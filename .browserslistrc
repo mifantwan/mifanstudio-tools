@@ -1,0 +1,12 @@
+# ES2025 Support - Modern browsers only
+last 2 versions
+Chrome >= 120
+Firefox >= 121
+Safari >= 17
+Edge >= 120
+iOS >= 17
+Android >= 14
+ChromeAndroid >= 120
+FirefoxAndroid >= 121
+Samsung >= 23
+not dead

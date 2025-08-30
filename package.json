@@ -1,0 +1,59 @@
+{
+  "name": "mifanstudio-tools",
+  "version": "1.0.0",
+  "description": "Sketch To  Platform Tools",
+  "keywords": [
+    "webpack",
+    "sass",
+    "encore"
+  ],
+  "homepage": "https://github.com/mifantwan/mifanstudio-tools#readme",
+  "bugs": {
+    "url": "https://github.com/mifantwan/mifanstudio-tools/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mifantwan/mifanstudio-tools.git"
+  },
+  "license": "ISC",
+  "author": "mifan twan ardana <me@mifan.io>",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "type": "module",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "yarn encore dev-server",
+    "build": "yarn encore production",
+    "install-deps": "yarn install"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "dependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-logical-assignment-operators": "^7.24.0",
+    "@babel/plugin-transform-nullish-coalescing-operator": "^7.24.0",
+    "@babel/plugin-transform-optional-chaining": "^7.24.0",
+    "@babel/plugin-transform-runtime": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/runtime": "^7.28.3",
+    "@symfony/webpack-encore": "^5.2.0",
+    "autoprefixer": "^10.4.21",
+    "core-js": "^3.45.1",
+    "dotenv": "^17.2.1",
+    "file-loader": "^6.2.0",
+    "path": "^0.12.7",
+    "path-browserify": "^1.0.1",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.1.1",
+    "sass": "^1.91.0",
+    "sass-loader": "^16.0.5",
+    "webpack-dev-server": "^5.2.2",
+    "webpack-notifier": "^1.15.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-umd": "^7.27.1",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1"
+  }
+}

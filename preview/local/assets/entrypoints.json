@@ -1,0 +1,97 @@
+{
+  "entrypoints": {
+    "local-apps": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-apps.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/local-apps.css"
+      ]
+    },
+    "local-frameworks": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-frameworks.js"
+      ]
+    },
+    "local-library": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-library.js"
+      ]
+    },
+    "local-products": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-products.js"
+      ]
+    },
+    "local-collection": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-collection.js"
+      ]
+    },
+    "local-collectionlist": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-collectionlist.js"
+      ]
+    },
+    "local-singlepost": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-singlepost.js"
+      ]
+    },
+    "local-blogs": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-blogs.js"
+      ]
+    },
+    "local-pages": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-pages.js"
+      ]
+    },
+    "local-search": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-search.js"
+      ]
+    },
+    "local-lost": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-lost.js"
+      ]
+    },
+    "local-giftcard": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-giftcard.js"
+      ]
+    },
+    "local-cart": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-cart.js"
+      ]
+    },
+    "local-account": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-account.js"
+      ]
+    },
+    "local-password": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-password.js"
+      ]
+    }
+  }
+}

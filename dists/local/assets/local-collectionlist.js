@@ -1,0 +1,1 @@
+"use strict";var MifanStudio;(this.webpackChunkMifanStudio=this.webpackChunkMifanStudio||[]).push([[837],{821:(i,a,t)=>{t.r(a)}},i=>{var a,t=(a=821,i(i.s=a));MifanStudio=t}]);

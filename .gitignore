@@ -1,0 +1,8 @@
+node_modules
+./sources/*
+!./sources/local/
+./preview/
+!./preview/local/
+./dist/
+./env/
+
