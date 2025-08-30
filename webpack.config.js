@@ -205,13 +205,14 @@ webpackConfig.experiments = {
 if (!Encore.isProduction()) {
     webpackConfig.devtool = 'eval-source-map';
     webpackConfig.mode = 'development';
+    const domain = process.env.PROJECT_DOMAIN || 'local';
     
     // Configure dev server for better compatibility
     webpackConfig.devServer = {
         ...webpackConfig.devServer,
         static: [
             {
-                directory: path.join(__dirname, 'preview', `${process.env.PROJECT_DOMAIN}`),
+                directory: path.join(__dirname, 'preview', `${domain}`),
                 publicPath: '/'
             }
         ],
