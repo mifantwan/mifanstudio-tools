@@ -1,0 +1,96 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[4]!./sources/local/sass/framework.sass ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body, html {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-text);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+html, body {
+  font-size: var(--font-large-units);
+  width: 100dvw;
+}
+html small, body small {
+  font-size: calc(var(--font-p) / var(--font-scale));
+}
+html p, body p {
+  font-size: var(--font-p);
+  line-height: 1.6;
+}
+html h6, body h6 {
+  font-size: calc(var(--font-p) * var(--font-scale));
+}
+html h5, body h5 {
+  font-size: calc(var(--font-p) * pow(var(--font-scale), 2));
+}
+html h4, body h4 {
+  font-size: calc(var(--font-p) * pow(var(--font-scale), 3));
+}
+html h3, body h3 {
+  font-size: calc(var(--font-p) * pow(var(--font-scale), 4));
+}
+html h2, body h2 {
+  font-size: calc(var(--font-p) * pow(var(--font-scale), 5));
+}
+html h1, body h1 {
+  font-size: calc(var(--font-p) * pow(var(--font-scale), 6));
+}
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6, body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  line-height: 1.15;
+  font-weight: normal;
+}
+html strong,
+html em,
+html a,
+html span,
+html code,
+html pre,
+html blockquote, body strong,
+body em,
+body a,
+body span,
+body code,
+body pre,
+body blockquote {
+  font-family: inherit;
+  font-size: inherit;
+}
+html strong,
+html b, body strong,
+body b {
+  font-weight: bold;
+  color: var(--color-text-bold);
+}
+
+@media screen and (min-width: 390px) and (max-width: 1366px) {
+  html, body {
+    font-size: calc(var(--font-small-units) + (var(--font-large) - var(--font-small)) * (100dvw - var(--screen-small-units)) / (var(--screen-large) - var(--screen-small)));
+  }
+}
+@media screen and (max-width: 389px) {
+  html, body {
+    font-size: var(--font-small-units);
+  }
+}

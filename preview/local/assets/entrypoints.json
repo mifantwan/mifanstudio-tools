@@ -1,96 +1,114 @@
 {
   "entrypoints": {
-    "local-apps": {
+    "local-preloader": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-apps.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-preloader.js"
       ],
       "css": [
-        "/assets/local-apps.css"
+        "http://localhost:8080/assets/local-preloader.css"
+      ]
+    },
+    "local-apps": {
+      "js": [
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-apps.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/local-apps.css"
       ]
     },
     "local-frameworks": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-frameworks.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-frameworks.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/local-frameworks.css"
       ]
     },
     "local-library": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-library.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-library.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/local-library.css"
       ]
     },
     "local-products": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-products.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-products.js"
       ]
     },
     "local-collection": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-collection.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-collection.js"
       ]
     },
     "local-collectionlist": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-collectionlist.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-collectionlist.js"
       ]
     },
     "local-singlepost": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-singlepost.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-singlepost.js"
       ]
     },
     "local-blogs": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-blogs.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-blogs.js"
       ]
     },
     "local-pages": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-pages.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-pages.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/local-pages.css"
       ]
     },
     "local-search": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-search.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-search.js"
       ]
     },
     "local-lost": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-lost.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-lost.js"
       ]
     },
     "local-giftcard": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-giftcard.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-giftcard.js"
       ]
     },
     "local-cart": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-cart.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-cart.js"
       ]
     },
     "local-account": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-account.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-account.js"
       ]
     },
     "local-password": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/local-password.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/local-password.js"
       ]
     }
   }

@@ -1,10 +1,11 @@
 node_modules
 ./sources/*
 !./sources/local/
-./preview/
-!./preview/
+./preview/*
+!./preview/local/
 ./dist/*
+!./dist/local/
 ./env/*
 !./env/.local.env
 !./env/.local-dists.env
-
+yarn.lock

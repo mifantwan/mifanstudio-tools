@@ -25,6 +25,7 @@ function configurePlatformEntries() {
 
     // Common entries for all platforms
     Encore
+        .addEntry(`${domain}-preloader`, `./${source}/${domain}/js/preloader.js`)
         .addEntry(`${domain}-apps`, `./${source}/${domain}/js/app.js`)
         .addEntry(`${domain}-frameworks`, `./${source}/${domain}/js/framework.js`)
         .addEntry(`${domain}-library`, `./${source}/${domain}/js/library.js`);
@@ -84,6 +85,7 @@ function configureEncore() {
             }
         )
         .setPublicPath('/assets');
+        // .enableHotModuleReplacementPlugin(); // Enable HMR
 
     // Configure platform-specific entries
     configurePlatformEntries();
@@ -181,8 +183,10 @@ function cleanOutputDirectory() {
 configureEnviroment();
 configureEncore();
 
-// Clean output directory before build
-cleanOutputDirectory();
+// Clean output directory before build (skip for dev-server)
+if (!process.argv.includes('dev-server')) {
+    cleanOutputDirectory();
+}
 
 const webpackConfig = Encore.getWebpackConfig();
 
@@ -213,10 +217,13 @@ if (!Encore.isProduction()) {
         static: [
             {
                 directory: path.join(__dirname, 'preview', `${domain}`),
-                publicPath: '/'
+                publicPath: '/',
+                watch: true // Enable file watching
             }
         ],
-        hot: true,
+        hot: 'only', // Enable HMR without page refresh as fallback
+        liveReload: true, // Enable live reload
+        watchFiles: [`preview/${domain}/**/*`], // Watch all files in preview directory
         open: true,
         compress: true,
         port: 8080,
@@ -224,7 +231,8 @@ if (!Encore.isProduction()) {
             'Access-Control-Allow-Origin': '*',
         },
         devMiddleware: {
-            writeToDisk: true
+            writeToDisk: true,
+            publicPath: '/assets/'
         }
     };
 }
@@ -262,13 +270,15 @@ webpackConfig.resolve = {
     }
 };
 
-// Add custom plugin for cleanup
-webpackConfig.plugins.push({
-    apply: (compiler) => {
-        compiler.hooks.beforeRun.tap('CleanOutputPlugin', () => {
-            cleanOutputDirectory();
-        });
-    }
-});
+// Add custom plugin for cleanup (skip for dev-server)
+if (!process.argv.includes('dev-server')) {
+    webpackConfig.plugins.push({
+        apply: (compiler) => {
+            compiler.hooks.beforeRun.tap('CleanOutputPlugin', () => {
+                cleanOutputDirectory();
+            });
+        }
+    });
+}
 
 export default webpackConfig;

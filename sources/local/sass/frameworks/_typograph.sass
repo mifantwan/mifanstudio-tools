@@ -1,0 +1,57 @@
+// Base Responsive Typography
+
+html, body
+    font-size: var(--font-large-units)
+    width: 100dvw
+
+    small
+        font-size: calc(var(--font-p) / var(--font-scale))
+
+    p
+        font-size: var(--font-p)
+        line-height: 1.6
+    h6
+        font-size: calc(var(--font-p) * var(--font-scale))
+    h5
+        font-size: calc(var(--font-p) * pow(var(--font-scale), 2))
+    h4
+        font-size: calc(var(--font-p) * pow(var(--font-scale), 3))
+    h3
+        font-size: calc(var(--font-p) * pow(var(--font-scale), 4))
+    h2
+        font-size: calc(var(--font-p) * pow(var(--font-scale), 5))
+    h1
+        font-size: calc(var(--font-p) * pow(var(--font-scale), 6))
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+        line-height: 1.15
+        font-weight: normal
+
+    strong,
+    em,
+    a,
+    span,
+    code,
+    pre,
+    blockquote
+        font-family: inherit
+        font-size: inherit
+
+    strong,
+    b
+        font-weight: bold
+        color: var(--color-text-bold)
+
+@media screen and (min-width: 390px) and (max-width: 1366px)
+    html, body
+        font-size: calc(var(--font-small-units) + (var(--font-large) - var(--font-small)) * ((100dvw - var(--screen-small-units)) / ( var(--screen-large) - var(--screen-small) )))
+
+
+@media screen and (max-width: 389px)
+    html, body
+        font-size: var(--font-small-units)
