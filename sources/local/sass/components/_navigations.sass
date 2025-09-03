@@ -1,0 +1,44 @@
+#local-navigation
+    .navigation-container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        column-gap: var(--space-normal)
+        nav
+            padding-block: var(--space-normal)
+            ul
+                display: flex
+                justify-content: flex-start
+                align-items: center
+                column-gap: var(--space-normal)
+
+        nav:first-child,
+        nav:last-child,
+        div:first-child,
+        div:last-child
+            flex: 1
+
+        div:last-child,
+        nav:last-child
+            display: flex
+            justify-content: flex-end
+
+        nav:not(:first-child):not(:last-child),
+        div:not(:first-child):not(:last-child)
+            display: flex
+            justify-content: center
+            
+
+        .navigation-actions
+            svg
+                path:nth-child(2)
+                    fill: var(--color-text)
+            span
+                font-size: var(--font-small-units)
+
+        
+    
+#local-navigation[preset-type="sketch"]
+    border-block-end: 1px solid color-mix(in srgb, var(--color-text) 20%, transparent)
+    section
+        border-inline: 1px solid color-mix(in srgb, var(--color-text) 20%, transparent)
