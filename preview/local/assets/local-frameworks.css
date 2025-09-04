@@ -122,6 +122,13 @@ section.container--full {
   margin-inline: auto;
 }
 
+button {
+  border: none;
+  background-color: color-mix(in srgb, var(--color-muted) 10%, transparent);
+  padding: var(--space-small);
+  border-radius: var(--space-small);
+}
+
 #local-announcement section {
   padding-block: var(--space-small);
 }
@@ -132,12 +139,8 @@ section.container--full {
   -moz-column-gap: var(--space-normal);
        column-gap: var(--space-normal);
 }
-
-#local-announcement[preset-type=sketch] {
-  border-block-end: 1px solid color-mix(in srgb, var(--color-text) 20%, transparent);
-}
-#local-announcement[preset-type=sketch] section {
-  border-inline: 1px solid color-mix(in srgb, var(--color-text) 20%, transparent);
+#local-announcement section .announcement-container a:not(:last-child) {
+  margin-right: var(--space-normal);
 }
 
 #local-navigation .navigation-container {
@@ -173,16 +176,32 @@ section.container--full {
   display: flex;
   justify-content: center;
 }
+#local-navigation .navigation-container .navigation-menu svg,
+#local-navigation .navigation-container .navigation-actions svg {
+  vertical-align: middle;
+}
+#local-navigation .navigation-container .navigation-menu svg path:nth-child(2),
 #local-navigation .navigation-container .navigation-actions svg path:nth-child(2) {
   fill: var(--color-text);
 }
+#local-navigation .navigation-container .navigation-menu span,
 #local-navigation .navigation-container .navigation-actions span {
   font-size: var(--font-small-units);
 }
-
-#local-navigation[preset-type=sketch] {
-  border-block-end: 1px solid color-mix(in srgb, var(--color-text) 20%, transparent);
+#local-navigation .navigation-container .navigation-menu button,
+#local-navigation .navigation-container .navigation-actions button {
+  position: relative;
 }
-#local-navigation[preset-type=sketch] section {
-  border-inline: 1px solid color-mix(in srgb, var(--color-text) 20%, transparent);
+#local-navigation .navigation-container .navigation-menu button span,
+#local-navigation .navigation-container .navigation-actions button span {
+  position: absolute;
+  top: calc(var(--space-small) * 0.5);
+  right: calc(var(--space-small) * 0.5);
+  color: var(--color-theme-primary);
+}
+
+header {
+  aspect-ratio: 16/9;
+  width: 100dvw;
+  height: auto;
 }

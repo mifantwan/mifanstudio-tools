@@ -1,41 +1,43 @@
 \:root
     // Brand Colors
-    --color-brand: rgba(255, 107, 53, 1)
+    --color-brand: rgba(255, 136, 30, 1)
     // Basic Colors
     --color-background: rgba(250, 250, 250, 1)
     --color-text: rgba(42, 42, 42, 0.8)
     --color-text-bold: rgba(42, 42, 42, 1)
-    // Themes Colors
-    --color-theme-primary: rgba(255, 107, 53, 1)
-    --color-theme-secondary: rgba(0, 0, 0, 1)
-    --color-theme-tertiary: rgba(0, 0, 0, 1)
+    // Actions Colors
+    --color-theme-primary: rgba(249, 65, 68, 1)
+    --color-theme-secondary: rgba(46, 196, 182, 1)
+    --color-theme-tertiary: rgba(42, 42, 42, 1)
     // Accent Colors
-    --color-accent-primary: rgba(0, 0, 0, 1)
-    --color-accent-secondary: rgba(0, 0, 0, 1)
-    --color-accent-tertiary: rgba(0, 0, 0, 1)
+    --color-accent-primary: color-mix(in srgb, var(--color-theme-primary) 25%, transparent)
+    --color-accent-secondary: color-mix(in srgb, var(--color-theme-secondary) 25%, transparent)
+    --color-accent-tertiary: rgba(42, 42, 42, 1)
     // Status Colors
-    --color-success: rgba(0, 0, 0, 1)
-    --color-warning: rgba(0, 0, 0, 1)
-    --color-error: rgba(0, 0, 0, 1)
-    --color-info: rgba(0, 0, 0, 1)
+    --color-danger: rgba(255, 182, 178, 1)
+    --color-info: rgba(179, 197, 245, 1)
+    --color-success: rgba(183, 229, 187, 1)
+    --color-warning: rgba(255, 246, 197, 1)
+    --color-muted: color-mix(in srgb, var(--color-text) 25%, transparent)
     
     @media (prefers-color-scheme: dark)
         // Brand Colors
-        --color-brand: rgba(255, 107, 53, 1)
+        --color-brand: rgba(255, 136, 30, 1)
         // Basic Colors
         --color-background: rgba(42, 42, 42, 1)
         --color-text: rgba(250, 250, 250, 0.8)
         --color-text-bold: rgba(250, 250, 250, 1)
-        // Themes Colors
-        --color-theme-primary: rgba(255, 107, 53, 1)
-        --color-theme-secondary: rgba(0, 0, 0, 1)
-        --color-theme-tertiary: rgba(0, 0, 0, 1)
+        // Actions Colors
+        --color-theme-primary: rgba(249, 65, 68, 1)
+        --color-theme-secondary: rgba(46, 196, 182, 1)
+        --color-theme-tertiary: rgba(250, 250, 250, 1)
         // Accent Colors
-        --color-accent-primary: rgba(0, 0, 0, 1)
-        --color-accent-secondary: rgba(0, 0, 0, 1)
-        --color-accent-tertiary: rgba(0, 0, 0, 1)
+        --color-accent-primary: color-mix(in srgb, var(--color-theme-primary) 25%, transparent)
+        --color-accent-secondary: color-mix(in srgb, var(--color-theme-secondary) 25%, transparent)
+        --color-accent-tertiary: rgba(250, 250, 250, 1)
         // Status Colors
-        --color-success: rgba(0, 0, 0, 1)
-        --color-warning: rgba(0, 0, 0, 1)
-        --color-error: rgba(0, 0, 0, 1)
-        --color-info: rgba(0, 0, 0, 1)
+        --color-danger: rgba(255, 182, 178, 1)
+        --color-info: rgba(179, 197, 245, 1)
+        --color-success: rgba(183, 229, 187, 1)
+        --color-warning: rgba(255, 246, 197, 1)
+        --color-muted: color-mix(in srgb, var(--color-text) 25%, transparent)
