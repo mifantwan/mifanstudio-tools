@@ -2,6 +2,7 @@
     position: sticky
     top: 0
     container-type: scroll-state
+    z-index: 4
 
     section
         padding-block: var(--space-small)
@@ -12,18 +13,110 @@
             justify-content: space-between
             align-items: center
             column-gap: var(--space-normal)
-            min-height: calc(var(--font-small-units) * 1.25) 
+            min-height: calc(var(--font-small-units) * 1.25)
+            position: relative
+            z-index: 1
 
             a:not(:last-child)
                 margin-right: var(--space-normal)
-
 
             .announcement-navs
                 flex: 0 0 auto
                 display: inline-flex
                 align-items: center
                 height: calc(var(--font-small-units) * 1.25)
+
                 div.selector
+                    position: relative
+                    z-index: 1
+                     
+                    .custom-select
+                        position: relative
+                        display: inline-block
+
+                        .select-trigger
+                            display: flex
+                            align-items: center
+                            gap: var(--space-small)
+                            padding: var(--space-small) 0
+                            background-color: color-mix(in srgb, var(--color-muted) 0%, transparent)
+                            border: none
+                            border-radius: 4px
+                            cursor: pointer
+                            font-family: var(--font-text)
+                            font-size: var(--font-small-units)
+                            transition: background-color 0.2s ease
+
+                            &:hover
+                                background-color: color-mix(in srgb, var(--color-muted) 10%, transparent)
+
+                            .flag-icon
+                                width: 20px
+                                height: 14px
+                                flex-shrink: 0
+
+                            .dropdown-arrow
+                                transition: transform 0.2s ease
+
+                        .select-options
+                            position: absolute
+                            top: calc(100% + 4px)
+                            left: 50%
+                            transform: translateX(-50%) translateY(-10px)
+                            background: white
+                            border: 1px solid var(--color-muted)
+                            border-radius: 4px
+                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+                            z-index: 9999
+                            opacity: 0
+                            visibility: hidden
+                            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease
+                            min-width: 155px
+                            width: max-content
+                            max-width: min(calc(100vw - 2rem), 300px)
+
+                            .select-option
+                                display: flex
+                                align-items: center
+                                gap: var(--space-small)
+                                padding: var(--space-small) var(--space-normal)
+                                cursor: pointer
+                                font-family: var(--font-text)
+                                font-size: var(--font-small-units)
+                                transition: background-color 0.2s ease
+                                white-space: nowrap
+
+                                &:hover
+                                    background-color: color-mix(in srgb, var(--color-muted) 5%, transparent)
+
+                                .flag-icon
+                                    width: 20px
+                                    height: 14px
+                                    flex-shrink: 0
+
+                        // Currency selector specific styling (no images)
+                        &.currency-select
+                            .select-trigger
+                                justify-content: center
+                                padding: var(--space-small) 0
+
+                            .select-options
+                                min-width: 60px
+                                max-width: min(calc(100vw - 2rem), 100px)
+
+                                .select-option
+                                    justify-content: center
+                                    padding: var(--space-small) var(--space-normal)
+
+                        &.open
+                            .select-trigger .dropdown-arrow
+                                transform: rotate(180deg)
+
+                            .select-options
+                                opacity: 1
+                                visibility: visible
+                                transform: translateX(-50%) translateY(0)
+
                     select
                         background-color: color-mix(in srgb, var(--color-muted) 0%, transparent)
                         border: none
@@ -34,8 +127,8 @@
                             font-family: var(--font-text)
                             font-size: var(--font-small-units)
 
-                    select:focus
-                        outline: none   
+                        &:focus
+                            outline: none
 
                 div.selector:not(:last-child)
                     margin-right: var(--space-normal)
@@ -44,41 +137,39 @@
                 flex: 1
                 min-width: 0
                 
-                ul 
-                     position: relative
-                     height: calc(var(--font-small-units) * 1.25)
-                     overflow: hidden
-                     line-height: calc(var(--font-small-units) * 1.25)
-                     display: flex
-                     align-items: center
+                ul
+                    position: relative
+                    height: calc(var(--font-small-units) * 1.25)
+                    overflow: hidden
+                    line-height: calc(var(--font-small-units) * 1.25)
+                    display: flex
+                    align-items: center
 
-                     li 
-                         position: absolute
-                         top: 60%
-                         left: 0
-                         width: 100%
-                         opacity: 0
-                         transform: translateY(calc(-50% + 20px))
-                         transition: opacity 0.5s ease, transform 0.5s ease
+                    li
+                        position: absolute
+                        top: 60%
+                        left: 0
+                        width: 100%
+                        opacity: 0
+                        transform: translateY(calc(-50% + 20px))
+                        transition: opacity 0.5s ease, transform 0.5s ease
 
-                         a small
-                             display: block
-                             white-space: nowrap
-                             overflow: hidden
-                             text-overflow: ellipsis
-                             max-width: 100%
+                        a small
+                            display: block
+                            white-space: nowrap
+                            overflow: hidden
+                            text-overflow: ellipsis
+                            max-width: 100%
 
-                         &.active
-                             opacity: 1
-                             transform: translateY(-50%)
+                        &.active
+                            opacity: 1
+                            transform: translateY(-50%)
 
             div.first-child
                 text-align: left
 
             div:last-child
                 text-align: right
-
-            
 
     @container scroll-state(stuck: top)
         section

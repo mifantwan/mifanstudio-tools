@@ -148,6 +148,7 @@ a:focus {
   position: sticky;
   top: 0;
   container-type: scroll-state;
+  z-index: 4;
 }
 #local-announcement section {
   padding-block: var(--space-small);
@@ -160,6 +161,8 @@ a:focus {
   -moz-column-gap: var(--space-normal);
        column-gap: var(--space-normal);
   min-height: calc(var(--font-small-units) * 1.25);
+  position: relative;
+  z-index: 1;
 }
 #local-announcement section .announcement-container a:not(:last-child) {
   margin-right: var(--space-normal);
@@ -169,6 +172,95 @@ a:focus {
   display: inline-flex;
   align-items: center;
   height: calc(var(--font-small-units) * 1.25);
+}
+#local-announcement section .announcement-container .announcement-navs div.selector {
+  position: relative;
+  z-index: 1;
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select {
+  position: relative;
+  display: inline-block;
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select .select-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+  padding: var(--space-small) 0;
+  background-color: color-mix(in srgb, var(--color-muted) 0%, transparent);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-text);
+  font-size: var(--font-small-units);
+  transition: background-color 0.2s ease;
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select .select-trigger:hover {
+  background-color: color-mix(in srgb, var(--color-muted) 10%, transparent);
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select .select-trigger .flag-icon {
+  width: 20px;
+  height: 14px;
+  flex-shrink: 0;
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select .select-trigger .dropdown-arrow {
+  transition: transform 0.2s ease;
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select .select-options {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: white;
+  border: 1px solid var(--color-muted);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  min-width: 155px;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: min(100vw - 2rem, 300px);
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select .select-options .select-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+  padding: var(--space-small) var(--space-normal);
+  cursor: pointer;
+  font-family: var(--font-text);
+  font-size: var(--font-small-units);
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select .select-options .select-option:hover {
+  background-color: color-mix(in srgb, var(--color-muted) 5%, transparent);
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select .select-options .select-option .flag-icon {
+  width: 20px;
+  height: 14px;
+  flex-shrink: 0;
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select.currency-select .select-trigger {
+  justify-content: center;
+  padding: var(--space-small) 0;
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select.currency-select .select-options {
+  min-width: 60px;
+  max-width: min(100vw - 2rem, 100px);
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select.currency-select .select-options .select-option {
+  justify-content: center;
+  padding: var(--space-small) var(--space-normal);
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select.open .select-trigger .dropdown-arrow {
+  transform: rotate(180deg);
+}
+#local-announcement section .announcement-container .announcement-navs div.selector .custom-select.open .select-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 #local-announcement section .announcement-container .announcement-navs div.selector select {
   background-color: color-mix(in srgb, var(--color-muted) 0%, transparent);
@@ -236,6 +328,7 @@ a:focus {
   position: sticky;
   top: calc(var(--font-small-units) * 1.25 + var(--space-small) * 2);
   container-type: scroll-state;
+  z-index: 3;
 }
 #local-navigation .navigation-container {
   display: flex;
