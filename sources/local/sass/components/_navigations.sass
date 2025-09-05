@@ -1,4 +1,8 @@
 #local-navigation
+    position: sticky
+    top: calc(( var(--font-small-units) * 1.25 ) + ( var(--space-small) * 2))
+    container-type: scroll-state
+    
     .navigation-container
         display: flex
         justify-content: space-between
@@ -46,3 +50,12 @@
                     top: calc(var(--space-small) * 0.5)
                     right: calc(var(--space-small) * 0.5)
                     color: var(--color-theme-primary)
+
+            button:hover 
+                background-color: color-mix(in srgb, var(--color-muted) 50%, transparent)
+
+    @container scroll-state(stuck: top)
+        section
+            background-color: color-mix(in srgb, var(--color-background) 25%, transparent)
+            backdrop-filter: blur(0.5rem)
+            box-shadow: 0 1px 3px color-mix(in srgb, var(--color-muted) 25%, transparent)

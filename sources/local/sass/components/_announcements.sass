@@ -1,12 +1,86 @@
 #local-announcement
+    position: sticky
+    top: 0
+    container-type: scroll-state
+
     section
         padding-block: var(--space-small)
 
         .announcement-container
             display: flex
+            flex-wrap: nowrap
             justify-content: space-between
             align-items: center
-            column-gap: var(--space-normal) 
+            column-gap: var(--space-normal)
+            min-height: calc(var(--font-small-units) * 1.25) 
 
             a:not(:last-child)
                 margin-right: var(--space-normal)
+
+
+            .announcement-navs
+                flex: 0 0 auto
+                display: inline-flex
+                align-items: center
+                height: calc(var(--font-small-units) * 1.25)
+                div.selector
+                    select
+                        background-color: color-mix(in srgb, var(--color-muted) 0%, transparent)
+                        border: none
+                        font-family: var(--font-text)
+                        font-size: var(--font-small-units)
+
+                        option
+                            font-family: var(--font-text)
+                            font-size: var(--font-small-units)
+
+                    select:focus
+                        outline: none   
+
+                div.selector:not(:last-child)
+                    margin-right: var(--space-normal)
+
+            .announcement-content
+                flex: 1
+                min-width: 0
+                
+                ul 
+                     position: relative
+                     height: calc(var(--font-small-units) * 1.25)
+                     overflow: hidden
+                     line-height: calc(var(--font-small-units) * 1.25)
+                     display: flex
+                     align-items: center
+
+                     li 
+                         position: absolute
+                         top: 60%
+                         left: 0
+                         width: 100%
+                         opacity: 0
+                         transform: translateY(calc(-50% + 20px))
+                         transition: opacity 0.5s ease, transform 0.5s ease
+
+                         a small
+                             display: block
+                             white-space: nowrap
+                             overflow: hidden
+                             text-overflow: ellipsis
+                             max-width: 100%
+
+                         &.active
+                             opacity: 1
+                             transform: translateY(-50%)
+
+            div.first-child
+                text-align: left
+
+            div:last-child
+                text-align: right
+
+            
+
+    @container scroll-state(stuck: top)
+        section
+            background-color: color-mix(in srgb, var(--color-theme-tertiary) 25%, transparent)
+            backdrop-filter: blur(0.5rem)

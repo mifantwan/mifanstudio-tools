@@ -4,6 +4,7 @@
 * {
   padding: 0;
   margin: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 ul {
@@ -99,50 +100,143 @@ body b {
     font-size: var(--font-small-units);
   }
 }
-section {
+.container {
   max-width: var(--screen-large-units);
   margin-inline: auto;
   padding-inline: var(--space-normal);
 }
 
-section.container--medium {
+.container--medium {
   max-width: var(--screen-medium-units);
   margin-inline: auto;
   padding-inline: var(--space-normal);
 }
 
-section.container--small {
+.container--small {
   max-width: var(--screen-small-units);
   margin-inline: auto;
   padding-inline: var(--space-normal);
 }
 
-section.container--full {
+.container--full {
   max-width: 100dvw;
   margin-inline: auto;
+  padding-inline: var(--space-normal);
 }
 
 button {
   border: none;
-  background-color: color-mix(in srgb, var(--color-muted) 10%, transparent);
+  background-color: color-mix(in srgb, var(--color-muted) 25%, transparent);
   padding: var(--space-small);
   border-radius: var(--space-small);
+  cursor: pointer;
 }
 
+a:hover {
+  color: color-mix(in srgb, var(--color-theme-primary) 50%, transparent);
+}
+
+a:active {
+  color: color-mix(in srgb, var(--color-theme-primary) 75%, transparent);
+}
+
+a:focus {
+  color: color-mix(in srgb, var(--color-theme-primary) 100%, transparent);
+}
+
+#local-announcement {
+  position: sticky;
+  top: 0;
+  container-type: scroll-state;
+}
 #local-announcement section {
   padding-block: var(--space-small);
 }
 #local-announcement section .announcement-container {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   -moz-column-gap: var(--space-normal);
        column-gap: var(--space-normal);
+  min-height: calc(var(--font-small-units) * 1.25);
 }
 #local-announcement section .announcement-container a:not(:last-child) {
   margin-right: var(--space-normal);
 }
+#local-announcement section .announcement-container .announcement-navs {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  height: calc(var(--font-small-units) * 1.25);
+}
+#local-announcement section .announcement-container .announcement-navs div.selector select {
+  background-color: color-mix(in srgb, var(--color-muted) 0%, transparent);
+  border: none;
+  font-family: var(--font-text);
+  font-size: var(--font-small-units);
+}
+#local-announcement section .announcement-container .announcement-navs div.selector select option {
+  font-family: var(--font-text);
+  font-size: var(--font-small-units);
+}
+#local-announcement section .announcement-container .announcement-navs div.selector select:focus {
+  outline: none;
+}
+#local-announcement section .announcement-container .announcement-navs div.selector:not(:last-child) {
+  margin-right: var(--space-normal);
+}
+#local-announcement section .announcement-container .announcement-content {
+  flex: 1;
+  min-width: 0;
+}
+#local-announcement section .announcement-container .announcement-content ul {
+  position: relative;
+  height: calc(var(--font-small-units) * 1.25);
+  overflow: hidden;
+  line-height: calc(var(--font-small-units) * 1.25);
+  display: flex;
+  align-items: center;
+}
+#local-announcement section .announcement-container .announcement-content ul li {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(calc(-50% + 20px));
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#local-announcement section .announcement-container .announcement-content ul li a small {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+#local-announcement section .announcement-container .announcement-content ul li.active {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+#local-announcement section .announcement-container div.first-child {
+  text-align: left;
+}
+#local-announcement section .announcement-container div:last-child {
+  text-align: right;
+}
+@container scroll-state(stuck: top) {
+  #local-announcement section {
+    background-color: color-mix(in srgb, var(--color-theme-tertiary) 25%, transparent);
+    -webkit-backdrop-filter: blur(0.5rem);
+            backdrop-filter: blur(0.5rem);
+  }
+}
 
+#local-navigation {
+  position: sticky;
+  top: calc(var(--font-small-units) * 1.25 + var(--space-small) * 2);
+  container-type: scroll-state;
+}
 #local-navigation .navigation-container {
   display: flex;
   justify-content: space-between;
@@ -198,6 +292,18 @@ button {
   top: calc(var(--space-small) * 0.5);
   right: calc(var(--space-small) * 0.5);
   color: var(--color-theme-primary);
+}
+#local-navigation .navigation-container .navigation-menu button:hover,
+#local-navigation .navigation-container .navigation-actions button:hover {
+  background-color: color-mix(in srgb, var(--color-muted) 50%, transparent);
+}
+@container scroll-state(stuck: top) {
+  #local-navigation section {
+    background-color: color-mix(in srgb, var(--color-background) 25%, transparent);
+    -webkit-backdrop-filter: blur(0.5rem);
+            backdrop-filter: blur(0.5rem);
+    box-shadow: 0 1px 3px color-mix(in srgb, var(--color-muted) 25%, transparent);
+  }
 }
 
 header {
