@@ -3,6 +3,7 @@
   "assets/local-preloader.js": "http://localhost:8080/assets/local-preloader.js",
   "assets/local-apps.css": "http://localhost:8080/assets/local-apps.css",
   "assets/local-apps.js": "http://localhost:8080/assets/local-apps.js",
+  "assets/local-frameworks.css": "http://localhost:8080/assets/local-frameworks.css",
   "assets/local-frameworks.js": "http://localhost:8080/assets/local-frameworks.js",
   "assets/local-library.css": "http://localhost:8080/assets/local-library.css",
   "assets/local-library.js": "http://localhost:8080/assets/local-library.js",
@@ -24,6 +25,5 @@
   "assets/fonts/MifanRegular.eot": "http://localhost:8080/assets/fonts/MifanRegular.9e3b85bc.eot",
   "assets/fonts/MifanRegular.ttf": "http://localhost:8080/assets/fonts/MifanRegular.fae1e3da.ttf",
   "assets/fonts/MifanRegular.woff": "http://localhost:8080/assets/fonts/MifanRegular.0601484d.woff",
-  "assets/fonts/MifanRegular.woff2": "http://localhost:8080/assets/fonts/MifanRegular.36c7e064.woff2",
-  "assets/local-frameworks.css": "http://localhost:8080/assets/local-frameworks.css"
+  "assets/fonts/MifanRegular.woff2": "http://localhost:8080/assets/fonts/MifanRegular.36c7e064.woff2"
 }
