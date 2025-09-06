@@ -9,5 +9,4 @@ node_modules
 !./env/.local.env
 !./env/.local-dists.env
 yarn.lock
-shopify
-wordpress
+platform
