@@ -144,11 +144,59 @@ a:focus {
   color: color-mix(in srgb, var(--color-theme-primary) 100%, transparent);
 }
 
+#local-apps {
+  z-index: 1;
+}
+
+#local-navigation-floating {
+  z-index: 2;
+}
+
+#local-navigation {
+  z-index: 3;
+}
+
 #local-announcement {
+  z-index: 4;
+}
+
+#local-notification {
+  z-index: 5;
+}
+
+#local-widget {
+  z-index: 6;
+}
+
+#local-side-nav {
+  z-index: 7;
+}
+
+#local-side-cart {
+  z-index: 8;
+}
+
+#local-side-account {
+  z-index: 9;
+}
+
+#local-popup-newsletter {
+  z-index: 10;
+}
+
+#local-cookie {
+  z-index: 11;
+}
+
+#local-preloader {
+  z-index: 12;
+}
+
+#local-announcement {
+  container-type: scroll-state;
+  container-name: announcement;
   position: sticky;
   top: 0;
-  container-type: scroll-state;
-  z-index: 4;
 }
 #local-announcement section {
   padding-block: var(--space-small);
@@ -214,7 +262,7 @@ a:focus {
   border: 1px solid var(--color-muted);
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 5;
+  z-index: 2;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
@@ -247,7 +295,7 @@ a:focus {
   padding: var(--space-small) 0;
 }
 #local-announcement section .announcement-container .announcement-navs div.selector .custom-select.currency-select .select-options {
-  min-width: 60px;
+  min-width: 50px;
   max-width: min(100vw - 2rem, 100px);
 }
 #local-announcement section .announcement-container .announcement-navs div.selector .custom-select.currency-select .select-options .select-option {
@@ -316,7 +364,7 @@ a:focus {
 #local-announcement section .announcement-container div:last-child {
   text-align: right;
 }
-@container scroll-state(stuck: top) {
+@container announcement scroll-state(stuck: top) {
   #local-announcement section {
     background-color: color-mix(in srgb, var(--color-theme-tertiary) 25%, transparent);
     -webkit-backdrop-filter: blur(0.5rem);
@@ -325,80 +373,88 @@ a:focus {
 }
 
 #local-navigation {
+  container-type: scroll-state;
+  container-name: main-navigation;
   position: sticky;
   top: calc(var(--font-small-units) * 1.25 + var(--space-small) * 2);
-  container-type: scroll-state;
-  z-index: 3;
 }
-#local-navigation .navigation-container {
+#local-navigation section .navigation-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   -moz-column-gap: var(--space-normal);
        column-gap: var(--space-normal);
 }
-#local-navigation .navigation-container nav {
+#local-navigation section .navigation-container nav {
   padding-block: var(--space-normal);
 }
-#local-navigation .navigation-container nav ul {
+#local-navigation section .navigation-container nav ul {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   -moz-column-gap: var(--space-normal);
        column-gap: var(--space-normal);
 }
-#local-navigation .navigation-container nav:first-child,
-#local-navigation .navigation-container nav:last-child,
-#local-navigation .navigation-container div:first-child,
-#local-navigation .navigation-container div:last-child {
+#local-navigation section .navigation-container nav:first-child,
+#local-navigation section .navigation-container nav:last-child,
+#local-navigation section .navigation-container div:first-child,
+#local-navigation section .navigation-container div:last-child {
   flex: 1;
 }
-#local-navigation .navigation-container div:last-child,
-#local-navigation .navigation-container nav:last-child {
+#local-navigation section .navigation-container div:last-child,
+#local-navigation section .navigation-container nav:last-child {
   display: flex;
   justify-content: flex-end;
 }
-#local-navigation .navigation-container nav:not(:first-child):not(:last-child),
-#local-navigation .navigation-container div:not(:first-child):not(:last-child) {
+#local-navigation section .navigation-container nav:not(:first-child):not(:last-child),
+#local-navigation section .navigation-container div:not(:first-child):not(:last-child) {
   display: flex;
   justify-content: center;
 }
-#local-navigation .navigation-container .navigation-menu svg,
-#local-navigation .navigation-container .navigation-actions svg {
+#local-navigation section .navigation-container .navigation-menu svg,
+#local-navigation section .navigation-container .navigation-actions svg {
   vertical-align: middle;
 }
-#local-navigation .navigation-container .navigation-menu svg path:nth-child(2),
-#local-navigation .navigation-container .navigation-actions svg path:nth-child(2) {
+#local-navigation section .navigation-container .navigation-menu svg path:nth-child(2),
+#local-navigation section .navigation-container .navigation-actions svg path:nth-child(2) {
   fill: var(--color-text);
 }
-#local-navigation .navigation-container .navigation-menu span,
-#local-navigation .navigation-container .navigation-actions span {
+#local-navigation section .navigation-container .navigation-menu span,
+#local-navigation section .navigation-container .navigation-actions span {
   font-size: var(--font-small-units);
 }
-#local-navigation .navigation-container .navigation-menu button,
-#local-navigation .navigation-container .navigation-actions button {
+#local-navigation section .navigation-container .navigation-menu button,
+#local-navigation section .navigation-container .navigation-actions button {
   position: relative;
 }
-#local-navigation .navigation-container .navigation-menu button span,
-#local-navigation .navigation-container .navigation-actions button span {
+#local-navigation section .navigation-container .navigation-menu button span,
+#local-navigation section .navigation-container .navigation-actions button span {
   position: absolute;
   top: calc(var(--space-small) * 0.5);
   right: calc(var(--space-small) * 0.5);
   color: var(--color-theme-primary);
 }
-#local-navigation .navigation-container .navigation-menu button:hover,
-#local-navigation .navigation-container .navigation-actions button:hover {
+#local-navigation section .navigation-container .navigation-menu button:hover,
+#local-navigation section .navigation-container .navigation-actions button:hover {
   background-color: color-mix(in srgb, var(--color-muted) 50%, transparent);
 }
-@container scroll-state(stuck: top) {
-  #local-navigation section {
-    background-color: color-mix(in srgb, var(--color-background) 25%, transparent);
-    -webkit-backdrop-filter: blur(0.5rem);
-            backdrop-filter: blur(0.5rem);
-    box-shadow: 0 1px 3px color-mix(in srgb, var(--color-muted) 25%, transparent);
-  }
+#local-navigation.is-stuck section {
+  background-color: color-mix(in srgb, var(--color-background) 25%, transparent);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--color-muted) 25%, transparent);
 }
 
+@media (max-width: 1024px) {
+  #local-navigation section .navigation-main {
+    display: none !important;
+  }
+}
+@media (min-width: 1025px) {
+  #local-navigation section .navigation-main-mobile {
+    display: none !important;
+  }
+}
 header {
   aspect-ratio: 16/9;
   width: 100dvw;

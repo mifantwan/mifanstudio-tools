@@ -1,8 +1,8 @@
 #local-announcement
+    container-type: scroll-state
+    container-name: announcement
     position: sticky
     top: 0
-    container-type: scroll-state
-    z-index: 4
 
     section
         padding-block: var(--space-small)
@@ -67,7 +67,7 @@
                             border: 1px solid var(--color-muted)
                             border-radius: 4px
                             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
-                            z-index: 5
+                            z-index: 2
                             opacity: 0
                             visibility: hidden
                             transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease
@@ -94,6 +94,8 @@
                                     height: 14px
                                     flex-shrink: 0
 
+
+
                         // Currency selector specific styling (no images)
                         &.currency-select
                             .select-trigger
@@ -101,7 +103,7 @@
                                 padding: var(--space-small) 0
 
                             .select-options
-                                min-width: 60px
+                                min-width: 50px
                                 max-width: min(calc(100vw - 2rem), 100px)
 
                                 .select-option
@@ -171,7 +173,7 @@
             div:last-child
                 text-align: right
 
-    @container scroll-state(stuck: top)
+    @container announcement scroll-state(stuck: top)
         section
             background-color: color-mix(in srgb, var(--color-theme-tertiary) 25%, transparent)
             backdrop-filter: blur(0.5rem)

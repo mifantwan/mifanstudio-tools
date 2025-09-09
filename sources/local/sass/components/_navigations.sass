@@ -1,62 +1,77 @@
 #local-navigation
+    container-type: scroll-state
+    container-name: main-navigation
     position: sticky
     top: calc(( var(--font-small-units) * 1.25 ) + ( var(--space-small) * 2))
-    container-type: scroll-state
-    z-index: 3
-    
-    .navigation-container
-        display: flex
-        justify-content: space-between
-        align-items: center
-        column-gap: var(--space-normal)
-        nav
-            padding-block: var(--space-normal)
-            ul
+
+    section
+        .navigation-container
+            display: flex
+            justify-content: space-between
+            align-items: center
+            column-gap: var(--space-normal)
+            nav
+                padding-block: var(--space-normal)
+                ul
+                    display: flex
+                    justify-content: flex-start
+                    align-items: center
+                    column-gap: var(--space-normal)
+
+            nav:first-child,
+            nav:last-child,
+            div:first-child,
+            div:last-child
+                flex: 1
+
+            div:last-child,
+            nav:last-child
                 display: flex
-                justify-content: flex-start
-                align-items: center
-                column-gap: var(--space-normal)
+                justify-content: flex-end
 
-        nav:first-child,
-        nav:last-child,
-        div:first-child,
-        div:last-child
-            flex: 1
-
-        div:last-child,
-        nav:last-child
-            display: flex
-            justify-content: flex-end
-
-        nav:not(:first-child):not(:last-child),
-        div:not(:first-child):not(:last-child)
-            display: flex
-            justify-content: center
-            
-
-        .navigation-menu,
-        .navigation-actions
-            svg
-                vertical-align: middle
-                path:nth-child(2)
-                    fill: var(--color-text)
-            span
-                font-size: var(--font-small-units)
-
-            button
-                position: relative
+            nav:not(:first-child):not(:last-child),
+            div:not(:first-child):not(:last-child)
+                display: flex
+                justify-content: center
                 
+
+            .navigation-menu,
+            .navigation-actions
+                svg
+                    vertical-align: middle
+                    path:nth-child(2)
+                        fill: var(--color-text)
                 span
-                    position: absolute
-                    top: calc(var(--space-small) * 0.5)
-                    right: calc(var(--space-small) * 0.5)
-                    color: var(--color-theme-primary)
+                    font-size: var(--font-small-units)
 
-            button:hover 
-                background-color: color-mix(in srgb, var(--color-muted) 50%, transparent)
+                button
+                    position: relative
+                    
+                    span
+                        position: absolute
+                        top: calc(var(--space-small) * 0.5)
+                        right: calc(var(--space-small) * 0.5)
+                        color: var(--color-theme-primary)
 
-    @container scroll-state(stuck: top)
+                button:hover 
+                    background-color: color-mix(in srgb, var(--color-muted) 50%, transparent)
+    
+    // JavaScript-based sticky state detection
+    &.is-stuck
         section
             background-color: color-mix(in srgb, var(--color-background) 25%, transparent)
             backdrop-filter: blur(0.5rem)
             box-shadow: 0 1px 3px color-mix(in srgb, var(--color-muted) 25%, transparent)
+            
+@media (max-width: 1024px)
+    #local-navigation
+        section
+            .navigation-main
+                display: none !important
+
+@media (min-width: 1025px)
+    #local-navigation
+        section
+            .navigation-main-mobile
+                display: none !important
+    
