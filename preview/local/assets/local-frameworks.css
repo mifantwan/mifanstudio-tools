@@ -456,7 +456,23 @@ a:focus {
   }
 }
 header {
-  aspect-ratio: 16/9;
   width: 100dvw;
   height: auto;
+}
+header .grid {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-normal);
+}
+header .grid div.grid--container {
+  flex: 1;
+  aspect-ratio: 1/1;
+  background-color: color-mix(in srgb, var(--color-muted) 25%, transparent);
+  border-radius: var(--space-small);
+  padding: var(--space-normal);
+}
+@media (max-width: 768px) {
+  header .grid {
+    flex-direction: column;
+  }
 }
