@@ -42,7 +42,12 @@ export default function floatingWidget() {
             e.preventDefault();
             const routeTo = btn.getAttribute('route-to');
             if (routeTo && (routeTo.startsWith('local-side-') || routeTo.startsWith('local-'))) {
-                showSideSection(routeTo);
+                const targetSection = document.getElementById(routeTo);
+                if (targetSection && targetSection.classList.contains('show')) {
+                    hideAllSideSections();
+                } else {
+                    showSideSection(routeTo);
+                }
             } else if (routeTo) {
                 window.location.href = routeTo;
             }
