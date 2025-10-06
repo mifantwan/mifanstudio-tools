@@ -155,12 +155,29 @@ button.close-floating-widget {
   background-color: var(--control-widget-background);
   top: var(--space-small);
   right: var(--space-small);
+  z-index: 10;
+  pointer-events: auto;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.8;
+}
+button.close-floating-widget:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
 button.close-floating-widget svg {
   vertical-align: middle;
 }
-button.close-floating-widget svg path {
-  fill: var(--color-text);
+button.close-floating-widget--info svg path {
+  fill: color-mix(in srgb, var(--color-info) 75%, black);
+}
+button.close-floating-widget--warning svg path {
+  fill: color-mix(in srgb, var(--color-warning) 75%, black);
+}
+button.close-floating-widget--error svg path {
+  fill: color-mix(in srgb, var(--color-error) 75%, black);
+}
+button.close-floating-widget--success svg path {
+  fill: color-mix(in srgb, var(--color-success) 75%, black);
 }
 
 a:hover {
@@ -578,4 +595,102 @@ header .grid div.grid--container {
 .floating-widget__center-center.show {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
+}
+
+.local-notification {
+  position: fixed;
+  max-width: var(--screen-small-units);
+  width: calc(100% - 2 * var(--space-normal));
+  height: -moz-max-content;
+  height: max-content;
+  padding-block: var(--space-small);
+  transition: all 0.3s ease-in-out;
+}
+.local-notification__bottom-right {
+  bottom: var(--space-normal);
+  right: var(--space-normal);
+}
+.local-notification__bottom-left {
+  bottom: var(--space-normal);
+  left: var(--space-normal);
+}
+.local-notification__top-right {
+  top: var(--space-normal);
+  right: var(--space-normal);
+}
+.local-notification__top-left {
+  top: var(--space-normal);
+  left: var(--space-normal);
+}
+
+.container__notification--info {
+  background-color: color-mix(in srgb, var(--color-info) 25%, white);
+  color: color-mix(in srgb, var(--color-info) 75%, black);
+  border: 1px solid color-mix(in srgb, var(--color-info) 75%, black);
+  padding-inline-end: calc(2 * var(--space-large)) !important;
+}
+.container__notification--warning {
+  background-color: color-mix(in srgb, var(--color-warning) 25%, white);
+  color: color-mix(in srgb, var(--color-warning) 75%, black);
+  border: 1px solid color-mix(in srgb, var(--color-warning) 75%, black);
+  padding-inline-end: calc(2 * var(--space-large)) !important;
+}
+.container__notification--error {
+  background-color: color-mix(in srgb, var(--color-error) 25%, white);
+  color: color-mix(in srgb, var(--color-error) 75%, black);
+  border: 1px solid color-mix(in srgb, var(--color-error) 75%, black);
+  padding-inline-end: calc(2 * var(--space-large)) !important;
+}
+.container__notification--success {
+  background-color: color-mix(in srgb, var(--color-success) 25%, white);
+  color: color-mix(in srgb, var(--color-success) 75%, black);
+  border: 1px solid color-mix(in srgb, var(--color-success) 75%, black);
+  padding-inline-end: calc(2 * var(--space-large)) !important;
+}
+.container__notification section {
+  position: relative;
+  width: 100%;
+  max-width: var(--screen-small-units);
+  background-color: var(--color-muted);
+  border-radius: var(--space-small);
+  -webkit-backdrop-filter: var(--widget-filter);
+          backdrop-filter: var(--widget-filter);
+  margin-block: var(--space-small);
+  margin-inline: auto;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity, height;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.container__notification section.hiding {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  will-change: transform, opacity, height, margin;
+}
+.container__notification section.hiding:hover {
+  transform: scale(1.02) !important;
+  transition: all 0.2s ease-out;
+}
+.container__notification section:first-child {
+  margin-block-start: 0;
+}
+.container__notification section:last-child {
+  margin-block-end: 0;
+}
+.container__notification .close-floating-widget {
+  position: absolute !important;
+  top: var(--space-small) !important;
+  right: var(--space-small) !important;
+  z-index: 100 !important;
+  pointer-events: auto !important;
+  transition: opacity 0.2s ease-in-out !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+.container__notification .close-floating-widget[data-notification-id] {
+  position: absolute !important;
+  top: var(--space-small) !important;
+  right: var(--space-small) !important;
+  z-index: 100 !important;
+  pointer-events: auto !important;
 }

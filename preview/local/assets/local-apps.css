@@ -20,7 +20,7 @@
   --color-accent-primary: color-mix(in srgb, var(--color-theme-primary) 25%, transparent);
   --color-accent-secondary: color-mix(in srgb, var(--color-theme-secondary) 25%, transparent);
   --color-accent-tertiary: rgba(42, 42, 42, 1);
-  --color-danger: rgba(255, 182, 178, 1);
+  --color-error: rgba(255, 182, 178, 1);
   --color-info: rgba(179, 197, 245, 1);
   --color-success: rgba(183, 229, 187, 1);
   --color-warning: rgba(255, 246, 197, 1);
@@ -43,7 +43,7 @@
     --color-accent-primary: color-mix(in srgb, var(--color-theme-primary) 25%, transparent);
     --color-accent-secondary: color-mix(in srgb, var(--color-theme-secondary) 25%, transparent);
     --color-accent-tertiary: rgba(250, 250, 250, 1);
-    --color-danger: rgba(255, 182, 178, 1);
+    --color-error: rgba(255, 182, 178, 1);
     --color-info: rgba(179, 197, 245, 1);
     --color-success: rgba(183, 229, 187, 1);
     --color-warning: rgba(255, 246, 197, 1);
