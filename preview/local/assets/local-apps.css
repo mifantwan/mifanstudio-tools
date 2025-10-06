@@ -25,6 +25,11 @@
   --color-success: rgba(183, 229, 187, 1);
   --color-warning: rgba(255, 246, 197, 1);
   --color-muted: color-mix(in srgb, var(--color-text) 25%, transparent);
+  --widget-background: color-mix(in srgb, var(--color-background) 75%, transparent);
+  --widget-filter: blur(0.5rem);
+  --box-shadow: 0 4px 12px color-mix(in srgb, var(--color-muted) 25%, transparent);
+  --control-main-background: color-mix(in srgb, var(--color-muted) 25%, transparent);
+  --control-widget-background: color-mix(in srgb, var(--color-muted) 0%, transparent);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -43,6 +48,11 @@
     --color-success: rgba(183, 229, 187, 1);
     --color-warning: rgba(255, 246, 197, 1);
     --color-muted: color-mix(in srgb, var(--color-text) 25%, transparent);
+    --widget-background: color-mix(in srgb, var(--color-background) 75%, transparent);
+    --widget-filter: blur(0.5rem);
+    --box-shadow: 0 4px 12px color-mix(in srgb, var(--color-muted) 25%, transparent);
+    --control-main-background: color-mix(in srgb, var(--color-muted) 25%, transparent);
+    --control-widget-background: color-mix(in srgb, var(--color-muted) 0%, transparent);
   }
 }
 

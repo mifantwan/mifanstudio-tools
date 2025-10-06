@@ -59,9 +59,9 @@
     // JavaScript-based sticky state detection
     &.is-stuck
         section
-            background-color: color-mix(in srgb, var(--color-background) 25%, transparent)
-            backdrop-filter: blur(0.5rem)
-            box-shadow: 0 1px 3px color-mix(in srgb, var(--color-muted) 25%, transparent)
+            background-color: var(--widget-background)
+            backdrop-filter: var(--widget-filter)
+            box-shadow: var(--box-shadow)
             
 @media (max-width: 1024px)
     #local-navigation

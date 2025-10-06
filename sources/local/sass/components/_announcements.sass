@@ -66,7 +66,7 @@
                             background-color: color-mix(in srgb, var(--color-background) 100%, transparent)
                             border: 1px solid var(--color-muted)
                             border-radius: 4px
-                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+                            box-shadow: var(--box-shadow)
                             z-index: 2
                             opacity: 0
                             visibility: hidden
@@ -176,4 +176,4 @@
     @container announcement scroll-state(stuck: top)
         section
             background-color: color-mix(in srgb, var(--color-theme-tertiary) 25%, transparent)
-            backdrop-filter: blur(0.5rem)
+            backdrop-filter: var(--widget-filter)

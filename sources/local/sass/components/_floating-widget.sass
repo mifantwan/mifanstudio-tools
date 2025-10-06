@@ -1,0 +1,70 @@
+.floating-widget
+    position: fixed
+    width: 100%
+    background-color: var(--widget-background)
+    backdrop-filter: var(--widget-filter)
+    box-shadow: var(--box-shadow)
+    display: none
+
+    &.show
+        display: block
+
+    // Shared styles for all directions
+    &__left-right,
+    &__right-left
+        top: 0
+        max-width: var(--screen-small-units)
+        height: 100dvh
+        transition: transform 0.3s ease-in-out
+        
+    &__top-bottom,
+    &__bottom-top
+        left: 0
+        max-width: 100vw
+        height: max-content
+        transition: transform 0.3s ease-in-out
+        
+    // Left to Right animation
+    &__left-right
+        left: 0
+        transform: translateX(-100%)
+        border-right: 1px solid var(--color-muted)
+        &.show
+            transform: translateX(0)
+
+    // Right to Left animation
+    &__right-left
+        right: 0
+        transform: translateX(100%)
+        border-left: 1px solid var(--color-muted)
+        &.show
+            transform: translateX(0)
+
+    // Top to Bottom animation
+    &__top-bottom
+        top: 0
+        transform: translateY(-100%)
+        border-bottom: 1px solid var(--color-muted)
+        &.show
+            transform: translateY(0)
+
+    // Bottom to Top animation
+    &__bottom-top
+        bottom: 0
+        transform: translateY(100%)
+        border-top: 1px solid var(--color-muted)
+        &.show
+            transform: translateY(0)
+
+    // Center animation (fade + scale)
+    &__center-center
+        top: 50%
+        left: 50%
+        max-width: var(--screen-medium-units)
+        height: max-content
+        opacity: 0
+        transform: translate(-50%, -50%) scale(0.8)
+        border: 1px solid var(--color-muted)
+        &.show
+            transform: translate(-50%, -50%) scale(1)
+            opacity: 1

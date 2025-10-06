@@ -101,7 +101,7 @@ function configureEncore() {
         })
         .splitEntryChunks()
         .configureSplitChunks(configureSplitChunks)
-        .enableSingleRuntimeChunk()
+        .disableSingleRuntimeChunk()
         .configureBabel(configureBabel)
         .configureBabelPresetEnv(configureBabelPresetEnv)
         .enableBuildNotifications()

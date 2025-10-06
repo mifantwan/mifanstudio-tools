@@ -3,6 +3,7 @@ import '../sass/framework.sass'
 import announcement from './components/announcement.js'
 import customSelect from './components/custom-select.js'
 import navigation from './components/navigation.js'
+import floatingWidget from './components/floating-widget.js'
 
 // Use readyState check for better performance
 if (document.readyState === 'loading') {
@@ -10,9 +11,11 @@ if (document.readyState === 'loading') {
         announcement()
         customSelect()
         navigation()
+        floatingWidget()
     })
 } else {
     announcement()
     customSelect()
     navigation()
+    floatingWidget()
 }

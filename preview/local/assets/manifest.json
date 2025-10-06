@@ -20,7 +20,6 @@
   "assets/local-cart.js": "http://localhost:8080/assets/local-cart.js",
   "assets/local-account.js": "http://localhost:8080/assets/local-account.js",
   "assets/local-password.js": "http://localhost:8080/assets/local-password.js",
-  "assets/runtime.js": "http://localhost:8080/assets/runtime.js",
   "assets/images/MifanRegular.svg": "http://localhost:8080/assets/images/MifanRegular.5243bdbc.svg",
   "assets/fonts/MifanRegular.eot": "http://localhost:8080/assets/fonts/MifanRegular.9e3b85bc.eot",
   "assets/fonts/MifanRegular.ttf": "http://localhost:8080/assets/fonts/MifanRegular.fae1e3da.ttf",

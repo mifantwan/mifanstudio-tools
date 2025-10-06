@@ -1,19 +1,24 @@
 .container
     max-width: var(--screen-large-units)
-    margin-inline: auto
-    padding-inline: var(--space-normal)
 
 .container--medium
     max-width: var(--screen-medium-units)
-    margin-inline: auto
-    padding-inline: var(--space-normal)
 
 .container--small
     max-width: var(--screen-small-units)
-    margin-inline: auto
-    padding-inline: var(--space-normal)
 
 .container--full
     max-width: 100dvw
+
+.container,
+.container--medium,
+.container--small,
+.container--full
     margin-inline: auto
     padding-inline: var(--space-normal)
+    &__content-space
+        padding-block: var(--space-normal)
+    &__content-space-large
+        padding-block: var(--space-large)
+    &__content-space-small
+        padding-block: var(--space-small)
