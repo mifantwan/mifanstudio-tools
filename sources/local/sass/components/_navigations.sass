@@ -17,6 +17,9 @@
                     justify-content: flex-start
                     align-items: center
                     column-gap: var(--space-normal)
+                    
+                    li
+                        position: relative
 
             nav:first-child,
             nav:last-child,
@@ -62,16 +65,225 @@
             background-color: var(--widget-background)
             backdrop-filter: var(--widget-filter)
             box-shadow: var(--box-shadow)
+
+    span
+        svg 
+            vertical-align: middle
+            transition: transform 0.3s ease
             
+    // Prevent rotation on click
+    a:active span svg,
+    a:focus span svg
+        transform: rotate(180deg) !important
+
+// Drop Down Start 
+ul.navigation-sub
+    position: absolute
+    top: calc(100% + var(--space-large))
+    left: 50%
+    transform: translateX(-50%)
+    background-color: var(--widget-background)
+    backdrop-filter: var(--widget-filter)
+    box-shadow: var(--box-shadow)
+    border-radius: var(--space-small)
+    padding: var(--space-small)
+    min-width: 200px
+    opacity: 0
+    visibility: hidden
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease
+    z-index: 1
+    list-style: none
+    margin: 0
+    display: flex
+    flex-direction: column
+    gap: calc(var(--space-small) * 0.5)
+    
+    li
+        margin: 0
+        width: 100%
+        a
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            padding: var(--space-small) var(--space-normal)
+            color: var(--color-text)
+            text-decoration: none
+            border-radius: calc(var(--space-small) * 0.5)
+            transition: background-color 0.2s ease
+            
+            &:hover
+                background-color: color-mix(in srgb, var(--color-muted) 50%, transparent)
+                color: color-mix(in srgb, var(--color-theme-primary) 50%, transparent)
+
+            span
+                svg
+                    vertical-align: middle
+        ul
+            position: fixed 
+            top: 0
+            left: calc(100% + var(--space-small))
+            background-color: var(--widget-background)
+            backdrop-filter: var(--widget-filter)
+            box-shadow: var(--box-shadow)
+            border-radius: var(--space-small)
+            padding: var(--space-small)
+            list-style: none
+            margin: 0
+            display: flex
+            flex-direction: column
+            gap: calc(var(--space-small) * 0.5)
+            min-width: 200px
+            opacity: 0
+            visibility: hidden
+            transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease
+            z-index: 1001
+
+
+// Show drop-down on hover
+li:hover ul.navigation-sub
+    opacity: 1
+    visibility: visible
+    transform: translateX(-50%) translateY(0)
+
+// Show nested dropdowns on hover
+li:hover ul
+    opacity: 1
+    visibility: visible
+
+// Show drop-down on click (for mobile/touch devices)
+li.has-dropdown.dropdown-open ul.navigation-sub
+    opacity: 1
+    visibility: visible
+    transform: translateX(-50%) translateY(0)
+
+// Show nested dropdowns on click
+li.has-dropdown.dropdown-open ul
+    opacity: 1
+    visibility: visible
+
+// Additional rules for nested ul elements (not just navigation-sub)
+ul.navigation-sub ul
+    position: absolute
+    top: 0
+    left: calc(100% + var(--space-small))
+    background-color: var(--widget-background)
+    backdrop-filter: var(--widget-filter)
+    box-shadow: var(--box-shadow)
+    border-radius: var(--space-small)
+    padding: var(--space-small)
+    list-style: none
+    margin: 0
+    display: flex
+    flex-direction: column
+    gap: calc(var(--space-small) * 0.5)
+    min-width: 200px
+    opacity: 0
+    visibility: hidden
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease
+    z-index: 1001
+
+// Show nested ul elements on hover
+ul.navigation-sub li:hover ul
+    opacity: 1
+    visibility: visible
+
+// Show nested ul elements on click
+ul.navigation-sub li.has-dropdown.dropdown-open ul
+    opacity: 1
+    visibility: visible
+
+// Style for li elements with navigation-sub class
+li.navigation-sub
+    a
+        cursor: pointer !important
+        text-decoration: none
+        
+        &:hover
+            color: var(--color-theme-primary)
+            
+    // When li.navigation-sub is clicked, show its parent's submenu
+    &.dropdown-open
+        a
+            color: var(--color-theme-primary)
+
+// Drop Down End 
 @media (max-width: 1024px)
     #local-navigation
         section
             .navigation-main
                 display: none !important
 
+    #local-side-navs
+        ul
+            display: flex
+            flex-direction: column
+            gap: calc(var(--space-small) * 0.5)
+            li
+                padding-block: var(--space-small)
+                position: relative
+                ul
+                    visibility: hidden
+                    max-height: 0
+                    opacity: 0
+                    overflow: hidden
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+                    padding: 0
+                    transform: translateY(-10px)
+
+                    li
+                        ul
+                            visibility: hidden
+                            max-height: 0
+                            opacity: 0
+                            overflow: hidden
+                            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+                            padding: 0
+                            transform: translateY(-10px)
+
+                svg
+                    vertical-align: middle
+
+                a
+                    display: flex
+                    width: 100%
+                    flex-direction: row
+                    justify-content: space-between
+
+            li:last-child
+                padding-block-end: 0
+
+        // Show nested ul elements when parent a has show class
+        a.show + ul
+            visibility: visible
+            max-height: 2000px
+            opacity: 1
+            padding: var(--space-small) 0
+            transform: translateY(0)
+            
+        // Show deeper nested ul elements when their parent a has show class
+        a.show + ul a.show + ul
+            visibility: visible 
+            max-height: 2000px
+            opacity: 1
+            padding: var(--space-small) 0
+            transform: translateY(0)
+            
+        // Show even deeper nested ul elements
+        a.show + ul a.show + ul a.show + ul
+            visibility: visible
+            max-height: 2000px
+            opacity: 1
+            padding: var(--space-small) 0
+            transform: translateY(0)
+
+    section.mobile-header
+        aspect-ratio: 3 / 1
+        width: 100%
+        height: auto
+        background-color: var(--control-main-background)
+
 @media (min-width: 1025px)
     #local-navigation
         section
             .navigation-main-mobile
-                display: none !important
-    
+                display: none !important    

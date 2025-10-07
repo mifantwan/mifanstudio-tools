@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/mifantwan/mifanstudio-tools.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "mifan twan ardana <me@mifan.io>",
   "engines": {
     "node": ">=18.0.0"

@@ -23,12 +23,12 @@ const ANIMATION_STYLES = {
 export default function notifications() {
     // json array of notifications containing id, text, url, date, time, type
     const notifications = [
-        { id: 1, text: 'New product launch! 🚀 Check out our latest collection of premium handcrafted items.', url: 'https://www.google.com', date: '2025-01-01', time: '12:00:00', type: 'info' },
-        { id: 2, text: '⚠️ Limited time offer: Get 25% off on all orders above $100. Don\'t miss out!', url: 'https://www.google.com', date: '2025-01-01', time: '12:00:00', type: 'warning' },
-        { id: 3, text: '❌ System maintenance scheduled for tonight from 2 AM - 4 AM EST. Some services may be unavailable.', url: 'https://www.google.com', date: '2025-01-01', time: '12:00:00', type: 'error' },
-        { id: 4, text: 'ℹ️ We\'ve updated our privacy policy. Please review the changes at your convenience.', url: 'https://www.google.com', date: '2025-01-01', time: '12:00:00', type: 'info' },
-        { id: 5, text: '⚡ High traffic alert: Orders may take longer to process. Thank you for your patience!', url: 'https://www.google.com', date: '2025-01-01', time: '12:00:00', type: 'warning' },
-        { id: 6, text: '🎉 Congratulations! You\'ve won a free gift with your purchase. Check your order details for more information.', url: 'https://www.google.com', date: '2025-01-01', time: '12:00:00', type: 'success' },
+        { id: 1, text: 'New product launch! Check out our latest collection of premium handcrafted items.', url: 'https://www.google.com', date: '2025-01-01', time: '12:00:00', type: 'info' },
+        { id: 2, text: 'Limited time offer: Get 25% off on all orders above $100. Don\'t miss out!', url: 'https://www.google.com', date: '2025-01-01', time: '12:00:00', type: 'warning' },
+        { id: 3, text: 'System maintenance scheduled for tonight from 2 AM - 4 AM EST. Some services may be unavailable.', url: 'https://www.google.com', date: '2025-01-01', time: '12:00:00', type: 'error' },
+        { id: 4, text: 'We\'ve updated our privacy policy. Please review the changes at your convenience.', url: 'https://www.google.com', date: '2025-01-01', time: '12:00:00', type: 'info' },
+        { id: 5, text: 'High traffic alert: Orders may take longer to process. Thank you for your patience!', url: 'https://www.google.com', date: '2025-01-01', time: '12:00:00', type: 'warning' },
+        { id: 6, text: 'Congratulations! You\'ve won a free gift with your purchase. Check your order details for more information.', url: 'https://www.google.com', date: '2025-01-01', time: '12:00:00', type: 'success' },
     ];
 
     if (!notifications.length) return;

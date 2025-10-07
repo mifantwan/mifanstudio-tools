@@ -167,17 +167,20 @@ button.close-floating-widget:hover {
 button.close-floating-widget svg {
   vertical-align: middle;
 }
+button.close-floating-widget svg path {
+  fill: var(--color-text);
+}
 button.close-floating-widget--info svg path {
-  fill: color-mix(in srgb, var(--color-info) 75%, black);
+  fill: color-mix(in srgb, var(--color-info) 75%, var(--color-text));
 }
 button.close-floating-widget--warning svg path {
-  fill: color-mix(in srgb, var(--color-warning) 75%, black);
+  fill: color-mix(in srgb, var(--color-warning) 75%, var(--color-text));
 }
 button.close-floating-widget--error svg path {
-  fill: color-mix(in srgb, var(--color-error) 75%, black);
+  fill: color-mix(in srgb, var(--color-error) 75%, var(--color-text));
 }
 button.close-floating-widget--success svg path {
-  fill: color-mix(in srgb, var(--color-success) 75%, black);
+  fill: color-mix(in srgb, var(--color-success) 75%, var(--color-text));
 }
 
 a:hover {
@@ -190,6 +193,10 @@ a:active {
 
 a:focus {
   color: color-mix(in srgb, var(--color-theme-primary) 100%, transparent);
+}
+
+.flex {
+  display: flex;
 }
 
 #local-apps {
@@ -232,12 +239,16 @@ a:focus {
   z-index: 10;
 }
 
-#local-cookie {
+#local-wishlist {
   z-index: 11;
 }
 
-#local-preloader {
+#local-cookie {
   z-index: 12;
+}
+
+#local-preloader {
+  z-index: 13;
 }
 
 #local-announcement {
@@ -443,6 +454,9 @@ a:focus {
   -moz-column-gap: var(--space-normal);
        column-gap: var(--space-normal);
 }
+#local-navigation section .navigation-container nav ul li {
+  position: relative;
+}
 #local-navigation section .navigation-container nav:first-child,
 #local-navigation section .navigation-container nav:last-child,
 #local-navigation section .navigation-container div:first-child,
@@ -492,10 +506,214 @@ a:focus {
           backdrop-filter: var(--widget-filter);
   box-shadow: var(--box-shadow);
 }
+#local-navigation span svg {
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+#local-navigation a:active span svg,
+#local-navigation a:focus span svg {
+  transform: rotate(180deg) !important;
+}
+
+ul.navigation-sub {
+  position: absolute;
+  top: calc(100% + var(--space-large));
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--widget-background);
+  -webkit-backdrop-filter: var(--widget-filter);
+          backdrop-filter: var(--widget-filter);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--space-small);
+  padding: var(--space-small);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-small) * 0.5);
+}
+ul.navigation-sub li {
+  margin: 0;
+  width: 100%;
+}
+ul.navigation-sub li a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--space-small) var(--space-normal);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: calc(var(--space-small) * 0.5);
+  transition: background-color 0.2s ease;
+}
+ul.navigation-sub li a:hover {
+  background-color: color-mix(in srgb, var(--color-muted) 50%, transparent);
+  color: color-mix(in srgb, var(--color-theme-primary) 50%, transparent);
+}
+ul.navigation-sub li a span svg {
+  vertical-align: middle;
+}
+ul.navigation-sub li ul {
+  position: fixed;
+  top: 0;
+  left: calc(100% + var(--space-small));
+  background-color: var(--widget-background);
+  -webkit-backdrop-filter: var(--widget-filter);
+          backdrop-filter: var(--widget-filter);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--space-small);
+  padding: var(--space-small);
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-small) * 0.5);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  z-index: 1001;
+}
+
+li:hover ul.navigation-sub {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+li:hover ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+li.has-dropdown.dropdown-open ul.navigation-sub {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+li.has-dropdown.dropdown-open ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+ul.navigation-sub ul {
+  position: absolute;
+  top: 0;
+  left: calc(100% + var(--space-small));
+  background-color: var(--widget-background);
+  -webkit-backdrop-filter: var(--widget-filter);
+          backdrop-filter: var(--widget-filter);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--space-small);
+  padding: var(--space-small);
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-small) * 0.5);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  z-index: 1001;
+}
+
+ul.navigation-sub li:hover ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+ul.navigation-sub li.has-dropdown.dropdown-open ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+li.navigation-sub a {
+  cursor: pointer !important;
+  text-decoration: none;
+}
+li.navigation-sub a:hover {
+  color: var(--color-theme-primary);
+}
+li.navigation-sub.dropdown-open a {
+  color: var(--color-theme-primary);
+}
 
 @media (max-width: 1024px) {
   #local-navigation section .navigation-main {
     display: none !important;
+  }
+  #local-side-navs ul {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space-small) * 0.5);
+  }
+  #local-side-navs ul li {
+    padding-block: var(--space-small);
+    position: relative;
+  }
+  #local-side-navs ul li ul {
+    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    transform: translateY(-10px);
+  }
+  #local-side-navs ul li ul li ul {
+    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    transform: translateY(-10px);
+  }
+  #local-side-navs ul li svg {
+    vertical-align: middle;
+  }
+  #local-side-navs ul li a {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #local-side-navs ul li:last-child {
+    padding-block-end: 0;
+  }
+  #local-side-navs a.show + ul {
+    visibility: visible;
+    max-height: 2000px;
+    opacity: 1;
+    padding: var(--space-small) 0;
+    transform: translateY(0);
+  }
+  #local-side-navs a.show + ul a.show + ul {
+    visibility: visible;
+    max-height: 2000px;
+    opacity: 1;
+    padding: var(--space-small) 0;
+    transform: translateY(0);
+  }
+  #local-side-navs a.show + ul a.show + ul a.show + ul {
+    visibility: visible;
+    max-height: 2000px;
+    opacity: 1;
+    padding: var(--space-small) 0;
+    transform: translateY(0);
+  }
+  section.mobile-header {
+    aspect-ratio: 3/1;
+    width: 100%;
+    height: auto;
+    background-color: var(--control-main-background);
   }
 }
 @media (min-width: 1025px) {
@@ -624,28 +842,32 @@ header .grid div.grid--container {
 }
 
 .container__notification--info {
-  background-color: color-mix(in srgb, var(--color-info) 25%, white);
-  color: color-mix(in srgb, var(--color-info) 75%, black);
-  border: 1px solid color-mix(in srgb, var(--color-info) 75%, black);
+  background-color: color-mix(in srgb, var(--color-info) 25%, var(--color-background));
+  color: color-mix(in srgb, var(--color-info) 75%, var(--color-text));
+  border: 1px solid color-mix(in srgb, var(--color-info) 75%, var(--color-text));
   padding-inline-end: calc(2 * var(--space-large)) !important;
+  border-radius: var(--space-small);
 }
 .container__notification--warning {
-  background-color: color-mix(in srgb, var(--color-warning) 25%, white);
-  color: color-mix(in srgb, var(--color-warning) 75%, black);
-  border: 1px solid color-mix(in srgb, var(--color-warning) 75%, black);
+  background-color: color-mix(in srgb, var(--color-warning) 25%, var(--color-background));
+  color: color-mix(in srgb, var(--color-warning) 75%, var(--color-text));
+  border: 1px solid color-mix(in srgb, var(--color-warning) 75%, var(--color-text));
   padding-inline-end: calc(2 * var(--space-large)) !important;
+  border-radius: var(--space-small);
 }
 .container__notification--error {
-  background-color: color-mix(in srgb, var(--color-error) 25%, white);
-  color: color-mix(in srgb, var(--color-error) 75%, black);
-  border: 1px solid color-mix(in srgb, var(--color-error) 75%, black);
+  background-color: color-mix(in srgb, var(--color-error) 25%, var(--color-background));
+  color: color-mix(in srgb, var(--color-error) 75%, var(--color-text));
+  border: 1px solid color-mix(in srgb, var(--color-error) 75%, var(--color-text));
   padding-inline-end: calc(2 * var(--space-large)) !important;
+  border-radius: var(--space-small);
 }
 .container__notification--success {
-  background-color: color-mix(in srgb, var(--color-success) 25%, white);
-  color: color-mix(in srgb, var(--color-success) 75%, black);
-  border: 1px solid color-mix(in srgb, var(--color-success) 75%, black);
+  background-color: color-mix(in srgb, var(--color-success) 25%, var(--color-background));
+  color: color-mix(in srgb, var(--color-success) 75%, var(--color-text));
+  border: 1px solid color-mix(in srgb, var(--color-success) 75%, var(--color-text));
   padding-inline-end: calc(2 * var(--space-large)) !important;
+  border-radius: var(--space-small);
 }
 .container__notification section {
   position: relative;

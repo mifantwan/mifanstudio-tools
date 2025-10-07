@@ -22,22 +22,25 @@ button.close-floating-widget
     svg
         vertical-align: middle
 
+        path
+            fill: var(--color-text)
+
     &--info
         svg
             path
-                fill: color-mix(in srgb, var(--color-info) 75%, black)
+                fill: color-mix(in srgb, var(--color-info) 75%, var(--color-text))
 
     &--warning
         svg
             path
-                fill: color-mix(in srgb, var(--color-warning) 75%, black)
+                fill: color-mix(in srgb, var(--color-warning) 75%, var(--color-text))
 
     &--error
         svg
             path
-                fill: color-mix(in srgb, var(--color-error) 75%, black)
+                fill: color-mix(in srgb, var(--color-error) 75%, var(--color-text))
 
     &--success
         svg
             path
-                fill: color-mix(in srgb, var(--color-success) 75%, black)
+                fill: color-mix(in srgb, var(--color-success) 75%, var(--color-text))
