@@ -90,7 +90,7 @@
             </div>
         </section>
     </div>
-    <div id="local-side-navs" class="floating-widget floating-widget__left-right">
+    <div id="local-side-navs" class="floating-widget floating-widget__left-right hidden-desktop">
         <button class="close-floating-widget" aria-label="close cookie popup">
             <svg width="0.75rem" height="0.75rem" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                 <path d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"/>
@@ -447,7 +447,7 @@
                                     </svg>
                                 </button>
                             </li>
-                            <li><a href="#">mochiatto</a></li>
+                            <li><a href="/">mochiatto</a></li>
                         </ul>
                     </nav>
                     <nav class="navigation-main">   
@@ -552,10 +552,10 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">dog food</a>
+                                <a href="#" show-menu="menu_one" aria-label="Open dog food menu">dog food</a>
                             </li>
                             <li>
-                                <a href="#">pet treats</a>
+                                <a href="#" show-menu="menu_two" aria-label="Open pet treats menu">pet treats</a>
                             </li>
                             <li>
                                 <a href="#">
@@ -725,8 +725,17 @@
             </div>
         </section>
     </div>
-    <div id="local-navigation-floating">
-
+    <div id="local-navigation-floating" role="navigation" aria-label="Floating navigation menu">
+        <section>
+            <div class="container-navigation-floating container__content-space">
+                <div id="menu_one" class="navigation-floating-container">
+                    <p>test 1</p>
+                </div>
+                <div id="menu_two" class="navigation-floating-container">
+                    <p>test 2</p>
+                </div>
+            </div>
+        </section>
     </div>
     <div id="local-apps">
         <header>
@@ -766,7 +775,7 @@
             </section>
             <section>
                 <div class="container">
-                    <small>Footer</small>
+                    <small>design & develop by <a href="https://www.linkedin.com/in/mifantwan" target="_blank">Mifan Studio. 2025</a></small>
                 </div>
             </section>
         </footer>

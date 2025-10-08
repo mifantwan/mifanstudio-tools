@@ -195,23 +195,19 @@ a:focus {
   color: color-mix(in srgb, var(--color-theme-primary) 100%, transparent);
 }
 
-.flex {
-  display: flex;
-}
-
 #local-apps {
   z-index: 1;
 }
 
-#local-navigation-floating {
+#local-navigation {
   z-index: 2;
 }
 
-#local-navigation {
+#local-announcement {
   z-index: 3;
 }
 
-#local-announcement {
+#local-navigation-floating {
   z-index: 4;
 }
 
@@ -431,6 +427,18 @@ a:focus {
   }
 }
 
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 #local-navigation {
   container-type: scroll-state;
   container-name: main-navigation;
@@ -508,7 +516,7 @@ a:focus {
 }
 #local-navigation span svg {
   vertical-align: middle;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 #local-navigation a:active span svg,
 #local-navigation a:focus span svg {
@@ -529,7 +537,7 @@ ul.navigation-sub {
   min-width: 200px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.5s ease 0.15s, visibility 0.5s ease 0.15s, transform 0.5s ease;
   z-index: 1;
   list-style: none;
   margin: 0;
@@ -576,8 +584,8 @@ ul.navigation-sub li ul {
   min-width: 200px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
-  z-index: 1001;
+  transition: opacity 0.5s ease 0.15s, visibility 0.5s ease 0.15s, transform 0.5s ease;
+  z-index: 1;
 }
 
 li:hover ul.navigation-sub {
@@ -620,8 +628,8 @@ ul.navigation-sub ul {
   min-width: 200px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
-  z-index: 1001;
+  transition: opacity 0.5s ease 0.15s, visibility 0.5s ease 0.15s, transform 0.5s ease;
+  z-index: 2;
 }
 
 ul.navigation-sub li:hover ul {
@@ -663,7 +671,7 @@ li.navigation-sub.dropdown-open a {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
     padding: 0;
     transform: translateY(-10px);
   }
@@ -672,7 +680,7 @@ li.navigation-sub.dropdown-open a {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
     padding: 0;
     transform: translateY(-10px);
   }
@@ -692,21 +700,21 @@ li.navigation-sub.dropdown-open a {
     visibility: visible;
     max-height: 2000px;
     opacity: 1;
-    padding: var(--space-small) 0;
+    padding-block: var(--space-small) 0;
     transform: translateY(0);
   }
   #local-side-navs a.show + ul a.show + ul {
     visibility: visible;
     max-height: 2000px;
     opacity: 1;
-    padding: var(--space-small) 0;
+    padding-block: var(--space-small) 0;
     transform: translateY(0);
   }
   #local-side-navs a.show + ul a.show + ul a.show + ul {
     visibility: visible;
     max-height: 2000px;
     opacity: 1;
-    padding: var(--space-small) 0;
+    padding-block: var(--space-small) 0;
     transform: translateY(0);
   }
   section.mobile-header {
@@ -721,6 +729,36 @@ li.navigation-sub.dropdown-open a {
     display: none !important;
   }
 }
+:root {
+  --top-announcement-height: calc(( var(--font-small-units) * 1.25 ) + ( var(--space-small) * 2));
+  --top-navigation-floatings: calc(( var(--space-normal) * 2) + ( var(--space-small) * 3 ) + 0.75rem);
+}
+
+#local-navigation-floating {
+  position: fixed;
+  top: calc(var(--top-announcement-height) + var(--top-navigation-floatings));
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+#local-navigation-floating.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#local-navigation-floating section .container-navigation-floating {
+  background-color: var(--widget-background);
+  -webkit-backdrop-filter: var(--widget-filter);
+          backdrop-filter: var(--widget-filter);
+  box-shadow: var(--box-shadow);
+  margin-inline: auto;
+  padding-inline: var(--space-normal);
+  max-width: var(--screen-large-units);
+}
+
 header {
   width: 100dvw;
   height: auto;

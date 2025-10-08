@@ -1,0 +1,29 @@
+\:root
+    --top-announcement-height: calc(( var(--font-small-units) * 1.25 ) + ( var(--space-small) * 2))
+    --top-navigation-floatings: calc(( var(--space-normal) * 2) + ( var(--space-small) * 3 ) + 0.75rem)
+
+#local-navigation-floating
+    position: fixed
+    top: calc(var(--top-announcement-height) + var(--top-navigation-floatings))
+    left: 0
+    width: 100%
+    opacity: 0
+    visibility: hidden
+    transform: translateY(-10px)
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease
+    
+    &.show
+        opacity: 1
+        visibility: visible
+        transform: translateY(0)
+    
+    section
+        .container-navigation-floating
+            background-color: var(--widget-background)
+            backdrop-filter: var(--widget-filter)
+            box-shadow: var(--box-shadow)
+            margin-inline: auto
+            padding-inline: var(--space-normal)
+            max-width: var(--screen-large-units)
+        
+    
