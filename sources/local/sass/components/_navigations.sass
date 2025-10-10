@@ -1,14 +1,4 @@
-// Screen reader only class for accessibility
-.sr-only
-    position: absolute !important
-    width: 1px !important
-    height: 1px !important
-    padding: 0 !important
-    margin: -1px !important
-    overflow: hidden !important
-    clip: rect(0, 0, 0, 0) !important
-    white-space: nowrap !important
-    border: 0 !important
+
 
 #local-navigation
     container-type: scroll-state
@@ -61,16 +51,14 @@
 
                 button
                     position: relative
-                    
                     span
                         position: absolute
                         top: calc(var(--space-small) * 0.5)
                         right: calc(var(--space-small) * 0.5)
-                        color: var(--color-theme-primary)
 
                 button:hover 
                     background-color: color-mix(in srgb, var(--color-muted) 50%, transparent)
-    
+
     // JavaScript-based sticky state detection
     &.is-stuck
         section
@@ -81,19 +69,19 @@
     span
         svg 
             vertical-align: middle
-            transition: transform 0.5s ease
+            transition: transform 0.3s ease
             
     // Prevent rotation on click
     a:active span svg,
     a:focus span svg
         transform: rotate(180deg) !important
 
-// Drop Down Start 
+// Drop Down Styles
 ul.navigation-sub
     position: absolute
     top: calc(100% + var(--space-large))
     left: 50%
-    transform: translateX(-50%)
+    transform: translateX(-50%) translateY(-10px)
     background-color: var(--widget-background)
     backdrop-filter: var(--widget-filter)
     box-shadow: var(--box-shadow)
@@ -102,8 +90,8 @@ ul.navigation-sub
     min-width: 200px
     opacity: 0
     visibility: hidden
-    transition: opacity 0.5s ease 0.15s, visibility 0.5s ease 0.15s, transform 0.5s ease
-    z-index: 1
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease
+    z-index: 10
     list-style: none
     margin: 0
     display: flex
@@ -113,27 +101,32 @@ ul.navigation-sub
     li
         margin: 0
         width: 100%
+        position: relative
+        
         a
             display: flex
             flex-direction: row
             justify-content: space-between
+            align-items: center
             padding: var(--space-small) var(--space-normal)
             color: var(--color-text)
             text-decoration: none
             border-radius: calc(var(--space-small) * 0.5)
-            transition: background-color 0.2s ease
+            transition: all 0.2s ease
             
             &:hover
                 background-color: color-mix(in srgb, var(--color-muted) 50%, transparent)
-                color: color-mix(in srgb, var(--color-theme-primary) 50%, transparent)
 
             span
                 svg
                     vertical-align: middle
+                    transition: transform 0.2s ease
+                    
+        // Nested submenus
         ul
-            position: fixed 
+            position: fixed
             top: 0
-            left: calc(100% + var(--space-small))
+            left: calc(100% + var(--space-normal))
             background-color: var(--widget-background)
             backdrop-filter: var(--widget-filter)
             box-shadow: var(--box-shadow)
@@ -147,11 +140,34 @@ ul.navigation-sub
             min-width: 200px
             opacity: 0
             visibility: hidden
-            transition: opacity 0.5s ease 0.15s, visibility 0.5s ease 0.15s, transform 0.5s ease
-            z-index: 1
+            transform: translateX(-10px)
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease
+            z-index: 11
+            
+            // Ensure nested dropdowns are accessible
+            li
+                position: relative
+                
+                a
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-between
+                    align-items: center
+                    padding: var(--space-small) var(--space-normal)
+                    color: var(--color-text)
+                    text-decoration: none
+                    border-radius: calc(var(--space-small) * 0.5)
+                    transition: all 0.2s ease
+                    
+                    &:hover
+                        background-color: color-mix(in srgb, var(--color-muted) 50%, transparent)
+                        
+                    span
+                        svg
+                            vertical-align: middle
+                            transition: transform 0.2s ease
 
-
-// Show drop-down on hover
+// Show dropdown on hover (desktop)
 li:hover ul.navigation-sub
     opacity: 1
     visibility: visible
@@ -161,64 +177,73 @@ li:hover ul.navigation-sub
 li:hover ul
     opacity: 1
     visibility: visible
+    transform: translateX(0)
 
-// Show drop-down on click (for mobile/touch devices)
-li.has-dropdown.dropdown-open ul.navigation-sub
+// Show dropdown on click/touch (JavaScript controlled)
+li.dropdown-open ul.navigation-sub
     opacity: 1
     visibility: visible
     transform: translateX(-50%) translateY(0)
 
 // Show nested dropdowns on click
-li.has-dropdown.dropdown-open ul
+li.dropdown-open ul
     opacity: 1
     visibility: visible
+    transform: translateX(0)
 
-// Additional rules for nested ul elements (not just navigation-sub)
-ul.navigation-sub ul
-    position: absolute
-    top: 0
-    left: calc(100% + var(--space-small))
-    background-color: var(--widget-background)
-    backdrop-filter: var(--widget-filter)
-    box-shadow: var(--box-shadow)
-    border-radius: var(--space-small)
-    padding: var(--space-small)
-    list-style: none
-    margin: 0
-    display: flex
-    flex-direction: column
-    gap: calc(var(--space-small) * 0.5)
-    min-width: 200px
-    opacity: 0
-    visibility: hidden
-    transition: opacity 0.5s ease 0.15s, visibility 0.5s ease 0.15s, transform 0.5s ease
-    z-index: 2
+    
+    span svg
+        transform: rotate(180deg)
 
-// Show nested ul elements on hover
-ul.navigation-sub li:hover ul
-    opacity: 1
-    visibility: visible
+// Enhanced dropdown link styling
+a.has-dropdown
+    cursor: pointer
+    position: relative
+    
 
-// Show nested ul elements on click
-ul.navigation-sub li.has-dropdown.dropdown-open ul
-    opacity: 1
-    visibility: visible
-
-// Style for li elements with navigation-sub class
-li.navigation-sub
-    a
-        cursor: pointer !important
-        text-decoration: none
+// Improve nested dropdown accessibility
+ul.navigation-sub
+    // Add hover delay to prevent accidental closing
+    li:hover ul
+        transition-delay: 0.1s
         
-        &:hover
-            color: var(--color-theme-primary)
+    // Ensure proper spacing for nested dropdowns
+    li
+        margin: 0
+        
+        // Add visual indicator for nested items
+        a.has-dropdown
+            position: relative
             
-    // When li.navigation-sub is clicked, show its parent's submenu
-    &.dropdown-open
-        a
-            color: var(--color-theme-primary)
 
-// Drop Down End 
+// Enhanced hover behavior for better accessibility
+#local-navigation
+    // Add hover delay for main navigation items
+    li
+        &:hover
+            ul.navigation-sub
+                transition-delay: 0.1s
+                
+        // Ensure nested dropdowns stay open when hovering over them
+        ul.navigation-sub
+                
+            li
+                // Add hover delay for nested items
+                &:hover ul
+                    transition-delay: 0.1s
+                    
+                // Ensure smooth transitions
+                ul
+                    transition: opacity 0.3s ease 0.1s, visibility 0.3s ease 0.1s, transform 0.3s ease 0.1s
+                    
+
+// Add bridge between parent and child dropdowns for easier navigation
+ul.navigation-sub li
+    position: relative
+
+    
+
+
 @media (max-width: 1024px)
     #local-navigation
         section
@@ -282,6 +307,14 @@ li.navigation-sub
             
         // Show even deeper nested ul elements
         a.show + ul a.show + ul a.show + ul
+            visibility: visible
+            max-height: 2000px
+            opacity: 1
+            padding-block: var(--space-small) 0
+            transform: translateY(0)
+            
+        // Mobile dropdown states
+        li.dropdown-open ul
             visibility: visible
             max-height: 2000px
             opacity: 1

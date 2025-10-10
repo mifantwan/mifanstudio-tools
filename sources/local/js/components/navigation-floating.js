@@ -7,6 +7,7 @@ export default function navigationFloating() {
     let hoverTimeout;
     let activeMenuId = null;
     let focusedElement = null;
+    let isDesktopClick = false;
     
     // Cache DOM queries and create event handler references for cleanup
     const menuContainers = navigationFloating.querySelectorAll('.navigation-floating-container');
@@ -91,7 +92,7 @@ export default function navigationFloating() {
         
         const isCurrentlyOpen = activeMenuId === showMenuId && navigationFloating.classList.contains('show');
         
-        if (isCurrentlyOpen) {
+        if (isCurrentlyOpen && !isDesktopClick) {
             navigationFloating.classList.remove('show');
             activeMenuId = null;
             announceToScreenReader('Floating menu closed');
@@ -99,12 +100,13 @@ export default function navigationFloating() {
             showMenu(showMenuId);
             navigationFloating.classList.add('show');
             activeMenuId = showMenuId;
+            isDesktopClick = true;
             announceToScreenReader('Floating menu opened');
         }
     }
 
     function handleHoverStart(showMenuId) {
-        if (!activeMenuId) {
+        if (!activeMenuId && !isDesktopClick) {
             clearTimeout(hoverTimeout);
             showMenu(showMenuId);
             navigationFloating.classList.add('show');
@@ -112,9 +114,9 @@ export default function navigationFloating() {
     }
 
     function handleHoverEnd() {
-        if (!activeMenuId) {
+        if (!activeMenuId && !isDesktopClick) {
             hoverTimeout = setTimeout(() => {
-                if (!activeMenuId) {
+                if (!activeMenuId && !isDesktopClick) {
                     navigationFloating.classList.remove('show');
                     announceToScreenReader('Floating menu closed');
                 }
@@ -134,6 +136,7 @@ export default function navigationFloating() {
                     e.preventDefault();
                     navigationFloating.classList.remove('show');
                     activeMenuId = null;
+                    isDesktopClick = false;
                     announceToScreenReader('Floating menu closed');
                     // Return focus to triggering element
                     const triggeringElement = localNavigation.querySelector(`[aria-controls="${showMenuId}"]`);
@@ -149,6 +152,7 @@ export default function navigationFloating() {
                         !localNavigation.contains(document.activeElement)) {
                         navigationFloating.classList.remove('show');
                         activeMenuId = null;
+                        isDesktopClick = false;
                     }
                 }, 0);
                 break;
@@ -158,11 +162,14 @@ export default function navigationFloating() {
     function handleOutsideClick(e) {
         // Close navigation if clicking outside floating navigation
         const isFloatingNavClick = navigationFloating.contains(e.target);
-        const isFloatingNavTrigger = e.target.closest('[show-menu]') || e.target.hasAttribute('show-menu');
+        const isFloatingNavTrigger = e.target.closest('[show-menu]')?.hasAttribute('data-floating-nav') || e.target.hasAttribute('show-menu');
         const isMainNavClick = localNavigation.contains(e.target);
+        const isMainNavDropdown = e.target.closest('.navigation-sub');
         
-        if (!isFloatingNavClick && !isFloatingNavTrigger && !isMainNavClick) {
+        // Don't close floating nav if clicking on main nav dropdowns or floating nav triggers
+        if (!isFloatingNavClick && !isFloatingNavTrigger && !isMainNavClick && !isMainNavDropdown) {
             activeMenuId = null;
+            isDesktopClick = false;
             navigationFloating.classList.remove('show');
         }
     }
@@ -172,7 +179,8 @@ export default function navigationFloating() {
         const floatingNavTrigger = e.target.closest('[show-menu]');
         
         // Only handle if this is specifically a floating nav trigger
-        if (floatingNavTrigger) {
+        // Check if it's a floating nav trigger (has data-floating-nav attribute)
+        if (floatingNavTrigger && floatingNavTrigger.hasAttribute('data-floating-nav')) {
             const showMenuId = floatingNavTrigger.getAttribute('show-menu');
             handleRouteClick(e, showMenuId);
         }
@@ -206,12 +214,14 @@ export default function navigationFloating() {
     // Listen for reset events from main navigation
     const handleResetEvent = () => {
         activeMenuId = null;
+        isDesktopClick = false;
         hideAllMenus();
+        navigationFloating.classList.remove('show');
     };
     document.addEventListener('resetFloatingNav', handleResetEvent);
 
     navigationFloating.addEventListener('mouseenter', () => {
-        if (!activeMenuId) clearTimeout(hoverTimeout);
+        if (!activeMenuId && !isDesktopClick) clearTimeout(hoverTimeout);
     });
     
     navigationFloating.addEventListener('mouseleave', handleHoverEnd);
@@ -244,7 +254,7 @@ export default function navigationFloating() {
         });
         
         navigationFloating.removeEventListener('mouseenter', () => {
-            if (!activeMenuId) clearTimeout(hoverTimeout);
+            if (!activeMenuId && !isDesktopClick) clearTimeout(hoverTimeout);
         });
         navigationFloating.removeEventListener('mouseleave', handleHoverEnd);
         document.removeEventListener('click', handleOutsideClick);
