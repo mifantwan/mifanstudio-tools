@@ -142,6 +142,265 @@ body b {
   padding-block: var(--space-small);
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--space-normal);
+}
+form div {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  -moz-column-gap: var(--space-normal);
+       column-gap: var(--space-normal);
+}
+form div .input-container .input-quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-text);
+  border-radius: var(--space-small);
+  overflow: hidden;
+  width: 100%;
+  padding: var(--space-small);
+}
+form div .input-container .input-quantity .quantity-btn {
+  border: none;
+  background-color: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-small);
+}
+form div .input-container .input-quantity .quantity-btn:hover:not(:disabled) {
+  background-color: var(--color-muted);
+  color: var(--color-background);
+}
+form div .input-container .input-quantity .quantity-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: var(--color-muted);
+}
+form div .input-container .input-quantity .quantity-btn svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+form div .input-container .input-quantity .quantity-input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  outline: none;
+  padding: var(--space-small);
+}
+form div .input-container .input-quantity .quantity-input::-webkit-outer-spin-button, form div .input-container .input-quantity .quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+form div .input-container .input-quantity .quantity-input[type=number] {
+  -moz-appearance: textfield;
+}
+form div .input-container button {
+  padding: var(--space-normal);
+  border-radius: var(--space-small);
+  border: 1px solid var(--color-text);
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: auto;
+}
+form div .input-container button svg path:first-child {
+  fill: transparent !important;
+}
+form div .input-container button svg path {
+  fill: var(--color-text) !important;
+}
+form div .input-selling-plan {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-normal);
+  padding: var(--space-normal);
+  border: 1px solid var(--color-text);
+  border-radius: var(--space-small);
+}
+form div .input-selling-plan .radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-normal);
+}
+form div .input-selling-plan .radio-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+  cursor: pointer;
+}
+form div .input-selling-plan .radio-option input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--color-theme-tertiary);
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+form div .input-selling-plan .radio-option input[type=radio]:checked {
+  background-color: var(--color-muted);
+  border-color: var(--color-theme-tertiary);
+}
+form div .input-selling-plan .radio-option input[type=radio]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--color-background);
+  border-radius: 50%;
+}
+form div .input-selling-plan .radio-option input[type=radio]:hover {
+  border-color: var(--color-theme-tertiary);
+}
+form div .input-selling-plan .radio-option label {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+form div .input-selling-plan .radio-option-subscription {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-normal);
+  visibility: visible;
+  opacity: 1;
+  max-height: 200px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+form div .input-selling-plan .radio-option-subscription.hidden {
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+}
+form div .input-selling-plan .radio-option-subscription div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--space-small);
+  padding: var(--space-small);
+  aspect-ratio: 1/1;
+}
+form div .input-selling-plan .radio-option-subscription button[type=button].subscription-option-btn {
+  aspect-ratio: 1/1;
+  letter-spacing: normal;
+  font-family: var(--font-text);
+  border: 1px solid var(--color-muted);
+}
+form div .input-selling-plan .radio-option-subscription button[type=button].subscription-option-btn[aria-pressed=true] {
+  background-color: var(--color-muted);
+}
+form div .input-variants {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  align-items: flex-start;
+  gap: var(--space-small);
+}
+form div .input-variants small {
+  color: var(--color-text);
+  margin-bottom: var(--space-small);
+}
+form div .input-variants .variant-type {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-small);
+}
+form div .input-variants .variant-type .variant-option {
+  padding: var(--space-small) var(--space-normal);
+  border: 1px solid var(--color-theme-tertiary);
+  background-color: transparent;
+  color: var(--color-text);
+  border-radius: var(--space-small);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form div .input-variants .variant-type .variant-option:hover {
+  background-color: var(--color-muted);
+  color: var(--color-background);
+}
+form div .input-variants .variant-type .variant-option[aria-pressed=true], form div .input-variants .variant-type .variant-option.selected {
+  background-color: var(--color-muted);
+  color: var(--color-background);
+  border-color: var(--color-theme-tertiary);
+}
+form div .input-variants[variant-type=color] .variant-type button {
+  aspect-ratio: 1/1;
+  width: auto;
+  height: 100%;
+}
+form div .input-variants[variant-type=color] .variant-type button:hover {
+  opacity: 0.5;
+}
+form div .input-variants[variant-type=color] .variant-type button[aria-pressed=true] {
+  opacity: 0.5;
+  border-color: var(--color-theme-primary);
+}
+form button {
+  letter-spacing: 0.1rem;
+}
+form button[type=submit] {
+  background-color: var(--color-theme-primary);
+  color: var(--color-background);
+  padding: var(--space-normal) var(--space-large);
+  border: 1px solid var(--color-text);
+  border-radius: var(--space-small);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+form button[type=button] {
+  background-color: transparent;
+  color: var(--color-theme-tertiary);
+  padding: var(--space-normal) var(--space-large);
+  border: 1px solid var(--color-theme-tertiary);
+  border-radius: var(--space-small);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+form input[type=number] {
+  width: 100%;
+  padding: var(--space-normal);
+  border: 1px solid var(--color-text);
+  background-color: transparent;
+  border-radius: var(--space-small);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 button {
   border: none;
   background-color: var(--control-main-background);
@@ -171,18 +430,32 @@ button.close-floating-widget svg path {
   fill: var(--color-text);
 }
 button.close-floating-widget--info svg path {
-  fill: color-mix(in srgb, var(--color-info) 75%, var(--color-text));
+  fill: color-mix(in srgb, var(--color-info) 10%, var(--color-text));
 }
 button.close-floating-widget--warning svg path {
-  fill: color-mix(in srgb, var(--color-warning) 75%, var(--color-text));
+  fill: color-mix(in srgb, var(--color-warning) 10%, var(--color-text));
 }
 button.close-floating-widget--error svg path {
-  fill: color-mix(in srgb, var(--color-error) 75%, var(--color-text));
+  fill: color-mix(in srgb, var(--color-error) 10%, var(--color-text));
 }
 button.close-floating-widget--success svg path {
-  fill: color-mix(in srgb, var(--color-success) 75%, var(--color-text));
+  fill: color-mix(in srgb, var(--color-success) 10%, var(--color-text));
 }
 
+@media (prefers-color-scheme: dark) {
+  button.close-floating-widget--info svg path {
+    fill: color-mix(in srgb, var(--color-info) 75%, var(--color-text));
+  }
+  button.close-floating-widget--warning svg path {
+    fill: color-mix(in srgb, var(--color-warning) 75%, var(--color-text));
+  }
+  button.close-floating-widget--error svg path {
+    fill: color-mix(in srgb, var(--color-error) 75%, var(--color-text));
+  }
+  button.close-floating-widget--success svg path {
+    fill: color-mix(in srgb, var(--color-success) 75%, var(--color-text));
+  }
+}
 span svg path {
   fill: var(--color-text);
 }
@@ -499,10 +772,12 @@ a:focus {
 #local-navigation section .navigation-container .navigation-actions button:hover {
   background-color: color-mix(in srgb, var(--color-muted) 50%, transparent);
 }
+#local-navigation section .navigation-container .navigation-menu button span,
+#local-navigation section .navigation-container .navigation-actions button span {
+  color: color-mix(in srgb, var(--color-theme-primary) 50%, transparent);
+}
 #local-navigation.is-stuck section {
   background-color: var(--widget-background);
-  -webkit-backdrop-filter: var(--widget-filter);
-          backdrop-filter: var(--widget-filter);
   box-shadow: var(--box-shadow);
 }
 #local-navigation span svg {
@@ -514,15 +789,20 @@ a:focus {
   transform: rotate(180deg) !important;
 }
 
+@container main-navigation scroll-state(stuck: top) {
+  #local-navigation section {
+    -webkit-backdrop-filter: var(--widget-filter);
+            backdrop-filter: var(--widget-filter);
+  }
+}
 ul.navigation-sub {
   position: absolute;
   top: calc(100% + var(--space-large));
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
-  background-color: var(--widget-background);
-  -webkit-backdrop-filter: var(--widget-filter);
-          backdrop-filter: var(--widget-filter);
+  background-color: var(--color-background);
   box-shadow: var(--box-shadow);
+  border: 1px solid var(--color-muted);
   border-radius: var(--space-small);
   padding: var(--space-small);
   min-width: 200px;
@@ -562,24 +842,22 @@ ul.navigation-sub li a span svg {
 ul.navigation-sub li ul {
   position: fixed;
   top: 0;
-  left: calc(100% + var(--space-normal));
-  background-color: var(--widget-background);
+  background-color: var(--color-background);
   -webkit-backdrop-filter: var(--widget-filter);
           backdrop-filter: var(--widget-filter);
   box-shadow: var(--box-shadow);
+  border: 1px solid var(--color-muted);
   border-radius: var(--space-small);
   padding: var(--space-small);
   list-style: none;
   margin: 0;
-  display: flex;
   flex-direction: column;
   gap: calc(var(--space-small) * 0.5);
   min-width: 200px;
   opacity: 0;
   visibility: hidden;
   transform: translateX(-10px);
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-  z-index: 11;
+  z-index: 3;
 }
 ul.navigation-sub li ul li {
   position: relative;
@@ -767,6 +1045,7 @@ ul.navigation-sub li {
   -webkit-backdrop-filter: var(--widget-filter);
           backdrop-filter: var(--widget-filter);
   box-shadow: var(--box-shadow);
+  border: 1px solid var(--color-muted);
   margin-inline: auto;
   padding-inline: var(--space-normal);
   max-width: var(--screen-large-units);
@@ -775,18 +1054,6 @@ ul.navigation-sub li {
 header {
   width: 100dvw;
   height: auto;
-}
-header .grid {
-  display: flex;
-  flex-direction: row;
-  gap: var(--space-normal);
-}
-header .grid div.grid--container {
-  flex: 1;
-  aspect-ratio: 1/1;
-  background-color: var(--control-main-background);
-  border-radius: var(--space-small);
-  padding: var(--space-normal);
 }
 @media (max-width: 768px) {
   header .grid {
@@ -893,30 +1160,30 @@ header .grid div.grid--container {
 }
 
 .container__notification--info {
-  background-color: color-mix(in srgb, var(--color-info) 25%, var(--color-background));
-  color: color-mix(in srgb, var(--color-info) 75%, var(--color-text));
-  border: 1px solid color-mix(in srgb, var(--color-info) 75%, var(--color-text));
+  background-color: color-mix(in srgb, var(--color-info) 10%, var(--color-background));
+  color: color-mix(in srgb, var(--color-info) 10%, var(--color-text));
+  border: 1px solid color-mix(in srgb, var(--color-info) 10%, var(--color-text));
   padding-inline-end: calc(2 * var(--space-large)) !important;
   border-radius: var(--space-small);
 }
 .container__notification--warning {
-  background-color: color-mix(in srgb, var(--color-warning) 25%, var(--color-background));
-  color: color-mix(in srgb, var(--color-warning) 75%, var(--color-text));
-  border: 1px solid color-mix(in srgb, var(--color-warning) 75%, var(--color-text));
+  background-color: color-mix(in srgb, var(--color-warning) 10%, var(--color-background));
+  color: color-mix(in srgb, var(--color-warning) 10%, var(--color-text));
+  border: 1px solid color-mix(in srgb, var(--color-warning) 10%, var(--color-text));
   padding-inline-end: calc(2 * var(--space-large)) !important;
   border-radius: var(--space-small);
 }
 .container__notification--error {
-  background-color: color-mix(in srgb, var(--color-error) 25%, var(--color-background));
-  color: color-mix(in srgb, var(--color-error) 75%, var(--color-text));
-  border: 1px solid color-mix(in srgb, var(--color-error) 75%, var(--color-text));
+  background-color: color-mix(in srgb, var(--color-error) 10%, var(--color-background));
+  color: color-mix(in srgb, var(--color-error) 10%, var(--color-text));
+  border: 1px solid color-mix(in srgb, var(--color-error) 10%, var(--color-text));
   padding-inline-end: calc(2 * var(--space-large)) !important;
   border-radius: var(--space-small);
 }
 .container__notification--success {
-  background-color: color-mix(in srgb, var(--color-success) 25%, var(--color-background));
-  color: color-mix(in srgb, var(--color-success) 75%, var(--color-text));
-  border: 1px solid color-mix(in srgb, var(--color-success) 75%, var(--color-text));
+  background-color: color-mix(in srgb, var(--color-success) 10%, var(--color-background));
+  color: color-mix(in srgb, var(--color-success) 10%, var(--color-text));
+  border: 1px solid color-mix(in srgb, var(--color-success) 10%, var(--color-text));
   padding-inline-end: calc(2 * var(--space-large)) !important;
   border-radius: var(--space-small);
 }
@@ -966,4 +1233,27 @@ header .grid div.grid--container {
   right: var(--space-small) !important;
   z-index: 100 !important;
   pointer-events: auto !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container__notification--info {
+    background-color: color-mix(in srgb, var(--color-info) 25%, var(--color-background));
+    color: color-mix(in srgb, var(--color-info) 75%, var(--color-text));
+    border: 1px solid color-mix(in srgb, var(--color-info) 75%, var(--color-text));
+  }
+  .container__notification--warning {
+    background-color: color-mix(in srgb, var(--color-warning) 25%, var(--color-background));
+    color: color-mix(in srgb, var(--color-warning) 75%, var(--color-text));
+    border: 1px solid color-mix(in srgb, var(--color-warning) 75%, var(--color-text));
+  }
+  .container__notification--error {
+    background-color: color-mix(in srgb, var(--color-error) 25%, var(--color-background));
+    color: color-mix(in srgb, var(--color-error) 75%, var(--color-text));
+    border: 1px solid color-mix(in srgb, var(--color-error) 75%, var(--color-text));
+  }
+  .container__notification--success {
+    background-color: color-mix(in srgb, var(--color-success) 25%, var(--color-background));
+    color: color-mix(in srgb, var(--color-success) 75%, var(--color-text));
+    border: 1px solid color-mix(in srgb, var(--color-success) 75%, var(--color-text));
+  }
 }

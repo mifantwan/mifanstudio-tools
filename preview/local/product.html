@@ -23,8 +23,8 @@
     <!-- Global Javascript Library -->
     <script src="assets/local-library.js"></script>
     <!-- Specific Javascript Assets -->
-    <link rel="stylesheet" href="assets/local-product.css">
-    <script src="assets/local-product.js"></script>
+    <link rel="stylesheet" href="assets/local-products.css">
+    <script src="assets/local-products.js"></script>
 </head>
 <body>
     <div id="local-preloader">
@@ -738,24 +738,252 @@
         </section>
     </div>
     <div id="local-apps">
-        <header>
+        <header class="local-product">
+            <section class="local-product-navigation">
+                <div class="container container__content-space">
+                    <small><a href="#">home</a> / <a href="#">collection</a> / <a href="#">product</a></small>
+                </div>
+            </section>
             <section>
                 <div class="container">
                     <div class="grid">
-                        <div class="grid--container">
+                        <div class="product-gallery">
+                            <div class="product-gallery-item">
+                                <button class="product-gallery-left" aria-label="Previous image">
+                                    <svg width="0.75rem" height="0.75rem" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-98.000000, -48.000000)" fill-rule="nonzero">
+                                                <g transform="translate(98.000000, 48.000000)">
+                                                    <path d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z" fill-rule="nonzero"></path>
+                                                    <path d="M3.2826,10.9395 C2.69682,11.5252 2.69682,12.475 3.2826,13.0608 L8.93946,18.7176 C9.52524,19.3034 10.475,19.3034 11.0608,18.7176 C11.6466,18.1318 11.6466,17.1821 11.0608,16.5963 L7.96458,13.5001 L19.5,13.5001 C20.3284,13.5001 21,12.8285 21,12.0001 C21,11.1717 20.3284,10.5001 19.5,10.5001 L7.96458,10.5001 L11.0608,7.40392 C11.6466,6.81814 11.6466,5.86839 11.0608,5.2826 C10.475,4.69682 9.52524,4.69682 8.93946,5.2826 L3.2826,10.9395 Z" fill="var(--color-text)"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </button>
+                                <button class="product-gallery-right" aria-label="Next image">
+                                    <svg width="0.75rem" height="0.75rem" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-146.000000, -48.000000)" fill-rule="nonzero">
+                                                <g transform="translate(146.000000, 48.000000)">
+                                                    <path d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z" fill-rule="nonzero"></path>
+                                                    <path d="M15.0606,5.2826 L20.7174,10.9395 C21.3032,11.5252 21.3032,12.475 20.7174,13.0608 L15.0606,18.7176 C14.4748,19.3034 13.525,19.3034 12.9392,18.7176 C12.3535,18.1318 12.3535,17.1821 12.9392,16.5963 L16.0354,13.5001 L4.5,13.5001 C3.67157,13.5001 3,12.8285 3,12.0001 C3,11.1717 3.67157,10.5001 4.5,10.5001 L16.0354,10.5001 L12.9392,7.40392 C12.3535,6.81814 12.3535,5.86839 12.9392,5.2826 C13.525,4.69682 14.4748,4.69682 15.0606,5.2826 Z" fill="var(--color-text)"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </button>
+                                <div class="product-gallery-item-container" delay="5000">
+                                    <div index="0">
+                                        <span>1</span>
+                                    </div>
+                                    <div index="1">
+                                        <span>2</span>
+                                    </div>
+                                    <div index="2">
+                                        <span>3</span>
+                                    </div>
+                                    <div index="3">
+                                        <span>4</span>
+                                    </div>
+                                    <div index="4">
+                                        <span>5</span>
+                                    </div>
+                                    <div index="5">
+                                        <span>6</span>
+                                    </div>
+                                    <div index="6">
+                                        <span>7</span>
+                                    </div>
+                                    <div index="7">
+                                        <span>8</span>
+                                    </div>
+                                    <div index="8">
+                                        <span>9</span>
+                                    </div>
+                                    <div index="9">
+                                        <span>10</span>
+                                    </div>
+                                    <div index="10">
+                                        <span>11</span>
+                                    </div>
+                                    <div index="11">
+                                        <span>12</span>
+                                    </div>
+                                    <div index="12">
+                                        <span>13</span>
+                                    </div>
+                                    <div index="13">
+                                        <span>14</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-gallery-controls">
+                                <div class="product-gallery-controls-container">
+                                    <div class="product-thumbnail">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>2</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>3</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>4</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>5</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>6</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>7</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>8</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>9</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>10</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>11</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>12</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>13</p>
+                                    </div>
+                                    <div class="product-thumbnail">
+                                        <p>14</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <div class="grid--container">
-                            <small>collections > products</small>
-                            <h1>Product Title</h1>
+                        <div class="product-details">
+                            <small>
+                                <span>
+                                    <svg width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.9121 1.59053C12.7508 1.2312 12.3936 1 11.9997 1C11.6059 1 11.2487 1.2312 11.0874 1.59053L8.27041 7.86702L1.43062 8.60661C1.03903 8.64895 0.708778 8.91721 0.587066 9.2918C0.465355 9.66639 0.574861 10.0775 0.866772 10.342L5.96556 14.9606L4.55534 21.6942C4.4746 22.0797 4.62768 22.4767 4.94632 22.7082C5.26497 22.9397 5.68983 22.9626 6.03151 22.7667L11.9997 19.3447L17.968 22.7667C18.3097 22.9626 18.7345 22.9397 19.0532 22.7082C19.3718 22.4767 19.5249 22.0797 19.4441 21.6942L18.0339 14.9606L23.1327 10.342C23.4246 10.0775 23.5341 9.66639 23.4124 9.2918C23.2907 8.91721 22.9605 8.64895 22.5689 8.60661L15.7291 7.86702L12.9121 1.59053Z" />
+                                    </svg>
+                                    <svg width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.9121 1.59053C12.7508 1.2312 12.3936 1 11.9997 1C11.6059 1 11.2487 1.2312 11.0874 1.59053L8.27041 7.86702L1.43062 8.60661C1.03903 8.64895 0.708778 8.91721 0.587066 9.2918C0.465355 9.66639 0.574861 10.0775 0.866772 10.342L5.96556 14.9606L4.55534 21.6942C4.4746 22.0797 4.62768 22.4767 4.94632 22.7082C5.26497 22.9397 5.68983 22.9626 6.03151 22.7667L11.9997 19.3447L17.968 22.7667C18.3097 22.9626 18.7345 22.9397 19.0532 22.7082C19.3718 22.4767 19.5249 22.0797 19.4441 21.6942L18.0339 14.9606L23.1327 10.342C23.4246 10.0775 23.5341 9.66639 23.4124 9.2918C23.2907 8.91721 22.9605 8.64895 22.5689 8.60661L15.7291 7.86702L12.9121 1.59053Z" />
+                                    </svg>
+                                    <svg width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.9121 1.59053C12.7508 1.2312 12.3936 1 11.9997 1C11.6059 1 11.2487 1.2312 11.0874 1.59053L8.27041 7.86702L1.43062 8.60661C1.03903 8.64895 0.708778 8.91721 0.587066 9.2918C0.465355 9.66639 0.574861 10.0775 0.866772 10.342L5.96556 14.9606L4.55534 21.6942C4.4746 22.0797 4.62768 22.4767 4.94632 22.7082C5.26497 22.9397 5.68983 22.9626 6.03151 22.7667L11.9997 19.3447L17.968 22.7667C18.3097 22.9626 18.7345 22.9397 19.0532 22.7082C19.3718 22.4767 19.5249 22.0797 19.4441 21.6942L18.0339 14.9606L23.1327 10.342C23.4246 10.0775 23.5341 9.66639 23.4124 9.2918C23.2907 8.91721 22.9605 8.64895 22.5689 8.60661L15.7291 7.86702L12.9121 1.59053Z" />
+                                    </svg>
+                                    <svg width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.9121 1.59053C12.7508 1.2312 12.3936 1 11.9997 1C11.6059 1 11.2487 1.2312 11.0874 1.59053L8.27041 7.86702L1.43062 8.60661C1.03903 8.64895 0.708778 8.91721 0.587066 9.2918C0.465355 9.66639 0.574861 10.0775 0.866772 10.342L5.96556 14.9606L4.55534 21.6942C4.4746 22.0797 4.62768 22.4767 4.94632 22.7082C5.26497 22.9397 5.68983 22.9626 6.03151 22.7667L11.9997 19.3447L17.968 22.7667C18.3097 22.9626 18.7345 22.9397 19.0532 22.7082C19.3718 22.4767 19.5249 22.0797 19.4441 21.6942L18.0339 14.9606L23.1327 10.342C23.4246 10.0775 23.5341 9.66639 23.4124 9.2918C23.2907 8.91721 22.9605 8.64895 22.5689 8.60661L15.7291 7.86702L12.9121 1.59053Z" />
+                                    </svg>
+                                    <svg width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.9997 1C11.6059 1 11.2487 1.2312 11.0874 1.59053L8.27041 7.86702L1.43062 8.60661C1.03903 8.64895 0.708778 8.91721 0.587066 9.2918C0.465355 9.66639 0.574861 10.0775 0.866772 10.342L5.96556 14.9606L4.55534 21.6942C4.4746 22.0797 4.62768 22.4767 4.94632 22.7082C5.26497 22.9397 5.68983 22.9626 6.03151 22.7667L11.9997 19.3447V1Z"  />
+                                    </svg>
+                                </span> <span>5,000 reviews</span> </small>
+                            <h1>TOOTHBRUSH SET</h1>
+                            
+                            <p>This Toothbrush Set features organic materials and a non-detergent design, ensuring gentle yet effective oral care. Crafted to minimize chemical exposure, it supports healthier gums and teeth while being environmentally friendly. Ideal for those seeking a natural approach to daily hygiene.</p>
+                            <div class="container__content-space product-details-price">
+                                <h2>$15,00</h2>
+                                <div>
+                                    <small>save 10%</small>
+                                    <p><s>$17.50</s></p>
+                                </div>
+                            </div>
+
+                            <div class="product-details-form">
+                                <form>
+                                    <div>
+                                        <div class="input-variants" variant-type="color">
+                                            <small>Color</small>
+                                            <div class="variant-type" type="color">
+                                                <button type="button" class="variant-option" data-value="color-1" style="background-color: #ffffff;" aria-label="white"></button>
+                                                <button type="button" class="variant-option" data-value="color-2" style="background-color: #000000;" aria-label="black"></button>
+                                                <button type="button" class="variant-option" data-value="color-3" style="background-color: #8B4513;" aria-label="brown"></button>
+                                                <button type="button" class="variant-option" data-value="color-4" style="background-color: #800080;" aria-label="purple"></button>
+                                                <button type="button" class="variant-option" data-value="color-5" style="background-color: #FFC0CB;" aria-label="pink"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="input-variants" variant-type="normal">
+                                            <small>Size</small>
+                                            <div class="variant-type" type="size">
+                                                <button type="button" class="variant-option" data-value="size-1">S</button>
+                                                <button type="button" class="variant-option" data-value="size-2">M</button>
+                                                <button type="button" class="variant-option" data-value="size-3">L</button>
+                                                <button type="button" class="variant-option" data-value="size-4">XL</button>
+                                                <button type="button" class="variant-option" data-value="size-5">XXL</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="input-selling-plan">
+                                            <div class="radio-group">
+                                                <div class="radio-option">
+                                                    <input type="radio" name="selling-plan" id="selling-plan-1" value="1" checked>
+                                                    <label for="selling-plan-1">Subscription</label>
+                                                </div>
+                                                <div class="radio-option-subscription">
+                                                    <button type="button" class="subscription-option-btn" data-value="weekly" aria-pressed="true">
+                                                        <span>weekly<br/>save 10%</span>
+                                                    </button>
+                                                    <button type="button" class="subscription-option-btn" data-value="bi-weekly" aria-pressed="false">
+                                                        <span>bi-weekly<br/>save 15%</span>
+                                                    </button>
+                                                    <button type="button" class="subscription-option-btn" data-value="monthly" aria-pressed="false">
+                                                        <span>monthly<br/>save 20%</span>
+                                                    </button>
+                                                </div>
+                                                <div class="radio-option">
+                                                    <input type="radio" name="selling-plan" id="selling-plan-2" value="2">
+                                                    <label for="selling-plan-2">One-Time</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="input-container">
+                                            <div class="input-quantity">
+                                                <button type="button" class="quantity-btn quantity-decrease" aria-label="Decrease quantity">
+                                                    <svg width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </button>
+                                                <input type="number" name="quantity" id="quantity" value="1" min="1" max="10" class="quantity-input">
+                                                <button type="button" class="quantity-btn quantity-increase" aria-label="Increase quantity">
+                                                    <svg width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" aria-label="Add to Cart">
+                                                <svg width="0.75rem" height="0.75rem" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <g transform="translate(-1008.000000, -48.000000)" fill-rule="nonzero">
+                                                            <g transform="translate(1008.000000, 48.000000)">
+                                                                <path d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z" fill-rule="nonzero"></path>
+                                                                <path d="M7.5,19 C8.32843,19 9,19.6716 9,20.5 C9,21.3284 8.32843,22 7.5,22 C6.67157,22 6,21.3284 6,20.5 C6,19.6716 6.67157,19 7.5,19 Z M17.5,19 C18.3284,19 19,19.6716 19,20.5 C19,21.3284 18.3284,22 17.5,22 C16.6716,22 16,21.3284 16,20.5 C16,19.6716 16.6716,19 17.5,19 Z M3,2 C4.72559,2 6.02275,3.28286 6.1454,5 L19.8018,5 C21.0496,5 21.9927,6.13009 21.7695,7.35777 L20.1332,16.3578 C19.9603,17.3088 19.132,18 18.1654,18 L6.93112,18 C5.88184,18 5.01096,17.1891 4.9362,16.1425 L4.13522,4.92875 C4.09111,4.31124 3.56456,4 3,4 C2.44772,4 2,3.55228 2,3 C2,2.44772 2.44772,2 3,2 Z"></path>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button type="submit">BUY NOW</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </header>
-        <main>
-            <section>
-                <div class="container container__content-space-large">
-                    
                 </div>
             </section>
         </main>

@@ -24,5 +24,6 @@
   "assets/fonts/MifanRegular.eot": "http://localhost:8080/assets/fonts/MifanRegular.9e3b85bc.eot",
   "assets/fonts/MifanRegular.ttf": "http://localhost:8080/assets/fonts/MifanRegular.fae1e3da.ttf",
   "assets/fonts/MifanRegular.woff": "http://localhost:8080/assets/fonts/MifanRegular.0601484d.woff",
-  "assets/fonts/MifanRegular.woff2": "http://localhost:8080/assets/fonts/MifanRegular.36c7e064.woff2"
+  "assets/fonts/MifanRegular.woff2": "http://localhost:8080/assets/fonts/MifanRegular.36c7e064.woff2",
+  "assets/local-products.css": "http://localhost:8080/assets/local-products.css"
 }

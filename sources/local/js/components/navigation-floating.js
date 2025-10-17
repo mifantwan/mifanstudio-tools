@@ -166,8 +166,11 @@ export default function navigationFloating() {
         const isMainNavClick = localNavigation.contains(e.target);
         const isMainNavDropdown = e.target.closest('.navigation-sub');
         
-        // Don't close floating nav if clicking on main nav dropdowns or floating nav triggers
-        if (!isFloatingNavClick && !isFloatingNavTrigger && !isMainNavClick && !isMainNavDropdown) {
+        // Use centralized event manager to check for active elements
+        const isActiveElementClick = window.NavigationEventManager?.isClickInActiveElement(e.target) || false;
+        
+        // Don't close floating nav if clicking on main nav dropdowns, floating nav triggers, or UI elements
+        if (!isFloatingNavClick && !isFloatingNavTrigger && !isMainNavClick && !isMainNavDropdown && !isActiveElementClick) {
             activeMenuId = null;
             isDesktopClick = false;
             navigationFloating.classList.remove('show');

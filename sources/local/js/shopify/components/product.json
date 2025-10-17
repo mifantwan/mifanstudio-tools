@@ -1,0 +1,682 @@
+{
+    "id": 9139043238125,
+    "title": "Tootbrush Set",
+    "handle": "tootbrush-set",
+    "description": "<p>This Toothbrush Set features organic materials and a non-detergent design, ensuring gentle yet effective oral care. Crafted to minimize chemical exposure, it supports healthier gums and teeth while being environmentally friendly. Ideal for those seeking a natural approach to daily hygiene.</p>",
+    "published_at": "2025-10-14T02:38:21-04:00",
+    "created_at": "2025-10-14T02:38:17-04:00",
+    "vendor": "mochiatto-devs-plus",
+    "type": "Shower",
+    "tags": [
+      "brush",
+      "set",
+      "tooth"
+    ],
+    "price": 1500000,
+    "price_min": 1500000,
+    "price_max": 2500000,
+    "available": true,
+    "price_varies": true,
+    "compare_at_price": 1750000,
+    "compare_at_price_min": 1750000,
+    "compare_at_price_max": 1750000,
+    "compare_at_price_varies": false,
+    "variants": [
+      {
+        "id": 48869471846637,
+        "title": "Green / 100g",
+        "option1": "Green",
+        "option2": "100g",
+        "option3": null,
+        "sku": null,
+        "requires_shipping": true,
+        "taxable": true,
+        "featured_image": {
+          "id": 45254236111085,
+          "product_id": 9139043238125,
+          "position": 1,
+          "created_at": "2025-10-14T02:31:02-04:00",
+          "updated_at": "2025-10-14T02:31:03-04:00",
+          "alt": null,
+          "width": 1024,
+          "height": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-1.jpg?v=1760423463",
+          "variant_ids": [
+            48869471846637
+          ]
+        },
+        "available": true,
+        "name": "Tootbrush Set - Green / 100g",
+        "public_title": "Green / 100g",
+        "options": [
+          "Green",
+          "100g"
+        ],
+        "price": 1500000,
+        "weight": 0,
+        "compare_at_price": 1750000,
+        "inventory_management": "shopify",
+        "barcode": "",
+        "featured_media": {
+          "alt": null,
+          "id": 36899631890669,
+          "position": 1,
+          "preview_image": {
+            "aspect_ratio": 1,
+            "height": 1024,
+            "width": 1024,
+            "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-1.jpg?v=1760423463"
+          }
+        },
+        "requires_selling_plan": false,
+        "unit_price": 1500000,
+        "unit_price_measurement": {
+          "measured_type": "weight",
+          "quantity_value": "100.0",
+          "quantity_unit": "g",
+          "reference_value": 100,
+          "reference_unit": "g"
+        },
+        "selling_plan_allocations": [],
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        }
+      },
+      {
+        "id": 48869471879405,
+        "title": "Green / 200g",
+        "option1": "Green",
+        "option2": "200g",
+        "option3": null,
+        "sku": null,
+        "requires_shipping": true,
+        "taxable": true,
+        "featured_image": {
+          "id": 45254236176621,
+          "product_id": 9139043238125,
+          "position": 2,
+          "created_at": "2025-10-14T02:31:02-04:00",
+          "updated_at": "2025-10-14T02:31:03-04:00",
+          "alt": null,
+          "width": 1024,
+          "height": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-3.jpg?v=1760423463",
+          "variant_ids": [
+            48869471879405
+          ]
+        },
+        "available": true,
+        "name": "Tootbrush Set - Green / 200g",
+        "public_title": "Green / 200g",
+        "options": [
+          "Green",
+          "200g"
+        ],
+        "price": 2500000,
+        "weight": 0,
+        "compare_at_price": 1750000,
+        "inventory_management": "shopify",
+        "barcode": "",
+        "featured_media": {
+          "alt": null,
+          "id": 36899631956205,
+          "position": 2,
+          "preview_image": {
+            "aspect_ratio": 1,
+            "height": 1024,
+            "width": 1024,
+            "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-3.jpg?v=1760423463"
+          }
+        },
+        "requires_selling_plan": false,
+        "unit_price": 2500000,
+        "unit_price_measurement": {
+          "measured_type": "weight",
+          "quantity_value": "100.0",
+          "quantity_unit": "g",
+          "reference_value": 100,
+          "reference_unit": "g"
+        },
+        "selling_plan_allocations": [],
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        }
+      },
+      {
+        "id": 48869471912173,
+        "title": "Purple / 100g",
+        "option1": "Purple",
+        "option2": "100g",
+        "option3": null,
+        "sku": null,
+        "requires_shipping": true,
+        "taxable": true,
+        "featured_image": {
+          "id": 45254235848941,
+          "product_id": 9139043238125,
+          "position": 3,
+          "created_at": "2025-10-14T02:31:02-04:00",
+          "updated_at": "2025-10-14T02:31:03-04:00",
+          "alt": null,
+          "width": 1024,
+          "height": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-1.jpg?v=1760423463",
+          "variant_ids": [
+            48869471912173
+          ]
+        },
+        "available": true,
+        "name": "Tootbrush Set - Purple / 100g",
+        "public_title": "Purple / 100g",
+        "options": [
+          "Purple",
+          "100g"
+        ],
+        "price": 1500000,
+        "weight": 0,
+        "compare_at_price": 1750000,
+        "inventory_management": "shopify",
+        "barcode": "",
+        "featured_media": {
+          "alt": null,
+          "id": 36899631628525,
+          "position": 3,
+          "preview_image": {
+            "aspect_ratio": 1,
+            "height": 1024,
+            "width": 1024,
+            "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-1.jpg?v=1760423463"
+          }
+        },
+        "requires_selling_plan": false,
+        "unit_price": 1500000,
+        "unit_price_measurement": {
+          "measured_type": "weight",
+          "quantity_value": "100.0",
+          "quantity_unit": "g",
+          "reference_value": 100,
+          "reference_unit": "g"
+        },
+        "selling_plan_allocations": [],
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        }
+      },
+      {
+        "id": 48869471944941,
+        "title": "Purple / 200g",
+        "option1": "Purple",
+        "option2": "200g",
+        "option3": null,
+        "sku": null,
+        "requires_shipping": true,
+        "taxable": true,
+        "featured_image": {
+          "id": 45254235914477,
+          "product_id": 9139043238125,
+          "position": 4,
+          "created_at": "2025-10-14T02:31:02-04:00",
+          "updated_at": "2025-10-14T02:31:03-04:00",
+          "alt": null,
+          "width": 1024,
+          "height": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-3.jpg?v=1760423463",
+          "variant_ids": [
+            48869471944941
+          ]
+        },
+        "available": true,
+        "name": "Tootbrush Set - Purple / 200g",
+        "public_title": "Purple / 200g",
+        "options": [
+          "Purple",
+          "200g"
+        ],
+        "price": 2500000,
+        "weight": 0,
+        "compare_at_price": 1750000,
+        "inventory_management": "shopify",
+        "barcode": "",
+        "featured_media": {
+          "alt": null,
+          "id": 36899631694061,
+          "position": 4,
+          "preview_image": {
+            "aspect_ratio": 1,
+            "height": 1024,
+            "width": 1024,
+            "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-3.jpg?v=1760423463"
+          }
+        },
+        "requires_selling_plan": false,
+        "unit_price": 2500000,
+        "unit_price_measurement": {
+          "measured_type": "weight",
+          "quantity_value": "100.0",
+          "quantity_unit": "g",
+          "reference_value": 100,
+          "reference_unit": "g"
+        },
+        "selling_plan_allocations": [],
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        }
+      },
+      {
+        "id": 48869471977709,
+        "title": "Yellow / 100g",
+        "option1": "Yellow",
+        "option2": "100g",
+        "option3": null,
+        "sku": null,
+        "requires_shipping": true,
+        "taxable": true,
+        "featured_image": {
+          "id": 45254235980013,
+          "product_id": 9139043238125,
+          "position": 5,
+          "created_at": "2025-10-14T02:31:02-04:00",
+          "updated_at": "2025-10-14T02:31:03-04:00",
+          "alt": null,
+          "width": 1024,
+          "height": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-1.jpg?v=1760423463",
+          "variant_ids": [
+            48869471977709
+          ]
+        },
+        "available": true,
+        "name": "Tootbrush Set - Yellow / 100g",
+        "public_title": "Yellow / 100g",
+        "options": [
+          "Yellow",
+          "100g"
+        ],
+        "price": 1500000,
+        "weight": 0,
+        "compare_at_price": 1750000,
+        "inventory_management": "shopify",
+        "barcode": "",
+        "featured_media": {
+          "alt": null,
+          "id": 36899631759597,
+          "position": 5,
+          "preview_image": {
+            "aspect_ratio": 1,
+            "height": 1024,
+            "width": 1024,
+            "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-1.jpg?v=1760423463"
+          }
+        },
+        "requires_selling_plan": false,
+        "unit_price": 1500000,
+        "unit_price_measurement": {
+          "measured_type": "weight",
+          "quantity_value": "100.0",
+          "quantity_unit": "g",
+          "reference_value": 100,
+          "reference_unit": "g"
+        },
+        "selling_plan_allocations": [],
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        }
+      },
+      {
+        "id": 48869472010477,
+        "title": "Yellow / 200g",
+        "option1": "Yellow",
+        "option2": "200g",
+        "option3": null,
+        "sku": null,
+        "requires_shipping": true,
+        "taxable": true,
+        "featured_image": {
+          "id": 45254236045549,
+          "product_id": 9139043238125,
+          "position": 6,
+          "created_at": "2025-10-14T02:31:02-04:00",
+          "updated_at": "2025-10-14T02:31:03-04:00",
+          "alt": null,
+          "width": 1024,
+          "height": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-3.jpg?v=1760423463",
+          "variant_ids": [
+            48869472010477
+          ]
+        },
+        "available": true,
+        "name": "Tootbrush Set - Yellow / 200g",
+        "public_title": "Yellow / 200g",
+        "options": [
+          "Yellow",
+          "200g"
+        ],
+        "price": 2500000,
+        "weight": 0,
+        "compare_at_price": 1750000,
+        "inventory_management": "shopify",
+        "barcode": "",
+        "featured_media": {
+          "alt": null,
+          "id": 36899631825133,
+          "position": 6,
+          "preview_image": {
+            "aspect_ratio": 1,
+            "height": 1024,
+            "width": 1024,
+            "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-3.jpg?v=1760423463"
+          }
+        },
+        "requires_selling_plan": false,
+        "unit_price": 2500000,
+        "unit_price_measurement": {
+          "measured_type": "weight",
+          "quantity_value": "100.0",
+          "quantity_unit": "g",
+          "reference_value": 100,
+          "reference_unit": "g"
+        },
+        "selling_plan_allocations": [],
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        }
+      }
+    ],
+    "images": [
+      "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-1.jpg?v=1760423463",
+      "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-3.jpg?v=1760423463",
+      "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-1.jpg?v=1760423463",
+      "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-3.jpg?v=1760423463",
+      "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-1.jpg?v=1760423463",
+      "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-3.jpg?v=1760423463",
+      "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-2.jpg?v=1760423463",
+      "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-4.jpg?v=1760423463",
+      "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-2.jpg?v=1760423463",
+      "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-4.jpg?v=1760423463",
+      "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-2.jpg?v=1760423463",
+      "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-4.jpg?v=1760423463"
+    ],
+    "featured_image": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-1.jpg?v=1760423463",
+    "options": [
+      "Color",
+      "Size"
+    ],
+    "media": [
+      {
+        "alt": null,
+        "id": 36899631890669,
+        "position": 1,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-1.jpg?v=1760423463"
+        },
+        "aspect_ratio": 1,
+        "height": 1024,
+        "media_type": "image",
+        "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-1.jpg?v=1760423463",
+        "width": 1024
+      },
+      {
+        "alt": null,
+        "id": 36899631956205,
+        "position": 2,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-3.jpg?v=1760423463"
+        },
+        "aspect_ratio": 1,
+        "height": 1024,
+        "media_type": "image",
+        "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-3.jpg?v=1760423463",
+        "width": 1024
+      },
+      {
+        "alt": null,
+        "id": 36899631628525,
+        "position": 3,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-1.jpg?v=1760423463"
+        },
+        "aspect_ratio": 1,
+        "height": 1024,
+        "media_type": "image",
+        "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-1.jpg?v=1760423463",
+        "width": 1024
+      },
+      {
+        "alt": null,
+        "id": 36899631694061,
+        "position": 4,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-3.jpg?v=1760423463"
+        },
+        "aspect_ratio": 1,
+        "height": 1024,
+        "media_type": "image",
+        "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-3.jpg?v=1760423463",
+        "width": 1024
+      },
+      {
+        "alt": null,
+        "id": 36899631759597,
+        "position": 5,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-1.jpg?v=1760423463"
+        },
+        "aspect_ratio": 1,
+        "height": 1024,
+        "media_type": "image",
+        "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-1.jpg?v=1760423463",
+        "width": 1024
+      },
+      {
+        "alt": null,
+        "id": 36899631825133,
+        "position": 6,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-3.jpg?v=1760423463"
+        },
+        "aspect_ratio": 1,
+        "height": 1024,
+        "media_type": "image",
+        "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-3.jpg?v=1760423463",
+        "width": 1024
+      },
+      {
+        "alt": null,
+        "id": 36899631661293,
+        "position": 7,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-2.jpg?v=1760423463"
+        },
+        "aspect_ratio": 1,
+        "height": 1024,
+        "media_type": "image",
+        "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-2.jpg?v=1760423463",
+        "width": 1024
+      },
+      {
+        "alt": null,
+        "id": 36899631726829,
+        "position": 8,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-4.jpg?v=1760423463"
+        },
+        "aspect_ratio": 1,
+        "height": 1024,
+        "media_type": "image",
+        "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product1-4.jpg?v=1760423463",
+        "width": 1024
+      },
+      {
+        "alt": null,
+        "id": 36899631792365,
+        "position": 9,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-2.jpg?v=1760423463"
+        },
+        "aspect_ratio": 1,
+        "height": 1024,
+        "media_type": "image",
+        "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-2.jpg?v=1760423463",
+        "width": 1024
+      },
+      {
+        "alt": null,
+        "id": 36899631857901,
+        "position": 10,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-4.jpg?v=1760423463"
+        },
+        "aspect_ratio": 1,
+        "height": 1024,
+        "media_type": "image",
+        "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product2-4.jpg?v=1760423463",
+        "width": 1024
+      },
+      {
+        "alt": null,
+        "id": 36899631923437,
+        "position": 11,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-2.jpg?v=1760423463"
+        },
+        "aspect_ratio": 1,
+        "height": 1024,
+        "media_type": "image",
+        "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-2.jpg?v=1760423463",
+        "width": 1024
+      },
+      {
+        "alt": null,
+        "id": 36899631988973,
+        "position": 12,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-4.jpg?v=1760423463"
+        },
+        "aspect_ratio": 1,
+        "height": 1024,
+        "media_type": "image",
+        "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/product3-4.jpg?v=1760423463",
+        "width": 1024
+      },
+      {
+        "alt": null,
+        "id": 36899902193901,
+        "position": 13,
+        "preview_image": {
+          "aspect_ratio": 1.896,
+          "height": 2160,
+          "width": 4096,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/preview_images/e058c93e5d35418d85c8256d98d36f39.thumbnail.0000000000.jpg?v=1760427247"
+        },
+        "aspect_ratio": 1.896,
+        "duration": 5640,
+        "media_type": "video",
+        "sources": [
+          {
+            "format": "mp4",
+            "height": 480,
+            "mime_type": "video/mp4",
+            "url": "//mochiatto-devs-plus.myshopify.com/cdn/shop/videos/c/vp/e058c93e5d35418d85c8256d98d36f39/e058c93e5d35418d85c8256d98d36f39.SD-480p-1.5Mbps-59717442.mp4?v=0",
+            "width": 910
+          },
+          {
+            "format": "mp4",
+            "height": 1080,
+            "mime_type": "video/mp4",
+            "url": "//mochiatto-devs-plus.myshopify.com/cdn/shop/videos/c/vp/e058c93e5d35418d85c8256d98d36f39/e058c93e5d35418d85c8256d98d36f39.HD-1080p-7.2Mbps-59717442.mp4?v=0",
+            "width": 2048
+          },
+          {
+            "format": "mp4",
+            "height": 720,
+            "mime_type": "video/mp4",
+            "url": "//mochiatto-devs-plus.myshopify.com/cdn/shop/videos/c/vp/e058c93e5d35418d85c8256d98d36f39/e058c93e5d35418d85c8256d98d36f39.HD-720p-4.5Mbps-59717442.mp4?v=0",
+            "width": 1364
+          },
+          {
+            "format": "m3u8",
+            "height": 1080,
+            "mime_type": "application/x-mpegURL",
+            "url": "//mochiatto-devs-plus.myshopify.com/cdn/shop/videos/c/vp/e058c93e5d35418d85c8256d98d36f39/e058c93e5d35418d85c8256d98d36f39.m3u8?v=0",
+            "width": 2048
+          }
+        ]
+      },
+      {
+        "alt": null,
+        "id": 36900325064941,
+        "position": 14,
+        "preview_image": {
+          "aspect_ratio": 1,
+          "height": 1024,
+          "width": 1024,
+          "src": "//mochiatto-devs-plus.myshopify.com/cdn/shop/files/preview_images/Chair.jpg?v=1760430675"
+        },
+        "media_type": "model",
+        "sources": [
+          {
+            "format": "glb",
+            "mime_type": "model/gltf-binary",
+            "url": "//mochiatto-devs-plus.myshopify.com/cdn/shop/3d/models/o/524461c348a7d7a1/Chair.glb?v=0"
+          },
+          {
+            "format": "usdz",
+            "mime_type": "model/vnd.usdz+zip",
+            "url": "//mochiatto-devs-plus.myshopify.com/cdn/shop/3d/models/o/2f7c7639fc57285c/Chair.usdz?v=0"
+          }
+        ]
+      }
+    ],
+    "requires_selling_plan": false,
+    "selling_plan_groups": [],
+    "content": "<p>This Toothbrush Set features organic materials and a non-detergent design, ensuring gentle yet effective oral care. Crafted to minimize chemical exposure, it supports healthier gums and teeth while being environmentally friendly. Ideal for those seeking a natural approach to daily hygiene.</p>"
+  }

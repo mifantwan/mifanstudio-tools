@@ -40,9 +40,12 @@ function handleSideNavigation() {
         }
     });
 
-    // Close dropdowns on outside click
+    // Close dropdowns on outside click - improved conflict resolution
     document.addEventListener('click', (e) => {
-        if (!sideNavs.contains(e.target)) {
+        const isSideNavClick = sideNavs.contains(e.target);
+        const isActiveElementClick = NavigationEventManager.isClickInActiveElement(e.target);
+        
+        if (!isSideNavClick && !isActiveElementClick) {
             sideNavs.querySelectorAll('a.show').forEach(open => {
                 open.classList.remove('show');
                 toggleSvgRotation(open, false);
@@ -83,6 +86,12 @@ function handleMainNavigation() {
                 submenu.style.visibility = 'hidden';
                 submenu.style.opacity = '0';
                 
+                // Initialize SVG rotation
+                const svg = link.querySelector('span svg');
+                if (svg) {
+                    svg.style.transform = 'rotate(0deg)';
+                }
+                
                 // Recursively initialize nested dropdowns
                 initializeDropdowns(submenu);
             }
@@ -91,7 +100,8 @@ function handleMainNavigation() {
 
     // Check if any child dropdowns are open
     const hasOpenChildren = (li) => {
-        return li.querySelectorAll('li.dropdown-open').length > 0;
+        const visibleSubmenu = li.querySelector('ul[style*="visibility: visible"]');
+        return visibleSubmenu !== null || li.querySelectorAll('li.dropdown-open').length > 0;
     };
 
     // Toggle SVG rotation based on dropdown state and child visibility
@@ -101,24 +111,25 @@ function handleMainNavigation() {
 
         const li = link.parentElement;
         const isNestedDropdown = link.closest('ul.navigation-sub');
+        const hasOpenChild = hasOpenChildren(li);
         
-        if (isNestedDropdown) {
-            // For nested dropdowns, force transform style directly
-            svg.style.transform = (show || hasOpenChildren(li)) ? 'rotate(90deg)' : 'none';
-            // Ensure transform is applied immediately
-            svg.style.transition = 'none';
-            requestAnimationFrame(() => {
-                svg.style.transition = 'transform 0.3s ease';
-            });
-        } else {
-            // For top-level dropdowns, force transform style directly
-            svg.style.transform = (show || hasOpenChildren(li)) ? 'rotate(180deg)' : 'none';
-            // Ensure transform is applied immediately
-            svg.style.transition = 'none';
-            requestAnimationFrame(() => {
-                svg.style.transition = 'transform 0.3s ease';
-            });
+        // Keep rotated if children are open
+        if (!show && hasOpenChild) {
+            show = true;
         }
+
+        // Apply rotation based on nesting level and visibility
+        let rotation = 0;
+        if (show || hasOpenChild) {
+            rotation = isNestedDropdown ? 180 : 180;
+        }
+
+        // Apply transform with smooth transition
+        svg.style.transition = 'none';
+        svg.style.transform = `rotate(${rotation}deg)`;
+        requestAnimationFrame(() => {
+            svg.style.transition = 'transform 0.3s ease';
+        });
     };
 
     // Show dropdown with proper positioning
@@ -141,6 +152,14 @@ function handleMainNavigation() {
                 toggleSvgRotation(parentLink, true);
                 parent = parent.parentElement.closest('li');
             }
+
+            // Update sibling SVG rotations
+            const siblings = li.parentElement.querySelectorAll('li > a');
+            siblings.forEach(sibling => {
+                if (sibling !== link) {
+                    toggleSvgRotation(sibling, hasOpenChildren(sibling.parentElement));
+                }
+            });
         }
     };
 
@@ -164,6 +183,14 @@ function handleMainNavigation() {
                 toggleSvgRotation(parentLink, hasOpenChildren(parent));
                 parent = parent.parentElement.closest('li');
             }
+
+            // Update sibling SVG rotations
+            const siblings = li.parentElement.querySelectorAll('li > a');
+            siblings.forEach(sibling => {
+                if (sibling !== link) {
+                    toggleSvgRotation(sibling, hasOpenChildren(sibling.parentElement));
+                }
+            });
         }
     };
 
@@ -225,23 +252,11 @@ function handleMainNavigation() {
             
             if (!isOpen) {
                 showDropdown(link);
-                // Rotate SVG based on menu level
-                const svg = link.querySelector('span svg');
-                if (svg) {
-                    if (li.closest('ul.navigation-sub')) {
-                        svg.style.transform = 'rotate(90deg)';
-                    } else {
-                        svg.style.transform = 'rotate(180deg)';
-                    }
-                }
+                toggleSvgRotation(link, true);
                 setTimeout(positionNestedDropdowns, 10);
             } else {
                 hideDropdown(link);
-                // Reset SVG rotation
-                const svg = link.querySelector('span svg');
-                if (svg) {
-                    svg.style.transform = 'rotate(0deg)';
-                }
+                toggleSvgRotation(link, false);
             }
         } else {
             hideAllDropdowns();
@@ -272,15 +287,7 @@ function handleMainNavigation() {
             
             hoverTimeout = setTimeout(() => {
                 showDropdown(link);
-                // Rotate SVG based on menu level
-                const svg = link.querySelector('span svg');
-                if (svg) {
-                    if (li.closest('ul.navigation-sub')) {
-                        svg.style.transform = 'rotate(90deg)';
-                    } else {
-                        svg.style.transform = 'rotate(180deg)';
-                    }
-                }
+                toggleSvgRotation(link, true);
                 setTimeout(positionNestedDropdowns, 10);
             }, 50);
         }
@@ -301,11 +308,7 @@ function handleMainNavigation() {
             setTimeout(() => {
                 if (!li.matches(':hover') && !submenu.matches(':hover')) {
                     hideDropdown(li.querySelector('a'));
-                    // Reset SVG rotation
-                    const svg = li.querySelector('a span svg');
-                    if (svg) {
-                        svg.style.transform = 'rotate(0deg)';
-                    }
+                    toggleSvgRotation(li.querySelector('a'), false);
                 }
             }, 200);
         }
@@ -324,9 +327,8 @@ function handleMainNavigation() {
         
         leaveTimeout = setTimeout(() => {
             hideAllDropdowns();
-            // Reset all SVG rotations
-            mainNav.querySelectorAll('a span svg').forEach(svg => {
-                svg.style.transform = 'rotate(0deg)';
+            mainNav.querySelectorAll('a').forEach(link => {
+                toggleSvgRotation(link, false);
             });
         }, 150);
     });
@@ -339,13 +341,15 @@ function handleMainNavigation() {
         }
     });
 
-    // Hide dropdowns when clicking outside
+    // Hide dropdowns when clicking outside - improved conflict resolution
     document.addEventListener('click', (e) => {
-        if (!mainNav.contains(e.target)) {
+        const isNavigationClick = mainNav.contains(e.target);
+        const isActiveElementClick = NavigationEventManager.isClickInActiveElement(e.target);
+        
+        if (!isNavigationClick && !isActiveElementClick) {
             hideAllDropdowns();
-            // Reset all SVG rotations
-            mainNav.querySelectorAll('a span svg').forEach(svg => {
-                svg.style.transform = 'rotate(0deg)';
+            mainNav.querySelectorAll('a').forEach(link => {
+                toggleSvgRotation(link, false);
             });
         }
     });
@@ -359,9 +363,65 @@ function handleMainNavigation() {
     initializeDropdowns(mainNav);
 }
 
+// main navigation sticky state handler
+function handleMainNavigationStickyState() {
+    const navigation = document.getElementById('local-navigation');
+    if (!navigation) return;
+
+    // Add scroll event listener to handle sticky state
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+            navigation.classList.add('is-stuck');
+        } else {
+            navigation.classList.remove('is-stuck'); 
+        }
+    });
+}
+
+// Centralized event management to prevent conflicts
+const NavigationEventManager = {
+    // Track active UI elements that should not close navigation
+    activeElements: new Set(),
+    
+    // Register an element as active (shouldn't close navigation)
+    registerActive(element) {
+        this.activeElements.add(element);
+    },
+    
+    // Unregister an element
+    unregisterActive(element) {
+        this.activeElements.delete(element);
+    },
+    
+    // Check if click target is in any active element
+    isClickInActiveElement(target) {
+        for (const element of this.activeElements) {
+            if (element.contains(target)) {
+                return true;
+            }
+        }
+        return false;
+    }
+};
+
+// Make NavigationEventManager globally accessible
+window.NavigationEventManager = NavigationEventManager;
 
 // Main export
 export default function navigation() {
+    // Register notification container as active element
+    const notificationContainer = document.getElementById('local-notification');
+    if (notificationContainer) {
+        NavigationEventManager.registerActive(notificationContainer);
+    }
+    
+    // Register floating widget as active element
+    const floatingWidget = document.getElementById('local-floating-widget');
+    if (floatingWidget) {
+        NavigationEventManager.registerActive(floatingWidget);
+    }
+    
+    handleMainNavigationStickyState();
     handleMainNavigation();
     handleSideNavigation();
 }

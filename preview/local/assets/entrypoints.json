@@ -33,6 +33,9 @@
       ]
     },
     "local-products": {
+      "css": [
+        "http://localhost:8080/assets/local-products.css"
+      ],
       "js": [
         "http://localhost:8080/assets/local-products.js"
       ]

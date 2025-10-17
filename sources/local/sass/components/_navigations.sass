@@ -59,12 +59,16 @@
                 button:hover 
                     background-color: color-mix(in srgb, var(--color-muted) 50%, transparent)
 
+                button
+                    span
+                        color: color-mix(in srgb, var(--color-theme-primary) 50%, transparent)
+
+
     // JavaScript-based sticky state detection
     &.is-stuck
         section
             background-color: var(--widget-background)
-            backdrop-filter: var(--widget-filter)
-            box-shadow: var(--box-shadow)
+            box-shadow: var(--box-shadow)                    
 
     span
         svg 
@@ -76,15 +80,21 @@
     a:focus span svg
         transform: rotate(180deg) !important
 
+
+@container main-navigation scroll-state(stuck: top)
+    #local-navigation
+        section
+            backdrop-filter: var(--widget-filter)
+
 // Drop Down Styles
 ul.navigation-sub
     position: absolute
     top: calc(100% + var(--space-large))
     left: 50%
     transform: translateX(-50%) translateY(-10px)
-    background-color: var(--widget-background)
-    backdrop-filter: var(--widget-filter)
+    background-color: var(--color-background)
     box-shadow: var(--box-shadow)
+    border: 1px solid var(--color-muted)
     border-radius: var(--space-small)
     padding: var(--space-small)
     min-width: 200px
@@ -126,23 +136,21 @@ ul.navigation-sub
         ul
             position: fixed
             top: 0
-            left: calc(100% + var(--space-normal))
-            background-color: var(--widget-background)
+            background-color: var(--color-background)
             backdrop-filter: var(--widget-filter)
             box-shadow: var(--box-shadow)
+            border: 1px solid var(--color-muted)
             border-radius: var(--space-small)
             padding: var(--space-small)
             list-style: none
             margin: 0
-            display: flex
             flex-direction: column
             gap: calc(var(--space-small) * 0.5)
             min-width: 200px
             opacity: 0
             visibility: hidden
             transform: translateX(-10px)
-            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease
-            z-index: 11
+            z-index: 3
             
             // Ensure nested dropdowns are accessible
             li
@@ -166,6 +174,7 @@ ul.navigation-sub
                         svg
                             vertical-align: middle
                             transition: transform 0.2s ease
+                            
 
 // Show dropdown on hover (desktop)
 li:hover ul.navigation-sub

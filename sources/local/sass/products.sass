@@ -1,0 +1,195 @@
+.local-product
+    .grid
+        display: grid
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+        grid-template-rows: repeat(1, 1fr)
+        grid-column-gap: var(--space-large)
+        grid-row-gap: var(--space-large)
+        justify-content: center
+        width: 100%
+        height: 100%
+
+    .product-gallery
+        position: relative
+        width: 100%
+        height: auto
+        border-radius: 12px
+        overflow: hidden
+
+    .product-gallery-item
+        position: relative
+        .product-gallery-item-container
+            aspect-ratio: 1 / 1
+            width: 100%
+            height: 100%
+            display: flex
+            flex-direction: row
+            justify-content: center
+            align-items: center
+            position: relative
+            overflow: hidden
+            
+            span
+                font-size: var(--font-small)
+
+            div[index]
+                position: absolute
+                top: 0
+                left: 0
+                aspect-ratio: 1 / 1
+                width: 100%
+                height: 100%
+                display: flex
+                justify-content: center
+                align-items: center
+                transform: translateX(100%)
+                opacity: 0
+                will-change: transform, opacity
+                transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+                background-color: var(--control-main-background)
+
+                &.active
+                    transform: translateX(0)
+                    opacity: 1
+                    
+                &.slide-out-right
+                    transform: translateX(-100%)
+                    opacity: 0
+                    
+                &.slide-out-left
+                    transform: translateX(100%)
+                    opacity: 0
+                    
+                &.slide-in-right
+                    transform: translateX(100%)
+                    opacity: 0
+                    
+                &.slide-in-left
+                    transform: translateX(-100%)
+                    opacity: 0
+
+    .product-gallery-controls
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+
+    button
+        background-color: transparent
+        svg
+            vertical-align: middle
+
+    .product-gallery-left
+        position: absolute
+        left: 1rem
+        top: 50%
+        transform: translateY(-50%)
+        opacity: 0.7
+        cursor: pointer
+        z-index: 10
+
+    .product-gallery-right
+        position: absolute
+        right: 1rem
+        top: 50%
+        transform: translateY(-50%)
+        opacity: 0.7
+        cursor: pointer
+        z-index: 10
+
+    .product-gallery-left,
+    .product-gallery-right
+        padding: var(--space-normal)
+        border: 1px solid var(--color-muted)
+        border-radius: var(--space-small)
+        transition: all 0.3s ease
+
+        &:hover
+            background-color: var(--control-main-background)
+            color: var(--color-text)
+
+    .product-gallery-controls
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        padding-block: var(--space-small)
+
+    .product-gallery-controls-container
+        display: flex
+        gap: var(--space-small)
+        max-width: 100%
+        overflow-x: auto
+        overflow-y: hidden
+        scrollbar-width: none  // Firefox
+        -webkit-overflow-scrolling: touch // Smooth scrolling on iOS
+        &::-webkit-scrollbar   // Chrome/Safari/Edge
+            display: none
+        white-space: nowrap
+        scroll-behavior: smooth
+
+    .product-thumbnail
+        flex: 0 0 4rem
+        width: 4rem
+        aspect-ratio: 1 / 1
+        background-color: var(--control-main-background)
+        cursor: pointer
+        border: 2px solid transparent
+        border-radius: var(--space-small)
+        transition: all 0.3s ease
+        display: flex
+        align-items: center
+        justify-content: center
+        
+        &:hover
+            background-color: var(--color-muted, rgba(0, 0, 0, 0.1))
+        
+        &.active
+            background-color: var(--color-muted, rgba(0, 0, 0, 0.1))
+            border: 1px solid var(--color-muted)
+            color: white
+            
+            p
+                color: white
+        
+        p
+            display: none
+    .local-product-navigation
+        div
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+            column-gap: var(--space-small)
+
+            small:not(:first-child)
+                a
+                    padding: var(--space-small)
+                    border-radius: var(--space-small)
+                    border: 1px solid var(--color-muted)
+                    color: var(--color-muted)
+                    text-decoration: none
+                    transition: all 0.3s ease
+
+                    &:hover
+                        background-color: var(--control-main-background)
+                        color: var(--color-text)
+
+
+    .product-details
+        border-radius: 12px
+        padding-inline: var(--space-large)
+
+        svg
+            path
+                fill: #ffc300
+
+    .product-details-price
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        column-gap: var(--space-normal)
+        align-items: flex-end
+
+        div
+            margin-block: auto

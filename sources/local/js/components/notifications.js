@@ -172,6 +172,9 @@ function handleCloseClick(e) {
     const button = e.target.closest('.close-floating-widget[data-notification-id]');
     if (!button) return;
     
+    // Prevent event from bubbling to navigation handlers
+    e.stopPropagation();
+    
     const notificationId = button.getAttribute('data-notification-id');
     const container = document.getElementById('local-notification');
     const slideDirection = getSlideDirection(getParentPosition(container));
