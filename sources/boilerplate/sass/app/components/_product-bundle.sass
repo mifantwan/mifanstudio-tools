@@ -1,0 +1,114 @@
+#product-bundle
+    padding-block: 0.75rem
+    h4
+        font-family: var(--font-text)
+        ont-size: 0.9375rem
+        font-weight: bold
+        color: var(--color-text-gray-dark)
+
+    .bundle-lists
+        padding-block: 0.4375rem 1.1875rem
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: space-evenly
+        align-items: flex-end
+        column-gap: 0.25rem
+        row-gap: 0.5rem
+
+        .bundle-item
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            gap: 0.21582rem
+            border-radius: 0.5rem
+            min-width: 6.625rem
+
+            span
+                background-color: rgba(254, 219, 54, 1)
+                width: 100%
+                text-align: center
+                padding-block: 4px
+                border-radius: 0.45rem 0.45rem 0px 0px
+                color: rgba(13, 43, 9, 1)
+                margin-block-end: 3.01px
+
+                h5
+                    font-size: 11px
+                    font-weight: 800
+                    line-height: normal
+                    
+
+            small
+                font-family: var(--font-text)
+                font-size: 10px
+                font-weight: bold
+                letter-spacing: -0.2px
+                line-height: normal
+                color: rgba(29, 33, 30, 1)
+
+            div
+                display: flex
+                flex-direction: row
+                padding-inline: 0.25rem
+                gap: 2px
+
+                p
+                    font-size: 12px
+                    font-weight: bold
+                    line-height: normal
+                    
+                    &:first-child
+                        color: rgba(4, 35, 36, 0.5)
+
+                    &:last-child
+                        color: rgba(29, 33, 30, 1)
+
+            div:last-child
+                aspect-ratio: 3/2
+                object-fit: cover
+                padding-block-start: 0.25rem
+                img
+                    aspect-ratio: 3/2
+                    object-fit: cover
+
+            &:first-child
+                padding-block: 10px 4px
+                margin-block-end: -0.25rem
+                border: 1px solid rgba(0, 0, 0, 1)
+                border-bottom-width: 0.25rem
+
+            &:not(:first-child)
+                padding-block: 0px 4px
+                border: 1px solid rgba(222, 222, 222, 1)
+
+            &:hover
+                border: 1px solid rgba(0, 0, 0, 1)
+
+
+
+    .bundle-announcement
+        margin-inline: 0.25rem
+        height: 3.231rem
+        width: auto
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        gap: 0.25rem
+        border-radius: 0.5rem
+        background-color: var(--color-border-light)
+
+        span
+            display: flex
+            align-items: center
+            justify-content: center
+            svg
+                vertical-align: middle
+
+        p
+            font-size: 1rem
+            font-weight: 100
+            line-height: normal
+            color: var(--color-text-gray-dark)

@@ -1,0 +1,93 @@
+{
+  "entrypoints": {
+    "boilerplate-preloader": {
+      "js": [
+        "/assets/boilerplate-preloader.js"
+      ]
+    },
+    "boilerplate-apps": {
+      "css": [
+        "/assets/boilerplate-apps.css"
+      ],
+      "js": [
+        "/assets/boilerplate-apps.js"
+      ]
+    },
+    "boilerplate-frameworks": {
+      "css": [
+        "/assets/boilerplate-frameworks.css"
+      ],
+      "js": [
+        "/assets/boilerplate-frameworks.js"
+      ]
+    },
+    "boilerplate-library": {
+      "css": [
+        "/assets/boilerplate-library.css"
+      ],
+      "js": [
+        "/assets/boilerplate-library.js"
+      ]
+    },
+    "boilerplate-products": {
+      "js": [
+        "/assets/boilerplate-products.js"
+      ]
+    },
+    "boilerplate-collection": {
+      "js": [
+        "/assets/boilerplate-collection.js"
+      ]
+    },
+    "boilerplate-collectionlist": {
+      "js": [
+        "/assets/boilerplate-collectionlist.js"
+      ]
+    },
+    "boilerplate-singlepost": {
+      "js": [
+        "/assets/boilerplate-singlepost.js"
+      ]
+    },
+    "boilerplate-blogs": {
+      "js": [
+        "/assets/boilerplate-blogs.js"
+      ]
+    },
+    "boilerplate-pages": {
+      "js": [
+        "/assets/boilerplate-pages.js"
+      ]
+    },
+    "boilerplate-search": {
+      "js": [
+        "/assets/boilerplate-search.js"
+      ]
+    },
+    "boilerplate-lost": {
+      "js": [
+        "/assets/boilerplate-lost.js"
+      ]
+    },
+    "boilerplate-giftcard": {
+      "js": [
+        "/assets/boilerplate-giftcard.js"
+      ]
+    },
+    "boilerplate-cart": {
+      "js": [
+        "/assets/boilerplate-cart.js"
+      ]
+    },
+    "boilerplate-account": {
+      "js": [
+        "/assets/boilerplate-account.js"
+      ]
+    },
+    "boilerplate-password": {
+      "js": [
+        "/assets/boilerplate-password.js"
+      ]
+    }
+  }
+}

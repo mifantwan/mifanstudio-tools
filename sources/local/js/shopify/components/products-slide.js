@@ -163,23 +163,30 @@ export default function productsSlide() {
         startAutoSlide();
     });
     
-    // Event listeners
-    leftButton.addEventListener('click', () => goToSlide('prev'));
-    rightButton.addEventListener('click', () => goToSlide('next'));
+    // Event listeners with preventDefault and stopPropagation to prevent any scrolling
+    leftButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        goToSlide('prev');
+    });
+    
+    rightButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        goToSlide('next');
+    });
 
-    // Thumbnail click event listeners
+    
+
+    // Thumbnail click event listeners with preventDefault
     thumbnails.forEach((thumbnail, index) => {
-        thumbnail.addEventListener('click', () => {
+        thumbnail.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             goToSlideIndex(index);
         });
     });
 
     // Start auto slide on init
     startAutoSlide();
-
-    // function thumbnail control slide
-    function thumbnailControl() {
-        // This function is now integrated into the main functionality above
-        // Thumbnails are automatically updated when slides change
-    }
 }

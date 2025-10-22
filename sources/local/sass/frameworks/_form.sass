@@ -4,6 +4,32 @@ form
     width: 100%
     gap: var(--space-normal)
 
+    // Base interactive element styles
+    %interactive-base
+        padding: var(--space-normal)
+        border-radius: var(--space-small)
+        border: 1px solid var(--color-text)
+        background-color: transparent
+        cursor: pointer
+        transition: all 0.3s ease
+        width: 100%
+
+    button, input[type="number"]
+        @extend %interactive-base
+
+    button
+        letter-spacing: 0.1rem
+
+        &[type="submit"]
+            background-color: var(--color-theme-primary)
+            color: var(--color-background)
+            padding-inline: var(--space-large)
+
+        &[type="button"]
+            color: var(--color-theme-tertiary)
+            border-color: var(--color-theme-tertiary)
+            padding-inline: var(--space-large)
+
     div
         width: inherit
         display: flex
@@ -12,6 +38,7 @@ form
         align-items: center
         column-gap: var(--space-normal)
 
+        // Quantity input styles
         .input-container
             .input-quantity
                 display: flex
@@ -20,18 +47,21 @@ form
                 border-radius: var(--space-small)
                 overflow: hidden
                 width: 100%
-                padding: var(--space-small)
+                padding: calc(var(--space-small) * 1.5) var(--space-small)
+
+                %quantity-element
+                    background-color: transparent
+                    padding: var(--space-small)
 
                 .quantity-btn
+                    @extend %quantity-element
                     border: none
-                    background-color: transparent
                     color: var(--color-text)
                     cursor: pointer
                     transition: all 0.3s ease
                     display: flex
                     align-items: center
                     justify-content: center
-                    padding: var(--space-small)
 
                     &:hover:not(:disabled)
                         background-color: var(--color-muted)
@@ -47,38 +77,35 @@ form
                         height: 0.75rem
 
                 .quantity-input
-                    width: 100% 
+                    @extend %quantity-element
+                    width: 100%
                     border: none
-                    background-color: transparent
                     text-align: center
-                    font-size: 1rem
-                    font-weight: 500
                     color: var(--color-text)
                     outline: none
-                    padding: var(--space-small)
 
+                    // Remove number input spinners
                     &::-webkit-outer-spin-button,
                     &::-webkit-inner-spin-button
                         -webkit-appearance: none
                         margin: 0
-
                     &[type=number]
                         -moz-appearance: textfield
 
             button
-                padding: var(--space-normal)
-                border-radius: var(--space-small)
-                border: 1px solid var(--color-text)
-                color: var(--color-muted)
-                text-decoration: none
-                transition: all 0.3s ease
                 width: auto
 
-                svg
-                    path:first-child
+                svg path
+                    &:first-child
                         fill: transparent !important
-                    path
-                        fill: var(--color-text) !important
+                    fill: var(--color-text) !important
+
+        // Radio and subscription styles
+        %radio-option-base
+            display: flex
+            align-items: center
+            gap: var(--space-small)
+            cursor: pointer
 
         .input-selling-plan
             display: flex
@@ -94,10 +121,7 @@ form
                 gap: var(--space-normal)
 
             .radio-option
-                display: flex
-                align-items: center
-                gap: var(--space-small)
-                cursor: pointer
+                @extend %radio-option-base
 
                 input[type="radio"]
                     appearance: none
@@ -117,8 +141,7 @@ form
                         &::after
                             content: ''
                             position: absolute
-                            top: 50%
-                            left: 50%
+                            inset: 50%
                             transform: translate(-50%, -50%)
                             width: 0.5rem
                             height: 0.5rem
@@ -130,7 +153,6 @@ form
 
                 label
                     cursor: pointer
-                    font-size: 1rem
                     font-weight: 500
                     color: var(--color-text)
                     user-select: none
@@ -141,7 +163,7 @@ form
                 gap: var(--space-normal)
                 visibility: visible
                 opacity: 1
-                max-height: 200px
+                max-height: 300px
                 transition: all 0.3s ease
                 overflow: hidden
 
@@ -150,6 +172,7 @@ form
                     opacity: 0
                     max-height: 0
                     margin: 0
+
                 div
                     display: flex
                     align-items: center
@@ -165,20 +188,25 @@ form
                     letter-spacing: normal
                     font-family: var(--font-text)
                     border: 1px solid var(--color-muted)
-                
-                button[type="button"].subscription-option-btn[aria-pressed="true"]
-                    background-color: var(--color-muted)
 
-        .input-variants
+                    &[aria-pressed="true"]
+                        background-color: var(--color-muted)
+
+        // Variant styles
+        %variant-base
             display: flex
             flex-direction: column
-            justify-self: flex-start
-            align-items: flex-start
             gap: var(--space-small)
 
             small
                 color: var(--color-text)
                 margin-bottom: var(--space-small)
+
+        .input-variants
+            @extend %variant-base
+            justify-self: flex-start
+            align-items: flex-start
+            flex-wrap: wrap
 
             .variant-type
                 display: flex
@@ -198,6 +226,7 @@ form
                     display: flex
                     align-items: center
                     justify-content: center
+                    width: fit-content
 
                     &:hover
                         background-color: var(--color-muted)
@@ -209,49 +238,111 @@ form
                         color: var(--color-background)
                         border-color: var(--color-theme-tertiary)
 
+        // Variant type specific styles
         .input-variants[variant-type="color"]
-            .variant-type
-                button
-                    aspect-ratio: 1/1
-                    width: auto
-                    height: 100%
+            .variant-type button
+                aspect-ratio: 1/1
+                width: auto
+                height: 100%
 
-                button:hover
+                &:hover,
+                &[aria-pressed="true"]
                     opacity: 0.5
 
-                button[aria-pressed="true"]
-                    opacity: 0.5
+                &[aria-pressed="true"]
                     border-color: var(--color-theme-primary)
-                    
 
-    button
-        letter-spacing: 0.1rem
+        .input-variants[variant-type="equals"]
+            .variant-type
+                flex-wrap: wrap
+                width: 100%
 
-    button[type="submit"]
-        background-color: var(--color-theme-primary)
-        color: var(--color-background)
-        padding: var(--space-normal) var(--space-large)
-        border: 1px solid var(--color-text)
-        border-radius: var(--space-small)
-        cursor: pointer
-        transition: all 0.3s ease
-        width: 100%
+                button
+                    width: fit-content
+                    text-align: center
+                    white-space: nowrap
+                    overflow: hidden
+                    text-overflow: ellipsis
 
-    button[type="button"]
-        background-color: transparent
-        color: var(--color-theme-tertiary)
-        padding: var(--space-normal) var(--space-large)
-        border: 1px solid var(--color-theme-tertiary)
-        border-radius: var(--space-small)
-        cursor: pointer
-        transition: all 0.3s ease
-        width: 100%
+        // Dropdown variant styles
+        .input-variants[variant-type="dropdown"]
+            .variant-type
+                position: relative
 
-    input[type="number"]
-        width: 100%
-        padding: var(--space-normal)
-        border: 1px solid var(--color-text)
-        background-color: transparent
-        border-radius: var(--space-small)
-        cursor: pointer
-        transition: all 0.3s ease
+                .floating-selector
+                    position: relative
+                    width: 100%
+
+                    %selector-element
+                        width: 100%
+                        background-color: transparent
+                        transition: all 0.3s ease
+
+                    .selector-trigger
+                        @extend %selector-element
+                        padding: var(--space-normal)
+                        border: 1px solid var(--color-text)
+                        border-radius: var(--space-small)
+                        color: var(--color-text)
+                        cursor: pointer
+                        font-weight: 500
+                        display: flex
+                        align-items: center
+                        justify-content: space-between
+
+                        &:hover,
+                        &:focus
+                            border-color: var(--color-theme-tertiary)
+                            outline: none
+
+                        .selector-arrow
+                            width: 0.75rem
+                            height: 0.75rem
+                            transition: transform 0.3s ease
+
+                            &.open
+                                transform: rotate(180deg)
+
+                    .selector-options
+                        @extend %selector-element
+                        position: absolute
+                        top: 100%
+                        left: 0
+                        right: 0
+                        border: 1px solid var(--color-theme-tertiary)
+                        border-radius: var(--space-small)
+                        z-index: 2
+                        opacity: 0
+                        visibility: hidden
+                        transform: translateY(-10px)
+                        height: fit-content
+                        overflow-y: auto
+                        display: flex
+                        flex-direction: column
+                        background-color: var(--color-background)
+
+                        &.open
+                            opacity: 1
+                            visibility: visible
+                            transform: translateY(0)
+
+                        .option
+                            width: 100%
+                            cursor: pointer
+                            transition: background-color 0.2s ease
+                            border-bottom: 1px solid var(--color-muted)
+
+                            span
+                                padding: var(--space-normal)
+                                font-size: var(--font-small-units)
+
+                            &:last-child
+                                border-bottom: none
+
+                            &:hover,
+                            &.selected
+                                background-color: var(--color-muted)
+                                color: var(--color-background)
+
+                svg path
+                    fill: unset

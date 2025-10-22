@@ -1,0 +1,13 @@
+html, body
+    font-size: var(--base-font-large-units)
+    width: 100dvw
+    font-family: var(--font-text)
+
+
+@media screen and (min-width: 320px) and (max-width: 390px)
+    html, body
+        font-size: calc(var(--base-font-small-units) + (var(--base-font-large) - var(--base-font-small)) * ((100dvw - var(--container-small-units)) / ( var(--container-large) - var(--container-small) )))
+
+@media screen and (max-width: 319px)
+    html, body
+        font-size: var(--base-font-small-units)

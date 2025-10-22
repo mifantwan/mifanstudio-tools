@@ -1,0 +1,121 @@
+.boilerplate-apps
+    header
+        section
+            .container
+                padding: 0
+                .media-slider
+                    .media-slider--highlight
+                        width: 100%
+                        height: 100%
+                        aspect-ratio: 1/1
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        position: relative
+
+                        .media-slider--highlight-lists
+                            aspect-ratio: 1/1
+                            object-fit: cover
+                            width: 100%
+                            height: 100%
+                            position: relative
+                            overflow: hidden
+
+                            div:not([index="0"])
+                                visibility: hidden
+                                opacity: 0
+
+                            div
+                                position: absolute
+                                top: 0
+                                left: 0
+                                width: 100%
+                                height: 100%
+                                transition: opacity 0.3s ease-in-out
+
+                                img
+                                    aspect-ratio: 1/1
+                                    object-fit: cover
+                                    width: 100%
+                                    height: 100%
+                                    transition: transform 0.3s ease
+                                    user-select: none
+
+                        button
+                            position: absolute
+                            bottom: 1.34375rem
+                            right: 1.34375rem
+                            height: 2.28125rem
+                            width: 2.28125rem
+                            aspect-ratio: 1/1
+                            border: 1px solid var(--color-border-dark)
+                            background-color: var(--color-background-light)
+                            border-radius: 50%
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            cursor: pointer
+                            transition: all 0.3s ease
+                            z-index: 1
+
+                            &:hover
+                                background-color: color-mix(in srgb, var(--color-background-light) 80%, var(--color-border-dark))
+                                border-color: color-mix(in srgb, var(--color-border-dark) 80%, var(--color-background-light))
+                                transform: scale(1.05)
+
+                            &:active
+                                transform: scale(0.95)
+
+                            &[data-action="zoom-out"]
+                                background-color: color-mix(in srgb, var(--color-background-light) 80%, var(--color-border-dark))
+                                border-color: color-mix(in srgb, var(--color-border-dark) 80%, var(--color-background-light))
+
+                    .media-slider--control
+                        padding-block: 0.5rem
+                        display: flex
+                        gap: 0.5rem
+                        width: 100%
+                        overflow-y: hidden
+                        scrollbar-width: none
+                        -webkit-overflow-scrolling: touch
+                        scroll-behavior: smooth
+                        white-space: nowrap
+
+                        &::-webkit-scrollbar
+                            display: none
+
+                        div
+                            width: 4.6875rem
+                            height: 4.6875rem
+                            aspect-ratio: 1/1
+                            background-color: var(--color-border-dark)
+                            border-radius: 0.25rem
+                            transition: all 0.3s ease
+                            box-sizing: border-box
+                            cursor: pointer
+
+                            img
+                                width: 100%
+                                height: 100%
+                                aspect-ratio: 1/1
+                                object-fit: cover
+                                border-radius: 0.25rem
+
+                            &:active,
+                            &:focus,
+                            &:hover
+                                border: 1px solid var(--color-text-gray-dark)
+                                border-bottom-width: 0.25rem
+                                border-radius: 0.25rem
+
+                            &.active
+                                border: 1px solid var(--color-text-gray-dark)
+                                border-bottom-width: 0.25rem
+                                border-radius: 0.25rem
+                                background-color: var(--color-background-light)
+
+                            &:first-child
+                                margin-inline-start: 0.5rem
+
+                            &:last-child
+                                margin-inline-end: 0.5rem

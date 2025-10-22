@@ -1,5 +1,14 @@
 // Helper function to update hidden inputs for form submission
 export default function productForm() {
+    // Wait for DOM to be fully loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeProductForm)
+        return
+    }
+    initializeProductForm()
+}
+
+function initializeProductForm() {
     // form input quantity
     const formInputQuantity = document.querySelector('input[name="quantity"]')
     const decreaseBtn = document.querySelector('.quantity-decrease')
@@ -119,5 +128,169 @@ export default function productForm() {
                 })
             })
         })
+
+        // custom equals variant selector functionality
+        const equalsVariantTypes = document.querySelectorAll('.input-variants[variant-type="equals"] .variant-type')
+        
+        equalsVariantTypes.forEach(equalsVariantType => {
+            const equalsVariantButtons = equalsVariantType.querySelectorAll('.variant-option')
+            
+            // Set equal width based on widest span content
+            setEqualButtonWidths(equalsVariantButtons)
+            
+            // Add click handlers
+            equalsVariantButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove selected state from all buttons
+                    equalsVariantButtons.forEach(btn => {
+                        btn.setAttribute('aria-pressed', 'false')
+                        btn.classList.remove('selected')
+                    })
+                    
+                    // Set clicked button as selected
+                    button.setAttribute('aria-pressed', 'true')
+                    button.classList.add('selected')
+                    
+                    const selectedValue = button.getAttribute('data-value')
+                    console.log('Selected equals variant:', selectedValue)
+                })
+            })
+        })
+
+        // Function to set equal width for buttons based on widest span content
+        function setEqualButtonWidths(buttons) {
+            if (buttons.length === 0) return
+            
+            // Reset width to auto to measure natural width
+            buttons.forEach(button => {
+                button.style.width = 'auto'
+                button.style.minWidth = 'auto'
+            })
+            
+            // Force a reflow to ensure width calculations are accurate
+            buttons[0].offsetHeight
+            
+            // Find the widest button by measuring span content
+            let maxWidth = 0
+            let widestButton = null
+            
+            buttons.forEach(button => {
+                const span = button.querySelector('span')
+                const buttonWidth = button.offsetWidth
+                const spanContent = span ? span.textContent : button.textContent
+                
+                console.log(`Button with span "${spanContent}" width: ${buttonWidth}px`)
+                
+                if (buttonWidth > maxWidth) {
+                    maxWidth = buttonWidth
+                    widestButton = spanContent
+                }
+            })
+            
+            console.log(`Widest button span: "${widestButton}" with width: ${maxWidth}px`)
+            
+            // Apply the max width to all buttons
+            buttons.forEach(button => {
+                button.style.width = `${maxWidth}px`
+                button.style.minWidth = `${maxWidth}px`
+            })
+            
+            console.log(`All buttons set to width: ${maxWidth}px`)
+        }
+
+        // Handle window resize to recalculate button widths
+        window.addEventListener('resize', () => {
+            equalsVariantTypes.forEach(equalsVariantType => {
+                const equalsVariantButtons = equalsVariantType.querySelectorAll('.variant-option')
+                setEqualButtonWidths(equalsVariantButtons)
+            })
+        })
+
+        // Custom floating selector functionality
+        const floatingSelectors = document.querySelectorAll('.floating-selector')
+        
+        floatingSelectors.forEach(selector => {
+            const trigger = selector.querySelector('.selector-trigger')
+            const options = selector.querySelector('.selector-options')
+            const optionElements = selector.querySelectorAll('.option')
+            const arrow = selector.querySelector('.selector-arrow')
+            const text = selector.querySelector('.selector-text')
+            
+            // Toggle dropdown
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation()
+                const isOpen = options.classList.contains('open')
+                
+                if (isOpen) {
+                    closeSelector()
+                } else {
+                    openSelector()
+                }
+            })
+            
+            // Handle option selection
+            optionElements.forEach(option => {
+                option.addEventListener('click', () => {
+                    selectOption(option)
+                    closeSelector()
+                })
+                
+                // Keyboard navigation
+                option.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        selectOption(option)
+                        closeSelector()
+                    }
+                })
+            })
+            
+            // Close on outside click
+            document.addEventListener('click', (e) => {
+                if (!selector.contains(e.target)) {
+                    closeSelector()
+                }
+            })
+            
+            // Keyboard navigation
+            trigger.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+                    e.preventDefault()
+                    if (!options.classList.contains('open')) {
+                        openSelector()
+                    }
+                }
+            })
+            
+            function openSelector() {
+                options.classList.add('open')
+                arrow.classList.add('open')
+                trigger.setAttribute('aria-expanded', 'true')
+                optionElements[0].focus()
+            }
+            
+            function closeSelector() {
+                options.classList.remove('open')
+                arrow.classList.remove('open')
+                trigger.setAttribute('aria-expanded', 'false')
+                trigger.focus()
+            }
+            
+            function selectOption(option) {
+                // Remove selected class from all options
+                optionElements.forEach(opt => opt.classList.remove('selected'))
+                
+                // Add selected class to clicked option
+                option.classList.add('selected')
+                
+                // Update trigger text
+                text.textContent = option.textContent
+                
+                // Get selected value
+                const selectedValue = option.getAttribute('data-value')
+                console.log('Selected floating option:', option.textContent, 'Value:', selectedValue)
+            }
+        })
+        
     }
 }

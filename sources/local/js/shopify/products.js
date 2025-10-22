@@ -1,4 +1,5 @@
 import '../../sass/products.sass'
+import '@google/model-viewer/dist/model-viewer.js'
 
 import productsSlide from './components/products-slide.js'
 import productForm from './components/product-form.js'
