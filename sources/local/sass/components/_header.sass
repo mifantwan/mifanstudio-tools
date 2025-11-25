@@ -2,6 +2,19 @@ header
     width: 100dvw
     height: auto
 
+    .header-hero-image
+
+        img 
+            aspect-ratio: 2/1
+            object-fit: cover
+            width: 100%
+            height: auto
+            border-radius: var(--padding-small)
+            filter: grayscale(100%)
+            transition: filter 0.3s ease
+            &:hover
+                filter: none
+
 
     @media (max-width: 768px)
         .grid

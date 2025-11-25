@@ -1,0 +1,21 @@
+@use '../../../framework/mixin' as *
+
+.single-post-image--featured
+    display: inline-flex
+    aspect-ratio: 3 / 2
+    width: 100%
+    height: auto
+    @include img-container
+    border-radius: calc(var(--padding-small) / 2)
+    margin-block-end: var(--padding-large)
+
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        border-radius: inherit
+        filter: grayscale(100%)
+        transition: filter 0.3s ease
+
+    &:hover img
+        filter: none

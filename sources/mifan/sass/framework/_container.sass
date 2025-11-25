@@ -1,0 +1,41 @@
+.mifan-apps
+    .container
+        display: flex
+        flex-direction: column
+        gap: calc( var(--padding-large) * 1.5)
+        width: 100%
+        height: 100%
+        max-width: var(--screen-size-units)
+        margin-inline: auto
+
+        section
+            padding-inline: var(--padding-normal)
+
+        // Reduce redundancy for space variants on both section and container
+        @each $size, $value in (large: 3, normal: 1, small: .5)
+            .section--space-#{$size}
+                padding-block: calc(var(--padding-normal) * #{$value})
+        @each $size, $value in (large: 3, normal: 1, small: .5)
+            ~.container--space-#{$size}
+                padding-block: calc(var(--padding-normal) * #{$value})
+
+    // Standalone container--space-* variants in .mifan-apps
+    @each $size, $value in (large: 3, normal: 1, small: .5)
+        .container--space-#{$size}
+            padding-block: calc(var(--padding-normal) * #{$value})
+
+.mifan-apps.box
+    padding-inline: var(--padding-normal)
+    
+    header,
+    main,
+    footer
+        background: color-mix(in srgb, var(--color-background) 0%, transparent)
+        .container
+            margin-block: var(--padding-small)
+            border-radius: var(--padding-small)
+            border: 2px solid color-mix(in srgb, var(--color-text) 85%, transparent)
+            
+body,
+html
+    scroll-behavior: smooth

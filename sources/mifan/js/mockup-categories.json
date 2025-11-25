@@ -1,0 +1,402 @@
+[
+    {
+        "id": 1,
+        "count": 5,
+        "description": "",
+        "link": "https://example.com/category/uncategorized/",
+        "name": "Uncategorized",
+        "slug": "uncategorized",
+        "taxonomy": "category",
+        "parent": 0,
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories/1"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?categories=1"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "count": 12,
+        "description": "",
+        "link": "https://example.com/category/technology/",
+        "name": "Technology",
+        "slug": "technology",
+        "taxonomy": "category",
+        "parent": 0,
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories/2"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?categories=2"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "count": 8,
+        "description": "",
+        "link": "https://example.com/category/lifestyle/",
+        "name": "Lifestyle",
+        "slug": "lifestyle",
+        "taxonomy": "category",
+        "parent": 0,
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories/3"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?categories=3"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 4,
+        "count": 15,
+        "description": "",
+        "link": "https://example.com/category/travel/",
+        "name": "Travel",
+        "slug": "travel",
+        "taxonomy": "category",
+        "parent": 0,
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories/4"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?categories=4"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "count": 10,
+        "description": "",
+        "link": "https://example.com/category/food/",
+        "name": "Food",
+        "slug": "food",
+        "taxonomy": "category",
+        "parent": 0,
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories/5"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?categories=5"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "count": 7,
+        "description": "",
+        "link": "https://example.com/category/health/",
+        "name": "Health",
+        "slug": "health",
+        "taxonomy": "category",
+        "parent": 0,
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories/6"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?categories=6"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 7,
+        "count": 9,
+        "description": "",
+        "link": "https://example.com/category/business/",
+        "name": "Business",
+        "slug": "business",
+        "taxonomy": "category",
+        "parent": 0,
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories/7"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?categories=7"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 8,
+        "count": 11,
+        "description": "",
+        "link": "https://example.com/category/entertainment/",
+        "name": "Entertainment",
+        "slug": "entertainment",
+        "taxonomy": "category",
+        "parent": 0,
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories/8"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?categories=8"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 9,
+        "count": 6,
+        "description": "",
+        "link": "https://example.com/category/sports/",
+        "name": "Sports",
+        "slug": "sports",
+        "taxonomy": "category",
+        "parent": 0,
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories/9"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?categories=9"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 10,
+        "count": 13,
+        "description": "",
+        "link": "https://example.com/category/education/",
+        "name": "Education",
+        "slug": "education",
+        "taxonomy": "category",
+        "parent": 0,
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories/10"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?categories=10"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    }
+]

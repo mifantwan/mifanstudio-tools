@@ -1,0 +1,31 @@
+.section--partners
+    span
+        padding: var(--padding-small) 0 
+        display: inline-block
+        
+        svg,
+        img
+            vertical-align: middle
+            width: auto
+            height: 3rem
+            filter: grayscale(100%)
+            
+            &:hover
+                filter: none
+
+    div.grid > *:last-child
+        display: inline-flex
+        gap: var(--padding-large)
+        overflow-x: auto
+        scrollbar-width: none
+        width: 100%
+        flex-wrap: nowrap
+        align-items: center
+
+@media (max-width: 1023px)
+    .section--partners
+        div.grid > *:last-child
+            gap: var(--padding-normal)
+
+        h3
+            margin-block-end: var(--padding-normal)

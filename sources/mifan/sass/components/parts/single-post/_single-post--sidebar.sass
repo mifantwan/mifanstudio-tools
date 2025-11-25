@@ -1,0 +1,21 @@
+.single-post-indexing,
+.single-post-extended--info
+    position: sticky
+    top: var(--space-top)
+    h6
+        margin-block-end: var(--padding-small)
+    p
+        line-height: 1
+
+    ul
+        list-style: none
+        
+    .post-categories,
+    .post-tags, 
+    .post-related--articles
+        margin-block-end: var(--padding-normal)
+
+@media screen and (max-width: 1023px)
+    .single-post-extended--info,
+    .single-post-indexing
+        min-height: calc(70dvh - var(--space-top))

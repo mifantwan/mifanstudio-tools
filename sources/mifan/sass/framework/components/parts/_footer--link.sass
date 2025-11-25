@@ -1,0 +1,38 @@
+footer
+    a
+        color: color-mix(in srgb, var(--color-text) 75%, transparent)
+        &:hover
+            color: color-mix(in srgb, var(--color-text) 35%, transparent)
+
+    ul
+        li
+            a
+                display: inline-block
+                transition: transform 0.3s
+                &:hover
+                    transform: translateX(0.5rem)
+
+    .navs__socials
+        display: flex
+        gap: var(--padding-small)
+        a
+            display: inline-block
+            svg
+                vertical-align: middle
+                path
+                    fill: var(--color-text)
+            &:hover
+                transform: scale(1.05)
+
+    .footer__navs-line
+        ul 
+            a:hover
+                transform: scale(1.05)
+
+    .container:last-child
+        ul
+            display: flex
+            gap: var(--padding-small)
+            li
+                a
+                    display: inline

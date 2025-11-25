@@ -1,0 +1,21 @@
+.blogs--list-category
+    position: sticky
+    top: var(--space-top)
+    
+    ul
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        gap: var(--padding-small)
+        
+        a
+            display: block
+            height: auto
+            
+            &:hover
+                background-color: var(--color-background-hover)
+                color: var(--color-primary)
+
+@media screen and (max-width: 1023px)
+    .blogs--list-category ul
+        flex-direction: row

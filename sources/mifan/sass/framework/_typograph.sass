@@ -1,0 +1,34 @@
+html, body
+    font-size: var(--font-size-units)
+    font-family: var(--font-text)
+    font-weight: var(--font-text-weight)
+
+    small
+        font-size: calc(var(--font-p) / var(--font-scale))
+
+    p
+        font-size: var(--font-p)
+        line-height: 1.6
+
+    @for $i from 1 through 6
+        h#{7-$i}
+            font-size: calc(var(--font-p) * pow(var(--font-scale), #{$i}))
+
+    h1, h2, h3, h4, h5, h6
+        font-family: var(--font-title)
+        font-weight: var(--font-title-weight)
+        line-height: 1.15
+
+    em, a, span, code, pre, blockquote, strong, b
+        font: inherit
+
+    strong, b
+        font-weight: bold
+
+@media screen and (min-width: 390px) and (max-width: 1366px)
+    html, body
+        font-size: calc(var(--font-size-small-units) + (var(--font-size) - var(--font-size-small)) * ((100dvw - var(--screen-size-small-units)) / (var(--screen-size) - var(--screen-size-small))))
+
+@media screen and (max-width: 389px)
+    html, body
+        font-size: var(--font-size-small-units)

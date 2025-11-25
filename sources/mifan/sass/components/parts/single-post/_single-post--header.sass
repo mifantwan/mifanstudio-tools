@@ -1,0 +1,28 @@
+@use '../../../framework/mixin' as *
+
+header[header-type="single-post"]
+    min-height: calc(30rem - var(--space-top))
+    .container
+        section
+            h1 
+                max-width: calc( var(--screen-size-small-units) * 2)      
+                padding-block: var(--padding-normal)
+
+            small
+                text-transform: uppercase
+                
+            div.author
+                div:first-child
+                    aspect-ratio: 1
+                    width: var(--padding-large)
+                    height: var(--padding-large)
+                    border-radius: 50%
+                    @include img-container
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                        border-radius: inherit
+
+                small
+                    text-transform: capitalize

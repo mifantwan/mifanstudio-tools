@@ -1,0 +1,24 @@
+footer
+    .footer__newsletter
+        h5
+            margin-block-end: var(--padding-large)
+        .newsletter__content
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+            gap: var(--padding-large)
+            
+            > *
+                flex: 1 1 0
+
+@media (max-width: 1024px)
+    footer
+        .footer__newsletter
+            h5
+                margin-block-end: var(--padding-normal)
+            .newsletter__content
+                flex-direction: column
+                gap: var(--padding-normal)
+
+                > *
+                    width: 100%

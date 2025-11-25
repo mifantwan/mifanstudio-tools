@@ -1,0 +1,67 @@
+.single-post-content
+    pre
+        white-space: pre-wrap
+        word-wrap: break-word
+        padding-inline: var(--padding-normal)
+        margin-block: var(--padding-normal)
+        background-color: color-mix(in srgb, var(--color-text) 5%, var(--color-background))
+        border: 1px solid color-mix(in srgb, var(--color-text) 15%, transparent)
+        border-radius: 0.25rem
+        overflow-x: auto
+        font-family: 'Courier New', Courier, monospace
+        font-size: 0.875rem
+        code
+            display: block
+            background: transparent
+            padding: var(--padding-normal) 0
+            border: none
+            color: var(--color-text)
+            font-family: inherit
+            font-size: inherit
+            white-space: pre-line
+            overflow-x: auto
+
+            // Syntax highlighting colors
+            .hl-keywords
+                color: color-mix(in srgb, var(--color-primary) 100%, transparent)
+                font-weight: 600
+
+            .hl-strings
+                color: color-mix(in srgb, var(--color-primary) 75%, transparent)
+
+            .hl-comments
+                color: color-mix(in srgb, var(--color-text) 50%, transparent)
+                font-style: italic
+
+            .hl-numbers
+                color: color-mix(in srgb, var(--color-primary) 85%, transparent)
+
+            .hl-functions
+                color: color-mix(in srgb, var(--color-text) 90%, transparent)
+                font-weight: 500
+
+            .hl-tags
+                color: color-mix(in srgb, var(--color-primary) 90%, transparent)
+
+            .hl-attributes
+                color: color-mix(in srgb, var(--color-text) 80%, transparent)
+
+            .hl-properties
+                color: color-mix(in srgb, var(--color-primary) 85%, transparent)
+
+            .hl-values
+                color: color-mix(in srgb, var(--color-text) 70%, transparent)
+
+            .hl-keys
+                color: color-mix(in srgb, var(--color-primary) 90%, transparent)
+
+            .hl-booleans
+                color: color-mix(in srgb, var(--color-primary) 100%, transparent)
+                font-weight: 600
+
+            .hl-selectors
+                color: color-mix(in srgb, var(--color-primary) 85%, transparent)
+
+            .hl-filters
+                color: color-mix(in srgb, var(--color-primary) 80%, transparent)
+                font-weight: 500

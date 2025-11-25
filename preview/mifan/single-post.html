@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo-small.png">
+    <title>Mifan | Single Post</title>
+    <!-- Meta Tags-->
+    <meta name="description" content="Frontend Engineer specializing in Shopify and WordPress development. Expertly building beautiful, high-converting digital experiences for thriving online businesses">
+    <!-- Preloader -->
+    <link rel="stylesheet" href="assets/mifan-preloader.css">
+    <script src="assets/mifan-preloader.js"></script>
+    <!-- CSS Global Assets -->
+    <link rel="stylesheet" href="assets/mifan-apps.css">
+    <link rel="stylesheet" href="assets/mifan-frameworks.css">
+    <link rel="stylesheet" href="assets/mifan-library.css">
+    <!-- Javascript Development Assets -->
+    <script src="assets/vendors.js"></script>
+    <!-- Javascript Global Assets -->
+    <script src="assets/mifan-apps.js"></script>
+    <script src="assets/mifan-frameworks.js"></script>
+    <script src="assets/mifan-library.js"></script>
+    <!-- Javascript Specific Assets -->
+    <link rel="stylesheet" href="assets/mifan-single-post.css">
+    <script src="assets/mifan-single-post.js"></script>
+</head>
+<body id="mifan-apps">
+    <!-- Section : Preloader -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- Section : Announcement -->
+    <div class="mifan-announcements" data-delay="5000">
+        <div class="container">
+            <section>
+                <div class="announcement-container">
+                    <small><a href="/">Shopify: CSS Variables Are Fighting Us, but This Theme Will Convert (Promise)</a></small>
+                    <small><a href="/">WordPress: We’re Elbow-Deep in the Loop, Building a Theme That Won’t Make You Cry</a></small>
+                    <small><a href="/">React UI: Assembling the Blazing-Fast Components You Need (State Management Is Behaving... Mostly)</a></small>
+                    <small><a href="/">Ready to Hire: Our Expert Brains Are Charged. Send Us Your Toughest Code</a></small>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Section : Top Navigation -->
+    <div class="mifan-top-navigation">
+        <nav>
+            <div class="container">
+                <section>
+                    <div class="logo">
+                        <a href="/index">
+                            <img src="assets/images/logo-small.png" alt="Mifan Studio Homepage">
+                            
+                            <span>
+                                <p>MIFAN</p>
+                            </span>
+                        </a>
+                    </div>
+                    <!--
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="/projects.html">
+                                    projects
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/journal.html">
+                                    journal
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/services.html">
+                                    services
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    -->
+                    <div>
+                        <ul>
+                            <li>
+                                <button aria-label="search">
+                                    <span>
+                                        <svg width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 2.75C6.66751 2.75 2.75 6.66751 2.75 11.5C2.75 16.3325 6.66751 20.25 11.5 20.25C16.3325 20.25 20.25 16.3325 20.25 11.5C20.25 6.66751 16.3325 2.75 11.5 2.75ZM1.25 11.5C1.25 5.83908 5.83908 1.25 11.5 1.25C17.1609 1.25 21.75 5.83908 21.75 11.5C21.75 14.0605 20.8111 16.4017 19.2589 18.1982L22.5303 21.4697C22.8232 21.7626 22.8232 22.2374 22.5303 22.5303C22.2374 22.8232 21.7626 22.8232 21.4697 22.5303L18.1982 19.2589C16.4017 20.8111 14.0605 21.75 11.5 21.75C5.83908 21.75 1.25 17.1609 1.25 11.5Z" fill="#1C274C"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <a href="mailto:me@mifan.io">
+                                    <span>
+                                        <svg width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.94358 3.25H14.0564C15.8942 3.24998 17.3498 3.24997 18.489 3.40314C19.6614 3.56076 20.6104 3.89288 21.3588 4.64124C22.1071 5.38961 22.4392 6.33856 22.5969 7.51098C22.75 8.65019 22.75 10.1058 22.75 11.9436V12.0564C22.75 13.8942 22.75 15.3498 22.5969 16.489C22.4392 17.6614 22.1071 18.6104 21.3588 19.3588C20.6104 20.1071 19.6614 20.4392 18.489 20.5969C17.3498 20.75 15.8942 20.75 14.0564 20.75H9.94359C8.10583 20.75 6.65019 20.75 5.51098 20.5969C4.33856 20.4392 3.38961 20.1071 2.64124 19.3588C1.89288 18.6104 1.56076 17.6614 1.40314 16.489C1.24997 15.3498 1.24998 13.8942 1.25 12.0564V11.9436C1.24998 10.1058 1.24997 8.65019 1.40314 7.51098C1.56076 6.33856 1.89288 5.38961 2.64124 4.64124C3.38961 3.89288 4.33856 3.56076 5.51098 3.40314C6.65019 3.24997 8.10582 3.24998 9.94358 3.25ZM5.71085 4.88976C4.70476 5.02502 4.12511 5.27869 3.7019 5.7019C3.27869 6.12511 3.02502 6.70476 2.88976 7.71085C2.75159 8.73851 2.75 10.0932 2.75 12C2.75 13.9068 2.75159 15.2615 2.88976 16.2892C3.02502 17.2952 3.27869 17.8749 3.7019 18.2981C4.12511 18.7213 4.70476 18.975 5.71085 19.1102C6.73851 19.2484 8.09318 19.25 10 19.25H14C15.9068 19.25 17.2615 19.2484 18.2892 19.1102C19.2952 18.975 19.8749 18.7213 20.2981 18.2981C20.7213 17.8749 20.975 17.2952 21.1102 16.2892C21.2484 15.2615 21.25 13.9068 21.25 12C21.25 10.0932 21.2484 8.73851 21.1102 7.71085C20.975 6.70476 20.7213 6.12511 20.2981 5.7019C19.8749 5.27869 19.2952 5.02502 18.2892 4.88976C17.2615 4.75159 15.9068 4.75 14 4.75H10C8.09318 4.75 6.73851 4.75159 5.71085 4.88976ZM5.42383 7.51986C5.68901 7.20165 6.16193 7.15866 6.48014 7.42383L8.63903 9.22291C9.57199 10.0004 10.2197 10.5384 10.7666 10.8901C11.2959 11.2306 11.6549 11.3449 12 11.3449C12.3451 11.3449 12.7041 11.2306 13.2334 10.8901C13.7803 10.5384 14.428 10.0004 15.361 9.22291L17.5199 7.42383C17.8381 7.15866 18.311 7.20165 18.5762 7.51986C18.8413 7.83807 18.7983 8.31099 18.4801 8.57617L16.2836 10.4066C15.3973 11.1452 14.6789 11.7439 14.0448 12.1517C13.3843 12.5765 12.7411 12.8449 12 12.8449C11.2589 12.8449 10.6157 12.5765 9.95518 12.1517C9.32112 11.7439 8.60272 11.1452 7.71636 10.4066L5.51986 8.57617C5.20165 8.31099 5.15866 7.83807 5.42383 7.51986Z" fill="#1C274C"/>
+                                        </svg>    
+                                    </span>
+                                    <span>me@mifan.io</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </nav>
+
+    </div>
+    
+    <!-- Section : Mobile Navigations -->
+    <div class="mifan-apps">
+        <!-- Sections : Hero single-post Single Posts -->
+        <header class="flex flex--column flex--justify-center flex--align-center" header-type="single-post">
+            <div class="container container--space-large">
+                <section>
+                    <div class="flex flex--row flex--justify-between flex--align-start flex--gap-small">
+                        <small>engineering</small>
+                        <small>Nov 14, 2025. 10:00 AM - 10 min read</small>
+                    </div>
+                    <h1>The Engineering Perspective: Why Bad Requests Lead to Buggy Code (and How to Fix Them)</h1>
+                    <div class="flex flex--row flex--justify-between flex--align-center flex--gap-small">
+                        <div class="author flex flex--row flex--justify-start flex--align-center flex--gap-small">
+                            <div>
+                                <img alt="" src="https://secure.gravatar.com/avatar/a0c0eef840eb4dd2941ba879ddb4d10d8192a3e37976c2acb8b7c3db3bd32f42?s=32&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a0c0eef840eb4dd2941ba879ddb4d10d8192a3e37976c2acb8b7c3db3bd32f42?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">                        
+                            </div>
+                            <div class="flex flex--column flex--justify-start flex--align-start">                        
+                                <small>Mifan</small>
+                                <small>Software Engineer</small>
+                            </div>
+                        </div>
+                        <div class="flex flex--row flex--justify-end flex--align-center flex--gap-small">
+                            <small>share:</small>
+                            <button class="button--social-share" aria-label="share article linkedin" social-share="twitter">
+                                <span>
+                                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19.83 8.00001C19.83 8.17001 19.83 8.35001 19.83 8.52001C19.8393 10.0302 19.5487 11.5272 18.9751 12.9242C18.4014 14.3212 17.5562 15.5904 16.4883 16.6583C15.4204 17.7262 14.1512 18.5714 12.7542 19.1451C11.3572 19.7187 9.86017 20.0093 8.34999 20C6.15213 20.0064 3.9992 19.3779 2.14999 18.19C2.47999 18.19 2.78999 18.19 3.14999 18.19C4.96345 18.19 6.72433 17.5808 8.14999 16.46C7.30493 16.4524 6.48397 16.1774 5.80489 15.6744C5.12581 15.1714 4.62349 14.4662 4.36999 13.66C4.62464 13.7006 4.88213 13.7207 5.13999 13.72C5.49714 13.7174 5.85281 13.6738 6.19999 13.59C5.2965 13.4056 4.48448 12.9147 3.90135 12.2003C3.31822 11.486 2.99981 10.5921 2.99999 9.67001C3.55908 9.97841 4.18206 10.153 4.81999 10.18C4.25711 9.80767 3.79593 9.30089 3.47815 8.7055C3.16038 8.11011 2.99604 7.44489 2.99999 6.77001C3.00124 6.06749 3.18749 5.37769 3.53999 4.77001C4.55172 6.01766 5.81423 7.03889 7.24575 7.76757C8.67727 8.49625 10.2459 8.91613 11.85 9.00001C11.7865 8.69737 11.753 8.38922 11.75 8.08001C11.7239 7.25689 11.9526 6.44578 12.4047 5.75746C12.8569 5.06913 13.5104 4.53714 14.2762 4.23411C15.0419 3.93109 15.8826 3.87181 16.6833 4.06437C17.484 4.25693 18.2057 4.69195 18.75 5.31001C19.655 5.12822 20.5214 4.78981 21.31 4.31001C21.0088 5.24317 20.3754 6.0332 19.53 6.53001C20.3337 6.44316 21.1194 6.23408 21.86 5.91001C21.3116 6.71097 20.6361 7.41694 19.86 8.00001H19.83Z" fill="#000000"/>
+                                    </svg>
+                                </span>
+                            </button>
+                            <button class="button--social-share" type="button" aria-label="share article linkedin" social-share="facebook">
+                                <span>
+                                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 12.05C19.9813 10.5255 19.5273 9.03809 18.6915 7.76295C17.8557 6.48781 16.673 5.47804 15.2826 4.85257C13.8921 4.2271 12.3519 4.01198 10.8433 4.23253C9.33473 4.45309 7.92057 5.10013 6.7674 6.09748C5.61422 7.09482 4.77005 8.40092 4.3343 9.86195C3.89856 11.323 3.88938 12.8781 4.30786 14.3442C4.72634 15.8103 5.55504 17.1262 6.69637 18.1371C7.83769 19.148 9.24412 19.8117 10.75 20.05V14.38H8.75001V12.05H10.75V10.28C10.7037 9.86846 10.7483 9.45175 10.8807 9.05931C11.0131 8.66687 11.23 8.30827 11.5161 8.00882C11.8022 7.70936 12.1505 7.47635 12.5365 7.32624C12.9225 7.17612 13.3368 7.11255 13.75 7.14003C14.3498 7.14824 14.9482 7.20173 15.54 7.30003V9.30003H14.54C14.3676 9.27828 14.1924 9.29556 14.0276 9.35059C13.8627 9.40562 13.7123 9.49699 13.5875 9.61795C13.4627 9.73891 13.3667 9.88637 13.3066 10.0494C13.2464 10.2125 13.2237 10.387 13.24 10.56V12.07H15.46L15.1 14.4H13.25V20C15.1399 19.7011 16.8601 18.7347 18.0985 17.2761C19.3369 15.8175 20.0115 13.9634 20 12.05Z" fill="#000000"/>
+                                    </svg>
+                                </span>
+                            </button>
+                            <button class="button--social-share" type="button" aria-label="share article linkedin" social-share="linkedin">
+                                <span>
+                                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z" fill="#000000"/>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </header>
+        <!-- Sections : Hero single-post Single Posts -->
+        <main>
+            <!-- single-post : Navigation Top -->
+            <div class="single-post--navigation-top">
+                <div class="container">
+                    <section class="section--space-normal flex flex--row flex--justify-center flex--align-center flex--gap-small">
+                        <button type="button" aria-label="content button" content-index="content">
+                            <p>Article Content</p>
+                        </button>
+                        <button type="button" aria-label="index button" content-index="index">
+                            <p>Table of Contents</p>
+                        </button>
+                        <button type="button" aria-label="info button" content-index="info">
+                            <p>Article Info</p>
+                        </button>
+                    </section>
+                </div>
+            </div>
+            <!-- single-post : Navigation Top -->
+            <!-- single-post : Content -->
+            <div class="container">
+                <!-- single-post : pagination --> 
+                 <section class="single-post-page section--space-normal">
+                    <div class="grid">
+                        <div class="col-12 col-medium-3 col-large-3" content-id="info">
+                            <!-- single-post : Extended Info -->
+                            <div class="single-post-extended--info flex flex--column flex--gap-normal">
+                                <div>
+                                    <h5>Article Info</h5>
+                                </div>
+                                <!-- single-post : Category -->
+                                <div class="post-categories">
+                                    <h6>Category :</h6>
+                                    <div class="flex flex--row flex--justify-start flex--align-center flex--gap-small flex--wrap">
+                                        <a href="/blogs.html">
+                                            <h6>all (33)</h6>
+                                        </a>
+                                        <a href="/blogs.html">
+                                            <h6>engineering (6)</h6>
+                                        </a>
+                                        <a href="/blogs.html">
+                                            <h6>design (4)</h6>
+                                        </a>
+                                        <a href="/blogs.html">
+                                            <h6>technology (8)</h6>
+                                        </a>
+                                        <a href="/blogs.html">
+                                            <h6>business (5)</h6>
+                                        </a>
+                                        <a href="/blogs.html">
+                                            <h6>lifestyle (3)</h6>
+                                        </a>
+                                        <a href="/blogs.html" class="active">
+                                            <h6>tutorials (7)</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- single-post : Category -->
+                                <!-- single-post : Tags -->
+                                <div class="post-tags">
+                                    <h6>Tags :</h6>
+                                    <div class="flex flex--row flex--justify-start flex--align-center flex--gap-small flex--wrap">
+                                        <span class="active">
+                                            <a href="/">
+                                                <small>#tag1</small>
+                                            </a>
+                                        </span>
+                                        <span>
+                                            <a href="/">
+                                                <small>#tag2</small>
+                                            </a>
+                                        </span>
+                                        <span class="active">
+                                            <a href="/">
+                                                <small>#tag3</small>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- single-post : Tags -->
+                                <!-- single-post : Related Articles -->
+                                <div class="post-related--articles">
+                                    <h6>Related Articles :</h6>
+                                    <div>
+                                        <a href="/" class="flex flex--row flex--justify-start flex--align-center flex--gap-small">
+                                            <div>
+                                                <p>Mastering CSS Grid Layouts: From Basics to Advanced Techniques</p>
+                                            </div>
+                                            <div>
+                                                <img src="https://res.cloudinary.com/vidi-project-studio/image/upload/c_scale,f_auto,q_auto,w_1200/v1762864067/JournalMifan/pexels-joshsorenson-1714203.jpg" srcset="
+                                        https://res.cloudinary.com/vidi-project-studio/image/upload/c_scale,f_auto,q_auto,w_600/v1762864067/JournalMifan/pexels-joshsorenson-1714203.jpg   600w,
+                                        https://res.cloudinary.com/vidi-project-studio/image/upload/c_scale,f_auto,q_auto,w_1200/v1762864067/JournalMifan/pexels-joshsorenson-1714203.jpg 1200w,
+                                        https://res.cloudinary.com/vidi-project-studio/image/upload/c_scale,f_auto,q_auto,w_1800/v1762864067/JournalMifan/pexels-joshsorenson-1714203.jpg 1800w
+                                    " sizes="(max-width: 600px) 600px, (max-width: 1200px) 1200px, 1800px" alt="Hero Section" loading="eager" decoding="async">
+                                            </div>
+                                        </a>
+                                        <a href="/" class="flex flex--row flex--justify-start flex--align-center flex--gap-small">
+                                            <div>
+                                                <p>The Complete Guide to TypeScript Generics and Type Safety</p>
+                                            </div>
+                                        </a>
+                                        <a href="/" class="flex flex--row flex--justify-start flex--align-center flex--gap-small">
+                                            <div>
+                                                <p>Optimizing Web Performance: Lazy Loading and Code Splitting Strategies</p>
+                                            </div>
+                                            <div>
+
+                                            </div>
+                                        </a>
+                                        <a href="/" class="flex flex--row flex--justify-start flex--align-center flex--gap-small">
+                                            <div>
+                                                <p>Building Accessible Web Components: ARIA Patterns and Best Practices</p>
+                                            </div>
+                                            <div>
+
+                                            </div>
+                                        </a>
+                                        <a href="/" class="flex flex--row flex--justify-start flex--align-center flex--gap-small">
+                                            <div>
+                                                <p>Modern JavaScript Patterns: Async/Await and Promise Chaining Demystified</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- single-post : Related Articles -->
+                            </div>
+                            <!-- single-post : Extended Info -->
+                        </div>
+                        <div class="col-12 col-medium-6 col-large-6" content-id="content">
+                            <div class="single-post-image--featured">
+                                <img src="https://res.cloudinary.com/vidi-project-studio/image/upload/c_scale,f_auto,q_auto,w_1200/v1762864067/JournalMifan/pexels-joshsorenson-1714203.jpg" srcset="
+                                https://res.cloudinary.com/vidi-project-studio/image/upload/c_scale,f_auto,q_auto,w_600/v1762864067/JournalMifan/pexels-joshsorenson-1714203.jpg   600w,
+                                https://res.cloudinary.com/vidi-project-studio/image/upload/c_scale,f_auto,q_auto,w_1200/v1762864067/JournalMifan/pexels-joshsorenson-1714203.jpg 1200w,
+                                https://res.cloudinary.com/vidi-project-studio/image/upload/c_scale,f_auto,q_auto,w_1800/v1762864067/JournalMifan/pexels-joshsorenson-1714203.jpg 1800w
+                            " sizes="(max-width: 600px) 600px, (max-width: 1200px) 1200px, 1800px" alt="Hero Section" loading="eager" decoding="async">
+                            </div>
+                            <div class="single-post-content">
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                                <h2>Lorem Ipsum 1</h2>
+                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+                                <h3>Lorem Ipsum 2</h3>
+                                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way. On her way she met a copy.</p>
+                                <h4>Lorem Ipsum 3</h4>
+                                <p>The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their projects again and again. And if she hasn’t been rewritten, then they are still using her.</p>
+                                <h5>Lorem Ipsum 4</h5>
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                                <h6>Lorem Ipsum 5</h6>
+                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+                                <ul>
+                                    <li>Lorem Ipsum 1</li>
+                                    <li>Lorem Ipsum 2</li>
+                                    <li>Lorem Ipsum 3</li>
+                                    <li>Lorem Ipsum 4</li>
+                                    <li>Lorem Ipsum 5</li>
+                                    <li>Lorem Ipsum 6</li>
+                                </ul>
+                                <h6>Lorem Ipsum 6</h6>
+                                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way. On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
+                                <p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their projects again and again. And if she hasn’t been rewritten, then they are still using her. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view</p>
+                                <pre>
+                                    <code class="language-python">
+                                        def openFile(path):
+                                        file = open(path, "r")
+                                        content = file.read()
+                                        file.close()
+                                        return content
+                                    </code>
+                                </pre>
+                                <p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their projects again and again. And if she hasn’t been rewritten, then they are still using her. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-medium-3 col-large-3" content-id="index">
+                            <div class="single-post-indexing flex flex--column flex--gap-normal">
+                                <h5>Table of Contents</h5>
+                            </div>
+                        </div>
+                    </div>
+                 </section>     
+            </div>
+            <!-- single-post : Content -->
+            <!-- single-post : Navigation Bottom -->
+            <div class="single-post-page--routing">
+                <div class="container">
+                    <section class="section--space-small flex flex--row flex--justify-between flex--align-center flex--gap-normal">
+                        <a href="/" class="flex flex--row flex--justify-start flex--align-center flex--gap-small">
+                            <span>
+                                <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.75 16.25C13.6515 16.2505 13.5538 16.2313 13.4628 16.1935C13.3718 16.1557 13.2893 16.1001 13.22 16.03L9.72001 12.53C9.57956 12.3894 9.50067 12.1988 9.50067 12C9.50067 11.8013 9.57956 11.6107 9.72001 11.47L13.22 8.00003C13.361 7.90864 13.5285 7.86722 13.6958 7.88241C13.8631 7.89759 14.0205 7.96851 14.1427 8.08379C14.2649 8.19907 14.3448 8.35203 14.3697 8.51817C14.3946 8.68431 14.363 8.85399 14.28 9.00003L11.28 12L14.28 15C14.4205 15.1407 14.4994 15.3313 14.4994 15.53C14.4994 15.7288 14.4205 15.9194 14.28 16.06C14.1353 16.1907 13.9448 16.259 13.75 16.25Z" fill="#000000"/>
+                                </svg>
+                            </span>
+                            <small>The Engineering Perspective: Why Bad Requests Lead to Buggy Code (and How to Fix Them)</small>
+                        </a>
+                        <a href="/" class="flex flex--row flex--justify-start flex--align-center flex--gap-small">
+                            <small>lorem ipsum dolor sit amet lorem ipsum dolor sit amet</small>
+                            <span>
+                                <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.25 16.25C10.1493 16.2466 10.0503 16.2227 9.95921 16.1797C9.86807 16.1367 9.78668 16.0756 9.72001 16C9.57956 15.8594 9.50067 15.6688 9.50067 15.47C9.50067 15.2713 9.57956 15.0806 9.72001 14.94L12.72 11.94L9.72001 8.94002C9.66069 8.79601 9.64767 8.63711 9.68277 8.48536C9.71786 8.33361 9.79933 8.19656 9.91586 8.09322C10.0324 7.98988 10.1782 7.92538 10.3331 7.90868C10.4879 7.89198 10.6441 7.92391 10.78 8.00002L14.28 11.5C14.4205 11.6407 14.4994 11.8313 14.4994 12.03C14.4994 12.2288 14.4205 12.4194 14.28 12.56L10.78 16C10.7133 16.0756 10.6319 16.1367 10.5408 16.1797C10.4497 16.2227 10.3507 16.2466 10.25 16.25Z" fill="#000000"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </section>
+                </div>
+            </div>
+            <!-- single-post : Navigation Bottom -->
+        </main>
+        <footer>
+            <div class="container container--space-large">
+                <!-- Footer Main UI Components -->
+                <!-- Footer Newsletter UI Components -->
+                <!-- Footer Navs UI Components -->
+                <!-- Footer Navs Line UI Components -->
+            </div>
+            <div class="container">
+                <section class="section--space-small">
+                    <ul>
+                        <li>
+                            <small><a href="/privacy-policy">Privacy Policy</a></small>
+                        </li>
+                        <li>
+                            <a href="/terms-of-service"><small>Terms of Service</small></a>
+                        </li>
+                        <li>
+                            <a href="/cookie-policy"><small>Cookie Policy</small></a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

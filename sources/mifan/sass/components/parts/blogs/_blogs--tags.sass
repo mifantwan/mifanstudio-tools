@@ -1,0 +1,12 @@
+@use '../../../framework/mixin' as *
+.blogs-tags
+    span
+        padding: calc(var(--padding-small) / 4) calc(var(--padding-small) / 2)
+        @include tags-container
+        border-radius: calc(var(--padding-small) / 2)
+        transition: border-color 0.3s ease
+
+        &:hover,
+        &.active
+            border-color: var(--color-primary-hover)
+            color: var(--color-primary)

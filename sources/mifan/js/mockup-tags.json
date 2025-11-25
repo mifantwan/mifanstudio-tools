@@ -1,0 +1,978 @@
+[
+    {
+        "id": 1,
+        "count": 15,
+        "description": "",
+        "link": "https://example.com/tag/design/",
+        "name": "Design",
+        "slug": "design",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/1"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=1"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "count": 23,
+        "description": "",
+        "link": "https://example.com/tag/development/",
+        "name": "Development",
+        "slug": "development",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/2"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=2"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "count": 18,
+        "description": "",
+        "link": "https://example.com/tag/javascript/",
+        "name": "JavaScript",
+        "slug": "javascript",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/3"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=3"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 4,
+        "count": 12,
+        "description": "",
+        "link": "https://example.com/tag/tutorial/",
+        "name": "Tutorial",
+        "slug": "tutorial",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/4"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=4"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "count": 20,
+        "description": "",
+        "link": "https://example.com/tag/web-design/",
+        "name": "Web Design",
+        "slug": "web-design",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/5"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=5"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "count": 8,
+        "description": "",
+        "link": "https://example.com/tag/css/",
+        "name": "CSS",
+        "slug": "css",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/6"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=6"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 7,
+        "count": 14,
+        "description": "",
+        "link": "https://example.com/tag/react/",
+        "name": "React",
+        "slug": "react",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/7"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=7"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 8,
+        "count": 10,
+        "description": "",
+        "link": "https://example.com/tag/wordpress/",
+        "name": "WordPress",
+        "slug": "wordpress",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/8"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=8"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 9,
+        "count": 16,
+        "description": "",
+        "link": "https://example.com/tag/ui-ux/",
+        "name": "UI/UX",
+        "slug": "ui-ux",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/9"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=9"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 10,
+        "count": 7,
+        "description": "",
+        "link": "https://example.com/tag/api/",
+        "name": "API",
+        "slug": "api",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/10"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=10"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 11,
+        "count": 22,
+        "description": "",
+        "link": "https://example.com/tag/programming/",
+        "name": "Programming",
+        "slug": "programming",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/11"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=11"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 12,
+        "count": 9,
+        "description": "",
+        "link": "https://example.com/tag/mobile/",
+        "name": "Mobile",
+        "slug": "mobile",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/12"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=12"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 13,
+        "count": 11,
+        "description": "",
+        "link": "https://example.com/tag/responsive/",
+        "name": "Responsive",
+        "slug": "responsive",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/13"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=13"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 14,
+        "count": 19,
+        "description": "",
+        "link": "https://example.com/tag/frontend/",
+        "name": "Frontend",
+        "slug": "frontend",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/14"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=14"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 15,
+        "count": 13,
+        "description": "",
+        "link": "https://example.com/tag/backend/",
+        "name": "Backend",
+        "slug": "backend",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/15"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=15"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 16,
+        "count": 6,
+        "description": "",
+        "link": "https://example.com/tag/node-js/",
+        "name": "Node.js",
+        "slug": "node-js",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/16"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=16"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 17,
+        "count": 17,
+        "description": "",
+        "link": "https://example.com/tag/performance/",
+        "name": "Performance",
+        "slug": "performance",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/17"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=17"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 18,
+        "count": 5,
+        "description": "",
+        "link": "https://example.com/tag/security/",
+        "name": "Security",
+        "slug": "security",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/18"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=18"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 19,
+        "count": 21,
+        "description": "",
+        "link": "https://example.com/tag/best-practices/",
+        "name": "Best Practices",
+        "slug": "best-practices",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/19"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=19"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 20,
+        "count": 8,
+        "description": "",
+        "link": "https://example.com/tag/git/",
+        "name": "Git",
+        "slug": "git",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/20"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=20"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 21,
+        "count": 4,
+        "description": "",
+        "link": "https://example.com/tag/typescript/",
+        "name": "TypeScript",
+        "slug": "typescript",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/21"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=21"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 22,
+        "count": 12,
+        "description": "",
+        "link": "https://example.com/tag/debugging/",
+        "name": "Debugging",
+        "slug": "debugging",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/22"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=22"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 23,
+        "count": 15,
+        "description": "",
+        "link": "https://example.com/tag/testing/",
+        "name": "Testing",
+        "slug": "testing",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/23"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=23"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 24,
+        "count": 9,
+        "description": "",
+        "link": "https://example.com/tag/devops/",
+        "name": "DevOps",
+        "slug": "devops",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/24"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=24"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 25,
+        "count": 11,
+        "description": "",
+        "link": "https://example.com/tag/open-source/",
+        "name": "Open Source",
+        "slug": "open-source",
+        "taxonomy": "post_tag",
+        "meta": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags/25"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/tags"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/taxonomies/post_tag"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://example.com/wp-json/wp/v2/posts?tags=25"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    }
+]
+

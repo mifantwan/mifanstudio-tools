@@ -1,0 +1,27 @@
+@use '../../../framework/mixin' as *
+.single-post--navigation-top
+    display: none
+    position: sticky
+    top: calc(var(--announcement-height) + var(--navigation-height))
+    width: 100%
+    box-shadow: 0 0.05rem 0.05rem 0 var(--color-box-shadow)
+    @include background-blur
+    z-index: 1
+    p, small
+        font-family: var(--font-title)
+
+    button
+        background-color: transparent
+        border: none
+        color: var(--color-text)
+
+@media screen and (max-width: 1023px)
+    .single-post--navigation-top
+        display: flex
+        button[content-index]
+            transition: opacity 0.3s ease
+            opacity: 0.8
+            
+            &.is-active
+                opacity: 1
+                color: var(--color-primary)

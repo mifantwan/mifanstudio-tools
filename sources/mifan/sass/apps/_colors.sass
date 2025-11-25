@@ -1,0 +1,24 @@
+\:root
+    // Main Colors
+    --color-text: rgba(45, 45, 45, 0.9)
+    --color-background: rgba(247, 247, 247, 1)
+    --color-primary: rgba(235, 168, 71, 1) 
+    // Box Shadow 
+    --color-box-shadow: color-mix(in srgb, var(--color-text) 25%, transparent)
+    // Hover
+    --color-text-hover: color-mix(in srgb, var(--color-text) 25%, transparent)
+    --color-background-hover: color-mix(in srgb, var(--color-background) 25%, transparent)
+    --color-primary-hover: color-mix(in srgb, var(--color-primary) 25%, transparent)
+
+    // Blur
+    --filter-blur: blur(1rem)
+
+    // Empty Background
+    --color-background-empty: color-mix(in srgb, var(--color-background) 95%, var(--color-text))
+
+
+@media (prefers-color-scheme: dark)
+    :root
+        --color-text: rgba(247, 247, 247, 0.9)
+        --color-background: rgba(45, 45, 45, 1)
+        --color-primary: rgba(235, 168, 71, 1)

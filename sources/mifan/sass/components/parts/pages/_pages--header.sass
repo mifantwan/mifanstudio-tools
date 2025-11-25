@@ -1,0 +1,103 @@
+@use '../../../framework/mixin' as *
+
+// Add scroll margin for anchor links to account for fixed navigation
+section[id]
+    scroll-margin-top: calc(var(--space-top) + var(--padding-normal))
+
+header[header-type="default"],
+header[header-type="pages"]
+    min-height: calc(30rem - var(--space-top))
+    .container
+        section
+            h1
+                max-width: calc(var(--screen-size-small-units) * 2)
+                padding-block: var(--padding-normal)
+
+            h5
+                padding-block-end: var(--padding-small)
+
+            small
+                text-transform: uppercase
+
+            p
+                max-width: calc(var(--screen-size-small-units) * 2)
+
+            .page-header-container[hero-type="default"]
+
+                > div:first-child
+                    padding-block: var(--padding-normal)
+
+                > div:nth-child(2)
+                    @include img-container
+                    aspect-ratio: 3/1
+                    width: auto
+                    height: 100%
+                    border-radius: var(--padding-small) var(--padding-small) 0 0
+                    border: 2px solid var(--color-text)
+
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                        border-radius: calc(var(--padding-small) - 2px) calc(var(--padding-small) - 2px) 0 0
+                        filter: grayscale(100%)
+                        transition: filter 0.3s ease
+                        &:hover
+                            filter: none
+
+                > div:last-child
+                    padding-block: var(--padding-normal)
+                    justify-content: center
+                    align-items: center
+                    
+                    > div
+                        flex: 1 1 0
+                        aspect-ratio: 3/1
+                        padding: var(--padding-small)
+                        background-color: color-mix(in srgb, var(--color-background) 95%, var(--color-text))
+                        border: 2px solid var(--color-text)
+                        position: relative
+
+                        > a
+                            position: absolute
+                            bottom: 0.5rem
+                            right: 0.5rem
+                            
+                            &:hover span svg
+                                transform: scale(1.15)
+
+                            span svg
+                                vertical-align: middle
+                                
+                                path
+                                    fill: var(--color-text)
+
+                    > div:first-child
+                        border-radius: 0 0 0 calc(var(--padding-small) - 0.3rem)
+                        
+                    > div:last-child
+                        border-radius: 0 0 calc(var(--padding-small) - 0.3rem) 0
+
+                @media (max-width: 1023px)
+                    > div:nth-child(2)
+                        aspect-ratio: 5/4
+
+                    > div:last-child
+                        flex-direction: column
+                        justify-content: flex-start
+                        align-items: flex-start
+                        
+                        > div
+                            aspect-ratio: unset
+                            width: -webkit-fill-available
+
+                            p
+                                padding-block-end: var(--padding-normal)
+                            
+                        > div:first-child,
+                        > div:nth-child(2),
+                        > div:last-child
+                            border-radius: 0 0 calc(var(--padding-small) - 0.3rem) calc(var(--padding-small) - 0.3rem)
+
+                        > div:not(:first-child)
+                            display: none
