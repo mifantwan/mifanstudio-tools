@@ -1,32 +1,34 @@
+let baseReRenderApp = null;
+let baseReRender = null;
+
+const captureBaseReRenders = () => {
+    if (!baseReRenderApp && typeof window.mifanReRenderApp === 'function') {
+        baseReRenderApp = window.mifanReRenderApp;
+    }
+
+    if (!baseReRender && typeof window.mifanReRender === 'function') {
+        baseReRender = window.mifanReRender;
+    }
+};
+
 export default function route() {
-    // Cache DOM elements
     const shell = document.querySelector('.mifan-apps');
     if (!shell) return;
 
-    // Store original reRender functions to restore them before loading new page scripts
-    const originalReRenderApp = window.mifanReRenderApp;
-    const originalReRender = window.mifanReRender;
+    // Store original reRender functions (only once when available)
+    captureBaseReRenders();
 
     // Track currently loaded page-specific assets
-    const currentPageAssets = {
-        styles: new Set(),
-        scripts: new Set()
-    };
+    const currentPageAssets = { styles: new Set(), scripts: new Set() };
 
-    // Global assets that should never be removed (as Set for O(1) lookup)
+    // Global assets (never removed)
     const globalAssets = new Set([
-        'mifan-preloader.css',
-        'mifan-preloader.js',
-        'mifan-apps.css',
-        'mifan-frameworks.css',
-        'mifan-library.css',
-        'vendors.js',
-        'mifan-apps.js',
-        'mifan-frameworks.js',
-        'mifan-library.js'
+        'mifan-preloader', 'mifan-apps', 'mifan-frameworks', 
+        'mifan-library', 'vendors'
     ]);
 
-    const isModifiedClick = (event) => event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0;
+    // Utility functions
+    const isModifiedClick = (e) => e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0;
     
     const isSameOrigin = (url) => {
         try {
@@ -44,66 +46,58 @@ export default function route() {
     };
 
     const removeOldAssets = () => {
-        // Remove old stylesheets
-        for (const href of currentPageAssets.styles) {
-            const link = document.querySelector(`link[href="${href}"]`);
-            if (link) link.remove();
-        }
-
-        // Remove old scripts
-        for (const src of currentPageAssets.scripts) {
-            const script = document.querySelector(`script[src="${src}"]`);
-            if (script) script.remove();
-        }
-
-        // Reset reRender functions to their original state
-        if (originalReRenderApp) window.mifanReRenderApp = originalReRenderApp;
-        if (originalReRender) window.mifanReRender = originalReRender;
-
-        // Clear tracking
+        currentPageAssets.styles.forEach(href => {
+            document.querySelector(`link[href="${href}"]`)?.remove();
+        });
+        currentPageAssets.scripts.forEach(src => {
+            document.querySelector(`script[src="${src}"]`)?.remove();
+        });
+        
+        // Reset reRender functions
+        captureBaseReRenders();
+        if (baseReRenderApp) window.mifanReRenderApp = baseReRenderApp;
+        if (baseReRender) window.mifanReRender = baseReRender;
+        
         currentPageAssets.styles.clear();
         currentPageAssets.scripts.clear();
     };
 
+    const loadAsset = (type, attr, value, collection) => {
+        return new Promise((resolve, reject) => {
+            const element = document.createElement(type);
+            if (type === 'link') {
+                element.rel = 'stylesheet';
+                element.href = value;
+            } else {
+                element.src = value;
+            }
+            element.onload = resolve;
+            element.onerror = reject;
+            document.head.appendChild(element);
+            collection.add(value);
+        });
+    };
+
     const loadNewAssets = async (doc) => {
-        const stylePromises = [];
-        const scriptPromises = [];
+        const promises = [];
 
-        // Extract and load page-specific stylesheets
-        const styleLinks = doc.querySelectorAll('link[rel="stylesheet"]');
-        for (let i = 0; i < styleLinks.length; i++) {
-            const href = styleLinks[i].getAttribute('href');
+        // Load stylesheets
+        doc.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+            const href = link.getAttribute('href');
             if (href && !isGlobalAsset(href)) {
-                stylePromises.push(new Promise((resolve, reject) => {
-                    const link = document.createElement('link');
-                    link.rel = 'stylesheet';
-                    link.href = href;
-                    link.onload = resolve;
-                    link.onerror = reject;
-                    document.head.appendChild(link);
-                    currentPageAssets.styles.add(href);
-                }));
+                promises.push(loadAsset('link', 'href', href, currentPageAssets.styles));
             }
-        }
+        });
 
-        // Extract and load page-specific scripts
-        const scriptTags = doc.querySelectorAll('script[src]');
-        for (let i = 0; i < scriptTags.length; i++) {
-            const src = scriptTags[i].getAttribute('src');
+        // Load scripts
+        doc.querySelectorAll('script[src]').forEach(script => {
+            const src = script.getAttribute('src');
             if (src && !isGlobalAsset(src)) {
-                scriptPromises.push(new Promise((resolve, reject) => {
-                    const script = document.createElement('script');
-                    script.src = src;
-                    script.onload = resolve;
-                    script.onerror = reject;
-                    document.head.appendChild(script);
-                    currentPageAssets.scripts.add(src);
-                }));
+                promises.push(loadAsset('script', 'src', src, currentPageAssets.scripts));
             }
-        }
+        });
 
-        // Wait for all assets to load
-        await Promise.all([...stylePromises, ...scriptPromises]);
+        await Promise.all(promises);
     };
 
     const loadPath = async (url, replace = false) => {
@@ -115,93 +109,82 @@ export default function route() {
             const doc = new DOMParser().parseFromString(html, 'text/html');
             const newShell = doc.querySelector('.mifan-apps');
 
-            // Remove old page-specific assets
+            // Remove old assets and load new ones
             removeOldAssets();
-
-            // Load new page-specific assets
             await loadNewAssets(doc);
 
+            // Update DOM
             if (newShell) {
                 shell.innerHTML = newShell.innerHTML;
             } else {
                 document.body.innerHTML = doc.body.innerHTML;
             }
 
-            // Update page title
+            // Update title and history
             const newTitle = doc.querySelector('title');
             if (newTitle) document.title = newTitle.textContent;
+            
+            history[replace ? 'replaceState' : 'pushState']({}, '', url);
 
-            if (replace) {
-                history.replaceState({}, '', url);
-            } else {
-                history.pushState({}, '', url);
-            }
+            // Scroll to top immediately
+            window.scrollTo({ top: 0, behavior: 'instant' });
 
-            // Scroll to top of page
-            window.scrollTo(0, 0);
-
-            // Re-run client initializers
-            // Use setTimeout to ensure new scripts have executed their setup code
-            setTimeout(() => {
-                window.mifanReRender?.();
-                window.mifanReRenderApp?.();
-            }, 0);
+            // Re-run client initializers after DOM is fully updated
+            // Use double RAF to ensure DOM is parsed and rendered
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    window.mifanReRender?.();
+                    window.mifanReRenderApp?.();
+                });
+            });
         } catch {
             window.location.assign(url);
         }
     };
 
-    const onLinkClick = (event) => {
+    const handleNavigation = (event) => {
         if (isModifiedClick(event)) return;
+        
         const anchor = event.target.closest('a');
-        if (!anchor) return;
-        
-        const href = anchor.getAttribute('href');
-        if (!href || href.startsWith('mailto:') || href.startsWith('tel:') || anchor.target === '_blank') return;
-        
-        // Handle hash links (anchor links) - allow default scroll behavior
-        if (href.startsWith('#')) {
-            const targetId = href.substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
+        if (anchor) {
+            const href = anchor.getAttribute('href');
+            if (!href || href.startsWith('mailto:') || href.startsWith('tel:') || anchor.target === '_blank') return;
+            
+            // Handle hash links
+            if (href.startsWith('#')) {
+                const targetElement = document.getElementById(href.substring(1));
+                if (targetElement) {
+                    event.preventDefault();
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                return;
+            }
+            
+            if (isSameOrigin(href)) {
                 event.preventDefault();
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                loadPath(href);
             }
             return;
         }
-        
-        if (!isSameOrigin(href)) return;
 
-        event.preventDefault();
-        loadPath(href);
-    };
-
-    const onButtonClick = (event) => {
+        // Handle buttons with onclick navigation
         const button = event.target.closest('button');
-        if (!button) return;
-
-        // Check if button has onclick with window.location.href
-        const onclickAttr = button.getAttribute('onclick');
-        if (!onclickAttr || !onclickAttr.includes('window.location.href')) return;
-
-        // Extract URL from onclick attribute
-        const urlMatch = onclickAttr.match(/window\.location\.href\s*=\s*['"]([^'"]+)['"]/);
-        if (!urlMatch) return;
-
-        const href = urlMatch[1];
-        if (!href || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-        if (!isSameOrigin(href)) return;
-
-        event.preventDefault();
-        loadPath(href);
+        if (button) {
+            const onclick = button.getAttribute('onclick');
+            if (onclick?.includes('window.location.href')) {
+                const urlMatch = onclick.match(/window\.location\.href\s*=\s*['"]([^'"]+)['"]/);
+                if (urlMatch) {
+                    const href = urlMatch[1];
+                    if (href && !href.startsWith('mailto:') && !href.startsWith('tel:') && isSameOrigin(href)) {
+                        event.preventDefault();
+                        loadPath(href);
+                    }
+                }
+            }
+        }
     };
 
-    const onPopState = () => loadPath(window.location.href, true);
-
-    // Attach listeners once
-    window.removeEventListener('popstate', onPopState);
-    document.removeEventListener('click', onLinkClick);
-    window.addEventListener('popstate', onPopState);
-    document.addEventListener('click', onLinkClick);
-    document.addEventListener('click', onButtonClick);
+    // Attach listeners
+    window.addEventListener('popstate', () => loadPath(window.location.href, true));
+    document.addEventListener('click', handleNavigation);
 }
