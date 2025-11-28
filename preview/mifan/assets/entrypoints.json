@@ -1,104 +1,120 @@
 {
   "entrypoints": {
     "mifan-preloader": {
-      "css": [
-        "/assets/mifan-preloader.css"
-      ],
       "js": [
-        "/assets/mifan-preloader.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-preloader.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/mifan-preloader.css"
       ]
     },
     "mifan-apps": {
-      "css": [
-        "/assets/mifan-apps.css"
-      ],
       "js": [
-        "/assets/mifan-apps.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-apps.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/mifan-apps.css"
       ]
     },
     "mifan-frameworks": {
-      "css": [
-        "/assets/mifan-frameworks.css"
-      ],
       "js": [
-        "/assets/mifan-frameworks.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-frameworks.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/mifan-frameworks.css"
       ]
     },
     "mifan-library": {
-      "css": [
-        "/assets/mifan-library.css"
-      ],
       "js": [
-        "/assets/mifan-library.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-library.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/mifan-library.css"
       ]
     },
     "mifan-products": {
       "js": [
-        "/assets/mifan-products.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-products.js"
       ]
     },
     "mifan-collections": {
       "js": [
-        "/assets/mifan-collections.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-collections.js"
       ]
     },
     "mifan-collection-list": {
       "js": [
-        "/assets/mifan-collection-list.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-collection-list.js"
       ]
     },
     "mifan-single-post": {
-      "css": [
-        "/assets/mifan-single-post.css"
-      ],
       "js": [
-        "/assets/mifan-single-post.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-single-post.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/mifan-single-post.css"
       ]
     },
     "mifan-blogs": {
-      "css": [
-        "/assets/mifan-blogs.css"
-      ],
       "js": [
-        "/assets/mifan-blogs.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-blogs.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/mifan-blogs.css"
       ]
     },
     "mifan-pages": {
-      "css": [
-        "/assets/mifan-pages.css"
-      ],
       "js": [
-        "/assets/mifan-pages.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-pages.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/mifan-pages.css"
       ]
     },
     "mifan-search": {
       "js": [
-        "/assets/mifan-search.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-search.js"
       ]
     },
     "mifan-lost": {
       "js": [
-        "/assets/mifan-lost.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-lost.js"
       ]
     },
     "mifan-giftcard": {
       "js": [
-        "/assets/mifan-giftcard.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-giftcard.js"
       ]
     },
     "mifan-cart": {
       "js": [
-        "/assets/mifan-cart.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-cart.js"
       ]
     },
     "mifan-account": {
       "js": [
-        "/assets/mifan-account.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-account.js"
       ]
     },
     "mifan-password": {
       "js": [
-        "/assets/mifan-password.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-password.js"
       ]
     }
   }

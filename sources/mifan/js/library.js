@@ -1,11 +1,23 @@
 // Import
 import '../sass/library.sass'
-// Start of Selection
+import { onReady } from './globalInit.js';
+
 const initLibraryList = [];
 
-// DOM Ready listener
-const onDOMContentLoaded = () => initLibraryList.length && initLibraryList.forEach(func => func());
+export const registerLibraryInit = (fn) => {
+    if (typeof fn === 'function') {
+        initLibraryList.push(fn);
+    }
+};
 
-document.readyState === 'loading' 
-    ? document.addEventListener('DOMContentLoaded', onDOMContentLoaded)
-    : onDOMContentLoaded();
+onReady(() => {
+    if (!initLibraryList.length) return;
+    initLibraryList.forEach((fn) => {
+        try {
+            fn();
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error(error);
+        }
+    });
+});

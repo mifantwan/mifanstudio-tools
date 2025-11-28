@@ -1,4 +1,5 @@
 import '../../sass/components/pages.sass'
+import { onReady, extendReRenderApp } from '../globalInit.js';
 
 import headerDefault from './parts/pages/headerDefault.js';
 import sectionService from './parts/pages/sectionService.js';
@@ -12,20 +13,10 @@ const initSections = () => {
 };
 
 // Add to re-render hook for SPA route updates
-if (window.mifanReRenderApp) {
-    const originalReRenderApp = window.mifanReRenderApp;
-    window.mifanReRenderApp = function reRenderApp() {
-        originalReRenderApp();
-        initSections();
-    };
-}
+extendReRenderApp(initSections);
 
-// Initialize on DOM ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSections);
-} else {
-    initSections();
-}
+// Initialize on global DOM ready
+onReady(initSections);
 
 // Re-initialize on resize
 window.addEventListener('resize', initSections);

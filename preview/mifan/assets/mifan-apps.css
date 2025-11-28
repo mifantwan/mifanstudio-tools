@@ -1,1 +1,74 @@
-*{margin:0;padding:0}a{color:inherit;text-decoration:none}footer ul{list-style:none}:root{--screen-size:1366;--screen-size-units:1366px;--screen-size-small:390;--screen-size-small-units:390px;--screen-size-medium:1024;--screen-size-medium-units:1024px;--padding-normal:var(--font-p);--padding-large:calc(var(--font-p)*3);--padding-small:calc(var(--font-p)/var(--font-scale));--font-text:"Mifan",sans-serif;--font-text-weight:400;--font-title:"Oswald",sans-serif;--font-title-weight:normal;--font-title-alt:"Oswald",sans-serif;--font-title-alt-weight:400;--font-size:16;--font-size-units:16px;--font-size-small:14;--font-size-small-units:14px;--minor-second:1.067;--major-second:1.125;--minor-third:1.2;--major-third:1.25;--perfect-fourth:1.333;--augmented-fourth:1.414;--perfect-fifth:1.5;--minor-sixth:1.6;--golder-ratio:1.618;--major-sixth:1.667;--minor-seventh:1.778;--font-scale:var(--minor-third);--font-p:1rem;--color-text:rgba(45,45,45,.9);--color-background:#f7f7f7;--color-primary:#eba847;--color-box-shadow:color-mix(in srgb,var(--color-text) 25%,transparent);--color-text-hover:color-mix(in srgb,var(--color-text) 25%,transparent);--color-background-hover:color-mix(in srgb,var(--color-background) 25%,transparent);--color-primary-hover:color-mix(in srgb,var(--color-primary) 25%,transparent);--filter-blur:blur(1rem);--color-background-empty:color-mix(in srgb,var(--color-background) 95%,var(--color-text))}@media(prefers-color-scheme:dark){:root{--color-text:hsla(0,0%,97%,.9);--color-background:#2d2d2d;--color-primary:#eba847}}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[4]!./sources/mifan/sass/apps.sass ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer ul {
+  list-style: none;
+}
+
+:root {
+  --screen-size: 1366;
+  --screen-size-units: 1366px;
+  --screen-size-small: 390;
+  --screen-size-small-units: 390px;
+  --screen-size-medium: 1024;
+  --screen-size-medium-units: 1024px;
+  --padding-normal: var(--font-p);
+  --padding-large: calc(var(--font-p) * 3);
+  --padding-small: calc(var(--font-p) / var(--font-scale));
+}
+
+:root {
+  --font-text: 'Mifan', sans-serif;
+  --font-text-weight: 400;
+  --font-title: 'Oswald', sans-serif;
+  --font-title-weight: normal;
+  --font-title-alt: 'Oswald', sans-serif;
+  --font-title-alt-weight: 400;
+  --font-size: 16;
+  --font-size-units: 16px;
+  --font-size-small: 14;
+  --font-size-small-units: 14px;
+  --minor-second: 1.067;
+  --major-second: 1.125;
+  --minor-third: 1.2;
+  --major-third: 1.25;
+  --perfect-fourth: 1.333;
+  --augmented-fourth: 1.414;
+  --perfect-fifth: 1.5;
+  --minor-sixth: 1.6;
+  --golder-ratio: 1.618;
+  --major-sixth: 1.667;
+  --minor-seventh: 1.778;
+  --font-scale: var(--minor-third);
+  --font-p: 1rem;
+}
+
+:root {
+  --color-text: rgba(45, 45, 45, 0.9);
+  --color-background: rgba(247, 247, 247, 1);
+  --color-primary: rgba(235, 168, 71, 1);
+  --color-box-shadow: color-mix(in srgb, var(--color-text) 25%, transparent);
+  --color-text-hover: color-mix(in srgb, var(--color-text) 25%, transparent);
+  --color-background-hover: color-mix(in srgb, var(--color-background) 25%, transparent);
+  --color-primary-hover: color-mix(in srgb, var(--color-primary) 25%, transparent);
+  --filter-blur: blur(1rem);
+  --color-background-empty: color-mix(in srgb, var(--color-background) 95%, var(--color-text));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: rgba(247, 247, 247, 0.9);
+    --color-background: rgba(45, 45, 45, 1);
+    --color-primary: rgba(235, 168, 71, 1);
+  }
+}

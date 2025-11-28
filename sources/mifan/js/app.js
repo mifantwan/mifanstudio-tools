@@ -1,5 +1,6 @@
 // Import
 import '../sass/apps.sass'
+import { onReady } from './globalInit.js';
 import mainRun from './components/mainRun.js';
 import signature from './components/signature.js';
 import imageReplacement from './components/imageReplacement.js';
@@ -16,7 +17,5 @@ window.mifanReRenderApp = () => {
     signature();
 };
 
-// Run on DOM ready
-document.readyState === 'loading' 
-    ? document.addEventListener('DOMContentLoaded', initApp)
-    : initApp();
+// Register for global DOM-ready
+onReady(initApp);

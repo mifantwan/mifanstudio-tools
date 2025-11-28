@@ -2,91 +2,107 @@
   "entrypoints": {
     "boilerplate-preloader": {
       "js": [
-        "/assets/boilerplate-preloader.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-preloader.js"
       ]
     },
     "boilerplate-apps": {
-      "css": [
-        "/assets/boilerplate-apps.css"
-      ],
       "js": [
-        "/assets/boilerplate-apps.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-apps.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/boilerplate-apps.css"
       ]
     },
     "boilerplate-frameworks": {
-      "css": [
-        "/assets/boilerplate-frameworks.css"
-      ],
       "js": [
-        "/assets/boilerplate-frameworks.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-frameworks.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/boilerplate-frameworks.css"
       ]
     },
     "boilerplate-library": {
-      "css": [
-        "/assets/boilerplate-library.css"
-      ],
       "js": [
-        "/assets/boilerplate-library.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-library.js"
+      ],
+      "css": [
+        "http://localhost:8080/assets/boilerplate-library.css"
       ]
     },
     "boilerplate-products": {
       "js": [
-        "/assets/boilerplate-products.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-products.js"
       ]
     },
-    "boilerplate-collection": {
+    "boilerplate-collections": {
       "js": [
-        "/assets/boilerplate-collection.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-collections.js"
       ]
     },
-    "boilerplate-collectionlist": {
+    "boilerplate-collection-list": {
       "js": [
-        "/assets/boilerplate-collectionlist.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-collection-list.js"
       ]
     },
-    "boilerplate-singlepost": {
+    "boilerplate-single-post": {
       "js": [
-        "/assets/boilerplate-singlepost.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-single-post.js"
       ]
     },
     "boilerplate-blogs": {
       "js": [
-        "/assets/boilerplate-blogs.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-blogs.js"
       ]
     },
     "boilerplate-pages": {
       "js": [
-        "/assets/boilerplate-pages.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-pages.js"
       ]
     },
     "boilerplate-search": {
       "js": [
-        "/assets/boilerplate-search.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-search.js"
       ]
     },
     "boilerplate-lost": {
       "js": [
-        "/assets/boilerplate-lost.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-lost.js"
       ]
     },
     "boilerplate-giftcard": {
       "js": [
-        "/assets/boilerplate-giftcard.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-giftcard.js"
       ]
     },
     "boilerplate-cart": {
       "js": [
-        "/assets/boilerplate-cart.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-cart.js"
       ]
     },
     "boilerplate-account": {
       "js": [
-        "/assets/boilerplate-account.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-account.js"
       ]
     },
     "boilerplate-password": {
       "js": [
-        "/assets/boilerplate-password.js"
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/boilerplate-password.js"
       ]
     }
   }

@@ -1,5 +1,6 @@
 // Import
 import '../sass/framework.sass'
+import { onReady } from './globalInit.js';
 import route from './components/frameworks/route.js';   
 import announcementsToggle from './components/frameworks/announcements.js';
 import pageTransition from './components/frameworks/pageTransition.js';
@@ -32,7 +33,5 @@ window.mifanReRender = () => {
     consoleFramework?.();
 };
 
-// Run on DOM ready
-document.readyState === 'loading' 
-    ? document.addEventListener('DOMContentLoaded', initFramework)
-    : initFramework();
+// Register for global DOM-ready
+onReady(initFramework);
