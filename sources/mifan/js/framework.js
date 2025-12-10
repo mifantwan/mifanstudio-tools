@@ -4,6 +4,7 @@ import { onReady } from './globalInit.js';
 import route from './components/frameworks/route.js';   
 import announcementsToggle from './components/frameworks/announcements.js';
 import pageTransition from './components/frameworks/pageTransition.js';
+import sideBar from './components/frameworks/sideBar.js';
 import footer from './components/frameworks/footer.js';
 
 // Lazy load console framework
@@ -29,6 +30,7 @@ const initFramework = () => {
 window.mifanReRender = () => {
     announcementsToggle();
     pageTransition();
+    sideBar();
     footer();
     consoleFramework?.();
 };

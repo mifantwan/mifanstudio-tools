@@ -3,7 +3,9 @@ $gap: var(--font-p)
 $breakpoints: ( small: 390px, medium: 1024px, large: 1366px )
 
 @mixin create-selectors($breakpoint: null)
-    $infix: if($breakpoint == null, '', '-#{$breakpoint}')
+    $infix: ''
+    @if $breakpoint != null
+        $infix: '-#{$breakpoint}'
     @for $i from 1 through $columns
         .col#{$infix}-#{$i}
             grid-column-end: span $i

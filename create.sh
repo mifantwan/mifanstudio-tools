@@ -22,7 +22,7 @@ create_environment() {
     # Platform selector
     echo "Select PROJECT_PLATFORM:"
     echo "1) default"
-    echo "2) shopify" 
+    echo "2) shopify"
     echo "3) wordpress"
     echo "4) components"
     read -p "Enter your choice (1-4): " platform_choice
