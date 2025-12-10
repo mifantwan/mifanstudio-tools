@@ -15,19 +15,15 @@ export default function route() {
     const shell = document.querySelector('.mifan-apps');
     if (!shell) return;
 
-    // Store original reRender functions (only once when available)
     captureBaseReRenders();
 
-    // Track currently loaded page-specific assets
     const currentPageAssets = { styles: new Set(), scripts: new Set() };
 
-    // Global assets (never removed)
     const globalAssets = new Set([
         'mifan-preloader', 'mifan-apps', 'mifan-frameworks', 
         'mifan-library', 'vendors'
     ]);
 
-    // Utility functions
     const isModifiedClick = (e) => e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0;
     
     const isSameOrigin = (url) => {
@@ -53,7 +49,6 @@ export default function route() {
             document.querySelector(`script[src="${src}"]`)?.remove();
         });
         
-        // Reset reRender functions
         captureBaseReRenders();
         if (baseReRenderApp) window.mifanReRenderApp = baseReRenderApp;
         if (baseReRender) window.mifanReRender = baseReRender;
@@ -81,7 +76,6 @@ export default function route() {
     const loadNewAssets = async (doc) => {
         const promises = [];
 
-        // Load stylesheets
         doc.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
             const href = link.getAttribute('href');
             if (href && !isGlobalAsset(href)) {
@@ -89,7 +83,6 @@ export default function route() {
             }
         });
 
-        // Load scripts
         doc.querySelectorAll('script[src]').forEach(script => {
             const src = script.getAttribute('src');
             if (src && !isGlobalAsset(src)) {
@@ -109,28 +102,22 @@ export default function route() {
             const doc = new DOMParser().parseFromString(html, 'text/html');
             const newShell = doc.querySelector('.mifan-apps');
 
-            // Remove old assets and load new ones
             removeOldAssets();
             await loadNewAssets(doc);
 
-            // Update DOM
             if (newShell) {
                 shell.innerHTML = newShell.innerHTML;
             } else {
                 document.body.innerHTML = doc.body.innerHTML;
             }
 
-            // Update title and history
             const newTitle = doc.querySelector('title');
             if (newTitle) document.title = newTitle.textContent;
             
             history[replace ? 'replaceState' : 'pushState']({}, '', url);
 
-            // Scroll to top immediately
             window.scrollTo({ top: 0, behavior: 'instant' });
 
-            // Re-run client initializers after DOM is fully updated
-            // Use double RAF to ensure DOM is parsed and rendered
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
                     window.mifanReRender?.();
@@ -150,7 +137,6 @@ export default function route() {
             const href = anchor.getAttribute('href');
             if (!href || href.startsWith('mailto:') || href.startsWith('tel:') || anchor.target === '_blank') return;
             
-            // Handle hash links
             if (href.startsWith('#')) {
                 const targetElement = document.getElementById(href.substring(1));
                 if (targetElement) {
@@ -167,7 +153,6 @@ export default function route() {
             return;
         }
 
-        // Handle buttons with onclick navigation
         const button = event.target.closest('button');
         if (button) {
             const onclick = button.getAttribute('onclick');
@@ -184,7 +169,6 @@ export default function route() {
         }
     };
 
-    // Attach listeners
     window.addEventListener('popstate', () => loadPath(window.location.href, true));
     document.addEventListener('click', handleNavigation);
 }

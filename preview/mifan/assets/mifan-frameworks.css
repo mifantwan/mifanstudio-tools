@@ -1550,7 +1550,7 @@ footer {
   width: 100%;
 }
 .mifan-side--top, .mifan-side--bottom {
-  min-height: 10dvh;
+  min-height: var(--space-top);
   width: 100vw;
 }
 .mifan-side--left {
