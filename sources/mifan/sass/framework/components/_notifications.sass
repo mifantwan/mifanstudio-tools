@@ -1,0 +1,153 @@
+.mifan-notifications
+    position: fixed
+    max-width: var(--screen-size-small-units)
+    width: min(100% - (var(--padding-normal) * 2), var(--screen-size-small-units))
+    z-index: 6
+
+    // Container positioning - consolidate bottom/top and left/right/center patterns
+    &[notif-positions^="bottom"]
+        bottom: calc(var(--padding-normal) * 3)
+        
+        &[notif-positions$="-right"]
+            right: var(--padding-normal)
+        
+        &[notif-positions$="-left"]
+            left: var(--padding-normal)
+        
+        &[notif-positions$="-center"]
+            left: 50%
+            transform: translateX(-50%)
+
+    &[notif-positions^="top"]
+        top: calc(var(--padding-normal) * 3)
+        
+        &[notif-positions$="-right"]
+            right: var(--padding-normal)
+        
+        &[notif-positions$="-left"]
+            left: var(--padding-normal)
+        
+        &[notif-positions$="-center"]
+            left: 50%
+            transform: translateX(-50%)
+
+    > div
+        width: 100%
+        height: auto
+        position: relative
+        display: flex
+        flex-direction: column
+
+    .notification-items
+        max-width: var(--screen-size-small-units)
+        width: -webkit-fill-available
+        height: auto
+        position: absolute
+        padding: var(--padding-small) calc(var(--padding-small) * 3) var(--padding-small) var(--padding-small)
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+        aspect-ratio: 5 / 1
+        opacity: 0
+        visibility: hidden
+        transform: translateY(20px)
+        z-index: var(--stack-index, 1)
+        
+        // Dynamic stacking will be applied via JavaScript
+        // CSS variables: --stack-index, --stack-offset, --stack-scale
+        
+        &.show
+            opacity: 1
+            visibility: visible
+            transform: translateY(0) scale(var(--stack-scale, 1))
+
+        // Close button
+        button.close
+            position: absolute
+            top: 0.25rem
+            right: 0.25rem
+            padding: 0.25rem
+            background: transparent
+            border: none
+            border-radius: calc(var(--padding-small) - 0.25rem)
+            cursor: pointer
+            display: flex
+            align-items: center
+            justify-content: center
+            transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1)
+
+            span
+                aspect-ratio: 1
+
+            &:hover
+                background-color: color-mix(in srgb, var(--color-text) 10%, transparent)
+
+        > div:last-child
+            position: absolute
+            bottom: var(--padding-small)
+            left: var(--padding-small)
+
+        // Status styles - use loop to reduce repetition
+        $statuses: ("": "text", "info": "info", "warning": "warning", "error": "error", "success": "success")
+        
+        @each $status, $color in $statuses
+            &[item-status="#{$status}"]
+                background-color: color-mix(in srgb, var(--color-#{$color}) 5%, var(--color-background))
+                color: color-mix(in srgb, var(--color-#{$color}) 55%, var(--color-text))
+                border: 1px solid color-mix(in srgb, var(--color-#{$color}) 55%, var(--color-text))
+                border-radius: var(--padding-small)
+
+        small 
+            overflow: hidden
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            text-overflow: ellipsis
+
+    // Bottom positioning - stack downwards
+    &[notif-positions^="bottom"]
+        .notification-items
+            bottom: var(--stack-offset, 0)
+            transform-origin: center bottom
+            
+            &.show
+                transform: translateY(0) scale(var(--stack-scale, 1))
+        
+        &[notif-positions="bottom-right"] .notification-items
+            right: 0
+            left: auto
+        
+        &[notif-positions="bottom-left"] .notification-items
+            left: 0
+            right: auto
+        
+        &[notif-positions="bottom-center"] .notification-items
+            left: 50%
+            right: auto
+            transform: translate(-50%, 20px)
+            
+            &.show
+                transform: translate(-50%, 0) scale(var(--stack-scale, 1))
+
+    // Top positioning - stack upwards
+    &[notif-positions^="top"]
+        .notification-items
+            top: var(--stack-offset, 0)
+            transform-origin: center top
+            
+            &.show
+                transform: translateY(0) scale(var(--stack-scale, 1))
+        
+        &[notif-positions="top-right"] .notification-items
+            right: 0
+            left: auto
+        
+        &[notif-positions="top-left"] .notification-items
+            left: 0
+            right: auto
+        
+        &[notif-positions="top-center"] .notification-items
+            left: 50%
+            right: auto
+            transform: translate(-50%, 20px)
+            
+            &.show
+                transform: translate(-50%, 0) scale(var(--stack-scale, 1))

@@ -6,6 +6,7 @@ import announcementsToggle from './components/frameworks/announcements.js';
 import pageTransition from './components/frameworks/pageTransition.js';
 import sideBar from './components/frameworks/sideBar.js';
 import popUp from './components/frameworks/popUp.js';
+import notifications from './components/frameworks/notifications.js';
 import footer from './components/frameworks/footer.js';
 
 // Lazy load console framework
@@ -33,6 +34,7 @@ window.mifanReRender = () => {
     pageTransition();
     sideBar();
     popUp();
+    notifications();
     footer();
     consoleFramework?.();
 };
