@@ -85,42 +85,53 @@ html strong, html b, body strong, body b {
     font-size: var(--font-size-small-units);
   }
 }
+.mifan-popup .container,
 .mifan-apps .container {
   display: flex;
   flex-direction: column;
   gap: calc(var(--padding-large) * 1.5);
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: var(--screen-size-units);
   margin-inline: auto;
 }
+.mifan-popup .container section,
 .mifan-apps .container section {
   padding-inline: var(--padding-normal);
 }
+.mifan-popup .container .section--space-large,
 .mifan-apps .container .section--space-large {
   padding-block: calc(var(--padding-normal) * 3);
 }
+.mifan-popup .container .section--space-normal,
 .mifan-apps .container .section--space-normal {
   padding-block: calc(var(--padding-normal) * 1);
 }
+.mifan-popup .container .section--space-small,
 .mifan-apps .container .section--space-small {
   padding-block: calc(var(--padding-normal) * 0.5);
 }
+.mifan-popup .container ~ .container--space-large,
 .mifan-apps .container ~ .container--space-large {
   padding-block: calc(var(--padding-normal) * 3);
 }
+.mifan-popup .container ~ .container--space-normal,
 .mifan-apps .container ~ .container--space-normal {
   padding-block: calc(var(--padding-normal) * 1);
 }
+.mifan-popup .container ~ .container--space-small,
 .mifan-apps .container ~ .container--space-small {
   padding-block: calc(var(--padding-normal) * 0.5);
 }
+.mifan-popup .container--space-large,
 .mifan-apps .container--space-large {
   padding-block: calc(var(--padding-normal) * 3);
 }
+.mifan-popup .container--space-normal,
 .mifan-apps .container--space-normal {
   padding-block: calc(var(--padding-normal) * 1);
 }
+.mifan-popup .container--space-small,
 .mifan-apps .container--space-small {
   padding-block: calc(var(--padding-normal) * 0.5);
 }
@@ -1592,11 +1603,11 @@ footer {
 }
 .mifan-side > div button.close {
   position: absolute;
-  top: var(--padding-small);
-  right: var(--padding-small);
+  top: 0.25rem;
+  right: 0.25rem;
   background: transparent;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: calc(var(--padding-small) - 0.25rem);
   cursor: pointer;
   padding: 0.25rem;
   margin: 0;
@@ -1618,4 +1629,54 @@ footer {
   width: -webkit-fill-available;
   height: -webkit-fill-available;
   padding: var(--padding-small);
+}
+
+.mifan-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: color-mix(in srgb, var(--color-background) 10%, transparent);
+  -webkit-backdrop-filter: blur(0.1rem);
+          backdrop-filter: blur(0.1rem);
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mifan-popup .container {
+  background-color: var(--color-background);
+  border: 2px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  border-radius: var(--padding-small);
+  margin: var(--padding-normal);
+}
+.mifan-popup .container > div {
+  position: relative;
+  padding: var(--padding-normal);
+  min-height: 50dvh;
+}
+.mifan-popup .container > div button.close {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  background: transparent;
+  border: none;
+  border-radius: calc(var(--padding-small) - 0.25rem);
+  cursor: pointer;
+  padding: 0.25rem;
+  margin: 0;
+  width: auto;
+  height: auto;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mifan-popup .container > div button.close span {
+  aspect-ratio: 1;
+}
+.mifan-popup .container > div button.close:hover {
+  background-color: color-mix(in srgb, var(--color-text) 10%, transparent);
 }
