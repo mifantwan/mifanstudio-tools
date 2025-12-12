@@ -5,15 +5,17 @@
   position: relative;
   height: -webkit-fill-available;
 }
-.mifan-top-navigation > nav > .container .search {
+.mifan-top-navigation > nav > .container .search-results, .mifan-top-navigation > nav > .container .search {
   position: absolute;
   margin-inline: auto;
   left: 0;
   right: 0;
-  top: 0;
-  padding: 0;
   max-width: calc(var(--screen-size-small-units) * 2);
   width: 100%;
+}
+.mifan-top-navigation > nav > .container .search {
+  top: 0;
+  padding: 0;
   height: 100%;
   background-color: transparent;
   opacity: 0;
@@ -65,7 +67,7 @@
 }
 .mifan-top-navigation > nav > .container .search form span {
   position: absolute;
-  right: calc(var(--padding-small) + var(--padding-small));
+  right: calc(var(--padding-small) * 2);
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -74,13 +76,7 @@
   pointer-events: none;
 }
 .mifan-top-navigation > nav > .container .search-results {
-  position: absolute;
   top: auto;
-  margin-inline: auto;
-  left: 0;
-  right: 0;
-  max-width: calc(var(--screen-size-small-units) * 2);
-  width: 100%;
   height: auto;
   padding-inline: 0;
   opacity: 0;
@@ -135,6 +131,100 @@
   justify-content: flex-start;
   align-items: center;
   gap: var(--padding-small);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+nav ul li a span svg {
+  vertical-align: middle;
+}
+nav ul li a span svg path {
+  fill: var(--color-text);
+  transition: fill 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+nav ul li a:hover {
+  color: color-mix(in srgb, var(--color-text) 25%, transparent);
+}
+nav ul li a:hover span svg path {
+  fill: color-mix(in srgb, var(--color-text) 25%, transparent);
+}
+nav ul li button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+nav ul li button span svg {
+  vertical-align: middle;
+}
+nav ul li button span svg path {
+  fill: var(--color-text);
+  transition: fill 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+nav ul li button:hover span svg path {
+  fill: color-mix(in srgb, var(--color-text) 25%, transparent);
+}
+nav ul li.parent {
+  position: relative;
+  height: 100%;
+}
+nav ul li.parent > div {
+  position: absolute;
+  top: calc(var(--space-top) - 3rem);
+  left: 50%;
+  transform: translate(-50%, -10px);
+  background-color: var(--color-background);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--color-muted);
+  border-radius: var(--padding-small);
+  padding: var(--padding-small);
+  min-width: calc(var(--screen-size-small-units) / 2);
+  padding: var(--padding-small);
+  border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-small);
+  box-shadow: 0 0 0.5rem 0 color-mix(in srgb, var(--color-text) 10%, transparent);
+}
+nav ul li.parent > div > ul {
+  flex-direction: column;
+}
+nav ul li.parent[parent-type=custom] > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--padding-small);
+}
+nav ul li.parent[parent-type=custom] > div > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+nav ul li.parent[parent-type=custom] > div ul {
+  justify-content: flex-start;
+}
+nav ul li.parent[parent-type=custom] > div > div {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--padding-small);
+}
+nav ul li.parent[parent-type=custom] > div > div span {
+  width: calc(var(--screen-size-small-units) / 2);
+  aspect-ratio: 1/1;
+  background-color: color-mix(in srgb, var(--color-text) 10%, transparent);
+  border-radius: var(--padding-small);
+  border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
 }
 
 @font-face {
@@ -1294,46 +1384,6 @@ nav .logo p {
   line-height: 1;
   color: var(--color-text);
   letter-spacing: 0.02em;
-}
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1rem;
-}
-nav ul li a {
-  text-decoration: none;
-  color: var(--color-text);
-  font-size: 1rem;
-}
-nav ul li a span svg {
-  vertical-align: middle;
-}
-nav ul li a span svg path {
-  fill: var(--color-text);
-}
-nav ul li a:hover {
-  color: color-mix(in srgb, var(--color-text) 25%, transparent);
-}
-nav ul li a:hover span svg path {
-  fill: color-mix(in srgb, var(--color-text) 25%, transparent);
-}
-nav ul li button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-}
-nav ul li button span svg {
-  vertical-align: middle;
-}
-nav ul li button span svg path {
-  fill: var(--color-text);
-}
-nav ul li button:hover span svg path {
-  fill: color-mix(in srgb, var(--color-text) 25%, transparent);
 }
 
 .button--downloads {
