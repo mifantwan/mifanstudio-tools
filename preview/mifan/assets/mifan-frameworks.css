@@ -1,6 +1,142 @@
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[4]!./sources/mifan/sass/framework.sass ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.mifan-top-navigation > nav > .container {
+  position: relative;
+  height: -webkit-fill-available;
+}
+.mifan-top-navigation > nav > .container .search {
+  position: absolute;
+  margin-inline: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 0;
+  max-width: calc(var(--screen-size-small-units) * 2);
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0.98);
+  transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), visibility 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.mifan-top-navigation > nav > .container .search.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
+.mifan-top-navigation > nav > .container .search form {
+  position: relative;
+  padding: var(--padding-small);
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
+.mifan-top-navigation > nav > .container .search form .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.mifan-top-navigation > nav > .container .search form input {
+  background-color: color-mix(in srgb, var(--color-background) 75%, transparent);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  border-radius: var(--padding-small);
+  border: 2px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  font-family: var(--font-text);
+  color: var(--color-text);
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  padding-inline: var(--padding-small);
+  padding-right: calc(var(--padding-small) + 1.5rem + var(--padding-small));
+}
+.mifan-top-navigation > nav > .container .search form input:focus-visible, .mifan-top-navigation > nav > .container .search form input:focus, .mifan-top-navigation > nav > .container .search form input:active, .mifan-top-navigation > nav > .container .search form input:hover {
+  border-color: color-mix(in srgb, var(--color-text) 90%, transparent);
+}
+.mifan-top-navigation > nav > .container .search form span {
+  position: absolute;
+  right: calc(var(--padding-small) + var(--padding-small));
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.mifan-top-navigation > nav > .container .search-results {
+  position: absolute;
+  top: auto;
+  margin-inline: auto;
+  left: 0;
+  right: 0;
+  max-width: calc(var(--screen-size-small-units) * 2);
+  width: 100%;
+  height: auto;
+  padding-inline: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-0.5rem);
+  transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), visibility 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.mifan-top-navigation > nav > .container .search-results.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.mifan-top-navigation > nav > .container .search-results > div {
+  padding: var(--padding-small);
+  margin-inline: var(--padding-small);
+  width: -webkit-fill-available;
+  justify-content: flex-start;
+  background-color: color-mix(in srgb, var(--color-background) 75%, transparent);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  border-radius: var(--padding-small);
+  border: 2px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  box-shadow: 0 0 0.5rem 0 color-mix(in srgb, var(--color-text) 10%, transparent);
+  position: relative;
+}
+.mifan-top-navigation > nav > .container .search-results > div p {
+  color: color-mix(in srgb, var(--color-text) 75%, var(--color-background));
+}
+.mifan-top-navigation > nav > .container .search-results > div button.close {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  padding: 0.25rem;
+  background: transparent;
+  border: none;
+  border-radius: calc(var(--padding-small) - 0.25rem);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mifan-top-navigation > nav > .container .search-results > div button.close span {
+  aspect-ratio: 1;
+}
+.mifan-top-navigation > nav > .container .search-results > div button.close:hover {
+  background-color: color-mix(in srgb, var(--color-text) 10%, transparent);
+}
+.mifan-top-navigation .logo ul {
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--padding-small);
+}
+
 @font-face {
   font-family: "Mifan";
   src: url(http://localhost:8080/assets/fonts/MifanRegular.9e3b85bc.eot);
