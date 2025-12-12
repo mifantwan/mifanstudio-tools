@@ -1,6 +1,22 @@
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[4]!./sources/mifan/sass/framework.sass ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@media (max-width: 1023px) {
+  .display-none-1023 {
+    display: none;
+  }
+  .visibility-hidden-1023 {
+    visibility: hidden;
+  }
+}
+@media (min-width: 1024px) {
+  .display-none-1024 {
+    display: none;
+  }
+  .visibility-hidden-1024 {
+    visibility: hidden;
+  }
+}
 .mifan-top-navigation > nav > .container {
   position: relative;
   height: -webkit-fill-available;
@@ -146,6 +162,9 @@ nav ul li a {
   font-size: 1rem;
   transition: color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
+nav ul li a span {
+  margin-inline: calc(var(--padding-small) * 0.5) 0;
+}
 nav ul li a span svg {
   vertical-align: middle;
 }
@@ -168,6 +187,7 @@ nav ul li button {
 }
 nav ul li button span svg {
   vertical-align: middle;
+  transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 nav ul li button span svg path {
   fill: var(--color-text);
@@ -180,7 +200,35 @@ nav ul li.parent {
   position: relative;
   height: 100%;
 }
-nav ul li.parent > div {
+nav ul li.parent > a[data-has-children=true] {
+  pointer-events: none;
+  cursor: default;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+nav ul li.parent > a[data-has-children=true]:focus, nav ul li.parent > a[data-has-children=true]:active, nav ul li.parent > a[data-has-children=true]:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+nav ul li.parent > a[data-has-children=true] span svg path {
+  transition: fill 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+nav ul li.parent > a[data-has-children=true] button {
+  pointer-events: auto;
+  cursor: pointer;
+}
+nav ul li.parent:hover > a[data-has-children=true] {
+  color: color-mix(in srgb, var(--color-text) 25%, transparent);
+}
+nav ul li.parent:hover > a[data-has-children=true] span svg path {
+  fill: color-mix(in srgb, var(--color-text) 25%, transparent);
+}
+nav ul li.parent > div[parent-content] {
   position: absolute;
   top: calc(var(--space-top) - 3rem);
   left: 50%;
@@ -191,35 +239,42 @@ nav ul li.parent > div {
   border-radius: var(--padding-small);
   padding: var(--padding-small);
   min-width: calc(var(--screen-size-small-units) / 2);
-  padding: var(--padding-small);
   border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
   display: flex;
   flex-direction: column;
   gap: var(--padding-small);
   box-shadow: 0 0 0.5rem 0 color-mix(in srgb, var(--color-text) 10%, transparent);
+  max-width: calc(100vw - 20px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), visibility 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), left 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
-nav ul li.parent > div > ul {
+nav ul li.parent > div[parent-content][data-visible=true] {
+  opacity: 1;
+  visibility: visible;
+}
+nav ul li.parent > div[parent-content] > ul {
   flex-direction: column;
 }
-nav ul li.parent[parent-type=custom] > div {
-  display: flex;
+nav ul li.parent[parent-type=custom] > div[parent-content] {
   flex-direction: row;
   justify-content: flex-start;
   gap: var(--padding-small);
 }
-nav ul li.parent[parent-type=custom] > div > * {
+nav ul li.parent[parent-type=custom] > div[parent-content] > * {
   flex: 1 1 0;
   min-width: 0;
 }
-nav ul li.parent[parent-type=custom] > div ul {
+nav ul li.parent[parent-type=custom] > div[parent-content] ul {
   justify-content: flex-start;
 }
-nav ul li.parent[parent-type=custom] > div > div {
+nav ul li.parent[parent-type=custom] > div[parent-content] > div {
   display: flex;
   justify-content: flex-end;
   gap: var(--padding-small);
 }
-nav ul li.parent[parent-type=custom] > div > div span {
+nav ul li.parent[parent-type=custom] > div[parent-content] > div span {
   width: calc(var(--screen-size-small-units) / 2);
   aspect-ratio: 1/1;
   background-color: color-mix(in srgb, var(--color-text) 10%, transparent);
@@ -1360,7 +1415,7 @@ nav .container section div:last-child {
 nav .logo a {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
   text-decoration: none;
 }
 nav .logo img {
@@ -1371,11 +1426,7 @@ nav .logo img {
   width: 1.5rem;
   height: auto;
   filter: grayscale(100%);
-}
-nav .logo img:hover {
-  filter: none;
-  transform: scale(1.05);
-  border-color: var(--color-primary);
+  transition: filter 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 nav .logo p {
   font-size: 1.5rem;
@@ -1384,6 +1435,16 @@ nav .logo p {
   line-height: 1;
   color: var(--color-text);
   letter-spacing: 0.02em;
+  transition: color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+nav .logo :hover img {
+  filter: none;
+  transform: scale(1.05);
+  border-color: var(--color-primary);
+}
+nav .logo :hover p {
+  color: var(--color-primary);
+  transform: scale(1.05);
 }
 
 .button--downloads {
