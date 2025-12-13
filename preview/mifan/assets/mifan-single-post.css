@@ -39,6 +39,7 @@ header[header-type=single-post] .container section div.author small {
   background-color: color-mix(in srgb, var(--color-background) 75%, transparent);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
+  color: var(--color-text);
   z-index: 1;
 }
 .single-post--navigation-top p, .single-post--navigation-top small {
@@ -302,6 +303,7 @@ header[header-type=single-post] .container section div.author small {
   background-color: color-mix(in srgb, var(--color-background) 75%, transparent);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
+  color: var(--color-text);
   z-index: 1;
 }
 .single-post-page--routing section a {
