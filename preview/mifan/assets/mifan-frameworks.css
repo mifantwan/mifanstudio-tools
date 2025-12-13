@@ -385,7 +385,6 @@ nav ul li button:hover span svg path {
   top: var(--announcement-height, 0);
 }
 .mifan-top-navigation section {
-  padding-block: var(--padding-normal);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -516,7 +515,6 @@ nav .logo a {
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  text-decoration: none;
 }
 nav .logo img {
   padding: 0.25rem;
@@ -526,7 +524,7 @@ nav .logo img {
   width: 1.5rem;
   height: auto;
   filter: grayscale(100%);
-  transition: filter 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: filter 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 nav .logo p {
   font-size: 1.5rem;
@@ -535,7 +533,7 @@ nav .logo p {
   line-height: 1;
   color: var(--color-text);
   letter-spacing: 0.02em;
-  transition: color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 nav .logo :hover img {
   filter: none;
