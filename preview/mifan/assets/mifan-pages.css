@@ -2,7 +2,7 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[4]!./sources/mifan/sass/components/pages.sass ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 section[id] {
-  scroll-margin-top: calc(var(--space-top) + var(--padding-normal));
+  scroll-margin-top: calc(var(--space-top) + var(--space-normal));
 }
 
 header[header-type=default],
@@ -12,11 +12,11 @@ header[header-type=pages] {
 header[header-type=default] .container section h1,
 header[header-type=pages] .container section h1 {
   max-width: calc(var(--screen-size-small-units) * 2);
-  padding-block: var(--padding-normal);
+  padding-block: var(--space-normal);
 }
 header[header-type=default] .container section h5,
 header[header-type=pages] .container section h5 {
-  padding-block-end: var(--padding-small);
+  padding-block-end: var(--space-small);
 }
 header[header-type=default] .container section small,
 header[header-type=pages] .container section small {
@@ -28,7 +28,7 @@ header[header-type=pages] .container section p {
 }
 header[header-type=default] .container section .page-header-container[hero-type=default] > div:first-child,
 header[header-type=pages] .container section .page-header-container[hero-type=default] > div:first-child {
-  padding-block: var(--padding-normal);
+  padding-block: var(--space-normal);
 }
 header[header-type=default] .container section .page-header-container[hero-type=default] > div:nth-child(2),
 header[header-type=pages] .container section .page-header-container[hero-type=default] > div:nth-child(2) {
@@ -37,7 +37,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   aspect-ratio: 3/1;
   width: auto;
   height: 100%;
-  border-radius: var(--padding-small) var(--padding-small) 0 0;
+  border-radius: var(--space-small) var(--space-small) 0 0;
   border: 2px solid var(--color-text);
 }
 header[header-type=default] .container section .page-header-container[hero-type=default] > div:nth-child(2) img,
@@ -46,7 +46,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: calc(var(--padding-small) - 2px) calc(var(--padding-small) - 2px) 0 0;
+  border-radius: calc(var(--space-small) - 2px) calc(var(--space-small) - 2px) 0 0;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
@@ -56,7 +56,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
 }
 header[header-type=default] .container section .page-header-container[hero-type=default] > div:last-child,
 header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child {
-  padding-block: var(--padding-normal);
+  padding-block: var(--space-normal);
   justify-content: center;
   align-items: center;
 }
@@ -64,7 +64,7 @@ header[header-type=default] .container section .page-header-container[hero-type=
 header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div {
   flex: 1 1 0;
   aspect-ratio: 3/1;
-  padding: var(--padding-small);
+  padding: var(--space-small);
   background-color: color-mix(in srgb, var(--color-background) 95%, var(--color-text));
   border: 2px solid var(--color-text);
   position: relative;
@@ -89,11 +89,11 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
 }
 header[header-type=default] .container section .page-header-container[hero-type=default] > div:last-child > div:first-child,
 header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div:first-child {
-  border-radius: 0 0 0 calc(var(--padding-small) - 0.3rem);
+  border-radius: 0 0 0 calc(var(--space-small) - 0.3rem);
 }
 header[header-type=default] .container section .page-header-container[hero-type=default] > div:last-child > div:last-child,
 header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div:last-child {
-  border-radius: 0 0 calc(var(--padding-small) - 0.3rem) 0;
+  border-radius: 0 0 calc(var(--space-small) - 0.3rem) 0;
 }
 @media (max-width: 1023px) {
   header[header-type=default] .container section .page-header-container[hero-type=default] > div:nth-child(2),
@@ -113,7 +113,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   }
   header[header-type=default] .container section .page-header-container[hero-type=default] > div:last-child > div p,
   header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div p {
-    padding-block-end: var(--padding-normal);
+    padding-block-end: var(--space-normal);
   }
   header[header-type=default] .container section .page-header-container[hero-type=default] > div:last-child > div:first-child,
   header[header-type=default] .container section .page-header-container[hero-type=default] > div:last-child > div:nth-child(2),
@@ -121,7 +121,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div:first-child,
   header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div:nth-child(2),
   header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div:last-child {
-    border-radius: 0 0 calc(var(--padding-small) - 0.3rem) calc(var(--padding-small) - 0.3rem);
+    border-radius: 0 0 calc(var(--space-small) - 0.3rem) calc(var(--space-small) - 0.3rem);
   }
   header[header-type=default] .container section .page-header-container[hero-type=default] > div:last-child > div:not(:first-child),
   header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div:not(:first-child) {
@@ -131,30 +131,30 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
 
 .section--services-pricing div:first-child h3, .section--services-pricing div:first-child p {
   text-align: center;
-  margin-block-end: var(--padding-normal);
+  margin-block-end: var(--space-normal);
 }
 .section--services-pricing .grid > *:first-child {
   border: none;
 }
 .section--services-pricing .grid > *:last-child {
   border: 2px solid var(--color-text);
-  border-radius: var(--padding-small);
+  border-radius: var(--space-small);
 }
 
 .button--services-pricing {
   width: auto;
-  padding: var(--padding-small);
+  padding: var(--space-small);
   display: flex;
   flex-direction: column;
-  gap: calc(var(--padding-small) / 2);
+  gap: calc(var(--space-small) / 2);
   position: sticky;
   top: var(--space-top);
 }
 .button--services-pricing button {
   width: 100%;
-  padding: calc(var(--padding-small) / 2);
+  padding: calc(var(--space-small) / 2);
   border: 2px solid var(--color-text);
-  border-radius: calc(var(--padding-small) - 0.3rem);
+  border-radius: calc(var(--space-small) - 0.3rem);
   background: var(--color-background);
   color: var(--color-text);
   cursor: pointer;
@@ -164,7 +164,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
 .button--services-pricing button div {
   display: flex;
   flex-direction: row;
-  gap: var(--padding-small);
+  gap: var(--space-small);
   align-items: center;
 }
 .button--services-pricing button div > div {
@@ -172,15 +172,15 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: calc(var(--padding-small) / 2);
+  gap: calc(var(--space-small) / 2);
 }
 .button--services-pricing button div > div small {
   font-family: var(--font-text);
 }
 .button--services-pricing button div span {
-  padding: var(--padding-small);
+  padding: var(--space-small);
   background: var(--color-text);
-  border-radius: calc(var(--padding-small) - 0.6rem);
+  border-radius: calc(var(--space-small) - 0.6rem);
   display: flex;
   align-items: center;
 }
@@ -204,10 +204,10 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
 
 .content--services-pricing {
   width: auto;
-  padding: var(--padding-small) 0;
+  padding: var(--space-small) 0;
   display: none;
   flex-direction: column;
-  gap: var(--padding-small);
+  gap: var(--space-small);
   opacity: 0;
   visibility: hidden;
   transform: translateY(0.5rem);
@@ -221,25 +221,25 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   pointer-events: auto;
 }
 .content--services-pricing div {
-  padding: 0 var(--padding-small);
+  padding: 0 var(--space-small);
 }
 .content--services-pricing div h4, .content--services-pricing div h5, .content--services-pricing div p, .content--services-pricing div ul {
   text-align: left;
 }
 .content--services-pricing div p, .content--services-pricing div ul {
-  margin-block-end: var(--padding-normal);
+  margin-block-end: var(--space-normal);
 }
 .content--services-pricing div ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--padding-small);
+  gap: var(--space-small);
   list-style: none;
   padding: 0;
 }
 .content--services-pricing div ul li {
   display: flex;
   align-items: center;
-  gap: calc(var(--padding-small) / 2);
+  gap: calc(var(--space-small) / 2);
 }
 .content--services-pricing div ul li::before {
   content: "";
@@ -251,14 +251,14 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   -webkit-mask: url("data:image/svg+xml;utf8,<svg width=\"1rem\" height=\"1rem\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M9.00001 18.25C8.8993 18.2466 8.80034 18.2227 8.70921 18.1797C8.61807 18.1367 8.53667 18.0756 8.47001 18L3.47001 13C3.37467 12.9382 3.29463 12.8556 3.23592 12.7583C3.17721 12.661 3.14136 12.5517 3.13109 12.4385C3.12082 12.3254 3.13639 12.2114 3.17663 12.1051C3.21686 11.9989 3.28071 11.9031 3.36336 11.8252C3.446 11.7472 3.54528 11.689 3.65369 11.6551C3.76211 11.6211 3.87682 11.6122 3.98918 11.629C4.10155 11.6458 4.20861 11.688 4.3023 11.7523C4.39599 11.8165 4.47385 11.9013 4.53001 12L9.00001 16.44L19.47 6.00003C19.611 5.90864 19.7785 5.86722 19.9458 5.88241C20.1131 5.89759 20.2705 5.96851 20.3927 6.08379C20.5149 6.19907 20.5948 6.35203 20.6197 6.51817C20.6446 6.68431 20.613 6.85399 20.53 7.00003L9.53001 18C9.46334 18.0756 9.38194 18.1367 9.29081 18.1797C9.19967 18.2227 9.10072 18.2466 9.00001 18.25Z\" fill=\"black\"/></svg>");
           mask: url("data:image/svg+xml;utf8,<svg width=\"1rem\" height=\"1rem\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M9.00001 18.25C8.8993 18.2466 8.80034 18.2227 8.70921 18.1797C8.61807 18.1367 8.53667 18.0756 8.47001 18L3.47001 13C3.37467 12.9382 3.29463 12.8556 3.23592 12.7583C3.17721 12.661 3.14136 12.5517 3.13109 12.4385C3.12082 12.3254 3.13639 12.2114 3.17663 12.1051C3.21686 11.9989 3.28071 11.9031 3.36336 11.8252C3.446 11.7472 3.54528 11.689 3.65369 11.6551C3.76211 11.6211 3.87682 11.6122 3.98918 11.629C4.10155 11.6458 4.20861 11.688 4.3023 11.7523C4.39599 11.8165 4.47385 11.9013 4.53001 12L9.00001 16.44L19.47 6.00003C19.611 5.90864 19.7785 5.86722 19.9458 5.88241C20.1131 5.89759 20.2705 5.96851 20.3927 6.08379C20.5149 6.19907 20.5948 6.35203 20.6197 6.51817C20.6446 6.68431 20.613 6.85399 20.53 7.00003L9.53001 18C9.46334 18.0756 9.38194 18.1367 9.29081 18.1797C9.19967 18.2227 9.10072 18.2466 9.00001 18.25Z\" fill=\"black\"/></svg>");
   background: var(--color-text);
-  margin-right: 0.25rem;
+  margin-right: var(--space-xsmall);
 }
 .content--services-pricing div:last-child {
-  margin-inline: var(--padding-small);
-  padding: var(--padding-large) var(--padding-normal);
+  margin-inline: var(--space-small);
+  padding: var(--space-large) var(--space-normal);
   background: var(--color-background-empty);
-  border-bottom-left-radius: calc(var(--padding-small) - 6px);
-  border-bottom-right-radius: calc(var(--padding-small) - 6px);
+  border-bottom-left-radius: calc(var(--space-small) - 6px);
+  border-bottom-right-radius: calc(var(--space-small) - 6px);
 }
 .content--services-pricing div:last-child h5, .content--services-pricing div:last-child p, .content--services-pricing div:last-child blockquote {
   text-align: center;
@@ -266,9 +266,9 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
 .content--services-pricing div:last-child .flex {
   display: flex;
   flex-direction: row;
-  gap: var(--padding-small);
+  gap: var(--space-small);
   align-items: center;
-  margin-block-end: var(--padding-normal);
+  margin-block-end: var(--space-normal);
 }
 .content--services-pricing div:last-child .flex span {
   aspect-ratio: 1;
@@ -279,7 +279,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--padding-small) / 2);
+  padding: calc(var(--space-small) / 2);
 }
 .content--services-pricing div:last-child .flex span svg {
   vertical-align: middle;
@@ -315,7 +315,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   }
 }
 .section--partners span {
-  padding: var(--padding-small) 0;
+  padding: var(--space-small) 0;
   display: inline-block;
 }
 .section--partners span svg,
@@ -331,7 +331,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
 }
 .section--partners div.grid > *:last-child {
   display: inline-flex;
-  gap: var(--padding-large);
+  gap: var(--space-large);
   overflow-x: auto;
   scrollbar-width: none;
   width: 100%;
@@ -341,10 +341,10 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
 
 @media (max-width: 1023px) {
   .section--partners div.grid > *:last-child {
-    gap: var(--padding-normal);
+    gap: var(--space-normal);
   }
   .section--partners h3 {
-    margin-block-end: var(--padding-normal);
+    margin-block-end: var(--space-normal);
   }
 }
 .section--blogs .grid > *:first-child div,
@@ -355,7 +355,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
 }
 .section--blogs .grid > *:first-child div {
   aspect-ratio: 1/1;
-  border-radius: var(--padding-small);
+  border-radius: var(--space-small);
   position: relative;
   border: 2px solid var(--color-text);
   background-color: var(--color-background-empty);
@@ -370,8 +370,8 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   bottom: 0;
   left: 0;
   right: 0;
-  margin: var(--padding-small);
-  padding: var(--padding-small);
+  margin: var(--space-small);
+  padding: var(--space-small);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   background-color: color-mix(in srgb, var(--color-background) 75%, transparent);
@@ -390,12 +390,12 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
 }
 .section--blogs .grid > *:nth-child(2) div {
   aspect-ratio: 1/1;
-  gap: var(--padding-normal);
-  padding: var(--padding-normal);
+  gap: var(--space-normal);
+  padding: var(--space-normal);
 }
 .section--blogs .grid > *:last-child {
   position: relative;
-  min-height: calc(2rem + var(--padding-small) * 2);
+  min-height: calc(1.5rem + var(--space-xsmall) * 2 + var(--space-small) * 2);
 }
 .section--blogs .grid > *:last-child a {
   position: absolute;
@@ -403,16 +403,16 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   right: 0;
   display: inline-flex;
   align-items: center;
-  gap: var(--padding-small);
-  padding: calc(var(--padding-small) / 2) calc(var(--padding-small) / 2) calc(var(--padding-small) / 2) var(--padding-small);
+  gap: var(--space-small);
+  padding: calc(var(--space-small) / 2) calc(var(--space-small) / 2) calc(var(--space-small) / 2) var(--space-small);
   border: 2px solid var(--color-text);
-  border-radius: calc(var(--padding-small) / 2);
+  border-radius: calc(var(--space-small) / 2);
   background-color: var(--color-background-empty);
 }
 .section--blogs .grid > *:last-child a span {
   aspect-ratio: 1;
   padding: 0.5rem;
-  border-radius: calc(var(--padding-small) - 0.6rem);
+  border-radius: calc(var(--space-small) - 0.6rem);
   -webkit-backdrop-filter: blur(0.5rem);
           backdrop-filter: blur(0.5rem);
   background-color: var(--color-text);
@@ -450,7 +450,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
 }
 
 .section--theme-source div div:first-child h3 {
-  padding-block-end: var(--padding-normal);
+  padding-block-end: var(--space-normal);
 }
 .section--theme-source div div:last-child {
   aspect-ratio: 2/1;
