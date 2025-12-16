@@ -33,7 +33,7 @@ header[header-type=single-post] .container section div.author small {
 .single-post--navigation-top {
   display: none;
   position: sticky;
-  top: calc(var(--announcement-height) + var(--navigation-height));
+  top: calc(var(--announcement-total-height) + var(--navigation-height));
   width: 100%;
   box-shadow: 0 0.05rem 0.05rem 0 var(--color-box-shadow);
   background-color: var(--filter-background-blur);

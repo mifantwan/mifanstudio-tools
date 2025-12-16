@@ -67,6 +67,7 @@ footer ul {
   --color-background-hover: color-mix(in srgb, var(--color-background) 25%, transparent);
   --color-primary-hover: color-mix(in srgb, var(--color-primary) 25%, transparent);
   --filter-blur: blur(1rem);
+  --filter-blur-popup: blur(0.25rem);
   --color-background-empty: color-mix(in srgb, var(--color-background) 95%, var(--color-text));
   --color-info: rgba(173, 216, 230, 1);
   --color-warning: rgba(255, 229, 180, 1);
@@ -93,4 +94,8 @@ footer ul {
   --transition-duration: 0.3s;
   --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
   --transition-scale: scale(1.05);
+}
+
+:root {
+  --base-border-radius: var(--space-xsmall);
 }
