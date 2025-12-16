@@ -97,5 +97,5 @@ footer ul {
 }
 
 :root {
-  --base-border-radius: var(--space-small);
+  --base-border-radius: var(--space-xsmall);
 }

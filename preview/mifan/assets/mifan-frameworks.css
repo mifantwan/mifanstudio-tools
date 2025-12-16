@@ -1237,7 +1237,9 @@ body[theme-type=floating] .mifan-announcements .container-full {
   --navigation-height: calc((var(--font-p) * 2) + 2.25rem);
 }
 
-body[theme-type=default] .mifan-top-navigation, body[theme-type=box] .mifan-top-navigation, body[theme-type=floating] .mifan-top-navigation {
+body[theme-type=default] .mifan-top-navigation,
+body[theme-type=box] .mifan-top-navigation,
+body[theme-type=floating] .mifan-top-navigation {
   position: fixed;
   top: 0;
   left: 0;
@@ -1257,10 +1259,10 @@ body[theme-type=default] .mifan-top-navigation {
   color: var(--color-text);
 }
 
-body[theme-type=box] .mifan-top-navigation body[theme-type=default] .mifan-top-navigation .container,
+body[theme-type=box] .mifan-top-navigation .container,
 body[theme-type=box] .mifan-top-navigation .container-md,
 body[theme-type=box] .mifan-top-navigation .container-sm,
-body[theme-type=box] .mifan-top-navigation .container-full, body[theme-type=box] .mifan-top-navigation body[theme-type=default] .mifan-top-navigation .container-md, body[theme-type=box] .mifan-top-navigation body[theme-type=default] .mifan-top-navigation .container-sm, body[theme-type=box] .mifan-top-navigation body[theme-type=default] .mifan-top-navigation .container-full, body[theme-type=box] .mifan-top-navigation body[theme-type=box] .mifan-top-navigation .container, body[theme-type=box] .mifan-top-navigation body[theme-type=box] .mifan-top-navigation .container-md, body[theme-type=box] .mifan-top-navigation body[theme-type=box] .mifan-top-navigation .container-sm, body[theme-type=box] .mifan-top-navigation body[theme-type=box] .mifan-top-navigation .container-full, body[theme-type=box] .mifan-top-navigation body[theme-type=floating] .mifan-top-navigation .container, body[theme-type=box] .mifan-top-navigation body[theme-type=floating] .mifan-top-navigation .container-md, body[theme-type=box] .mifan-top-navigation body[theme-type=floating] .mifan-top-navigation .container-sm, body[theme-type=box] .mifan-top-navigation body[theme-type=floating] .mifan-top-navigation .container-full {
+body[theme-type=box] .mifan-top-navigation .container-full {
   border-radius: var(--base-border-radius);
   box-shadow: inset 0 0 0 2px var(--color-border-bold);
   background-color: var(--filter-background-blur);
@@ -1269,10 +1271,10 @@ body[theme-type=box] .mifan-top-navigation .container-full, body[theme-type=box]
   color: var(--color-text);
 }
 
-body[theme-type=floating] .mifan-top-navigation body[theme-type=default] .mifan-top-navigation .container,
+body[theme-type=floating] .mifan-top-navigation .container,
 body[theme-type=floating] .mifan-top-navigation .container-md,
 body[theme-type=floating] .mifan-top-navigation .container-sm,
-body[theme-type=floating] .mifan-top-navigation .container-full, body[theme-type=floating] .mifan-top-navigation body[theme-type=default] .mifan-top-navigation .container-md, body[theme-type=floating] .mifan-top-navigation body[theme-type=default] .mifan-top-navigation .container-sm, body[theme-type=floating] .mifan-top-navigation body[theme-type=default] .mifan-top-navigation .container-full, body[theme-type=floating] .mifan-top-navigation body[theme-type=box] .mifan-top-navigation .container, body[theme-type=floating] .mifan-top-navigation body[theme-type=box] .mifan-top-navigation .container-md, body[theme-type=floating] .mifan-top-navigation body[theme-type=box] .mifan-top-navigation .container-sm, body[theme-type=floating] .mifan-top-navigation body[theme-type=box] .mifan-top-navigation .container-full, body[theme-type=floating] .mifan-top-navigation body[theme-type=floating] .mifan-top-navigation .container, body[theme-type=floating] .mifan-top-navigation body[theme-type=floating] .mifan-top-navigation .container-md, body[theme-type=floating] .mifan-top-navigation body[theme-type=floating] .mifan-top-navigation .container-sm, body[theme-type=floating] .mifan-top-navigation body[theme-type=floating] .mifan-top-navigation .container-full {
+body[theme-type=floating] .mifan-top-navigation .container-full {
   border-bottom-left-radius: var(--base-border-radius);
   border-bottom-right-radius: var(--base-border-radius);
   border-bottom: 2px solid var(--color-border-bold);
@@ -1284,99 +1286,291 @@ body[theme-type=floating] .mifan-top-navigation .container-full, body[theme-type
   color: var(--color-text);
 }
 
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=center], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center], body[theme-type=box] .mifan-top-navigation .container section[nav-type=center], body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center], body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center], body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center], body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center], body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center], body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center], body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=center], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center],
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=center],
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center],
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center],
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center],
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center],
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center],
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center],
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=center] div:first-child, body[theme-type=default] .mifan-top-navigation .container section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center] div:first-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center] div:first-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center] div:first-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center] div:last-child, body[theme-type=box] .mifan-top-navigation .container section[nav-type=center] div:first-child, body[theme-type=box] .mifan-top-navigation .container section[nav-type=center] div:last-child, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center] div:first-child, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center] div:last-child, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center] div:first-child, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center] div:first-child, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center] div:last-child, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center] div:first-child, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center] div:first-child, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center] div:first-child, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] div:first-child, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] div:last-child {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=center] div:first-child, body[theme-type=default] .mifan-top-navigation .container section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center] div:first-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center] div:first-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center] div:first-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=center] div:first-child,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=center] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center] div:first-child,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center] div:first-child,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center] div:first-child,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center] div:first-child,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center] div:first-child,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center] div:first-child,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] div:first-child,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] div:last-child {
   flex: 1;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=center] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container section[nav-type=center] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] div:nth-child(2) {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=center] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=center] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] div:nth-child(2) {
   flex: 2;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center] div:last-child, body[theme-type=box] .mifan-top-navigation .container section[nav-type=center] div:last-child, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center] div:last-child, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center] div:last-child, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] div:last-child {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=center] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] div:last-child {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left], body[theme-type=box] .mifan-top-navigation .container section[nav-type=left], body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left], body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left], body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left], body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left], body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left], body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left], body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=left], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left],
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=left],
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left],
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left],
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left],
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left],
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left],
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left],
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:first-child, body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:first-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:first-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:first-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:last-child, body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:first-child, body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:last-child, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:first-child, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:last-child, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:first-child, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:first-child, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:last-child, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:first-child, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:first-child, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:first-child, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:first-child, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:last-child {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:first-child, body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:first-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:first-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:first-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:first-child,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:first-child,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:first-child,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:first-child,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:first-child,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:first-child,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:first-child,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:first-child,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:last-child {
   flex: 0;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) {
   flex: 1;
   padding-inline: calc(var(--space-normal) * 2);
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul, body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] {
   padding-inline: var(--space-normal);
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div {
   padding-inline: 0;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:last-child, body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:last-child, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:last-child, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:last-child, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:last-child {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:last-child {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right], body[theme-type=box] .mifan-top-navigation .container section[nav-type=right], body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right], body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right], body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right], body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right], body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right], body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right], body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=right], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right],
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=right],
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right],
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right],
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right],
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right],
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right],
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right],
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:first-child, body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:first-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:first-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:first-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:last-child, body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:first-child, body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:last-child, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:first-child, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:last-child, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:first-child, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:first-child, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:last-child, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:first-child, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:first-child, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:first-child, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:first-child, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:last-child {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:first-child, body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:first-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:first-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:first-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:first-child,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:first-child,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:first-child,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:first-child,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:first-child,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:first-child,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:first-child,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:first-child,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:last-child {
   flex: 0;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) {
   flex: 1;
   padding-inline: calc(var(--space-normal) * 2);
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul, body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] {
   padding-inline: var(--space-normal);
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div {
   padding-inline: 0;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:last-child, body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:last-child, body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:last-child, body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child, body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:last-child, body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child, body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:last-child {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child,
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child,
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:last-child {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) {
+body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2),
+body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2),
+body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) {
   display: flex;
   flex-direction: row;
   align-items: center;
