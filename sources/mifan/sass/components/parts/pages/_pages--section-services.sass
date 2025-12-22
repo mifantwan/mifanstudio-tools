@@ -34,7 +34,7 @@
         border-radius: var(--base-border-radius)
         background: var(--color-background)
         cursor: pointer
-        transition: transform 0.3s ease-in-out
+        transition: transform 0.3s ease-in-out, width 0.3s ease-in-out
         text-align: left
         color: var(--color-text)
 
@@ -186,6 +186,19 @@
             padding: 0
             width: auto
             border: none
+            transition: width 0.3s ease-in-out, transform 0.3s ease-in-out
+
+            &[popular]
+                width: -webkit-fill-available
+                transform: scale(0.99)
+
+                > div
+                    width: -webkit-fill-available
+                    background: var(--color-primary)
+                    justify-content: center
+
+            > div
+                transition: width 0.3s ease-in-out, justify-content 0.3s ease-in-out
 
             div div
                 display: none

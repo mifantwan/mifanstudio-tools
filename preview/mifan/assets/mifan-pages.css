@@ -169,7 +169,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   border-radius: var(--base-border-radius);
   background: var(--color-background);
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
   text-align: left;
   color: var(--color-text);
 }
@@ -324,6 +324,19 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
     padding: 0;
     width: auto;
     border: none;
+    transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  .button--services-pricing button[popular] {
+    width: -webkit-fill-available;
+    transform: scale(0.99);
+  }
+  .button--services-pricing button[popular] > div {
+    width: -webkit-fill-available;
+    background: var(--color-primary);
+    justify-content: center;
+  }
+  .button--services-pricing button > div {
+    transition: width 0.3s ease-in-out, justify-content 0.3s ease-in-out;
   }
   .button--services-pricing button div div {
     display: none;
