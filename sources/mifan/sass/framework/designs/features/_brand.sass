@@ -1,0 +1,106 @@
+@use '../../mixin' as *
+
+nav
+    [brand-type]
+        ul
+            @include flex-center-start
+            gap: var(--space-small)
+            li
+                button
+                    span
+                        margin-inline-end: calc(var(--space-small) * 0.5)
+                        margin-inline-start: 0
+
+        a, ul
+            @include flex-center-start
+
+        a
+            gap: var(--space-xsmall)
+
+        img
+            @include border-bold-all
+            @include transition-all-properties
+            padding: var(--space-xsmall)
+            border-radius: var(--space-xsmall)
+            filter: grayscale(100%)
+
+        p
+            @include transition-brand
+            font-family: var(--font-title)
+            font-weight: var(--font-text-weight)
+            font-size: calc(var(--font-p) * 1.5)
+            line-height: normal
+            letter-spacing: calc(var(--font-p) * 0.02)
+            color: var(--filter-background-blur-inverse)
+
+        @media (max-width: 389px)
+            span p
+                display: none
+
+        &:hover
+            img
+                filter: none
+                border-color: var(--color-primary)
+                transform: var(--transition-scale)
+
+            p
+                color: var(--color-primary)
+                transform: var(--transition-scale)
+
+    // Brand type variations
+    [brand-type]
+        @at-root [brand-type="logo-text"] img
+            width: calc(var(--font-p) * 1.5)
+            height: auto
+            aspect-ratio: 1/1
+
+        @at-root [brand-type="logo-text"] span p
+            display: block
+
+        @at-root [brand-type="logo-icon"] img
+            width: auto
+            height: calc(var(--font-p) * 1.5)
+
+        @at-root [brand-type="logo-icon"] span p
+            display: none
+
+footer
+    .brand
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        max-width: var(--screen-size-small-units)
+
+        div
+            width: calc(var(--space-normal) * 6)
+            aspect-ratio: 1
+            display: flex
+            align-items: center
+            justify-content: center
+            &:hover
+                border-color: var(--color-primary)
+
+        img
+            @include transition-all-properties
+            aspect-ratio: 1/1
+            width: 100%
+            filter: grayscale(100%)
+
+        span p
+            @include transition-brand
+            font-family: var(--font-title)
+            font-weight: var(--font-text-weight)
+            font-size: calc(var(--font-p) * 4)
+            line-height: normal
+            letter-spacing: calc(var(--font-p) * 0.02)
+            color: var(--filter-background-blur-inverse)
+
+        &:hover
+            img
+                filter: none
+                transform: scale(1.05)
+
+            p
+                color: var(--color-primary)
+                transform: scale(1.05)
+

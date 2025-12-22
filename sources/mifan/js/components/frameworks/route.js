@@ -34,6 +34,17 @@ export default function route() {
         }
     };
 
+    const isSameRoute = (url) => {
+        try {
+            const currentUrl = new URL(window.location.href);
+            const targetUrl = new URL(url, window.location.origin);
+            return currentUrl.pathname === targetUrl.pathname && 
+                   currentUrl.search === targetUrl.search;
+        } catch {
+            return false;
+        }
+    };
+
     const isGlobalAsset = (href) => {
         for (const asset of globalAssets) {
             if (href.includes(asset)) return true;
@@ -147,6 +158,9 @@ export default function route() {
             }
             
             if (isSameOrigin(href)) {
+                if (isSameRoute(href)) {
+                    return;
+                }
                 event.preventDefault();
                 loadPath(href);
             }
@@ -161,6 +175,9 @@ export default function route() {
                 if (urlMatch) {
                     const href = urlMatch[1];
                     if (href && !href.startsWith('mailto:') && !href.startsWith('tel:') && isSameOrigin(href)) {
+                        if (isSameRoute(href)) {
+                            return;
+                        }
                         event.preventDefault();
                         loadPath(href);
                     }

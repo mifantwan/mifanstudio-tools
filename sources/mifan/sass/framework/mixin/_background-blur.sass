@@ -1,3 +1,14 @@
 @mixin background-blur
-    background-color: color-mix(in srgb, var(--color-background) 75%, transparent)
-    backdrop-filter: blur(1rem)
+    background-color: var(--filter-background-blur)
+    backdrop-filter: var(--filter-blur)
+    color: var(--color-text)
+
+@mixin background-blur-inverse
+    background-color: var(--filter-background-blur-inverse)
+    backdrop-filter: var(--filter-blur)
+    color: var(--color-background)
+
+@mixin background-blur-popup
+    background-color: var(--filter-background-blur-popup)
+    backdrop-filter: var(--filter-blur-popup)
+    color: var(--color-text)

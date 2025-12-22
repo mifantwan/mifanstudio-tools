@@ -1,0 +1,51 @@
+@use '../../mixin' as *
+.mifan-popup
+    @include position-fixed-full
+    @include flex-center
+    @include background-blur-popup
+    @include transition-popup
+    inset: 0
+    opacity: 0
+    visibility: hidden
+    pointer-events: none
+    
+    &.show
+        opacity: 1
+        visibility: visible
+        pointer-events: auto
+        
+        .container
+            transform: scale(1)
+
+    .container,
+    .container-md,
+    .container-sm,
+    .container-full
+        @include border-default-all
+        @include transition-transform
+        background-color: var(--color-background)
+        border-radius: var(--base-border-radius)
+        margin: var(--space-normal)
+        transform: scale(0.9)
+        
+        > div
+            position: relative
+            padding: var(--space-normal)
+            min-height: 50dvh
+
+body[theme-type="default"]
+    .mifan-popup
+        .container,
+        .container-md,
+        .container-sm,
+        .container-full
+            @include border-default-all
+
+body[theme-type="box"],
+body[theme-type="float"]
+    .mifan-popup
+        .container,
+        .container-md,
+        .container-sm,
+        .container-full
+            border: 2px solid var(--color-border-bold)

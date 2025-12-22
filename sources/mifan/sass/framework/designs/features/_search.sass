@@ -1,0 +1,123 @@
+@use '../../mixin' as *
+.mifan-top-navigation
+    > nav
+        > .container,
+        > .container-full,
+        > .container-md,
+        > .container-sm
+            position: relative
+            height: -webkit-fill-available
+
+            %absolute-centered
+                @include container-small
+                @include position-absolute
+                margin-inline: auto
+                
+            .search
+                @extend %absolute-centered
+                @include transition-search
+                height: 100%
+                padding: 0
+                background-color: transparent
+                opacity: 0
+                visibility: hidden
+                pointer-events: none
+                transform: scale(0.9)
+                
+                &.is-visible
+                    opacity: 1
+                    visibility: visible
+                    pointer-events: auto
+                    transform: scale(1)
+
+                form
+                    @include position-relative
+                    padding: var(--space-small)
+                    height: -webkit-fill-available
+                    width: -webkit-fill-available
+                    
+                    .visually-hidden
+                        position: absolute
+                        width: 1px
+                        height: 1px
+                        padding: 0
+                        margin: -1px
+                        overflow: hidden
+                        clip: rect(0, 0, 0, 0)
+                        white-space: nowrap
+                        border-width: 0
+                    
+                    input
+                        @include background-blur
+                        @include border-bold
+                        @include transition-all
+                        border-radius: calc(var(--base-border-radius) - ( var(--space-small) * 0.5 ))
+                        padding-inline-start: var(--space-small)
+                        padding-inline-end: calc(var(--space-small) + 1.5rem + var(--space-small))
+                        font-family: inherit
+                        outline: none   
+                        width: -webkit-fill-available
+                        height: -webkit-fill-available
+                        
+
+                        &:focus-visible,
+                        &:focus,
+                        &:active,
+                        &:hover
+                            @include border-bold-all
+
+                    span
+                        @include flex-center
+                        position: absolute
+                        right: calc(var(--space-small) * 2)
+                        top: 50%
+                        transform: translateY(-50%)
+                        pointer-events: none
+
+            .search-results
+                @extend %absolute-centered
+                @include transition-search
+                top: auto
+                height: auto
+                padding: 0
+                margin-block-start: var(--space-small)
+                width: -webkit-fill-available
+                opacity: 0
+                visibility: hidden
+                pointer-events: none
+                transform: translateY(-0.5rem)
+                
+                &.is-visible
+                    opacity: 1
+                    visibility: visible
+                    pointer-events: auto
+                    transform: translateY(0)
+                    
+                > div, div:last-child
+                    @include flex-col-start-start
+                    @include shadow-default
+                    @include position-relative
+                    border-radius: calc(var(--base-border-radius) - ( var(--space-small) * 0.5 ))
+                    background-color: var(--color-background)
+                    padding: var(--space-small)
+                    margin-inline: var(--space-small)
+                    width: -webkit-fill-available
+                    
+                    p
+                        color: var(--color-link)
+
+body[theme-type="default"]
+    .search-results
+        > div, div:last-child
+            @include border-default-all
+
+body[theme-type="box"]
+    .search-results
+        > div, div:last-child
+            border: 2px solid var(--color-border-bold)
+
+body[theme-type="float"]
+    .search-results
+        > div, div:last-child
+            border: 2px solid var(--color-border-bold)
+                    

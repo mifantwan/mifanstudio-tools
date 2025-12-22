@@ -44,7 +44,7 @@
   --announcement-total-height: calc(var(--announcement-height) + (var(--space-xsmall) * 2));
 }
 
-[theme-type=floating] {
+[theme-type=float] {
   --announcement-height: calc((var(--font-p) / var(--font-scale)) + var(--space-normal));
   --announcement-total-height: calc(var(--announcement-height) + (var(--space-xsmall) + 2px));
 }
@@ -379,7 +379,7 @@ html strong, html b, body strong, body b {
   grid-row-start: 13;
 }
 
-@media (min-width: 390px) {
+@media (min-width: 391px) {
   .col-small-1 {
     grid-column-end: span 1;
     transition: all 0.3s linear;
@@ -537,7 +537,7 @@ html strong, html b, body strong, body b {
     grid-row-start: 13;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .col-medium-1 {
     grid-column-end: span 1;
     transition: all 0.3s linear;
@@ -695,7 +695,7 @@ html strong, html b, body strong, body b {
     grid-row-start: 13;
   }
 }
-@media (min-width: 1366px) {
+@media (min-width: 1367px) {
   .col-large-1 {
     grid-column-end: span 1;
     transition: all 0.3s linear;
@@ -889,6 +889,9 @@ html strong, html b, body strong, body b {
 .flex--align-end {
   align-items: flex-end;
 }
+.flex--gap-xsmall {
+  gap: var(--space-xsmall);
+}
 .flex--gap-small {
   gap: var(--space-small);
 }
@@ -902,20 +905,20 @@ html strong, html b, body strong, body b {
   flex-wrap: wrap;
 }
 
-@media (max-width: 1023px) {
-  .display-none-1023 {
-    display: none;
+@media (max-width: 1024px) {
+  .display-below-1024 {
+    display: none !important;
   }
-  .visibility-hidden-1023 {
-    visibility: hidden;
+  .visibility-bellow-1024 {
+    visibility: hidden !important;
   }
 }
-@media (min-width: 1024px) {
-  .display-none-1024 {
-    display: none;
+@media (min-width: 1025px) {
+  .display-above-1024 {
+    display: none !important;
   }
-  .visibility-hidden-1024 {
-    visibility: hidden;
+  .visibility-above-1024 {
+    visibility: hidden !important;
   }
 }
 .mifan-top-navigation {
@@ -937,7 +940,6 @@ html strong, html b, body strong, body b {
 body,
 html {
   scroll-behavior: smooth;
-  scroll-margin-top: var(--space-top);
 }
 
 @keyframes fadeInUp {
@@ -1010,6 +1012,109 @@ a {
   cursor: pointer;
 }
 
+footer ul {
+  list-style: none;
+}
+footer ul li a {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+footer ul li a:hover {
+  transform: translateX(var(--space-xsmall));
+}
+footer a {
+  color: var(--filter-background-blur-inverse);
+}
+footer a:hover {
+  color: var(--color-link-hover);
+}
+footer .navs__socials {
+  display: flex;
+  gap: var(--space-small);
+}
+footer .navs__socials a {
+  display: inline-block;
+}
+footer .navs__socials a svg {
+  vertical-align: middle;
+}
+footer .navs__socials a svg path {
+  fill: var(--filter-background-blur-inverse);
+}
+footer .navs__socials a:hover {
+  transform: scale(1.05);
+}
+footer .footer__navs-line ul a:hover {
+  transform: scale(1.05);
+}
+footer .container:last-child ul,
+footer .container-sm:last-child ul,
+footer .container-md:last-child ul,
+footer .container-full:last-child ul {
+  display: flex;
+  gap: var(--space-small);
+}
+footer .container:last-child ul li a,
+footer .container-sm:last-child ul li a,
+footer .container-md:last-child ul li a,
+footer .container-full:last-child ul li a {
+  display: inline;
+}
+
+.button--downloads {
+  box-shadow: var(--space-xsmall) var(--space-xsmall) 0.75rem 0 rgba(0, 0, 0, 0.18);
+}
+.button--downloads > * {
+  display: inline-flex;
+  gap: var(--space-normal);
+  align-items: center;
+  padding: calc(var(--space-small) / 2);
+  border-radius: calc(var(--space-small) / 2);
+  position: relative;
+  width: 100%;
+  background-color: var(--color-background);
+  border: 2px solid var(--color-text);
+  color: var(--color-text);
+}
+.button--downloads > * span {
+  aspect-ratio: 1;
+  border-radius: calc(var(--space-small) - 0.6rem);
+}
+.button--downloads > * span svg {
+  vertical-align: middle;
+}
+.button--downloads > * span:last-child {
+  padding: 0.75rem;
+  position: absolute;
+  right: -1.25rem;
+  -webkit-backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
+  background-color: var(--color-text);
+  border-radius: calc(var(--space-small) - 0.6rem);
+  height: 1rem;
+  width: 1rem;
+}
+.button--downloads > * span:last-child svg {
+  width: 1rem;
+  height: 1rem;
+  aspect-ratio: 1;
+}
+.button--downloads > * span:last-child svg path {
+  fill: var(--color-background);
+}
+.button--downloads > * span:last-child:hover {
+  background-color: var(--color-primary);
+}
+.button--downloads > * p {
+  padding-inline-end: calc(var(--space-normal) * 2);
+}
+
+.button--downloads {
+  margin-inline: 1rem 2rem;
+  width: 100%;
+  max-width: var(--screen-size-small-units);
+}
+
 button {
   pointer-events: auto;
   cursor: pointer;
@@ -1060,17 +1165,17 @@ button.close:hover {
 }
 
 form .input-container {
-  padding: calc(var(--font-p) / 8);
-  border: 2px solid color-mix(in srgb, var(--color-text) 75%, transparent);
-  border-radius: 0.5rem;
-  background: transparent;
+  padding: var(--space-xsmall);
+  border: 2px solid var(--filter-background-blur-inverse);
+  border-radius: var(--base-border-radius);
+  background: var(--color-background);
   position: relative;
   max-width: 100%;
   height: 2rem;
 }
 form .input-container input[type=email],
 form .input-container button[type=submit] {
-  border-radius: calc(0.5rem - 3px);
+  border-radius: calc(var(--base-border-radius) - var(--space-xsmall) / 2);
   background: transparent;
 }
 form .input-container input[type=email] {
@@ -1085,12 +1190,12 @@ form .input-container input[type=email] {
 }
 form .input-container button[type=submit] {
   position: absolute;
-  right: calc(var(--font-p) / 8);
+  right: var(--space-xsmall);
   width: 2rem;
   height: 2rem;
   aspect-ratio: 1;
-  background: color-mix(in srgb, var(--color-text) 95%, var(--color-background));
-  border: 2px solid color-mix(in srgb, var(--color-text) 75%, transparent);
+  background: var(--filter-background-blur-inverse);
+  border: 2px solid var(--filter-background-blur-inverse);
 }
 form .input-container button[type=submit] span svg {
   vertical-align: middle;
@@ -1099,7 +1204,7 @@ form .input-container button[type=submit] span svg path {
   fill: var(--color-background-empty);
 }
 form .input-container button[type=submit]:hover {
-  background-color: color-mix(in srgb, var(--color-primary) 85%, transparent);
+  background-color: color-mix(in srgb, var(--color-primary) 65%, transparent);
   border: 2px solid color-mix(in srgb, var(--color-primary) 75%, transparent);
 }
 form .checkbox {
@@ -1114,10 +1219,10 @@ form .checkbox input[type=checkbox] {
   -moz-appearance: none;
   width: 1.15rem;
   height: 1.15rem;
-  border: 2px solid color-mix(in srgb, var(--color-text) 75%, transparent);
-  border-radius: 0.375rem;
-  background: var(--color-background-empty);
-  transition: border-color 0.2s, background 0.2s;
+  border: 2px solid var(--color-border-bold);
+  border-radius: var(--base-border-radius);
+  background: var(--color-background);
+  transition: border-color 0.3s, background 0.3s;
   outline: none;
   position: relative;
   cursor: pointer;
@@ -1127,7 +1232,7 @@ form .checkbox input[type=checkbox]:hover {
   border-color: color-mix(in srgb, var(--color-text) 75%, transparent);
 }
 form .checkbox input[type=checkbox]:checked {
-  background: transparent;
+  background: color-mix(in srgb, var(--color-primary) 75%, transparent);
   border-color: color-mix(in srgb, var(--color-text) 75%, transparent);
 }
 form .checkbox input[type=checkbox]:checked::after {
@@ -1213,15 +1318,15 @@ body[theme-type=box] .mifan-announcements .container-full {
   color: var(--color-background);
 }
 
-body[theme-type=floating] .mifan-announcements {
+body[theme-type=float] .mifan-announcements {
   padding-block: var(--space-xsmall) 0;
   padding-inline: var(--space-normal);
   width: -webkit-fill-available;
 }
-body[theme-type=floating] .mifan-announcements .container,
-body[theme-type=floating] .mifan-announcements .container-md,
-body[theme-type=floating] .mifan-announcements .container-sm,
-body[theme-type=floating] .mifan-announcements .container-full {
+body[theme-type=float] .mifan-announcements .container,
+body[theme-type=float] .mifan-announcements .container-md,
+body[theme-type=float] .mifan-announcements .container-sm,
+body[theme-type=float] .mifan-announcements .container-full {
   background-color: var(--filter-background-blur-inverse);
   -webkit-backdrop-filter: var(--filter-blur);
           backdrop-filter: var(--filter-blur);
@@ -1237,9 +1342,7 @@ body[theme-type=floating] .mifan-announcements .container-full {
   --navigation-height: calc((var(--font-p) * 2) + 2.25rem);
 }
 
-body[theme-type=default] .mifan-top-navigation,
-body[theme-type=box] .mifan-top-navigation,
-body[theme-type=floating] .mifan-top-navigation {
+body[theme-type] .mifan-top-navigation {
   position: fixed;
   top: 0;
   left: 0;
@@ -1247,7 +1350,7 @@ body[theme-type=floating] .mifan-top-navigation {
   top: var(--announcement-total-height, 0);
 }
 body[theme-type=box] .mifan-top-navigation,
-body[theme-type=floating] .mifan-top-navigation {
+body[theme-type=float] .mifan-top-navigation {
   padding-inline: var(--space-normal);
   width: -webkit-fill-available;
 }
@@ -1271,10 +1374,10 @@ body[theme-type=box] .mifan-top-navigation .container-full {
   color: var(--color-text);
 }
 
-body[theme-type=floating] .mifan-top-navigation .container,
-body[theme-type=floating] .mifan-top-navigation .container-md,
-body[theme-type=floating] .mifan-top-navigation .container-sm,
-body[theme-type=floating] .mifan-top-navigation .container-full {
+body[theme-type=float] .mifan-top-navigation .container,
+body[theme-type=float] .mifan-top-navigation .container-md,
+body[theme-type=float] .mifan-top-navigation .container-sm,
+body[theme-type=float] .mifan-top-navigation .container-full {
   border-bottom-left-radius: var(--base-border-radius);
   border-bottom-right-radius: var(--base-border-radius);
   border-bottom: 2px solid var(--color-border-bold);
@@ -1286,291 +1389,112 @@ body[theme-type=floating] .mifan-top-navigation .container-full {
   color: var(--color-text);
 }
 
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=center], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center],
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=center],
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center],
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center],
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center],
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center],
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center],
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center],
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] {
+body[theme-type] .mifan-top-navigation .container section[nav-type=center], body[theme-type] .mifan-top-navigation .container-md section[nav-type=center], body[theme-type] .mifan-top-navigation .container-sm section[nav-type=center], body[theme-type] .mifan-top-navigation .container-full section[nav-type=center] {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=center] div:first-child, body[theme-type=default] .mifan-top-navigation .container section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center] div:first-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center] div:first-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center] div:first-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=center] div:first-child,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=center] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center] div:first-child,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center] div:first-child,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center] div:first-child,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center] div:first-child,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center] div:first-child,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center] div:first-child,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] div:first-child,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] div:last-child {
+body[theme-type] .mifan-top-navigation .container section[nav-type=center] div:first-child, body[theme-type] .mifan-top-navigation .container section[nav-type=center] div:last-child, body[theme-type] .mifan-top-navigation .container-md section[nav-type=center] div:first-child, body[theme-type] .mifan-top-navigation .container-md section[nav-type=center] div:last-child, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=center] div:first-child, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child, body[theme-type] .mifan-top-navigation .container-full section[nav-type=center] div:first-child, body[theme-type] .mifan-top-navigation .container-full section[nav-type=center] div:last-child {
   flex: 1;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=center] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=center] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] div:nth-child(2) {
+body[theme-type] .mifan-top-navigation .container section[nav-type=center] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-md section[nav-type=center] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-sm section[nav-type=center] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-full section[nav-type=center] div:nth-child(2) {
   flex: 2;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=center] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=center] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=center] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=center] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=center] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=center] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=center] div:last-child {
+body[theme-type] .mifan-top-navigation .container section[nav-type=center] div:last-child, body[theme-type] .mifan-top-navigation .container-md section[nav-type=center] div:last-child, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child, body[theme-type] .mifan-top-navigation .container-full section[nav-type=center] div:last-child {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left],
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=left],
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left],
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left],
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left],
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left],
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left],
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left],
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] {
+body[theme-type] .mifan-top-navigation .container section[nav-type=center] div:last-child > ul, body[theme-type] .mifan-top-navigation .container-md section[nav-type=center] div:last-child > ul, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=center] div:last-child > ul, body[theme-type] .mifan-top-navigation .container-full section[nav-type=center] div:last-child > ul {
+  gap: var(--space-xsmall);
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=left], body[theme-type] .mifan-top-navigation .container-md section[nav-type=left], body[theme-type] .mifan-top-navigation .container-sm section[nav-type=left], body[theme-type] .mifan-top-navigation .container-full section[nav-type=left] {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:first-child, body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:first-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:first-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:first-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:first-child,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:first-child,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:first-child,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:first-child,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:first-child,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:first-child,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:first-child,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:first-child,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:last-child {
+body[theme-type] .mifan-top-navigation .container section[nav-type=left] div:first-child, body[theme-type] .mifan-top-navigation .container section[nav-type=left] div:last-child, body[theme-type] .mifan-top-navigation .container-md section[nav-type=left] div:first-child, body[theme-type] .mifan-top-navigation .container-md section[nav-type=left] div:last-child, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=left] div:first-child, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child, body[theme-type] .mifan-top-navigation .container-full section[nav-type=left] div:first-child, body[theme-type] .mifan-top-navigation .container-full section[nav-type=left] div:last-child {
   flex: 0;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) {
+body[theme-type] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) {
   flex: 1;
-  padding-inline: calc(var(--space-normal) * 2);
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-}
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] {
-  padding-inline: var(--space-normal);
-}
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div {
-  padding-inline: 0;
-}
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=left] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=left] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=left] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=left] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=left] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=left] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=left] div:last-child {
+body[theme-type] .mifan-top-navigation .container section[nav-type=left] div:last-child, body[theme-type] .mifan-top-navigation .container-md section[nav-type=left] div:last-child, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child, body[theme-type] .mifan-top-navigation .container-full section[nav-type=left] div:last-child {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right],
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=right],
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right],
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right],
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right],
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right],
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right],
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right],
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] {
+body[theme-type] .mifan-top-navigation .container section[nav-type=left] div:last-child > ul, body[theme-type] .mifan-top-navigation .container-md section[nav-type=left] div:last-child > ul, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=left] div:last-child > ul, body[theme-type] .mifan-top-navigation .container-full section[nav-type=left] div:last-child > ul {
+  gap: var(--space-xsmall);
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) {
+  padding-inline: calc(var(--space-normal) * 2);
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul, body[theme-type] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul, body[theme-type] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content], body[theme-type] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] {
+  padding-inline: var(--space-normal);
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start !important;
+  align-items: flex-start;
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type] .mifan-top-navigation .container-md section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div, body[theme-type] .mifan-top-navigation .container-full section[nav-type=left] div:nth-child(2) ul li > div[parent-content] div {
+  padding-inline: 0;
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=right], body[theme-type] .mifan-top-navigation .container-md section[nav-type=right], body[theme-type] .mifan-top-navigation .container-sm section[nav-type=right], body[theme-type] .mifan-top-navigation .container-full section[nav-type=right] {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:first-child, body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:first-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:first-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:first-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:first-child,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:first-child,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:first-child,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:first-child,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:first-child,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:first-child,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:first-child,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:first-child,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:last-child {
+body[theme-type] .mifan-top-navigation .container section[nav-type=right] div:first-child, body[theme-type] .mifan-top-navigation .container section[nav-type=right] div:last-child, body[theme-type] .mifan-top-navigation .container-md section[nav-type=right] div:first-child, body[theme-type] .mifan-top-navigation .container-md section[nav-type=right] div:last-child, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=right] div:first-child, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child, body[theme-type] .mifan-top-navigation .container-full section[nav-type=right] div:first-child, body[theme-type] .mifan-top-navigation .container-full section[nav-type=right] div:last-child {
   flex: 0;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) {
+body[theme-type] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) {
   flex: 1;
-  padding-inline: calc(var(--space-normal) * 2);
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-}
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content],
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] {
-  padding-inline: var(--space-normal);
-}
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div {
-  padding-inline: 0;
-}
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child, body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child,
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child,
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:last-child {
+body[theme-type] .mifan-top-navigation .container section[nav-type=right] div:last-child, body[theme-type] .mifan-top-navigation .container-md section[nav-type=right] div:last-child, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child, body[theme-type] .mifan-top-navigation .container-full section[nav-type=right] div:last-child {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
 }
-body[theme-type=default] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type=default] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2),
-body[theme-type=box] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2),
-body[theme-type=floating] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) {
+body[theme-type] .mifan-top-navigation .container section[nav-type=right] div:last-child > ul, body[theme-type] .mifan-top-navigation .container-md section[nav-type=right] div:last-child > ul, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=right] div:last-child > ul, body[theme-type] .mifan-top-navigation .container-full section[nav-type=right] div:last-child > ul {
+  gap: var(--space-xsmall);
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) {
+  padding-inline: calc(var(--space-normal) * 2);
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul, body[theme-type] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul, body[theme-type] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content], body[theme-type] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] {
+  padding-inline: var(--space-normal);
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul, body[theme-type] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start !important;
+  align-items: flex-start;
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div, body[theme-type] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) ul li > div[parent-content] div {
+  padding-inline: 0;
+}
+body[theme-type] .mifan-top-navigation .container section[nav-type=right] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-md section[nav-type=right] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-sm section[nav-type=right] div:nth-child(2), body[theme-type] .mifan-top-navigation .container-full section[nav-type=right] div:nth-child(2) {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1656,6 +1580,7 @@ nav ul li.parent > div[parent-content] > ul {
   justify-content: flex-start !important;
   align-items: flex-start;
   width: -webkit-fill-available;
+  gap: var(--space-normal) !important;
 }
 nav ul li.parent[parent-type=custom] > div[parent-content] {
   display: flex;
@@ -1740,6 +1665,7 @@ nav ul li.parent[parent-type=custom] > div[parent-content] > div span > div {
   width: 100%;
   padding: var(--space-small);
   height: -webkit-fill-available;
+  width: -webkit-fill-available;
 }
 .mifan-top-navigation > nav > .container .search form .visually-hidden,
 .mifan-top-navigation > nav > .container-full .search form .visually-hidden,
@@ -1846,6 +1772,7 @@ nav ul li.parent[parent-type=custom] > div[parent-content] > div span > div {
   background-color: var(--color-background);
   padding: var(--space-small);
   margin-inline: var(--space-small);
+  width: -webkit-fill-available;
 }
 .mifan-top-navigation > nav > .container .search-results > div p, .mifan-top-navigation > nav > .container .search-results div:last-child p,
 .mifan-top-navigation > nav > .container-full .search-results > div p,
@@ -1865,7 +1792,7 @@ body[theme-type=box] .search-results > div, body[theme-type=box] .search-results
   border: 2px solid var(--color-border-bold);
 }
 
-body[theme-type=floating] .search-results > div, body[theme-type=floating] .search-results div:last-child {
+body[theme-type=float] .search-results > div, body[theme-type=float] .search-results div:last-child {
   border: 2px solid var(--color-border-bold);
 }
 
@@ -1878,12 +1805,15 @@ nav [brand-type] ul {
 }
 nav [brand-type] ul li button span {
   margin-inline-end: calc(var(--space-small) * 0.5);
+  margin-inline-start: 0;
 }
-nav [brand-type] a {
+nav [brand-type] a, nav [brand-type] ul {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+}
+nav [brand-type] a {
   gap: var(--space-xsmall);
 }
 nav [brand-type] img {
@@ -1901,6 +1831,11 @@ nav [brand-type] p {
   line-height: normal;
   letter-spacing: calc(var(--font-p) * 0.02);
   color: var(--filter-background-blur-inverse);
+}
+@media (max-width: 389px) {
+  nav [brand-type] span p {
+    display: none;
+  }
 }
 nav [brand-type]:hover img {
   filter: none;
@@ -1928,6 +1863,46 @@ nav [brand-type]:hover p {
 
 [brand-type=logo-icon] span p {
   display: none;
+}
+
+footer .brand {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: var(--screen-size-small-units);
+}
+footer .brand div {
+  width: calc(var(--space-normal) * 6);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .brand div:hover {
+  border-color: var(--color-primary);
+}
+footer .brand img {
+  transition: filter var(--transition-duration) var(--transition-ease), transform var(--transition-duration) var(--transition-ease), border-color var(--transition-duration) var(--transition-ease);
+  aspect-ratio: 1/1;
+  width: 100%;
+  filter: grayscale(100%);
+}
+footer .brand span p {
+  transition: color var(--transition-duration) var(--transition-ease), transform var(--transition-duration) var(--transition-ease);
+  font-family: var(--font-title);
+  font-weight: var(--font-text-weight);
+  font-size: calc(var(--font-p) * 4);
+  line-height: normal;
+  letter-spacing: calc(var(--font-p) * 0.02);
+  color: var(--filter-background-blur-inverse);
+}
+footer .brand:hover img {
+  filter: none;
+  transform: scale(1.05);
+}
+footer .brand:hover p {
+  color: var(--color-primary);
+  transform: scale(1.05);
 }
 
 body[theme-type=default] .mifan-side {
@@ -2063,105 +2038,105 @@ body[theme-type=box] .mifan-side--top > div, body[theme-type=box] .mifan-side--b
   min-height: var(--space-top);
 }
 
-body[theme-type=floating] .mifan-side {
+body[theme-type=float] .mifan-side {
   transition: transform var(--transition-duration) var(--transition-ease);
   position: fixed;
 }
-body[theme-type=floating] .mifan-side--left, body[theme-type=floating] .mifan-side--right {
+body[theme-type=float] .mifan-side--left, body[theme-type=float] .mifan-side--right {
   width: 100%;
   max-width: var(--screen-size-small-units);
   height: 100dvh;
 }
-body[theme-type=floating] .mifan-side--top, body[theme-type=floating] .mifan-side--bottom {
+body[theme-type=float] .mifan-side--top, body[theme-type=float] .mifan-side--bottom {
   width: 100vw;
 }
-body[theme-type=floating] .mifan-side--left {
+body[theme-type=float] .mifan-side--left {
   left: 0;
   transform: translateX(-100%);
 }
-body[theme-type=floating] .mifan-side--left.is-visible {
+body[theme-type=float] .mifan-side--left.is-visible {
   transform: translateX(0);
 }
-body[theme-type=floating] .mifan-side--right {
+body[theme-type=float] .mifan-side--right {
   right: 0;
   transform: translateX(100%);
 }
-body[theme-type=floating] .mifan-side--right.is-visible {
+body[theme-type=float] .mifan-side--right.is-visible {
   transform: translateX(0);
 }
-body[theme-type=floating] .mifan-side--top {
+body[theme-type=float] .mifan-side--top {
   top: 0;
   transform: translateY(-100%);
 }
-body[theme-type=floating] .mifan-side--top.is-visible {
+body[theme-type=float] .mifan-side--top.is-visible {
   transform: translateY(0);
 }
-body[theme-type=floating] .mifan-side--bottom {
+body[theme-type=float] .mifan-side--bottom {
   bottom: 0;
   transform: translateY(100%);
 }
-body[theme-type=floating] .mifan-side--bottom.is-visible {
+body[theme-type=float] .mifan-side--bottom.is-visible {
   transform: translateY(0);
 }
-body[theme-type=floating] .mifan-side > div {
+body[theme-type=float] .mifan-side > div {
   background-color: var(--filter-background-blur);
   -webkit-backdrop-filter: var(--filter-blur);
           backdrop-filter: var(--filter-blur);
   color: var(--color-text);
   position: relative;
 }
-body[theme-type=floating] .mifan-side > div > div {
+body[theme-type=float] .mifan-side > div > div {
   width: -webkit-fill-available;
   height: -webkit-fill-available;
   padding: var(--space-small);
 }
-body[theme-type=floating] .mifan-side--left > div, body[theme-type=floating] .mifan-side--right > div {
+body[theme-type=float] .mifan-side--left > div, body[theme-type=float] .mifan-side--right > div {
   width: calc(100% - var(--space-small));
   height: calc(100% - var(--space-small) * 2);
   margin-block: var(--space-small);
 }
-body[theme-type=floating] .mifan-side--left > div {
+body[theme-type=float] .mifan-side--left > div {
   margin-inline: 0 var(--space-small);
 }
-body[theme-type=floating] .mifan-side--right > div {
+body[theme-type=float] .mifan-side--right > div {
   margin-inline: var(--space-small) 0;
 }
-body[theme-type=floating] .mifan-side--top > div, body[theme-type=floating] .mifan-side--bottom > div {
+body[theme-type=float] .mifan-side--top > div, body[theme-type=float] .mifan-side--bottom > div {
   width: calc(100% - var(--space-small) * 2);
   height: calc(100% - var(--space-small) * 2);
   margin-inline: var(--space-small);
 }
-body[theme-type=floating] .mifan-side--top > div {
+body[theme-type=float] .mifan-side--top > div {
   margin-block: 0 var(--space-small);
 }
-body[theme-type=floating] .mifan-side--bottom > div {
+body[theme-type=float] .mifan-side--bottom > div {
   margin-block: var(--space-small) 0;
 }
-body[theme-type=floating] .mifan-side--top > div, body[theme-type=floating] .mifan-side--bottom > div {
+body[theme-type=float] .mifan-side--top > div, body[theme-type=float] .mifan-side--bottom > div {
   min-height: var(--space-top);
 }
-body[theme-type=floating] .mifan-side--top > div {
+body[theme-type=float] .mifan-side--top > div {
   border-bottom-left-radius: var(--base-border-radius);
   border-bottom-right-radius: var(--base-border-radius);
   border-bottom: 2px solid var(--color-border-bold);
   border-left: 2px solid var(--color-border-bold);
   border-right: 2px solid var(--color-border-bold);
 }
-body[theme-type=floating] .mifan-side--bottom > div {
+body[theme-type=float] .mifan-side--bottom > div {
   border-top-left-radius: var(--base-border-radius);
   border-top-right-radius: var(--base-border-radius);
   border-top: 2px solid var(--color-border-bold);
   border-left: 2px solid var(--color-border-bold);
   border-right: 2px solid var(--color-border-bold);
 }
-body[theme-type=floating] .mifan-side--left > div {
+body[theme-type=float] .mifan-side--left > div {
   border-top-right-radius: var(--base-border-radius);
   border-bottom-right-radius: var(--base-border-radius);
   border-top: 2px solid var(--color-border-bold);
   border-bottom: 2px solid var(--color-border-bold);
   border-right: 2px solid var(--color-border-bold);
 }
-body[theme-type=floating] .mifan-side--right > div {
+body[theme-type=float] .mifan-side--right > div {
   border-top-left-radius: var(--base-border-radius);
   border-bottom-left-radius: var(--base-border-radius);
   border-top: 2px solid var(--color-border-bold);
@@ -2229,10 +2204,10 @@ body[theme-type=box] .mifan-popup .container,
 body[theme-type=box] .mifan-popup .container-md,
 body[theme-type=box] .mifan-popup .container-sm,
 body[theme-type=box] .mifan-popup .container-full,
-body[theme-type=floating] .mifan-popup .container,
-body[theme-type=floating] .mifan-popup .container-md,
-body[theme-type=floating] .mifan-popup .container-sm,
-body[theme-type=floating] .mifan-popup .container-full {
+body[theme-type=float] .mifan-popup .container,
+body[theme-type=float] .mifan-popup .container-md,
+body[theme-type=float] .mifan-popup .container-sm,
+body[theme-type=float] .mifan-popup .container-full {
   border: 2px solid var(--color-border-bold);
 }
 
@@ -2407,13 +2382,9 @@ body[theme-type=floating] .mifan-popup .container-full {
   flex: 1;
 }
 
-body[theme-type=box] .mifan-apps {
-  padding-inline: var(--space-normal);
-}
 body[theme-type=box] .mifan-apps header,
-body[theme-type=box] .mifan-apps main,
-body[theme-type=box] .mifan-apps footer {
-  background: color-mix(in srgb, var(--color-background) 0%, transparent);
+body[theme-type=box] .mifan-apps main {
+  padding-inline: var(--space-normal);
 }
 body[theme-type=box] .mifan-apps header .container,
 body[theme-type=box] .mifan-apps header .container-sm,
@@ -2422,14 +2393,14 @@ body[theme-type=box] .mifan-apps header .container-full,
 body[theme-type=box] .mifan-apps main .container,
 body[theme-type=box] .mifan-apps main .container-sm,
 body[theme-type=box] .mifan-apps main .container-md,
-body[theme-type=box] .mifan-apps main .container-full,
-body[theme-type=box] .mifan-apps footer .container,
-body[theme-type=box] .mifan-apps footer .container-sm,
-body[theme-type=box] .mifan-apps footer .container-md,
-body[theme-type=box] .mifan-apps footer .container-full {
+body[theme-type=box] .mifan-apps main .container-full {
   width: -webkit-fill-available;
   border-radius: var(--base-border-radius);
   border: 2px solid var(--color-border-bold);
+  background-color: var(--filter-background-blur);
+  -webkit-backdrop-filter: var(--filter-blur);
+          backdrop-filter: var(--filter-blur);
+  color: var(--color-text);
 }
 body[theme-type=box] .mifan-apps header .container,
 body[theme-type=box] .mifan-apps header .container-sm,
@@ -2440,154 +2411,12 @@ body[theme-type=box] .mifan-apps header .container-full {
 body[theme-type=box] .mifan-apps main .container,
 body[theme-type=box] .mifan-apps main .container-sm,
 body[theme-type=box] .mifan-apps main .container-md,
-body[theme-type=box] .mifan-apps main .container-full,
-body[theme-type=box] .mifan-apps footer .container,
-body[theme-type=box] .mifan-apps footer .container-sm,
-body[theme-type=box] .mifan-apps footer .container-md,
-body[theme-type=box] .mifan-apps footer .container-full {
+body[theme-type=box] .mifan-apps main .container-full {
   margin-block: var(--space-small);
 }
 
 header {
   padding-block-start: var(--space-top);
-}
-
-.button--downloads {
-  box-shadow: var(--space-xsmall) var(--space-xsmall) 0.75rem 0 rgba(0, 0, 0, 0.18);
-}
-.button--downloads > * {
-  display: inline-flex;
-  gap: var(--space-normal);
-  align-items: center;
-  padding: calc(var(--space-small) / 2);
-  border-radius: calc(var(--space-small) / 2);
-  position: relative;
-  width: 100%;
-  background-color: var(--color-background);
-  border: 2px solid var(--color-text);
-  color: var(--color-text);
-}
-.button--downloads > * span {
-  aspect-ratio: 1;
-  border-radius: calc(var(--space-small) - 0.6rem);
-}
-.button--downloads > * span svg {
-  vertical-align: middle;
-}
-.button--downloads > * span:last-child {
-  padding: 0.75rem;
-  position: absolute;
-  right: -1.25rem;
-  -webkit-backdrop-filter: blur(0.5rem);
-  backdrop-filter: blur(0.5rem);
-  background-color: var(--color-text);
-  border-radius: calc(var(--space-small) - 0.6rem);
-  height: 1rem;
-  width: 1rem;
-}
-.button--downloads > * span:last-child svg {
-  width: 1rem;
-  height: 1rem;
-  aspect-ratio: 1;
-}
-.button--downloads > * span:last-child svg path {
-  fill: var(--color-background);
-}
-.button--downloads > * span:last-child:hover {
-  background-color: var(--color-primary);
-}
-.button--downloads > * p {
-  padding-inline-end: calc(var(--space-normal) * 2);
-}
-
-.button--downloads {
-  margin-inline: 1rem 2rem;
-  width: 100%;
-  max-width: var(--screen-size-small-units);
-}
-
-footer .brand {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  max-width: var(--screen-size-small-units);
-}
-footer .brand div {
-  width: calc(var(--space-normal) * 6);
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-footer .brand div:hover {
-  border-color: var(--color-primary);
-}
-footer .brand img {
-  width: 100%;
-  filter: grayscale(100%);
-  transition: filter 0.2s, transform 0.2s;
-  aspect-ratio: 1/1;
-}
-footer .brand img:hover {
-  filter: none;
-  transform: scale(1.05);
-}
-footer .brand span p {
-  line-height: 1;
-}
-footer .brand span p:first-child {
-  font-family: var(--font-title);
-  font-size: calc(var(--font-p) * 3);
-}
-footer .brand span p:last-child {
-  font-size: calc(var(--font-p) * 2);
-  letter-spacing: calc(var(--font-p) * 0.25);
-}
-
-footer a {
-  color: color-mix(in srgb, var(--color-text) 75%, transparent);
-}
-footer a:hover {
-  color: color-mix(in srgb, var(--color-text) 35%, transparent);
-}
-footer ul li a {
-  display: inline-block;
-  transition: transform 0.3s;
-}
-footer ul li a:hover {
-  transform: translateX(0.5rem);
-}
-footer .navs__socials {
-  display: flex;
-  gap: var(--space-small);
-}
-footer .navs__socials a {
-  display: inline-block;
-}
-footer .navs__socials a svg {
-  vertical-align: middle;
-}
-footer .navs__socials a svg path {
-  fill: var(--color-text);
-}
-footer .navs__socials a:hover {
-  transform: scale(1.05);
-}
-footer .footer__navs-line ul a:hover {
-  transform: scale(1.05);
-}
-footer .container:last-child ul,
-footer .container-sm:last-child ul,
-footer .container-md:last-child ul,
-footer .container-full:last-child ul {
-  display: flex;
-  gap: var(--space-small);
-}
-footer .container:last-child ul li a,
-footer .container-sm:last-child ul li a,
-footer .container-md:last-child ul li a,
-footer .container-full:last-child ul li a {
-  display: inline;
 }
 
 footer .footer__main {
@@ -2642,7 +2471,7 @@ footer .footer__main[list-alignment=right] .brand {
   justify-content: flex-end;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   footer .footer__main {
     flex-direction: column;
     gap: var(--space-normal);
@@ -2792,8 +2621,77 @@ footer .container-full:last-child section:last-child {
   align-items: center;
   gap: var(--space-small);
 }
+footer .container:last-child section:last-child ul li small,
+footer .container:last-child section:last-child ul li a,
+footer .container-sm:last-child section:last-child ul li small,
+footer .container-sm:last-child section:last-child ul li a,
+footer .container-md:last-child section:last-child ul li small,
+footer .container-md:last-child section:last-child ul li a,
+footer .container-full:last-child section:last-child ul li small,
+footer .container-full:last-child section:last-child ul li a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
 
-footer {
-  background: var(--color-background-empty);
+body[theme-type=float] footer .container,
+body[theme-type=float] footer .container-sm,
+body[theme-type=float] footer .container-md,
+body[theme-type=float] footer .container-full, body[theme-type=box] footer, body[theme-type=default] footer {
   color: color-mix(in srgb, var(--color-text) 95%, var(--color-background));
+}
+
+body[theme-type=default] footer {
+  background: var(--color-background-empty);
+}
+
+body[theme-type=box] footer {
+  background: color-mix(in srgb, var(--color-background) 0%, transparent);
+  padding-inline: var(--space-normal);
+}
+body[theme-type=box] footer .container,
+body[theme-type=box] footer .container-sm,
+body[theme-type=box] footer .container-md,
+body[theme-type=box] footer .container-full {
+  background-color: var(--filter-background-blur);
+  -webkit-backdrop-filter: var(--filter-blur);
+          backdrop-filter: var(--filter-blur);
+  color: var(--color-text);
+  width: -webkit-fill-available;
+  border-radius: var(--base-border-radius);
+  border: 2px solid var(--color-border-bold);
+  margin-block: var(--space-xsmall);
+}
+
+body[theme-type=float] footer {
+  margin-block-end: var(--space-xsmall);
+  padding-inline: var(--space-normal);
+}
+body[theme-type=float] footer .container,
+body[theme-type=float] footer .container-sm,
+body[theme-type=float] footer .container-md,
+body[theme-type=float] footer .container-full {
+  background: var(--color-background-empty);
+}
+body[theme-type=float] footer > div:first-child {
+  border-top: 2px solid var(--color-border-bold);
+  border-left: 2px solid var(--color-border-bold);
+  border-right: 1px solid var(--color-border-bold);
+  border-top-left-radius: var(--base-border-radius);
+  border-top-right-radius: var(--base-border-radius);
+}
+body[theme-type=float] footer > div:not(:first-child),
+body[theme-type=float] footer > div:not(:last-child) {
+  border-left: 2px solid var(--color-border-bold);
+  border-right: 2px solid var(--color-border-bold);
+}
+body[theme-type=float] footer > div:last-child {
+  border-bottom: 2px solid var(--color-border-bold);
+  border-left: 2px solid var(--color-border-bold);
+  border-right: 2px solid var(--color-border-bold);
+  border-bottom-left-radius: var(--base-border-radius);
+  border-bottom-right-radius: var(--base-border-radius);
 }

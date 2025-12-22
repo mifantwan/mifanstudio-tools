@@ -45,6 +45,14 @@ export const extendReRenderApp = (fn) => {
 };
 
 if (typeof document !== 'undefined') {
+    // Ensure page starts at the very top on initial load
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    
+    // Force scroll to top before any other code runs
+    window.scrollTo(0, 0);
+    
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', runReadyCallbacks);
     } else {

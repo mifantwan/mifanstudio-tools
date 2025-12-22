@@ -1,94 +1,115 @@
 .section--blogs
-    .grid
-        > *:first-child,
-        > *:nth-child(2)
-            div
-                display: flex
-                flex-direction: column
-                justify-content: center
+    --container-aspect-ratio: 1 / 1
 
-        > *:first-child
-            div
-                aspect-ratio: 1 / 1
-                border-radius: var(--padding-small)
-                position: relative
-                border: 2px solid var(--color-text)
-                background-color: var(--color-background-empty)
-                background-position: 50%
-                background-repeat: no-repeat
-                background-size: cover
-                filter: grayscale(100%)
-                transition: filter .3s  ease
+    .grid > * div
+        display: flex
+        flex-direction: column
+        width: 100%
+        height: auto
 
-                .blog-title
-                    position: absolute
-                    bottom: 0
-                    left: 0
-                    right: 0
-                    margin: var(--padding-small)
-                    padding: var(--padding-small)
-                    backdrop-filter: blur(1rem)
-                    background-color:  color-mix(in srgb, var(--color-background) 75%, transparent)
-                    border: 2px solid var(--color-text)
-                    backdrop-filter: blur(0.5rem)
-                    width: auto
-                    aspect-ratio: unset
-                    box-shadow: unset
+    .blog-latest
+        position: relative
+        aspect-ratio: var(--container-aspect-ratio)
+        width: -webkit-fill-available
+        height: auto
 
-                    &:hover
-                        border-color: var(--color-primary)
-
-                &:hover
-                    filter: none
-
-        > *:nth-child(2)
-            div
-                aspect-ratio: 1 / 1
-                gap: var(--padding-normal)
-                padding: var(--padding-normal)
-
-        > *:last-child
-            position: relative 
-            min-height: calc(1.5rem + (0.25rem * 2) + ( var(--padding-small) * 2))
-
-            a
+        > div
+            &:first-child,
+            &:last-child
                 position: absolute
+                width: -webkit-fill-available
+                border-radius: calc(var(--base-border-radius) - 2px)
+
+            &:first-child
+                z-index: 1
+                aspect-ratio: var(--container-aspect-ratio)
+                height: auto
+                border-radius: var(--base-border-radius)
+                border: 2px solid var(--filter-background-blur-inverse)
+
+                img
+                    background-color: var(--filter-background-blur)
+                    width: -webkit-fill-available
+                    aspect-ratio: var(--container-aspect-ratio)
+                    height: 100%
+                    object-fit: cover
+                    border-radius: calc(var(--base-border-radius) - 2px)
+                    filter: grayscale(100%)
+                    transition: filter 0.3s ease
+
+            &:last-child
+                z-index: 2
                 bottom: 0
-                right: 0
-                display: inline-flex
+                aspect-ratio: unset
+                padding: var(--space-small)
+                margin: var(--space-xsmall)
+                background-color: var(--filter-background-blur)
+                backdrop-filter: var(--filter-blur)
+                border: 2px solid var(--filter-background-blur-inverse)
+                transition: border-color 0.3s ease
+                max-width: calc(var(--screen-size-small-units) * 2)
+
+        &:hover
+            div:first-child img
+                filter: none
+            div:last-child
+                border-color: var(--color-primary)
+
+    .blog-types
+        display: flex
+        flex-direction: column
+        aspect-ratio: var(--container-aspect-ratio)
+        width: -webkit-fill-available
+        height: auto
+
+        > div
+            flex: 1 1 0
+            aspect-ratio: unset
+            border-top: 1px solid var(--color-background-empty)
+            transition: background-color 0.3s ease  // smooth hover transition
+
+            > a
+                display: flex
+                flex-direction: row
+                width: -webkit-fill-available
+                justify-content: space-between
                 align-items: center
-                gap: var(--padding-small)
-                padding: calc(var(--padding-small) / 2) calc(var(--padding-small) / 2) calc(var(--padding-small) / 2) var(--padding-small)
-                border: 2px solid var(--color-text)
-                border-radius: calc(var(--padding-small) / 2)
+                height: -webkit-fill-available
+                padding-inline: var(--space-normal)
+
+                span svg
+                    path
+                        fill: var(--filter-background-blur-inverse)
+                        transition: fill 0.3s ease  // smooth hover transition
+
+            &:hover
                 background-color: var(--color-background-empty)
-                span
-                    aspect-ratio: 1
-                    padding: 0.5rem
-                    border-radius: calc(var(--padding-small) - 0.6rem)
-                    backdrop-filter: blur(0.5rem)
-                    background-color: var(--color-text)
-                    svg
-                        vertical-align: middle
-                        path
-                            fill: var(--color-background)
 
-                &:hover
-                    span
-                        background-color: color-mix(in srgb, var(--color-primary) 85%, transparent)
+                span svg
+                    path
+                        fill: var(--color-primary)
 
-        @media (max-width: 1023px)
-            > *:first-child
-                order: 2
-                div
-                    aspect-ratio: 4 / 3
-            > *:nth-child(2)
-                order: 1
-                div
-                    aspect-ratio: unset
-                    padding-inline: 0
-            > *:last-child
-                order: 3
-                text-align: right
-                a
-                    position: static
+        > div:last-child
+            border-bottom: 1px solid var(--color-background-empty)
+
+    .blog-section-title
+        display: flex
+        flex-direction: column
+        width: -webkit-fill-available !important
+        height: -webkit-fill-available
+        gap: var(--space-normal)
+        padding-inline: var(--space-normal)
+        padding-block-end: var(--space-normal)
+
+        small
+            letter-spacing: calc(var(--font-p) * 0.02)
+
+@media screen and (max-width: 1024px)
+    .section--blogs
+        --container-aspect-ratio: 3 / 2
+
+    .blog-latest
+        > div
+            &:last-child
+                margin-inline: calc(var(--space-xsmall) + 2px) !important
+

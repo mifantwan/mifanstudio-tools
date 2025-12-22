@@ -9,6 +9,10 @@ header[header-type=default],
 header[header-type=pages] {
   min-height: calc(30rem - var(--space-top));
 }
+header[header-type=default] .container section,
+header[header-type=pages] .container section {
+  padding-block-start: 0;
+}
 header[header-type=default] .container section h1,
 header[header-type=pages] .container section h1 {
   max-width: calc(var(--screen-size-small-units) * 2);
@@ -25,6 +29,7 @@ header[header-type=pages] .container section small {
 header[header-type=default] .container section p,
 header[header-type=pages] .container section p {
   max-width: calc(var(--screen-size-small-units) * 2);
+  padding-block-end: var(--space-normal);
 }
 header[header-type=default] .container section .page-header-container[hero-type=default] > div:first-child,
 header[header-type=pages] .container section .page-header-container[hero-type=default] > div:first-child {
@@ -37,8 +42,8 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   aspect-ratio: 3/1;
   width: auto;
   height: 100%;
-  border-radius: var(--space-small) var(--space-small) 0 0;
-  border: 2px solid var(--color-text);
+  border-radius: var(--base-border-radius) var(--base-border-radius) 0 0;
+  border: 1px solid var(--color-border-bold);
 }
 header[header-type=default] .container section .page-header-container[hero-type=default] > div:nth-child(2) img,
 header[header-type=pages] .container section .page-header-container[hero-type=default] > div:nth-child(2) img {
@@ -46,7 +51,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: calc(var(--space-small) - 2px) calc(var(--space-small) - 2px) 0 0;
+  border-radius: calc(var(--base-border-radius) - 2px) calc(var(--base-border-radius) - 2px) 0 0;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
@@ -66,7 +71,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   aspect-ratio: 3/1;
   padding: var(--space-small);
   background-color: color-mix(in srgb, var(--color-background) 95%, var(--color-text));
-  border: 2px solid var(--color-text);
+  border: 1px solid var(--color-border-bold);
   position: relative;
 }
 header[header-type=default] .container section .page-header-container[hero-type=default] > div:last-child > div > a,
@@ -89,11 +94,11 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
 }
 header[header-type=default] .container section .page-header-container[hero-type=default] > div:last-child > div:first-child,
 header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div:first-child {
-  border-radius: 0 0 0 calc(var(--space-small) - 0.3rem);
+  border-radius: 0 0 0 calc(var(--base-border-radius) - 0.3rem);
 }
 header[header-type=default] .container section .page-header-container[hero-type=default] > div:last-child > div:last-child,
 header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div:last-child {
-  border-radius: 0 0 calc(var(--space-small) - 0.3rem) 0;
+  border-radius: 0 0 calc(var(--base-border-radius) - 0.3rem) 0;
 }
 @media (max-width: 1023px) {
   header[header-type=default] .container section .page-header-container[hero-type=default] > div:nth-child(2),
@@ -121,7 +126,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div:first-child,
   header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div:nth-child(2),
   header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div:last-child {
-    border-radius: 0 0 calc(var(--space-small) - 0.3rem) calc(var(--space-small) - 0.3rem);
+    border-radius: 0 0 calc(var(--base-border-radius) - 0.3rem) calc(var(--base-border-radius) - 0.3rem);
   }
   header[header-type=default] .container section .page-header-container[hero-type=default] > div:last-child > div:not(:first-child),
   header[header-type=pages] .container section .page-header-container[hero-type=default] > div:last-child > div:not(:first-child) {
@@ -129,16 +134,23 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   }
 }
 
-.section--services-pricing div:first-child h3, .section--services-pricing div:first-child p {
+.section--services-pricing div.section--title h3, .section--services-pricing div.section--title p {
   text-align: center;
+  max-width: calc(var(--screen-size-small-units) * 2);
+  margin-inline: auto;
+}
+.section--services-pricing div.section--title h3 {
   margin-block-end: var(--space-normal);
+}
+.section--services-pricing div.section--title p {
+  margin-block-end: var(--space-large);
 }
 .section--services-pricing .grid > *:first-child {
   border: none;
 }
 .section--services-pricing .grid > *:last-child {
-  border: 2px solid var(--color-text);
-  border-radius: var(--space-small);
+  border: 1px solid var(--color-border-bold);
+  border-radius: var(--base-border-radius);
 }
 
 .button--services-pricing {
@@ -146,20 +158,20 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   padding: var(--space-small);
   display: flex;
   flex-direction: column;
-  gap: calc(var(--space-small) / 2);
+  gap: var(--space-xsmall);
   position: sticky;
   top: var(--space-top);
 }
 .button--services-pricing button {
   width: 100%;
-  padding: calc(var(--space-small) / 2);
-  border: 2px solid var(--color-text);
-  border-radius: calc(var(--space-small) - 0.3rem);
+  padding: var(--space-xsmall);
+  border: 1px solid var(--color-border-bold);
+  border-radius: var(--base-border-radius);
   background: var(--color-background);
-  color: var(--color-text);
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
   text-align: left;
+  color: var(--color-text);
 }
 .button--services-pricing button div {
   display: flex;
@@ -172,15 +184,17 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: calc(var(--space-small) / 2);
+  gap: var(--space-xsmall);
 }
 .button--services-pricing button div > div small {
   font-family: var(--font-text);
 }
 .button--services-pricing button div span {
   padding: var(--space-small);
-  background: var(--color-text);
-  border-radius: calc(var(--space-small) - 0.6rem);
+  background: var(--filter-background-blur-inverse);
+  -webkit-backdrop-filter: blur(var(--filter-blur));
+          backdrop-filter: blur(var(--filter-blur));
+  border-radius: calc(var(--base-border-radius) - var(--space-xsmall) / 2);
   display: flex;
   align-items: center;
 }
@@ -199,7 +213,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button--services-pricing button[popular] span {
-  background-color: var(--color-primary);
+  background: var(--color-primary);
 }
 
 .content--services-pricing {
@@ -220,11 +234,17 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   transform: translateY(0);
   pointer-events: auto;
 }
+.content--services-pricing > *:nth-child(3) {
+  margin-block: var(--space-small);
+}
 .content--services-pricing div {
   padding: 0 var(--space-small);
 }
 .content--services-pricing div h4, .content--services-pricing div h5, .content--services-pricing div p, .content--services-pricing div ul {
   text-align: left;
+}
+.content--services-pricing div h5 b, .content--services-pricing div small b {
+  color: var(--color-primary);
 }
 .content--services-pricing div p, .content--services-pricing div ul {
   margin-block-end: var(--space-normal);
@@ -257,8 +277,8 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   margin-inline: var(--space-small);
   padding: var(--space-large) var(--space-normal);
   background: var(--color-background-empty);
-  border-bottom-left-radius: calc(var(--space-small) - 6px);
-  border-bottom-right-radius: calc(var(--space-small) - 6px);
+  border-bottom-left-radius: calc(var(--base-border-radius) - var(--space-small) / 2);
+  border-bottom-right-radius: calc(var(--base-border-radius) - var(--space-small) / 2);
 }
 .content--services-pricing div:last-child h5, .content--services-pricing div:last-child p, .content--services-pricing div:last-child blockquote {
   text-align: center;
@@ -268,6 +288,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   flex-direction: row;
   gap: var(--space-small);
   align-items: center;
+  justify-content: center;
   margin-block-end: var(--space-normal);
 }
 .content--services-pricing div:last-child .flex span {
@@ -285,7 +306,7 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
   vertical-align: middle;
 }
 .content--services-pricing hr {
-  border: 1px solid var(--color-text);
+  border: 0.5px solid var(--color-text);
 }
 .content--services-pricing[content-route] p {
   text-align: left !important;
@@ -314,144 +335,266 @@ header[header-type=pages] .container section .page-header-container[hero-type=de
     flex-direction: column;
   }
 }
-.section--partners span {
-  padding: var(--space-small) 0;
-  display: inline-block;
+.section--blogs {
+  --container-aspect-ratio: 1 / 1;
 }
-.section--partners span svg,
-.section--partners span img {
-  vertical-align: middle;
-  width: auto;
-  height: 3rem;
-  filter: grayscale(100%);
-}
-.section--partners span svg:hover,
-.section--partners span img:hover {
-  filter: none;
-}
-.section--partners div.grid > *:last-child {
-  display: inline-flex;
-  gap: var(--space-large);
-  overflow-x: auto;
-  scrollbar-width: none;
-  width: 100%;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-
-@media (max-width: 1023px) {
-  .section--partners div.grid > *:last-child {
-    gap: var(--space-normal);
-  }
-  .section--partners h3 {
-    margin-block-end: var(--space-normal);
-  }
-}
-.section--blogs .grid > *:first-child div,
-.section--blogs .grid > *:nth-child(2) div {
+.section--blogs .grid > * div {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  width: 100%;
+  height: auto;
 }
-.section--blogs .grid > *:first-child div {
-  aspect-ratio: 1/1;
-  border-radius: var(--space-small);
+.section--blogs .blog-latest {
   position: relative;
-  border: 2px solid var(--color-text);
-  background-color: var(--color-background-empty);
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  aspect-ratio: var(--container-aspect-ratio);
+  width: -webkit-fill-available;
+  height: auto;
+}
+.section--blogs .blog-latest > div:first-child, .section--blogs .blog-latest > div:last-child {
+  position: absolute;
+  width: -webkit-fill-available;
+  border-radius: calc(var(--base-border-radius) - 2px);
+}
+.section--blogs .blog-latest > div:first-child {
+  z-index: 1;
+  aspect-ratio: var(--container-aspect-ratio);
+  height: auto;
+  border-radius: var(--base-border-radius);
+  border: 2px solid var(--filter-background-blur-inverse);
+}
+.section--blogs .blog-latest > div:first-child img {
+  background-color: var(--filter-background-blur);
+  width: -webkit-fill-available;
+  aspect-ratio: var(--container-aspect-ratio);
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: calc(var(--base-border-radius) - 2px);
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
-.section--blogs .grid > *:first-child div .blog-title {
-  position: absolute;
+.section--blogs .blog-latest > div:last-child {
+  z-index: 2;
   bottom: 0;
-  left: 0;
-  right: 0;
-  margin: var(--space-small);
-  padding: var(--space-small);
-  -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
-  background-color: color-mix(in srgb, var(--color-background) 75%, transparent);
-  border: 2px solid var(--color-text);
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
-  width: auto;
   aspect-ratio: unset;
-  box-shadow: unset;
+  padding: var(--space-small);
+  margin: var(--space-xsmall);
+  background-color: var(--filter-background-blur);
+  -webkit-backdrop-filter: var(--filter-blur);
+          backdrop-filter: var(--filter-blur);
+  border: 2px solid var(--filter-background-blur-inverse);
+  transition: border-color 0.3s ease;
+  max-width: calc(var(--screen-size-small-units) * 2);
 }
-.section--blogs .grid > *:first-child div .blog-title:hover {
-  border-color: var(--color-primary);
-}
-.section--blogs .grid > *:first-child div:hover {
+.section--blogs .blog-latest:hover div:first-child img {
   filter: none;
 }
-.section--blogs .grid > *:nth-child(2) div {
-  aspect-ratio: 1/1;
-  gap: var(--space-normal);
-  padding: var(--space-normal);
+.section--blogs .blog-latest:hover div:last-child {
+  border-color: var(--color-primary);
 }
-.section--blogs .grid > *:last-child {
-  position: relative;
-  min-height: calc(1.5rem + var(--space-xsmall) * 2 + var(--space-small) * 2);
+.section--blogs .blog-types {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: var(--container-aspect-ratio);
+  width: -webkit-fill-available;
+  height: auto;
 }
-.section--blogs .grid > *:last-child a {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  display: inline-flex;
+.section--blogs .blog-types > div {
+  flex: 1 1 0;
+  aspect-ratio: unset;
+  border-top: 1px solid var(--color-background-empty);
+  transition: background-color 0.3s ease;
+}
+.section--blogs .blog-types > div > a {
+  display: flex;
+  flex-direction: row;
+  width: -webkit-fill-available;
+  justify-content: space-between;
   align-items: center;
-  gap: var(--space-small);
-  padding: calc(var(--space-small) / 2) calc(var(--space-small) / 2) calc(var(--space-small) / 2) var(--space-small);
-  border: 2px solid var(--color-text);
-  border-radius: calc(var(--space-small) / 2);
+  height: -webkit-fill-available;
+  padding-inline: var(--space-normal);
+}
+.section--blogs .blog-types > div > a span svg path {
+  fill: var(--filter-background-blur-inverse);
+  transition: fill 0.3s ease;
+}
+.section--blogs .blog-types > div:hover {
   background-color: var(--color-background-empty);
 }
-.section--blogs .grid > *:last-child a span {
-  aspect-ratio: 1;
-  padding: 0.5rem;
-  border-radius: calc(var(--space-small) - 0.6rem);
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
-  background-color: var(--color-text);
+.section--blogs .blog-types > div:hover span svg path {
+  fill: var(--color-primary);
 }
-.section--blogs .grid > *:last-child a span svg {
-  vertical-align: middle;
+.section--blogs .blog-types > div:last-child {
+  border-bottom: 1px solid var(--color-background-empty);
 }
-.section--blogs .grid > *:last-child a span svg path {
-  fill: var(--color-background);
+.section--blogs .blog-section-title {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available !important;
+  height: -webkit-fill-available;
+  gap: var(--space-normal);
+  padding-inline: var(--space-normal);
+  padding-block-end: var(--space-normal);
 }
-.section--blogs .grid > *:last-child a:hover span {
-  background-color: color-mix(in srgb, var(--color-primary) 85%, transparent);
-}
-@media (max-width: 1023px) {
-  .section--blogs .grid > *:first-child {
-    order: 2;
-  }
-  .section--blogs .grid > *:first-child div {
-    aspect-ratio: 4/3;
-  }
-  .section--blogs .grid > *:nth-child(2) {
-    order: 1;
-  }
-  .section--blogs .grid > *:nth-child(2) div {
-    aspect-ratio: unset;
-    padding-inline: 0;
-  }
-  .section--blogs .grid > *:last-child {
-    order: 3;
-    text-align: right;
-  }
-  .section--blogs .grid > *:last-child a {
-    position: static;
-  }
+.section--blogs .blog-section-title small {
+  letter-spacing: calc(var(--font-p) * 0.02);
 }
 
+@media screen and (max-width: 1024px) {
+  .section--blogs {
+    --container-aspect-ratio: 3 / 2;
+  }
+  .blog-latest > div:last-child {
+    margin-inline: calc(var(--space-xsmall) + 2px) !important;
+  }
+}
 .section--theme-source div div:first-child h3 {
   padding-block-end: var(--space-normal);
 }
 .section--theme-source div div:last-child {
   aspect-ratio: 2/1;
+}
+
+.section--experience .experience-company,
+.section--experience .experience-projects,
+.section--experience .experience-personal {
+  height: -webkit-fill-available;
+  border-radius: var(--base-border-radius);
+  padding: var(--space-small);
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+.section--experience .experience-company {
+  aspect-ratio: 1/1;
+  width: -webkit-fill-available;
+  background-color: var(--color-background-empty);
+  -webkit-backdrop-filter: blur(var(--filter-blur));
+          backdrop-filter: blur(var(--filter-blur));
+}
+.section--experience .experience-company span {
+  width: var(--space-large);
+  height: var(--space-large);
+  aspect-ratio: 1;
+}
+.section--experience .experience-company span img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: grayscale(100%);
+  transform: scale(0.9);
+  transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.section--experience .experience-company span a:hover img,
+.section--experience .experience-company span img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
+.section--experience .experience-company h6 {
+  padding-block-end: var(--space-small);
+}
+.section--experience .experience-company a:hover img,
+.section--experience .experience-company img:hover {
+  filter: grayscale(0%);
+  transform: scale(1);
+}
+.section--experience .experience-company .flex--row,
+.section--experience .experience-company .flex--column {
+  width: -webkit-fill-available;
+}
+.section--experience .experience-projects {
+  padding-block-end: 0;
+  padding-inline-end: 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 8rem 11rem;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, background-position 0.3s ease;
+}
+.section--experience .experience-projects:hover {
+  filter: grayscale(0%);
+  background-position: 7.5rem 10.5rem;
+}
+.section--experience .experience-projects:hover span svg path {
+  fill: #003D3E;
+  transition: fill 0.3s ease;
+}
+.section--experience .experience-projects span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+}
+.section--experience .experience-projects span img,
+.section--experience .experience-projects span svg {
+  width: 2rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: filter 0.3s ease;
+  border-radius: var(--base-border-radius);
+}
+.section--experience .experience-projects a {
+  line-height: 0;
+}
+.section--experience .experience-projects h6, .section--experience .experience-projects p {
+  padding-block-end: var(--space-small);
+}
+.section--experience .experience-personal h6 {
+  padding-block-end: var(--space-small);
+}
+.section--experience .experience-personal span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xsmall);
+  padding: var(--space-xsmall) calc(var(--space-small) - var(--space-xsmall));
+  background-color: var(--color-background-empty);
+  -webkit-backdrop-filter: blur(var(--filter-blur));
+          backdrop-filter: blur(var(--filter-blur));
+  border-radius: var(--base-border-radius);
+}
+.section--experience .experience-personal span img,
+.section--experience .experience-personal span svg {
+  width: auto;
+  height: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .section--experience {
+    overflow: hidden;
+    padding: 0 1rem;
+  }
+  .section--experience .grid {
+    transition: transform 0.3s ease-in-out;
+    gap: 0;
+  }
+  .section--experience .grid.experience-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .section--experience .grid.experience-slider > div {
+    flex: 0 0 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .section--experience .experience-company,
+  .section--experience .experience-projects,
+  .section--experience .experience-personal {
+    height: 280px;
+    min-height: 240px;
+    max-height: 320px;
+    aspect-ratio: unset;
+    margin: 0 auto;
+    max-width: calc(100% - 2rem);
+    width: 100%;
+  }
+  .section--experience .experience-projects {
+    height: -webkit-fill-available;
+  }
 }

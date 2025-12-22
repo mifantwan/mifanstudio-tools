@@ -1,0 +1,71 @@
+@use '../../mixin' as *
+nav
+    ul
+        @include flex-center
+        list-style: none
+        li
+            a
+                @include transition-color
+                span
+                    svg
+                        path
+                            @include transition-color
+
+            a:hover,
+            a:focus,
+            a:focus-visible,
+            a:active
+                @include link-color-hover
+                span
+                    svg
+                        @include link-icon-hover
+
+
+a
+    pointer-events: auto
+    cursor: pointer
+
+
+footer
+    ul
+        list-style: none
+        li
+            a
+                display: inline-block
+                transition: transform 0.3s
+
+                &:hover
+                    transform: translateX(var(--space-xsmall))
+
+    a
+        color: var(--filter-background-blur-inverse)
+        &:hover
+            color: var(--color-link-hover)
+
+    .navs__socials
+        display: flex
+        gap: var(--space-small)
+        a
+            display: inline-block
+            svg
+                vertical-align: middle
+                path
+                    fill: var(--filter-background-blur-inverse)
+            &:hover
+                transform: scale(1.05)
+
+    .footer__navs-line
+        ul 
+            a:hover
+                transform: scale(1.05)
+
+    .container:last-child,
+    .container-sm:last-child,
+    .container-md:last-child,
+    .container-full:last-child
+        ul
+            display: flex
+            gap: var(--space-small)
+            li
+                a
+                    display: inline

@@ -1,0 +1,65 @@
+footer
+    .footer__navs
+        .navs__container
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+            gap: var(--space-large)
+            > *
+                flex: 1 1 0
+                min-width: 0
+
+        ul
+            display: flex
+            flex-direction: column
+            gap: var(--space-small)
+
+        h6
+            margin-block-end: var(--space-normal)
+            font-weight: var(--font-title-alt-weight)
+
+        @media (max-width: 1024px)
+            .navs__container
+                flex-direction: column
+                gap: 0
+                > *
+                    width: 100%
+                    border-bottom: 1px solid color-mix(in srgb, var(--color-text) 25%, transparent)
+                    &:last-child
+                        border-bottom: none
+
+            h6
+                margin-block-end: 0
+                padding-block: var(--space-small)
+                position: relative
+                &::after
+                    content: ''
+                    position: absolute
+                    right: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    display: inline-block
+                    width: 0.5rem
+                    height: 0.5rem
+                    mask-image: url("data:image/svg+xml;utf8,<svg fill='black' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='11' y='4' width='2' height='16'/><rect x='4' y='11' width='16' height='2'/></svg>");
+                    mask-size: cover
+                    background-color: var(--color-text)
+                    transition: transform 0.3s
+                &.open::after
+                    transform: translateY(-50%) rotate(45deg)
+            ul
+                overflow: hidden
+                max-height: 0
+                opacity: 0
+                visibility: hidden
+                padding-block: 0
+                transform: translateY(-12px)
+                transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1), visibility 0.4s cubic-bezier(0.4,0,0.2,1), padding-block 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.5s cubic-bezier(0.4,0,0.2,1)
+            h6.open + ul
+                max-height: 25rem
+                opacity: 1
+                visibility: visible
+                padding-block: var(--space-normal)
+                transform: translateY(0)
+                transition: max-height 0.7s cubic-bezier(0.4,0,0.2,1), opacity 0.6s cubic-bezier(0.4,0,0.2,1), visibility 0.5s cubic-bezier(0.4,0,0.2,1), padding-block 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1)
+                will-change: max-height, opacity, visibility, padding-block, transform

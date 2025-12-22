@@ -1,0 +1,170 @@
+@use '../../mixin' as *
+
+@mixin mifan-side-base
+    @include transition-transform
+    position: fixed
+
+    &--left,
+    &--right
+        width: 100%
+        max-width: var(--screen-size-small-units)
+        height: 100dvh
+
+    &--top,
+    &--bottom
+        width: 100vw
+
+@mixin mifan-side-transforms
+    &--left
+        left: 0
+        transform: translateX(-100%)
+        &.is-visible
+            transform: translateX(0)
+    &--right
+        right: 0
+        transform: translateX(100%)
+        &.is-visible
+            transform: translateX(0)
+    &--top
+        top: 0
+        transform: translateY(-100%)
+        &.is-visible
+            transform: translateY(0)
+    &--bottom
+        bottom: 0
+        transform: translateY(100%)
+        &.is-visible
+            transform: translateY(0)
+
+@mixin mifan-side-common-content
+    > div
+        width: 100%
+        height: 100%
+        position: relative
+
+        > div
+            width: -webkit-fill-available
+            height: -webkit-fill-available
+            padding: var(--space-small)
+
+body[theme-type="default"]
+    .mifan-side
+        @include mifan-side-base
+        @include background-blur
+        @include mifan-side-transforms
+
+        &--left   
+            @include border-default-right
+        &--right
+            @include border-default-left
+        &--top
+            @include border-default-bottom
+        &--bottom
+            @include border-default-top
+
+        &--top,
+        &--bottom
+            min-height: var(--space-top)
+
+        @include mifan-side-common-content
+
+body[theme-type="box"]
+    .mifan-side
+        @include mifan-side-base
+        @include mifan-side-transforms
+
+        > div
+            @include background-blur
+            width: calc(100% - (var(--space-small) * 2))
+            height: calc(100% - (var(--space-small) * 2))
+            border-radius: var(--base-border-radius)
+            position: relative
+            box-shadow: inset 0 0 0 2px var(--color-border-bold)
+            margin: var(--space-small)
+
+            > div
+                width: -webkit-fill-available
+                height: -webkit-fill-available
+                padding: var(--space-small)
+
+        &--top > div,
+        &--bottom > div
+            min-height: var(--space-top)
+
+body[theme-type="float"]
+    .mifan-side
+        @include mifan-side-base
+        @include mifan-side-transforms
+
+        > div
+            @include background-blur
+            position: relative
+
+            > div
+                width: -webkit-fill-available
+                height: -webkit-fill-available
+                padding: var(--space-small)
+
+        &--left > div,
+        &--right > div
+            width: calc(100% - var(--space-small))
+            height: calc(100% - (var(--space-small) * 2))
+            margin-block: var(--space-small)
+
+        &--left > div   
+            margin-inline: 0 var(--space-small)
+        &--right > div  
+            margin-inline: var(--space-small) 0
+
+        &--top > div,
+        &--bottom > div
+            width: calc(100% - (var(--space-small) * 2))
+            height: calc(100% - (var(--space-small) * 2))
+            margin-inline: var(--space-small)
+
+        &--top > div    
+            margin-block: 0 var(--space-small)
+        &--bottom > div 
+            margin-block: var(--space-small) 0
+
+        &--top > div,
+        &--bottom > div
+            min-height: var(--space-top)
+ 
+        @mixin float-side-radius($side)
+            @if $side == 'top'
+                border-bottom-left-radius: var(--base-border-radius)
+                border-bottom-right-radius: var(--base-border-radius)
+                border-bottom: 2px solid var(--color-border-bold)
+                border-left: 2px solid var(--color-border-bold)
+                border-right: 2px solid var(--color-border-bold)
+
+            @else if $side == 'bottom'
+                border-top-left-radius: var(--base-border-radius)
+                border-top-right-radius: var(--base-border-radius)
+                border-top: 2px solid var(--color-border-bold)
+                border-left: 2px solid var(--color-border-bold)
+                border-right: 2px solid var(--color-border-bold)
+
+            @else if $side == 'left'
+                border-top-right-radius: var(--base-border-radius)
+                border-bottom-right-radius: var(--base-border-radius)
+                border-top: 2px solid var(--color-border-bold)
+                border-bottom: 2px solid var(--color-border-bold)
+                border-right: 2px solid var(--color-border-bold)
+
+            @else if $side == 'right'
+                border-top-left-radius: var(--base-border-radius)
+                border-bottom-left-radius: var(--base-border-radius)
+                border-top: 2px solid var(--color-border-bold)
+                border-bottom: 2px solid var(--color-border-bold)
+                border-left: 2px solid var(--color-border-bold)
+            
+        &--top > div    
+            @include float-side-radius('top')
+        &--bottom > div
+            @include float-side-radius('bottom')
+        &--left > div   
+            @include float-side-radius('left')
+        &--right > div  
+            @include float-side-radius('right')

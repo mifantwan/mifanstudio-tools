@@ -12,7 +12,7 @@ export default function footer() {
         navToggles[0].classList.add('open');
     }
 
-    const MOBILE_WIDTH = 1024;
+    const MOBILE_WIDTH = 1025;
     const isMobile = () => window.innerWidth < MOBILE_WIDTH;
 
     navToggles.forEach(toggle => {

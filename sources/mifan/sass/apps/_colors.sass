@@ -5,19 +5,25 @@
     --color-primary: rgba(235, 168, 71, 1) 
     // Box Shadow 
     --color-box-shadow: color-mix(in srgb, var(--color-text) 25%, transparent)
+    // Link & Icon Link Colors 
+    --color-link: color-mix(in srgb, var(--color-text) 75%, transparent)
     // Hover
-    --color-text-hover: color-mix(in srgb, var(--color-text) 25%, transparent)
+    --color-link-hover: color-mix(in srgb, var(--color-text) 25%, transparent)
     --color-background-hover: color-mix(in srgb, var(--color-background) 25%, transparent)
     --color-primary-hover: color-mix(in srgb, var(--color-primary) 25%, transparent)
     // Blur
     --filter-blur: blur(1rem)
+    --filter-blur-popup: blur(0.25rem)
     // Empty Background
     --color-background-empty: color-mix(in srgb, var(--color-background) 95%, var(--color-text))
     // Notifications
     --color-info: rgba(173, 216, 230, 1) 
     --color-warning: rgba(255, 229, 180, 1)  
     --color-error: rgba(255, 182, 193, 1)     
-    --color-success: rgba(186, 255, 201, 1)   
+    --color-success: rgba(186, 255, 201, 1)
+    // Border
+    --color-border: color-mix(in srgb, var(--color-text) 15%, transparent)
+    --color-border-bold: color-mix(in srgb, var(--color-text) 75%, transparent)
 
 
 @media (prefers-color-scheme: dark)

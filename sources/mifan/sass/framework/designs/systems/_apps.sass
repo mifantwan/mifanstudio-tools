@@ -1,0 +1,15 @@
+\:root,
+[theme-type="default"]
+    --announcement-height: calc((var(--font-p) / var(--font-scale)) + var(--space-normal))
+    --announcement-total-height: var(--announcement-height)
+
+[theme-type="box"]
+    --announcement-height: calc((var(--font-p) / var(--font-scale)) + var(--space-normal))
+    --announcement-total-height: calc(var(--announcement-height) + (var(--space-xsmall) * 2))
+
+[theme-type="float"]
+    --announcement-height: calc((var(--font-p) / var(--font-scale)) + var(--space-normal))
+    --announcement-total-height: calc(var(--announcement-height) + (var(--space-xsmall) + 2px))
+
+#mifan-apps
+    --space-top: calc(var(--announcement-total-height) + var(--navigation-height) + var(--space-normal))

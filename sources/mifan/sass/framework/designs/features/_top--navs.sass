@@ -1,0 +1,190 @@
+@use '../../mixin' as *
+
+:root
+    --navigation-height: calc((var(--font-p) * 2) + 2.25rem)
+
+@mixin nav-section-flex-base($firstlast-flex, $second-flex)
+    @include flex-center-between
+    div
+        &:first-child, &:last-child
+            flex: $firstlast-flex
+        &:nth-child(2)
+            flex: $second-flex
+    div:last-child
+        @include flex-center-end
+        > ul
+            gap: var(--space-xsmall)
+
+@mixin nav-section-flex
+    @include nav-section-flex-base(1, 2)
+
+@mixin _nav-section-base
+    @include nav-section-flex-base(0, 1)
+    div
+        &:nth-child(2)
+            padding-inline: calc(var(--space-normal) * 2)
+            ul
+                @include flex-center-start
+                li
+                    > div[parent-content]
+                        padding-inline: var(--space-normal)
+                        ul
+                            @include flex-col-start-start
+                        div
+                            padding-inline: 0
+
+@mixin nav-section-flex-left
+    @include _nav-section-base
+
+@mixin nav-section-flex-right
+    @include _nav-section-base
+    div:nth-child(2)
+        @include flex-center-end
+
+@mixin nav-container-blur($theme)
+    @if $theme == blur
+        @include background-blur
+    @else if $theme == blur-inverse
+        @include background-blur-inverse
+
+@mixin nav-box-shadow($theme)
+    @if $theme == box
+        box-shadow: inset 0 0 0 2px var(--color-border-bold)
+
+// Improve attribute selector specificity and avoid repeated declarations
+body[theme-type]
+    .mifan-top-navigation
+        @include position-fixed-full
+        top: var(--announcement-total-height, 0)
+
+        @at-root
+            body[theme-type="box"] .mifan-top-navigation,
+            body[theme-type="float"] .mifan-top-navigation
+                padding-inline: var(--space-normal)
+                width: -webkit-fill-available
+
+            body[theme-type="default"] .mifan-top-navigation
+                @include background-blur
+
+        .container, .container-md, .container-sm, .container-full
+            @at-root
+                body[theme-type="box"] .mifan-top-navigation .container,
+                body[theme-type="box"] .mifan-top-navigation .container-md,
+                body[theme-type="box"] .mifan-top-navigation .container-sm,
+                body[theme-type="box"] .mifan-top-navigation .container-full
+                    border-radius: var(--base-border-radius)
+                    box-shadow: inset 0 0 0 2px var(--color-border-bold)
+                    @include background-blur
+
+                body[theme-type="float"] .mifan-top-navigation .container,
+                body[theme-type="float"] .mifan-top-navigation .container-md,
+                body[theme-type="float"] .mifan-top-navigation .container-sm,
+                body[theme-type="float"] .mifan-top-navigation .container-full
+                    border-bottom-left-radius: var(--base-border-radius)
+                    border-bottom-right-radius: var(--base-border-radius)
+                    border-bottom: 2px solid var(--color-border-bold)
+                    border-left: 2px solid var(--color-border-bold)
+                    border-right: 2px solid var(--color-border-bold)
+                    @include background-blur
+
+            section
+                &[nav-type="center"]
+                    @include nav-section-flex
+                &[nav-type="left"]
+                    @include nav-section-flex-left
+                &[nav-type="right"]
+                    @include nav-section-flex-right
+
+        @at-root
+            body[theme-type="default"] .mifan-top-navigation nav
+                @include shadow-nav-bottom
+
+nav
+    ul     
+        gap: var(--space-normal)
+        li
+            a, button
+                font-size: var(--font-p)
+                background-color: transparent
+                border: none
+                padding: 0
+                margin: 0
+
+                span
+                    margin-inline: calc(var(--space-small) * 0.5) 0
+                    svg
+                        path
+                            fill: var(--color-link)
+
+        li.parent
+            position: relative
+            height: 100%
+
+            > a[data-has-children="true"]
+                @include transition-color
+                pointer-events: none
+                cursor: default
+                opacity: 1
+                outline: none
+                user-select: none
+                -webkit-tap-highlight-color: transparent
+                &:focus,
+                &:active,
+                &:focus-visible
+                    outline: none
+                    box-shadow: none
+                span svg path
+                    @include transition-fill
+
+            &:hover > a[data-has-children="true"]
+                @include link-color-hover
+                span svg
+                    @include link-icon-hover
+
+            > div[parent-content]
+                @include border-nav-children
+                @include flex-col-start-start
+                @include transition-nav-children
+                @include shadow-default
+                position: absolute
+                top: var(--navigation-height)
+                left: 50%
+                transform: translate(-50%, -10px)
+                background-color: var(--color-background)
+                border-radius: var(--base-border-radius)
+                padding: var(--space-small)
+                min-width: calc(var(--screen-size-small-units) / 2)
+                max-width: calc(100dvw - var(--space-normal))
+                gap: var(--space-small)
+                z-index: 1
+                opacity: 0
+                visibility: hidden
+                &[data-visible="true"]
+                    opacity: 1
+                    visibility: visible
+                > ul
+                    @include flex-col-start-start
+                    width: -webkit-fill-available
+                    gap: var(--space-normal) !important
+
+        li.parent[parent-type="custom"]
+            > div[parent-content]
+                @include flex-center-start
+
+                > *
+                    flex: 1 1 0
+                    min-width: calc(var(--screen-size-small-units) / 2)
+
+                > div
+                    @include flex-center-end
+                    gap: var(--space-small)
+                    span
+                        width: -webkit-fill-available
+                        > div
+                            @include media-container-background
+                            @include border-nav-children
+                            aspect-ratio: 1/1
+                            width: 100%
+                            height: auto
+                            border-radius: calc(var(--base-border-radius) - ( var(--space-small) * 0.5 ))
+

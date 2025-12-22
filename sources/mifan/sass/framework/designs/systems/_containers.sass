@@ -1,0 +1,22 @@
+@each $class, $size in (
+    "": var(--screen-size-units),
+    "-md": var(--screen-size-medium-units),
+    "-sm": var(--screen-size-small-units),
+    "-full": 100dvw
+)
+    .container#{$class}
+        max-width: #{$size}
+        margin-inline: auto
+
+.container,
+.container-md,
+.container-sm,
+.container-full
+    section
+        padding-inline: var(--space-normal)
+
+@each $space, $multiplier in (large: 3, normal: 1, small: .5, xsmall: .25)
+    .section--space-#{$space}
+        padding-block: calc(var(--space-normal) * #{$multiplier})
+    .container--space-#{$space}
+        padding-block: calc(var(--space-normal) * #{$multiplier})

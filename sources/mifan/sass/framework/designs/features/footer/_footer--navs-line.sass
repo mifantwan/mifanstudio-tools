@@ -1,0 +1,29 @@
+footer
+    .footer__navs-line
+        ul, p
+            display: flex
+            flex-wrap: wrap
+
+    .footer__navs-line[list-alignment="center"]
+        ul, p
+            justify-content: center
+
+    .footer__navs-line[list-alignment="right"]
+        ul, p
+            justify-content: flex-end
+
+    .footer__navs-line[list-alignment="left"]
+        ul, p
+            justify-content: flex-start
+
+    .footer__navs-line[list-space="small"]
+        ul, p
+            gap: var(--space-small)
+
+    .footer__navs-line[list-space="normal"]
+        ul, p
+            gap: var(--space-normal)
+
+    .footer__navs-line[list-space="large"]
+        ul, p
+            gap: var(--space-large)

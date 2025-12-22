@@ -1,0 +1,51 @@
+// Common styles for container inside popup or apps
+@use '../../mixin' as *
+.mifan-popup,
+.mifan-apps
+    .container,
+    .container-sm,
+    .container-md,
+    .container-full
+        display: flex
+        flex-direction: column
+        gap: var(--space-large)
+        width: 100%
+        height: auto
+
+// Apps main structure
+.mifan-apps
+    min-height: 100dvh
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+
+    main
+        flex: 1
+
+// Box style for mifan-apps
+body[theme-type="box"]
+    .mifan-apps
+        header,
+        main
+            padding-inline: var(--space-normal)
+            .container,
+            .container-sm,
+            .container-md,
+            .container-full
+                width: -webkit-fill-available
+                border-radius: var(--base-border-radius)
+                border: 2px solid var(--color-border-bold)
+                @include background-blur
+
+        header
+            .container,
+            .container-sm,
+            .container-md,
+            .container-full
+                margin-block: 0 var(--space-small)
+        main
+            .container,
+            .container-sm,
+            .container-md,
+            .container-full
+                margin-block: var(--space-small)

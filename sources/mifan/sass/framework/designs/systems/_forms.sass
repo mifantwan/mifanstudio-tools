@@ -1,0 +1,95 @@
+form
+    // Input Container
+    .input-container
+        padding: var(--space-xsmall)
+        border: 2px solid var(--filter-background-blur-inverse)
+        border-radius: var(--base-border-radius)
+        background: var(--color-background)
+        position: relative
+        max-width: 100%
+        height: 2rem
+
+        input[type="email"],
+        button[type="submit"] 
+            border-radius: calc(var(--base-border-radius) - calc(var(--space-xsmall) / 2)) 
+            background: transparent
+
+        input[type="email"]
+            position: absolute
+            width: 85%
+            height: 2rem
+            border: none
+            outline: none
+            padding-inline-start: calc(var(--font-p) / 2)
+            font-family: var(--font-text)
+            color: color-mix(in srgb, var(--color-text) 75%, transparent)
+
+        button[type="submit"]
+            position: absolute
+            right: var(--space-xsmall)
+            width: 2rem
+            height: 2rem
+            aspect-ratio: 1
+            background: var(--filter-background-blur-inverse)
+            border: 2px solid var(--filter-background-blur-inverse)
+            span svg
+                vertical-align: middle
+                path
+                    fill: var(--color-background-empty)
+
+            &:hover
+                background-color: color-mix(in srgb, var(--color-primary) 65%, transparent)
+                border: 2px solid color-mix(in srgb, var(--color-primary) 75%, transparent)
+
+    // Checkbox
+    .checkbox
+        display: flex
+        align-items: center
+        gap: calc(var(--font-p) / 2)
+        padding-block: calc(var(--font-p) / 2)
+
+        input[type="checkbox"]
+            // Remove default OS appearance
+            appearance: none
+            -webkit-appearance: none
+            -moz-appearance: none
+            width: 1.15rem
+            height: 1.15rem
+            border: 2px solid var(--color-border-bold)
+            border-radius: var(--base-border-radius)
+            background: var(--color-background)
+            transition: border-color 0.3s, background 0.3s
+            outline: none
+            position: relative
+            cursor: pointer
+            margin: 0
+
+            &:hover
+                border-color: color-mix(in srgb, var(--color-text) 75%, transparent)
+
+            &:checked
+                background: color-mix(in srgb, var(--color-primary) 75%, transparent)
+                border-color: color-mix(in srgb, var(--color-text) 75%, transparent)
+            
+                // custom checkmark (centered)
+                &::after
+                    content: ''
+                    display: block
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    width: 0.33rem
+                    height: 0.6rem
+                    border: 2px solid color-mix(in srgb, var(--color-text) 75%, transparent)
+                    border-width: 0 2px 2px 0
+                    transform: translate(-50%, -60%) rotate(45deg)
+                    pointer-events: none
+
+        label
+            font-family: var(--font-text)
+            color: color-mix(in srgb, var(--color-text) 88%, var(--color-background))
+            user-select: none
+            cursor: pointer
+
+        small
+            color: color-mix(in srgb, var(--color-text) 88%, var(--color-background))

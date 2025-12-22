@@ -1,0 +1,52 @@
+@use '../../mixin' as *
+
+.mifan-announcements
+    @include position-fixed-full
+    .announcement-container
+        @include position-relative
+        height: var(--announcement-height, 0)
+
+        small
+            @include position-absolute
+            @include transition-roll-in
+            @include flex-center
+            height: inherit
+
+            a
+                @include text-ellipsis
+                text-align: center
+
+body[theme-type="default"]
+    .mifan-announcements
+        @include background-blur-inverse
+
+body[theme-type="box"]
+    .mifan-announcements
+        padding-block: var(--space-xsmall)
+        padding-inline: var(--space-normal)
+        width: -webkit-fill-available
+
+        .container,
+        .container-md,
+        .container-sm,
+        .container-full
+            border-radius: var(--base-border-radius)
+            box-shadow: inset 0 0 0 2px var(--color-border-bold)
+            @include background-blur-inverse
+
+body[theme-type="float"]
+    .mifan-announcements
+        padding-block: var(--space-xsmall) 0
+        padding-inline: var(--space-normal)
+        width: -webkit-fill-available
+
+        .container,
+        .container-md,
+        .container-sm,
+        .container-full
+            @include background-blur-inverse
+            border-top-left-radius: var(--base-border-radius)
+            border-top-right-radius: var(--base-border-radius)
+            border-top: 2px solid var(--color-border-bold)
+            border-left: 2px solid var(--color-border-bold)
+            border-right: 2px solid var(--color-border-bold)

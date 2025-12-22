@@ -1,0 +1,62 @@
+@use '../../mixin' as *
+
+@forward './footer/footer--main'
+@forward './footer/footer--navs'
+@forward './footer/footer--newsletter'
+@forward './footer/footer--navs-line'
+@forward './footer/footer--copyright'
+
+// Footer base color logic
+%footer-text-color
+    color: color-mix(in srgb, var(--color-text) 95%, var(--color-background))
+
+body[theme-type="default"]
+    footer
+        @extend %footer-text-color
+        background: var(--color-background-empty)
+        
+body[theme-type="box"]
+    footer
+        @extend %footer-text-color
+        background: color-mix(in srgb, var(--color-background) 0%, transparent)
+        padding-inline: var(--space-normal)
+        .container,
+        .container-sm,
+        .container-md,
+        .container-full
+            @include background-blur
+            width: -webkit-fill-available
+            border-radius: var(--base-border-radius)
+            border: 2px solid var(--color-border-bold)
+            margin-block: var(--space-xsmall)
+
+body[theme-type="float"]
+    footer
+        margin-block-end: var(--space-xsmall)
+        padding-inline: var(--space-normal)
+        .container,
+        .container-sm,
+        .container-md,
+        .container-full
+            background: var(--color-background-empty)
+            @extend %footer-text-color
+        
+        > div:first-child
+            border-top: 2px solid var(--color-border-bold)
+            border-left: 2px solid var(--color-border-bold)
+            border-right: 1px solid var(--color-border-bold)
+            border-top-left-radius: var(--base-border-radius)
+            border-top-right-radius: var(--base-border-radius)
+
+        > div:not(:first-child),
+        > div:not(:last-child)
+            border-left: 2px solid var(--color-border-bold)
+            border-right: 2px solid var(--color-border-bold)
+
+        > div:last-child
+            border-bottom: 2px solid var(--color-border-bold)
+            border-left: 2px solid var(--color-border-bold)
+            border-right: 2px solid var(--color-border-bold)
+            border-bottom-left-radius: var(--base-border-radius)
+            border-bottom-right-radius: var(--base-border-radius)
+    

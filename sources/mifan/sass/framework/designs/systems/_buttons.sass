@@ -1,0 +1,51 @@
+@use '../../mixin' as *
+@forward './buttons/button--downloads'
+
+button
+    pointer-events: auto 
+    cursor: pointer
+
+nav
+    ul
+        li
+            button
+                font-size: unset
+                span
+                    svg
+                        @include transition-transform
+                        path
+                            @include transition-fill
+
+            button:hover
+                span
+                    svg
+                        @include link-icon-hover
+
+// close button
+button.close
+    position: absolute
+    top: var(--space-xsmall)
+    right: var(--space-xsmall)
+    padding: var(--space-xsmall)
+    background: transparent
+    border: none
+    border-radius: calc(var(--base-border-radius) - var(--space-xsmall))
+    @include flex-center
+    @include transition-background-color
+
+    span
+        aspect-ratio: 1
+
+    &:hover
+        background-color: color-mix(in srgb, var(--color-text) 15%, transparent)
+
+// Social Share Button
+.button
+    &--social-share
+        padding: calc( var(--space-small) / 2)
+        border-radius: calc(var(--space-small) / 2)
+        border: none
+        background-color: var(--color-background-empty)
+
+        &:hover
+            background-color: color-mix(in srgb, var(--color-primary) 85%, transparent)

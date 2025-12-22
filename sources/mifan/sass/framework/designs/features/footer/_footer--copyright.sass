@@ -1,0 +1,22 @@
+footer
+    .container:last-child,
+    .container-sm:last-child,
+    .container-md:last-child,
+    .container-full:last-child
+        section
+            &:last-child
+                display: flex
+                justify-content: space-between
+                align-items: center
+                gap: var(--space-small)
+
+                ul
+                    li
+                        small,
+                        a
+                            display: -webkit-box
+                            -webkit-line-clamp: 2
+                            -webkit-box-orient: vertical
+                            overflow: hidden
+                            text-overflow: ellipsis
+                            white-space: normal

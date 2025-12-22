@@ -1,15 +1,15 @@
 @use '../../../framework/mixin' as *
 .post-related--articles
     a
-        height: calc(3rem + var(--padding-small) / 2)
-        padding: calc(var(--padding-small) / 2)
+        height: calc(3rem + var(--space-small) / 2)
+        padding: calc(var(--space-small) / 2)
 
         div:nth-child(2)
             aspect-ratio: 3 / 2
             width: auto
             height: 100%
             @include img-container
-            border-radius: calc(var(--padding-small) / 2)
+            border-radius: calc(var(--space-small) / 2)
 
             img
                 width: 100%

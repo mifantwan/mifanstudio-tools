@@ -2,60 +2,62 @@
 
 // Add scroll margin for anchor links to account for fixed navigation
 section[id]
-    scroll-margin-top: calc(var(--space-top) + var(--padding-normal))
+    scroll-margin-top: calc(var(--space-top) + var(--space-normal))
 
 header[header-type="default"],
 header[header-type="pages"]
     min-height: calc(30rem - var(--space-top))
     .container
         section
+            padding-block-start: 0
             h1
                 max-width: calc(var(--screen-size-small-units) * 2)
-                padding-block: var(--padding-normal)
+                padding-block: var(--space-normal)
 
             h5
-                padding-block-end: var(--padding-small)
+                padding-block-end: var(--space-small)
 
             small
                 text-transform: uppercase
 
             p
                 max-width: calc(var(--screen-size-small-units) * 2)
+                padding-block-end: var(--space-normal)
 
             .page-header-container[hero-type="default"]
 
                 > div:first-child
-                    padding-block: var(--padding-normal)
+                    padding-block: var(--space-normal)
 
                 > div:nth-child(2)
                     @include img-container
                     aspect-ratio: 3/1
                     width: auto
                     height: 100%
-                    border-radius: var(--padding-small) var(--padding-small) 0 0
-                    border: 2px solid var(--color-text)
+                    border-radius: var(--base-border-radius) var(--base-border-radius) 0 0
+                    border: 1px solid var(--color-border-bold)
 
                     img
                         width: 100%
                         height: 100%
                         object-fit: cover
-                        border-radius: calc(var(--padding-small) - 2px) calc(var(--padding-small) - 2px) 0 0
+                        border-radius: calc(var(--base-border-radius) - 2px) calc(var(--base-border-radius) - 2px) 0 0
                         filter: grayscale(100%)
                         transition: filter 0.3s ease
                         &:hover
                             filter: none
 
                 > div:last-child
-                    padding-block: var(--padding-normal)
+                    padding-block: var(--space-normal)
                     justify-content: center
                     align-items: center
                     
                     > div
                         flex: 1 1 0
                         aspect-ratio: 3/1
-                        padding: var(--padding-small)
+                        padding: var(--space-small)
                         background-color: color-mix(in srgb, var(--color-background) 95%, var(--color-text))
-                        border: 2px solid var(--color-text)
+                        border: 1px solid var(--color-border-bold)
                         position: relative
 
                         > a
@@ -73,10 +75,10 @@ header[header-type="pages"]
                                     fill: var(--color-text)
 
                     > div:first-child
-                        border-radius: 0 0 0 calc(var(--padding-small) - 0.3rem)
+                        border-radius: 0 0 0 calc(var(--base-border-radius) - 0.3rem)
                         
                     > div:last-child
-                        border-radius: 0 0 calc(var(--padding-small) - 0.3rem) 0
+                        border-radius: 0 0 calc(var(--base-border-radius) - 0.3rem) 0
 
                 @media (max-width: 1023px)
                     > div:nth-child(2)
@@ -92,12 +94,12 @@ header[header-type="pages"]
                             width: -webkit-fill-available
 
                             p
-                                padding-block-end: var(--padding-normal)
+                                padding-block-end: var(--space-normal)
                             
                         > div:first-child,
                         > div:nth-child(2),
                         > div:last-child
-                            border-radius: 0 0 calc(var(--padding-small) - 0.3rem) calc(var(--padding-small) - 0.3rem)
+                            border-radius: 0 0 calc(var(--base-border-radius) - 0.3rem) calc(var(--base-border-radius) - 0.3rem)
 
                         > div:not(:first-child)
                             display: none
