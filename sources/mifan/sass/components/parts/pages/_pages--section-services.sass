@@ -15,7 +15,8 @@
         &:first-child
             border: none
         &:last-child
-            border: 1px solid var(--color-border-bold)
+            border: 1px solid transparent
+            background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box
             border-radius: var(--base-border-radius)
 
 .button--services-pricing
@@ -30,9 +31,9 @@
     button
         width: 100%
         padding: var(--space-xsmall)
-        border: 1px solid var(--color-border-bold)
+        border: 1px solid transparent
+        background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box
         border-radius: var(--base-border-radius)
-        background: var(--color-background)
         cursor: pointer
         transition: transform 0.3s ease-in-out, width 0.3s ease-in-out
         text-align: left
@@ -169,12 +170,14 @@
                         vertical-align: middle
 
     hr
-        border: 0.5px solid var(--color-text)
+        border: none
+        height: 1px
+        background: linear-gradient(90deg, var(--color-border-gradient-start), var(--color-border-gradient-end))
 
     &[content-route] p
         text-align: left !important
 
-@media (max-width: 1023px)
+@media (max-width: 1024px)
     .button--services-pricing
         flex-direction: row
         padding: 0
@@ -183,6 +186,7 @@
         scrollbar-width: none
 
         button
+            border-radius: var(--base-border-radius)
             padding: 0
             width: auto
             border: none
@@ -191,11 +195,13 @@
             &[popular]
                 width: -webkit-fill-available
                 transform: scale(0.99)
+                border-radius: var(--base-border-radius)
 
                 > div
                     width: -webkit-fill-available
                     background: var(--color-primary)
                     justify-content: center
+                    border-radius: var(--base-border-radius)
 
             > div
                 transition: width 0.3s ease-in-out, justify-content 0.3s ease-in-out

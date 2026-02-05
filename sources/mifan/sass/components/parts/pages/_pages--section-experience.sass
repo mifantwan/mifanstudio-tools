@@ -2,15 +2,17 @@
     .experience-company,
     .experience-projects,
     .experience-personal
-        height: -webkit-fill-available
+        height: 100%
         border-radius: var(--base-border-radius)
         padding: var(--space-small)
-        border: 1px solid var(--color-border)
+        border: 1px solid transparent
+        background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box
         position: relative
 
     .experience-company
         aspect-ratio: 1 / 1
         width: -webkit-fill-available
+        height: 100%
         background-color: var(--color-background-empty)
         backdrop-filter: blur(var(--filter-blur))
 
@@ -46,13 +48,13 @@
             width: -webkit-fill-available
 
     .experience-projects
-        padding-block-end: 0
         padding-inline-end: 0
         background-size: 100%
         background-repeat: no-repeat
         background-position: 8rem 11rem
         filter: grayscale(100%)
         transition: filter 0.3s ease, background-position 0.3s ease
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14)
         
         &:hover
             filter: grayscale(0%)
@@ -132,4 +134,7 @@
             width: 100%
             
         .experience-projects
-            height: -webkit-fill-available
+            height: calc(100% - ( 2 * var(--space-normal)) + 2px)
+            border: 1px solid var(--color-border)
+            box-shadow: none
+

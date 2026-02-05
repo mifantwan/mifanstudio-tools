@@ -34,8 +34,9 @@ body[theme-type="box"]
             .container-full
                 width: -webkit-fill-available
                 border-radius: var(--base-border-radius)
-                border: 2px solid var(--color-border-bold)
-                @include background-blur
+                border: 2px solid transparent
+                background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box
+                backdrop-filter: var(--filter-blur)
 
         header
             .container,

@@ -35,7 +35,8 @@ header[header-type="pages"]
                     width: auto
                     height: 100%
                     border-radius: var(--base-border-radius) var(--base-border-radius) 0 0
-                    border: 1px solid var(--color-border-bold)
+                    border: 1px solid transparent
+                    background: linear-gradient(var(--color-background-empty), var(--color-background-empty)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box
 
                     img
                         width: 100%
@@ -56,8 +57,8 @@ header[header-type="pages"]
                         flex: 1 1 0
                         aspect-ratio: 3/1
                         padding: var(--space-small)
-                        background-color: color-mix(in srgb, var(--color-background) 95%, var(--color-text))
-                        border: 1px solid var(--color-border-bold)
+                        border: 1px solid transparent
+                        background: linear-gradient(color-mix(in srgb, var(--color-background) 95%, var(--color-text)), color-mix(in srgb, var(--color-background) 95%, var(--color-text))) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box
                         position: relative
 
                         > a
@@ -103,3 +104,249 @@ header[header-type="pages"]
 
                         > div:not(:first-child)
                             display: none
+
+header[header-type="homepage"]
+    min-height: calc(50vh - var(--space-top))
+    display: flex
+    flex-direction: column
+
+    .container
+        flex: 1 1 auto
+        display: flex
+        flex-direction: column
+        height: 100%
+
+        section
+            flex: 1 1 auto
+            min-height: calc(50vh - var(--space-top))
+            height: 100%
+            
+            .grid
+                height: 100%
+                align-items: stretch
+
+                > div
+                    height: 100%
+
+        .hero-bento
+            display: flex
+            flex-direction: row
+            gap: var(--space-small)
+
+            > div
+                flex: 1 1 0
+                border: 1px solid transparent
+
+            .hero-bento-item
+                display: flex
+                flex-direction: column
+                gap: var(--space-small)
+
+                .hero-bento-item-image
+                    flex: 1 1 0
+                    aspect-ratio: 1/1
+                    width: fit-content
+                    height: auto
+                    @include gradient-border(1px, var(--color-background-empty), var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end))
+                    border-radius: calc(var(--base-border-radius) + 1px)
+
+                .hero-bento-item-text
+                    flex: 1 1 0
+                    width: 100%
+                    height: 100%
+                    aspect-ratio: 3/1
+                    @include gradient-border(1px, var(--color-background), var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end))
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    border-radius: calc(var(--base-border-radius) + 1px)
+
+                .summary
+                    backdrop-filter: var(--filter-blur)
+                    @include gradient-border(1px, var(--filter-background-blur), var(--color-border-gradient-start), var(--color-border-gradient-end))
+                    padding: var(--space-xsmall)
+                    height: -webkit-fill-available
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    justify-content: center
+                    border-radius: var(--base-border-radius)
+
+                    .flex
+                        gap: var(--space-small)
+                    
+                    small
+                        margin-block-end: var(--space-small)
+
+                    span
+                        aspect-ratio: 1/1
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        width: auto
+                        max-height: 1.5rem
+                        border-radius: var(--base-border-radius)
+                        circle,
+                        path
+                            fill: var(--filter-background-blur-inverse)
+
+                        svg
+                            aspect-ratio: 1/1
+                            max-height: 1.5rem
+                            width: auto
+
+                .specialization
+                    @include gradient-border(1px, var(--filter-background-blur-inverse), var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end))
+                    backdrop-filter: blur(var(--filter-blur))
+                    border-radius: var(--base-border-radius)
+                    height: 100%
+                    width: 100%
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    span
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        svg
+                            width: 75%
+                            height: auto
+                            path
+                                fill: revert-layer !important
+                            
+                            // First SVG (black text) - show in dark mode, hide in light mode
+                            &:nth-of-type(1)
+                                @media (prefers-color-scheme: dark)
+                                    display: block
+                                @media (prefers-color-scheme: light)
+                                    display: none
+                            
+                            // Second SVG (white text) - hide in dark mode, show in light mode
+                            &:nth-of-type(2)
+                                @media (prefers-color-scheme: dark)
+                                    display: none
+                                @media (prefers-color-scheme: light)
+                                    display: block   
+
+            // Common image styles
+            .hero-bento-item-profile,
+            .hero-bento-item-blogs
+                @include gradient-border(1px, var(--color-background-empty), var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end))
+                border-radius: var(--base-border-radius)
+                position: relative
+
+                img
+                    width: 100%
+                    object-fit: cover
+                    border-radius: calc(var(--base-border-radius) - 1px)
+                    filter: grayscale(100%)
+                    transition: filter 0.3s ease
+                    &:hover
+                        filter: none
+
+            .hero-bento-item-profile
+                width: 100%
+                height: auto
+
+                img
+                    height: auto
+                    display: block
+
+                a
+                    position: absolute
+                    top: var(--space-xsmall)
+                    right: var(--space-xsmall)
+                    left: var(--space-xsmall)
+
+                    span
+                        padding: var(--space-xsmall) var(--space-small)
+                        color: color-mix(in srgb, var(--color-success) 55%, var(--color-text))
+                        @include gradient-border(1px, color-mix(in srgb, var(--color-success) 5%, var(--color-background)), var(--color-border-gradient-start), color-mix(in srgb, var(--color-success) 80%, transparent))
+                        border-radius: var(--base-border-radius)
+                        display: flex
+                        align-items: center
+                        gap: var(--space-small)
+
+                    small 
+                        display: block
+                        overflow: hidden
+                        text-overflow: ellipsis
+                        white-space: nowrap
+                        max-width: 100%
+
+            .hero-bento-item-blogs
+                width: 100%
+                height: 100%
+
+                img
+                    height: 100%
+
+                a
+                    position: absolute
+                    bottom: var(--space-xsmall)
+                    right: var(--space-xsmall)
+                    left: var(--space-xsmall)
+
+                    span
+                        padding: var(--space-xsmall) var(--space-small)
+                        color: var(--color-text)
+                        @include gradient-border(1px, var(--filter-background-blur), var(--color-border-gradient-start), var(--color-border-gradient-end))
+                        border-radius: var(--base-border-radius)
+                        display: flex
+                        align-items: center
+                        gap: var(--space-xsmall)
+
+                    small 
+                        display: -webkit-box
+                        -webkit-line-clamp: 2
+                        -webkit-box-orient: vertical
+                        overflow: hidden
+                        text-overflow: ellipsis
+
+
+        .hero-main
+            padding: var(--space-normal)
+            height: calc(100% - (var(--space-normal) * 2))
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            align-items: flex-start
+            gap: var(--space-normal)
+
+            > div:first-child
+                display: flex
+                flex-direction: column
+                justify-content: flex-start
+                align-items: flex-start
+                gap: var(--space-normal)
+
+            h1
+                background: linear-gradient(90deg, var(--color-text), var(--color-border-gradient-end))
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                background-clip: text
+                color: transparent
+                line-height: 1.3
+
+    .requirements
+        max-width: calc(var(--screen-size-small-units) * 2)
+        margin-inline: auto
+        padding-block-start: var(--space-large)
+        margin-block-start: var(--space-large)
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+        gap: var(--space-normal)
+        h4
+            margin: 0
+            text-align: center
+            color: var(--filter-background-blur-inverse)
+            backdrop-filter: var(--filter-blur)
+
+        @media (max-width: 1023px)
+            margin-block-start: var(--space-xsmall)
+
+
+

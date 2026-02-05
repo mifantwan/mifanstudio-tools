@@ -114,10 +114,12 @@ body[theme-type="default"]
 body[theme-type="box"]
     .search-results
         > div, div:last-child
-            border: 2px solid var(--color-border-bold)
+            border: 2px solid transparent
+            background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box
 
 body[theme-type="float"]
     .search-results
         > div, div:last-child
-            border: 2px solid var(--color-border-bold)
+            border: 2px solid transparent
+            background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box
                     

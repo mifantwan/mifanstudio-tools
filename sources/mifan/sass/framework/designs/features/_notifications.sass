@@ -69,9 +69,9 @@
         
         @each $status, $color in $statuses
             &[item-status="#{$status}"]
-                background-color: color-mix(in srgb, var(--color-#{$color}) 5%, var(--color-background))
                 color: color-mix(in srgb, var(--color-#{$color}) 55%, var(--color-text))
-                border: 1px solid color-mix(in srgb, var(--color-#{$color}) 55%, var(--color-text))
+                border: 1px solid transparent
+                background: linear-gradient(color-mix(in srgb, var(--color-#{$color}) 5%, var(--color-background)), color-mix(in srgb, var(--color-#{$color}) 5%, var(--color-background))) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), color-mix(in srgb, var(--color-#{$color}) 80%, transparent)) border-box
                 border-radius: var(--base-border-radius)
 
         small 

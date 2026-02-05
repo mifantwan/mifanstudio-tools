@@ -1072,8 +1072,8 @@ footer .container-full:last-child ul li a {
   border-radius: calc(var(--space-small) / 2);
   position: relative;
   width: 100%;
-  background-color: var(--color-background);
-  border: 2px solid var(--color-text);
+  border: 2px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
   color: var(--color-text);
 }
 .button--downloads > * span {
@@ -1166,9 +1166,9 @@ button.close:hover {
 
 form .input-container {
   padding: var(--space-xsmall);
-  border: 2px solid var(--filter-background-blur-inverse);
+  border: 2px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
   border-radius: var(--base-border-radius);
-  background: var(--color-background);
   position: relative;
   max-width: 100%;
   height: 2rem;
@@ -1194,8 +1194,8 @@ form .input-container button[type=submit] {
   width: 2rem;
   height: 2rem;
   aspect-ratio: 1;
-  background: var(--filter-background-blur-inverse);
-  border: 2px solid var(--filter-background-blur-inverse);
+  border: 2px solid transparent;
+  background: linear-gradient(var(--filter-background-blur-inverse), var(--filter-background-blur-inverse)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
 }
 form .input-container button[type=submit] span svg {
   vertical-align: middle;
@@ -1204,8 +1204,8 @@ form .input-container button[type=submit] span svg path {
   fill: var(--color-background-empty);
 }
 form .input-container button[type=submit]:hover {
-  background-color: color-mix(in srgb, var(--color-primary) 65%, transparent);
-  border: 2px solid color-mix(in srgb, var(--color-primary) 75%, transparent);
+  border: 2px solid transparent;
+  background: linear-gradient(color-mix(in srgb, var(--color-primary) 65%, transparent), color-mix(in srgb, var(--color-primary) 65%, transparent)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
 }
 form .checkbox {
   display: flex;
@@ -1219,21 +1219,20 @@ form .checkbox input[type=checkbox] {
   -moz-appearance: none;
   width: 1.15rem;
   height: 1.15rem;
-  border: 2px solid var(--color-border-bold);
+  border: 2px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
   border-radius: var(--base-border-radius);
-  background: var(--color-background);
-  transition: border-color 0.3s, background 0.3s;
+  transition: background 0.3s;
   outline: none;
   position: relative;
   cursor: pointer;
   margin: 0;
 }
 form .checkbox input[type=checkbox]:hover {
-  border-color: color-mix(in srgb, var(--color-text) 75%, transparent);
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-primary)) border-box;
 }
 form .checkbox input[type=checkbox]:checked {
-  background: color-mix(in srgb, var(--color-primary) 75%, transparent);
-  border-color: color-mix(in srgb, var(--color-text) 75%, transparent);
+  background: linear-gradient(color-mix(in srgb, var(--color-primary) 75%, transparent), color-mix(in srgb, var(--color-primary) 75%, transparent)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
 }
 form .checkbox input[type=checkbox]:checked::after {
   content: "";
@@ -1348,6 +1347,7 @@ body[theme-type] .mifan-top-navigation {
   left: 0;
   width: 100dvw;
   top: var(--announcement-total-height, 0);
+  height: var(--navigation-height);
 }
 body[theme-type=box] .mifan-top-navigation,
 body[theme-type=float] .mifan-top-navigation {
@@ -1549,7 +1549,8 @@ nav ul li.parent:hover > a[data-has-children=true] span svg path {
   fill: var(--color-link-hover);
 }
 nav ul li.parent > div[parent-content] {
-  border: 1px solid var(--color-border);
+  border: 1px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-start !important;
@@ -1592,23 +1593,37 @@ nav ul li.parent[parent-type=custom] > div[parent-content] > * {
   flex: 1 1 0;
   min-width: calc(var(--screen-size-small-units) / 2);
 }
-nav ul li.parent[parent-type=custom] > div[parent-content] > div {
+nav ul li.parent[parent-type=custom] > div[parent-content] > a {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   gap: var(--space-small);
 }
-nav ul li.parent[parent-type=custom] > div[parent-content] > div span {
+nav ul li.parent[parent-type=custom] > div[parent-content] > a span {
   width: -webkit-fill-available;
+  position: relative;
 }
-nav ul li.parent[parent-type=custom] > div[parent-content] > div span > div {
+nav ul li.parent[parent-type=custom] > div[parent-content] > a span > div {
   background-color: color-mix(in srgb, var(--color-text) 5%, transparent);
-  border: 1px solid var(--color-border);
+  border: 1px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
   aspect-ratio: 1/1;
   width: 100%;
   height: auto;
   border-radius: calc(var(--base-border-radius) - var(--space-small) * 0.5);
+}
+nav ul li.parent[parent-type=custom] > div[parent-content] > a span small {
+  position: absolute;
+  bottom: var(--space-small);
+  right: var(--space-small);
+  text-align: right;
+  border: 1px solid transparent;
+  background: linear-gradient(var(--filter-background-blur), var(--filter-background-blur)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
+  -webkit-backdrop-filter: blur(var(--filter-blur));
+          backdrop-filter: blur(var(--filter-blur));
+  border-radius: var(--base-border-radius);
+  padding: var(--space-xsmall) var(--space-small);
 }
 
 .mifan-top-navigation > nav > .container,
@@ -1689,7 +1704,8 @@ nav ul li.parent[parent-type=custom] > div[parent-content] > div span > div {
   -webkit-backdrop-filter: var(--filter-blur);
           backdrop-filter: var(--filter-blur);
   color: var(--color-text);
-  border: 2px solid var(--color-border);
+  border: 2px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
   transition: all var(--transition-duration) var(--transition-ease);
   border-radius: calc(var(--base-border-radius) - var(--space-small) * 0.5);
   padding-inline-start: var(--space-small);
@@ -1712,7 +1728,8 @@ nav ul li.parent[parent-type=custom] > div[parent-content] > div span > div {
 .mifan-top-navigation > nav > .container-sm .search form input:focus,
 .mifan-top-navigation > nav > .container-sm .search form input:active,
 .mifan-top-navigation > nav > .container-sm .search form input:hover {
-  border: 2px solid var(--color-border-bold);
+  border: 2px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
 }
 .mifan-top-navigation > nav > .container .search form span,
 .mifan-top-navigation > nav > .container-full .search form span,
@@ -1785,15 +1802,18 @@ nav ul li.parent[parent-type=custom] > div[parent-content] > div span > div {
 }
 
 body[theme-type=default] .search-results > div, body[theme-type=default] .search-results div:last-child {
-  border: 1px solid var(--color-border);
+  border: 1px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
 }
 
 body[theme-type=box] .search-results > div, body[theme-type=box] .search-results div:last-child {
-  border: 2px solid var(--color-border-bold);
+  border: 2px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
 }
 
 body[theme-type=float] .search-results > div, body[theme-type=float] .search-results div:last-child {
-  border: 2px solid var(--color-border-bold);
+  border: 2px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
 }
 
 nav [brand-type] ul {
@@ -1817,7 +1837,8 @@ nav [brand-type] a {
   gap: var(--space-xsmall);
 }
 nav [brand-type] img {
-  border: 2px solid var(--color-border-bold);
+  border: 2px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
   transition: filter var(--transition-duration) var(--transition-ease), transform var(--transition-duration) var(--transition-ease), border-color var(--transition-duration) var(--transition-ease);
   padding: var(--space-xsmall);
   border-radius: var(--space-xsmall);
@@ -1952,16 +1973,20 @@ body[theme-type=default] .mifan-side--bottom.is-visible {
   transform: translateY(0);
 }
 body[theme-type=default] .mifan-side--left {
-  border-right: 1px solid var(--color-border);
+  border-right: 1px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
 }
 body[theme-type=default] .mifan-side--right {
-  border-left: 1px solid var(--color-border);
+  border-left: 1px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
 }
 body[theme-type=default] .mifan-side--top {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
 }
 body[theme-type=default] .mifan-side--bottom {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
 }
 body[theme-type=default] .mifan-side--top, body[theme-type=default] .mifan-side--bottom {
   min-height: var(--space-top);
@@ -2177,7 +2202,8 @@ body[theme-type=float] .mifan-side--right > div {
 .mifan-popup .container-md,
 .mifan-popup .container-sm,
 .mifan-popup .container-full {
-  border: 1px solid var(--color-border);
+  border: 1px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
   transition: transform var(--transition-duration) var(--transition-ease);
   background-color: var(--color-background);
   border-radius: var(--base-border-radius);
@@ -2197,7 +2223,8 @@ body[theme-type=default] .mifan-popup .container,
 body[theme-type=default] .mifan-popup .container-md,
 body[theme-type=default] .mifan-popup .container-sm,
 body[theme-type=default] .mifan-popup .container-full {
-  border: 1px solid var(--color-border);
+  border: 1px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box;
 }
 
 body[theme-type=box] .mifan-popup .container,
@@ -2208,7 +2235,8 @@ body[theme-type=float] .mifan-popup .container,
 body[theme-type=float] .mifan-popup .container-md,
 body[theme-type=float] .mifan-popup .container-sm,
 body[theme-type=float] .mifan-popup .container-full {
-  border: 2px solid var(--color-border-bold);
+  border: 2px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
 }
 
 .mifan-notifications {
@@ -2274,33 +2302,33 @@ body[theme-type=float] .mifan-popup .container-full {
   left: var(--space-small);
 }
 .mifan-notifications .notification-items[item-status=""] {
-  background-color: color-mix(in srgb, var(--color-text) 5%, var(--color-background));
   color: color-mix(in srgb, var(--color-text) 55%, var(--color-text));
-  border: 1px solid color-mix(in srgb, var(--color-text) 55%, var(--color-text));
+  border: 1px solid transparent;
+  background: linear-gradient(color-mix(in srgb, var(--color-text) 5%, var(--color-background)), color-mix(in srgb, var(--color-text) 5%, var(--color-background))) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), color-mix(in srgb, var(--color-text) 80%, transparent)) border-box;
   border-radius: var(--base-border-radius);
 }
 .mifan-notifications .notification-items[item-status=info] {
-  background-color: color-mix(in srgb, var(--color-info) 5%, var(--color-background));
   color: color-mix(in srgb, var(--color-info) 55%, var(--color-text));
-  border: 1px solid color-mix(in srgb, var(--color-info) 55%, var(--color-text));
+  border: 1px solid transparent;
+  background: linear-gradient(color-mix(in srgb, var(--color-info) 5%, var(--color-background)), color-mix(in srgb, var(--color-info) 5%, var(--color-background))) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), color-mix(in srgb, var(--color-info) 80%, transparent)) border-box;
   border-radius: var(--base-border-radius);
 }
 .mifan-notifications .notification-items[item-status=warning] {
-  background-color: color-mix(in srgb, var(--color-warning) 5%, var(--color-background));
   color: color-mix(in srgb, var(--color-warning) 55%, var(--color-text));
-  border: 1px solid color-mix(in srgb, var(--color-warning) 55%, var(--color-text));
+  border: 1px solid transparent;
+  background: linear-gradient(color-mix(in srgb, var(--color-warning) 5%, var(--color-background)), color-mix(in srgb, var(--color-warning) 5%, var(--color-background))) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), color-mix(in srgb, var(--color-warning) 80%, transparent)) border-box;
   border-radius: var(--base-border-radius);
 }
 .mifan-notifications .notification-items[item-status=error] {
-  background-color: color-mix(in srgb, var(--color-error) 5%, var(--color-background));
   color: color-mix(in srgb, var(--color-error) 55%, var(--color-text));
-  border: 1px solid color-mix(in srgb, var(--color-error) 55%, var(--color-text));
+  border: 1px solid transparent;
+  background: linear-gradient(color-mix(in srgb, var(--color-error) 5%, var(--color-background)), color-mix(in srgb, var(--color-error) 5%, var(--color-background))) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), color-mix(in srgb, var(--color-error) 80%, transparent)) border-box;
   border-radius: var(--base-border-radius);
 }
 .mifan-notifications .notification-items[item-status=success] {
-  background-color: color-mix(in srgb, var(--color-success) 5%, var(--color-background));
   color: color-mix(in srgb, var(--color-success) 55%, var(--color-text));
-  border: 1px solid color-mix(in srgb, var(--color-success) 55%, var(--color-text));
+  border: 1px solid transparent;
+  background: linear-gradient(color-mix(in srgb, var(--color-success) 5%, var(--color-background)), color-mix(in srgb, var(--color-success) 5%, var(--color-background))) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), color-mix(in srgb, var(--color-success) 80%, transparent)) border-box;
   border-radius: var(--base-border-radius);
 }
 .mifan-notifications .notification-items small {
@@ -2396,11 +2424,10 @@ body[theme-type=box] .mifan-apps main .container-md,
 body[theme-type=box] .mifan-apps main .container-full {
   width: -webkit-fill-available;
   border-radius: var(--base-border-radius);
-  border: 2px solid var(--color-border-bold);
-  background-color: var(--filter-background-blur);
+  border: 2px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
   -webkit-backdrop-filter: var(--filter-blur);
           backdrop-filter: var(--filter-blur);
-  color: var(--color-text);
 }
 body[theme-type=box] .mifan-apps header .container,
 body[theme-type=box] .mifan-apps header .container-sm,
@@ -2656,13 +2683,12 @@ body[theme-type=box] footer .container,
 body[theme-type=box] footer .container-sm,
 body[theme-type=box] footer .container-md,
 body[theme-type=box] footer .container-full {
-  background-color: var(--filter-background-blur);
-  -webkit-backdrop-filter: var(--filter-blur);
-          backdrop-filter: var(--filter-blur);
-  color: var(--color-text);
   width: -webkit-fill-available;
   border-radius: var(--base-border-radius);
-  border: 2px solid var(--color-border-bold);
+  border: 2px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
+  -webkit-backdrop-filter: var(--filter-blur);
+          backdrop-filter: var(--filter-blur);
   margin-block: var(--space-xsmall);
 }
 
@@ -2677,21 +2703,21 @@ body[theme-type=float] footer .container-full {
   background: var(--color-background-empty);
 }
 body[theme-type=float] footer > div:first-child {
-  border-top: 2px solid var(--color-border-bold);
-  border-left: 2px solid var(--color-border-bold);
-  border-right: 1px solid var(--color-border-bold);
+  border: 2px solid transparent;
+  border-bottom: none;
+  background: linear-gradient(var(--color-background-empty), var(--color-background-empty)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
   border-top-left-radius: var(--base-border-radius);
   border-top-right-radius: var(--base-border-radius);
 }
-body[theme-type=float] footer > div:not(:first-child),
-body[theme-type=float] footer > div:not(:last-child) {
-  border-left: 2px solid var(--color-border-bold);
-  border-right: 2px solid var(--color-border-bold);
+body[theme-type=float] footer > div:not(:first-child):not(:last-child) {
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  background: linear-gradient(var(--color-background-empty), var(--color-background-empty)) padding-box, linear-gradient(90deg, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
 }
 body[theme-type=float] footer > div:last-child {
-  border-bottom: 2px solid var(--color-border-bold);
-  border-left: 2px solid var(--color-border-bold);
-  border-right: 2px solid var(--color-border-bold);
+  border: 2px solid transparent;
+  border-top: none;
+  background: linear-gradient(var(--color-background-empty), var(--color-background-empty)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box;
   border-bottom-left-radius: var(--base-border-radius);
   border-bottom-right-radius: var(--base-border-radius);
 }

@@ -56,6 +56,7 @@ body[theme-type]
     .mifan-top-navigation
         @include position-fixed-full
         top: var(--announcement-total-height, 0)
+        height: var(--navigation-height)
 
         @at-root
             body[theme-type="box"] .mifan-top-navigation,
@@ -175,11 +176,12 @@ nav
                     flex: 1 1 0
                     min-width: calc(var(--screen-size-small-units) / 2)
 
-                > div
+                > a
                     @include flex-center-end
                     gap: var(--space-small)
                     span
                         width: -webkit-fill-available
+                        position: relative
                         > div
                             @include media-container-background
                             @include border-nav-children
@@ -187,4 +189,15 @@ nav
                             width: 100%
                             height: auto
                             border-radius: calc(var(--base-border-radius) - ( var(--space-small) * 0.5 ))
+
+                        small
+                            position: absolute
+                            bottom: var(--space-small)
+                            right: var(--space-small)
+                            text-align: right
+                            border: 1px solid transparent
+                            background: linear-gradient(var(--filter-background-blur), var(--filter-background-blur)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box
+                            backdrop-filter: blur(var(--filter-blur))
+                            border-radius: var(--base-border-radius)
+                            padding: var(--space-xsmall) var(--space-small)
 

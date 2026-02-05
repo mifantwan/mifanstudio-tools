@@ -1,10 +1,10 @@
 @mixin img-container
-    background-color: var(--color-background-empty)
-    border: 1px solid color-mix(in srgb, var(--color-text) 15%, transparent)
+    border: 1px solid transparent
+    background: linear-gradient(var(--color-background-empty), var(--color-background-empty)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box
     
 @mixin tags-container
-    background-color: var(--color-background-empty)
-    border: 2px solid color-mix(in srgb, var(--color-text) 15%, transparent)
+    border: 2px solid transparent
+    background: linear-gradient(var(--color-background-empty), var(--color-background-empty)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box
 
 @mixin container-small
     max-width: calc(var(--screen-size-small-units) * 2)

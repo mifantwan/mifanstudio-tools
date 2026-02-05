@@ -23,9 +23,10 @@
             &:first-child
                 z-index: 1
                 aspect-ratio: var(--container-aspect-ratio)
-                height: auto
+                height: calc(100% - 4px)
                 border-radius: var(--base-border-radius)
-                border: 2px solid var(--filter-background-blur-inverse)
+                border: 2px solid transparent
+                background: linear-gradient(var(--color-background), var(--color-background)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box
 
                 img
                     background-color: var(--filter-background-blur)
@@ -43,10 +44,10 @@
                 aspect-ratio: unset
                 padding: var(--space-small)
                 margin: var(--space-xsmall)
-                background-color: var(--filter-background-blur)
                 backdrop-filter: var(--filter-blur)
-                border: 2px solid var(--filter-background-blur-inverse)
-                transition: border-color 0.3s ease
+                border: 2px solid transparent
+                background: linear-gradient(var(--filter-background-blur), var(--filter-background-blur)) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box
+                transition: background 0.3s ease
                 max-width: calc(var(--screen-size-small-units) * 2)
 
         &:hover
@@ -74,7 +75,7 @@
                 width: -webkit-fill-available
                 justify-content: space-between
                 align-items: center
-                height: -webkit-fill-available
+                height: 100%
                 padding-inline: var(--space-normal)
 
                 span svg
@@ -112,4 +113,13 @@
         > div
             &:last-child
                 margin-inline: calc(var(--space-xsmall) + 2px) !important
+
+    .blog-types
+        flex-direction: row !important
+        flex-wrap: wrap !important
+        > div
+            width: 50% !important
+            flex: unset !important
+            > a
+                flex: 1 1 0
 

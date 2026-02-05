@@ -1,117 +1,101 @@
 {
   "entrypoints": {
     "local-preloader": {
-      "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-preloader.js"
-      ],
       "css": [
-        "http://localhost:8080/assets/local-preloader.css"
+        "/assets/local-preloader.css"
+      ],
+      "js": [
+        "/assets/local-preloader.js"
       ]
     },
     "local-apps": {
-      "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-apps.js"
-      ],
       "css": [
-        "http://localhost:8080/assets/local-apps.css"
+        "/assets/local-apps.css"
+      ],
+      "js": [
+        "/assets/local-apps.js"
       ]
     },
     "local-frameworks": {
-      "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-frameworks.js"
-      ],
       "css": [
-        "http://localhost:8080/assets/local-frameworks.css"
+        "/assets/local-frameworks.css"
+      ],
+      "js": [
+        "/assets/local-frameworks.js"
       ]
     },
     "local-library": {
-      "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-library.js"
-      ],
       "css": [
-        "http://localhost:8080/assets/local-library.css"
+        "/assets/local-library.css"
+      ],
+      "js": [
+        "/assets/local-library.js"
       ]
     },
     "local-products": {
-      "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-products.js"
-      ],
       "css": [
-        "http://localhost:8080/assets/local-products.css"
+        "/assets/local-products.css"
+      ],
+      "js": [
+        "/assets/local-products.js"
       ]
     },
     "local-collections": {
       "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-collections.js"
+        "/assets/local-collections.js"
       ]
     },
     "local-collection-list": {
       "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-collection-list.js"
+        "/assets/local-collection-list.js"
       ]
     },
     "local-single-post": {
       "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-single-post.js"
+        "/assets/local-single-post.js"
       ]
     },
     "local-blogs": {
       "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-blogs.js"
+        "/assets/local-blogs.js"
       ]
     },
     "local-pages": {
-      "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-pages.js"
-      ],
       "css": [
-        "http://localhost:8080/assets/local-pages.css"
+        "/assets/local-pages.css"
+      ],
+      "js": [
+        "/assets/local-pages.js"
       ]
     },
     "local-search": {
       "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-search.js"
+        "/assets/local-search.js"
       ]
     },
     "local-lost": {
       "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-lost.js"
+        "/assets/local-lost.js"
       ]
     },
     "local-giftcard": {
       "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-giftcard.js"
+        "/assets/local-giftcard.js"
       ]
     },
     "local-cart": {
       "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-cart.js"
+        "/assets/local-cart.js"
       ]
     },
     "local-account": {
       "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-account.js"
+        "/assets/local-account.js"
       ]
     },
     "local-password": {
       "js": [
-        "http://localhost:8080/assets/vendors.js",
-        "http://localhost:8080/assets/local-password.js"
+        "/assets/local-password.js"
       ]
     }
   }

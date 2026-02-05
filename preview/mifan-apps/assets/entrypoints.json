@@ -1,0 +1,34 @@
+{
+  "entrypoints": {
+    "mifan-apps-preloader": {
+      "js": [
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-apps-preloader.js"
+      ]
+    },
+    "mifan-apps-apps": {
+      "js": [
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-apps-apps.js"
+      ]
+    },
+    "mifan-apps-frameworks": {
+      "js": [
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-apps-frameworks.js"
+      ]
+    },
+    "mifan-apps-library": {
+      "js": [
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-apps-library.js"
+      ]
+    },
+    "mifan-apps-pages": {
+      "js": [
+        "http://localhost:8080/assets/vendors.js",
+        "http://localhost:8080/assets/mifan-apps-pages.js"
+      ]
+    }
+  }
+}

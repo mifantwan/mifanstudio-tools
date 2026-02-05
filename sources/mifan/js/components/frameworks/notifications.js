@@ -46,49 +46,49 @@ const mockNotifications = [
     {
         id: 1,
         status: "",
-        message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, doloremque odio sequi aut quo architecto aliquam molestias tempore voluptatibus est delectus non nesciunt sunt blanditiis vitae eaque ipsum ea laboriosam!",
+        message: "Welcome to Mifan! Your custom notifications will show up here as we roll out new features.",
         link: "#",
         timestamp: Date.now()
     },
     {
         id: 2,
         status: "info",
-        message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, doloremque odio sequi aut quo architecto aliquam molestias tempore voluptatibus est delectus non nesciunt sunt blanditiis vitae eaque ipsum ea laboriosam!",
+        message: "You have a new comment on your profile. Click to view the conversation.",
         link: "#",
         timestamp: Date.now()
     },
     {
         id: 3,
         status: "warning",
-        message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, doloremque odio sequi aut quo architecto aliquam molestias tempore voluptatibus est delectus non nesciunt sunt blanditiis vitae eaque ipsum ea laboriosam!",
+        message: "Don't forget to verify your email address to unlock all features.",
         link: "#",
         timestamp: Date.now()
     },
     {
         id: 4,
         status: "error",
-        message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, doloremque odio sequi aut quo architecto aliquam molestias tempore voluptatibus est delectus non nesciunt sunt blanditiis vitae eaque ipsum ea laboriosam!",
+        message: "There was a problem saving your changes. Please try again later.",
         link: "#",
         timestamp: Date.now()
     },
     {
         id: 5,
         status: "success",
-        message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, doloremque odio sequi aut quo architecto aliquam molestias tempore voluptatibus est delectus non nesciunt sunt blanditiis vitae eaque ipsum ea laboriosam!",
+        message: "Your submission has been received! We’ll notify you once it has been reviewed.",
         link: "#",
         timestamp: Date.now()
     },
     {
         id: 6,
         status: "info",
-        message: "Sixth notification - Testing dynamic stacking! This proves the system works with more than 5 notifications.",
+        message: "Update available: A new version of the Mifan app is ready. Refresh the page to get the latest.",
         link: "#",
         timestamp: Date.now()
     },
     {
         id: 7,
         status: "warning",
-        message: "Seventh notification - Dynamic stacking in action!",
+        message: "Storage is almost full. Consider deleting old files to avoid interruptions.",
         link: "#",
         timestamp: Date.now()
     }

@@ -33,7 +33,8 @@ function configurePlatformEntries() {
 
     const platformEntries = {
         shopify: ['products', 'collections', 'collection-list', 'single-post', 'blogs', 'pages', 'search', 'lost', 'giftcard', 'cart', 'account', 'password'],
-        wordpress: ['singlepost', 'blogs', 'pages', 'store', 'singleproduct', 'cart', 'checkout', 'account', 'lost']
+        wordpress: ['singlepost', 'blogs', 'pages', 'store', 'singleproduct', 'cart', 'checkout', 'account', 'lost'],
+        custom: ['pages']
     };
 
     if (platformEntries[platform]) {

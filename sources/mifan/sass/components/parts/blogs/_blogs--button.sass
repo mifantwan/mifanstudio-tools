@@ -2,11 +2,11 @@
     text-align: center
     margin-block: var(--space-normal)
     button
-        border: 2px solid var(--color-text)
+        border: 2px solid transparent
+        background: linear-gradient(var(--color-background-hover), var(--color-background-hover)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box
         padding: var(--space-small) var(--space-large)
         border-radius: calc(var(--space-small) / 2)
-        transition: background-color 0.3s ease, border-color 0.3s ease
-        background-color: var(--color-background-hover)
+        transition: background 0.3s ease
         color: var(--color-text)
         &:hover
-            background-color: var(--color-primary-hover)
+            background: linear-gradient(var(--color-primary-hover), var(--color-primary-hover)) padding-box, linear-gradient(to top right, var(--color-border-gradient-bold-start), var(--color-border-gradient-bold-end)) border-box

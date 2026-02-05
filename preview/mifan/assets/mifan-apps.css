@@ -59,8 +59,8 @@ footer ul {
 
 :root {
   --color-text: rgba(45, 45, 45, 0.9);
-  --color-background: rgba(247, 247, 247, 1);
-  --color-primary: rgba(235, 168, 71, 1);
+  --color-background: rgba(255, 253, 251, 1);
+  --color-primary: rgba(248, 169, 103, 1);
   --color-box-shadow: color-mix(in srgb, var(--color-text) 25%, transparent);
   --color-link: color-mix(in srgb, var(--color-text) 75%, transparent);
   --color-link-hover: color-mix(in srgb, var(--color-text) 25%, transparent);
@@ -75,13 +75,17 @@ footer ul {
   --color-success: rgba(186, 255, 201, 1);
   --color-border: color-mix(in srgb, var(--color-text) 15%, transparent);
   --color-border-bold: color-mix(in srgb, var(--color-text) 75%, transparent);
+  --color-border-gradient-start: var(--color-border);
+  --color-border-gradient-end: color-mix(in srgb, var(--color-primary) 80%, transparent);
+  --color-border-gradient-bold-start: var(--color-border-bold);
+  --color-border-gradient-bold-end: color-mix(in srgb, var(--color-primary) 80%, transparent);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text: rgba(247, 247, 247, 0.9);
+    --color-text: rgba(255, 253, 251, 0.9);
     --color-background: rgba(45, 45, 45, 1);
-    --color-primary: rgba(235, 168, 71, 1);
+    --color-primary: rgba(248, 169, 103, 1);
   }
 }
 :root {
@@ -97,5 +101,5 @@ footer ul {
 }
 
 :root {
-  --base-border-radius: var(--space-xsmall);
+  --base-border-radius: var(--space-small);
 }

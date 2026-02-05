@@ -4,8 +4,8 @@
         word-wrap: break-word
         padding-inline: var(--space-normal)
         margin-block: var(--space-normal)
-        background-color: color-mix(in srgb, var(--color-text) 5%, var(--color-background))
-        border: 1px solid color-mix(in srgb, var(--color-text) 15%, transparent)
+        border: 1px solid transparent
+        background: linear-gradient(color-mix(in srgb, var(--color-text) 5%, var(--color-background)), color-mix(in srgb, var(--color-text) 5%, var(--color-background))) padding-box, linear-gradient(to top right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box
         border-radius: var(--space-xsmall)
         overflow-x: auto
         font-family: 'Courier New', Courier, monospace
